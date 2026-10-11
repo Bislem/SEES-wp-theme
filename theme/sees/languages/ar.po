@@ -4,17 +4,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SEES 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sees\n"
+"POT-Creation-Date: 2026-10-11T12:04:17+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: SEES\n"
 "Language-Team: Arabic\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Language: ar\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-11T09:04:50+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sees\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
 
 #. Theme Name of the theme
 #. Author of the theme
@@ -23,13 +24,17 @@ msgid "SEES"
 msgstr ""
 
 #. Theme URI of the theme
+#. Author URI of the theme
 #: style.css
 msgid "https://www.seesengineering.com"
 msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "Custom theme for SEES — Smart Electrical Engineering Solutions. Classic PHP theme with English/Arabic (Polylang), ACF page fields and Contact Form 7 styling."
+msgid ""
+"Custom theme for SEES — Smart Electrical Engineering Solutions. Classic PHP "
+"theme with English/Arabic (Polylang), ACF page fields and Contact Form 7 "
+"styling."
 msgstr ""
 
 #: 404.php:14
@@ -48,67 +53,66 @@ msgstr "العودة إلى الرئيسية"
 msgid "Our Projects"
 msgstr "مشاريعنا"
 
-#: archive-project.php:26
-msgid "A selection of electrical systems we've designed, built and keep running."
-msgstr "مجموعة مختارة من الأنظمة الكهربائية التي صمّمناها ونفّذناها ونحافظ على تشغيلها."
+#: archive-project.php:26 inc/setup.php:84
+msgid ""
+"A selection of electrical systems we've designed, built and keep running."
+msgstr ""
+"مجموعة مختارة من الأنظمة الكهربائية التي صمّمناها ونفّذناها ونحافظ على تشغيلها."
 
-#: archive-project.php:34
+#: archive-project.php:32
 msgid "Filter projects"
 msgstr "تصفية المشاريع"
 
-#: archive-project.php:35
+#: archive-project.php:33
 msgid "All"
 msgstr "الكل"
 
-#: archive-project.php:51
-#: archive-project.php:59
+#: archive-project.php:49 archive-project.php:57
 msgid "No projects in this category yet."
 msgstr "لا توجد مشاريع في هذا التصنيف بعد."
 
-#: archive-project.php:54
+#: archive-project.php:52
 msgid "Previous"
 msgstr "السابق"
 
-#: archive-project.php:55
+#: archive-project.php:53
 msgid "Next"
 msgstr "التالي"
 
-#: archive-project.php:66
-#: single-project.php:60
+#: archive-project.php:64 single-project.php:58
 msgid "Your project could be next."
 msgstr "قد يكون مشروعك هو التالي."
 
-#: archive-project.php:67
-#: single-project.php:61
+#: archive-project.php:65 single-project.php:59
 msgid "Share your plans and we'll prepare a proposal."
 msgstr "شاركنا خططك وسنعدّ لك عرضًا مناسبًا."
 
-#: archive-project.php:68
-#: single-project.php:62
+#: archive-project.php:66 single-project.php:60
 msgid "Start a project"
 msgstr "ابدأ مشروعك"
 
-#: footer.php:18
-#: header.php:32
+#: footer.php:18 header.php:45 header.php:50
 msgid "SEES — Smart Electrical Engineering Solutions"
 msgstr "سيز للحلول الهندسية الكهربائية الذكية"
 
 #: footer.php:22
-msgid "Engineering smarter, powering better — integrated electrical solutions from Makkah, Saudi Arabia."
-msgstr "نهندس بذكاء ونُشغّل بشكل أفضل — حلول كهربائية متكاملة من مكة المكرمة، المملكة العربية السعودية."
+msgid ""
+"Engineering smarter, powering better — integrated electrical solutions from "
+"Makkah, Saudi Arabia."
+msgstr ""
+"نهندس بذكاء ونُشغّل بشكل أفضل — حلول كهربائية متكاملة من مكة المكرمة، المملكة "
+"العربية السعودية."
 
 #: footer.php:27
 msgid "Company"
 msgstr "الشركة"
 
-#: footer.php:39
-#: inc/post-types.php:12
+#: footer.php:39 inc/post-types.php:12
 msgid "Solutions"
 msgstr "الحلول"
 
 #. Template Name of the theme
-#: footer.php:51
-#: inc/menus.php:19
+#: footer.php:51 inc/menus.php:19 inc/setup-check.php:92
 msgid "Contact"
 msgstr "تواصل معنا"
 
@@ -154,132 +158,142 @@ msgstr "المباني الذكية"
 msgid "Operations & Maintenance"
 msgstr "التشغيل والصيانة"
 
-#: front-page.php:48
+#: front-page.php:51
 msgid "Engineering a smarter tomorrow"
 msgstr "نهندس غدًا أذكى"
 
-#: front-page.php:49
+#: front-page.php:52
 msgid "Smart Electrical Engineering Solutions"
 msgstr "الحلول الهندسية الكهربائية الذكية"
 
-#: front-page.php:50
-msgid "Delivering intelligent, reliable and sustainable electrical solutions for a brighter future."
+#: front-page.php:53
+msgid ""
+"Delivering intelligent, reliable and sustainable electrical solutions for a "
+"brighter future."
 msgstr "نقدّم حلولًا كهربائية ذكية وموثوقة ومستدامة من أجل مستقبل أكثر إشراقًا."
 
 #. Template Name of the theme
-#: front-page.php:52
-#: front-page.php:118
-#: inc/menus.php:17
+#: front-page.php:55 front-page.php:121 inc/menus.php:17 inc/setup-check.php:91
 msgid "Our Solutions"
 msgstr "حلولنا"
 
-#: front-page.php:53
+#: front-page.php:56
 msgid "View Projects"
 msgstr "شاهد المشاريع"
 
-#: front-page.php:72
+#: front-page.php:75
 msgid "About SEES"
 msgstr "عن سيز"
 
-#: front-page.php:73
+#: front-page.php:76
 msgid "Engineering Intelligence for Real-World Impact"
 msgstr "ذكاء هندسي بأثر ملموس"
 
-#: front-page.php:74
-msgid "SEES delivers integrated electrical engineering solutions that combine innovation, quality and sustainability. We power progress across diverse sectors with a focus on reliability, efficiency and long-term value."
-msgstr "تقدّم سيز حلولًا هندسية كهربائية متكاملة تجمع بين الابتكار والجودة والاستدامة. نُسهم في دفع عجلة التقدّم في مختلف القطاعات مع تركيز على الموثوقية والكفاءة والقيمة على المدى الطويل."
+#: front-page.php:77
+msgid ""
+"SEES delivers integrated electrical engineering solutions that combine "
+"innovation, quality and sustainability. We power progress across diverse "
+"sectors with a focus on reliability, efficiency and long-term value."
+msgstr ""
+"تقدّم سيز حلولًا هندسية كهربائية متكاملة تجمع بين الابتكار والجودة والاستدامة. "
+"نُسهم في دفع عجلة التقدّم في مختلف القطاعات مع تركيز على الموثوقية والكفاءة "
+"والقيمة على المدى الطويل."
 
-#: front-page.php:75
+#: front-page.php:78
 msgid "Learn More"
 msgstr "اعرف المزيد"
 
-#: front-page.php:83
+#: front-page.php:78
+msgid "about SEES"
+msgstr "عن سيز"
+
+#: front-page.php:86
 msgid "Play our story video"
 msgstr "تشغيل فيديو قصتنا"
 
-#: front-page.php:87
+#: front-page.php:90
 msgid "Our Story"
 msgstr "قصتنا"
 
-#: front-page.php:88
+#: front-page.php:91
 msgid "Building smarter infrastructure for a better tomorrow."
 msgstr "نبني بنية تحتية أذكى من أجل غدٍ أفضل."
 
-#: front-page.php:95
+#: front-page.php:98
 msgid "Years of Experience"
 msgstr "سنوات من الخبرة"
 
-#: front-page.php:99
+#: front-page.php:102
 msgid "Projects Delivered"
 msgstr "مشروع منجز"
 
-#: front-page.php:103
+#: front-page.php:106
 msgid "Trusted by Leading Partners"
 msgstr "شريك موثوق لكبرى الجهات"
 
-#: front-page.php:107
+#: front-page.php:110
 msgid "Commitment to Sustainable Solutions"
 msgstr "التزام بالحلول المستدامة"
 
-#: front-page.php:119
+#: front-page.php:122
 msgid "Integrated electrical solutions, from design to operation."
 msgstr "حلول كهربائية متكاملة، من التصميم إلى التشغيل."
 
-#: front-page.php:121
-#: inc/post-types.php:16
+#: front-page.php:124 inc/post-types.php:16
 msgid "All solutions"
 msgstr "جميع الحلول"
 
-#: front-page.php:152
+#: front-page.php:155
 msgid "One or two sentences on the client's challenge and what SEES delivered."
 msgstr "جملة أو جملتان عن تحدي العميل وما قدّمته سيز."
 
-#: front-page.php:160
+#: front-page.php:163
 msgid "Featured Project"
 msgstr "مشروع مميّز"
 
-#: front-page.php:164
-#: single-project.php:14
+#: front-page.php:167 single-project.php:14
 msgid "Client"
 msgstr "العميل"
 
-#: front-page.php:165
-#: single-project.php:15
+#: front-page.php:168 single-project.php:15
 msgid "Location"
 msgstr "الموقع"
 
-#: front-page.php:168
+#: front-page.php:171
 msgid "View all projects"
 msgstr "شاهد جميع المشاريع"
 
-#: front-page.php:179
+#: front-page.php:182
 msgid "Let's power your next project."
 msgstr "لنُشغّل مشروعك القادم."
 
-#: front-page.php:180
-msgid "Tell us what you're building — an engineer will get back to you with next steps."
+#: front-page.php:183
+msgid ""
+"Tell us what you're building — an engineer will get back to you with next "
+"steps."
 msgstr "أخبرنا بما تبنيه، وسيتواصل معك أحد مهندسينا بالخطوات التالية."
 
-#: header.php:20
+#: header.php:32
 msgid "Skip to content"
 msgstr "انتقل إلى المحتوى"
 
-#: header.php:39
+#: header.php:57
 msgid "Main"
 msgstr "القائمة الرئيسية"
 
-#: header.php:49
-#: header.php:57
-#: template-parts/cta-band.php:18
+#: header.php:71 header.php:80
+msgid "Dark mode"
+msgstr "الوضع الداكن"
+
+#: header.php:73 header.php:85 template-parts/cta-band.php:18
 msgid "Get in Touch"
 msgstr "تواصل معنا"
 
-#: header.php:53
-#: searchform.php:13
+#: header.php:77 searchform.php:13
 msgid "Search"
 msgstr "بحث"
 
-#: header.php:58
+#: header.php:86
 msgid "Menu"
 msgstr "القائمة"
 
@@ -287,7 +301,7 @@ msgstr "القائمة"
 msgid "The SEES theme needs these free plugins:"
 msgstr "يحتاج قالب سيز إلى هذه الإضافات المجانية:"
 
-#: inc/helpers.php:131
+#: inc/helpers.php:136
 msgid "Al Shahamah District, Makkah, Saudi Arabia"
 msgstr "حي الشهامة، مكة المكرمة، المملكة العربية السعودية"
 
@@ -323,8 +337,7 @@ msgstr ""
 msgid "Shield"
 msgstr ""
 
-#: inc/icons.php:23
-#: page-about.php:15
+#: inc/icons.php:23 page-about.php:15
 msgid "People"
 msgstr "الإنسان"
 
@@ -336,19 +349,16 @@ msgstr ""
 msgid "Office"
 msgstr ""
 
-#: inc/menus.php:15
-#: template-parts/page-header.php:45
+#: inc/menus.php:15 template-parts/page-header.php:58
 msgid "Home"
 msgstr "الرئيسية"
 
 #. Template Name of the theme
-#: inc/menus.php:16
+#: inc/menus.php:16 inc/setup-check.php:90
 msgid "About"
 msgstr "من نحن"
 
-#: inc/menus.php:18
-#: inc/post-types.php:31
-#: single-project.php:29
+#: inc/menus.php:18 inc/post-types.php:31 single-project.php:27
 msgid "Projects"
 msgstr "المشاريع"
 
@@ -384,8 +394,7 @@ msgstr "جميع المشاريع"
 msgid "FAQs"
 msgstr "الأسئلة الشائعة"
 
-#: inc/post-types.php:49
-#: page-solutions.php:97
+#: inc/post-types.php:49 page-solutions.php:94
 msgid "FAQ"
 msgstr "الأسئلة الشائعة"
 
@@ -409,28 +418,299 @@ msgstr "تصنيفات المشاريع"
 msgid "Project category"
 msgstr "تصنيف المشروع"
 
-#: inc/post-types.php:79
-#: inc/post-types.php:80
+#: inc/post-types.php:79 inc/post-types.php:80
 msgid "Order"
 msgstr "الترتيب"
 
-#: inc/setup.php:23
+#: inc/setup-check.php:41
+msgid "Polylang plugin"
+msgstr "إضافة Polylang"
+
+#: inc/setup-check.php:42
+msgid "Provides English / Arabic content, URLs and the language switcher."
+msgstr "توفّر المحتوى بالإنجليزية والعربية وروابط اللغات ومبدّل اللغة."
+
+#: inc/setup-check.php:43 inc/setup-check.php:46 inc/setup-check.php:49
+#: inc/setup-check.php:210 page-solutions.php:17
+msgid "Install"
+msgstr "التركيب"
+
+#: inc/setup-check.php:44
+msgid "Advanced Custom Fields plugin"
+msgstr "إضافة Advanced Custom Fields"
+
+#: inc/setup-check.php:45
+msgid "All editable page fields (texts, photos, contact details) use ACF."
+msgstr "جميع حقول الصفحات القابلة للتحرير (النصوص والصور وبيانات التواصل) تعتمد على ACF."
+
+#: inc/setup-check.php:47
+msgid "Contact Form 7 plugin"
+msgstr "إضافة Contact Form 7"
+
+#: inc/setup-check.php:48
+msgid "Powers the quote request form on the Contact page."
+msgstr "تشغّل نموذج طلب عرض السعر في صفحة التواصل."
+
+#: inc/setup-check.php:53
+msgid "English and Arabic languages in Polylang"
+msgstr "اللغتان الإنجليزية والعربية في Polylang"
+
+#: inc/setup-check.php:55
+msgid ""
+"Add English (en_US) and Arabic (ar). The theme switches to right-to-left "
+"automatically on Arabic pages."
+msgstr "أضف الإنجليزية (en_US) والعربية (ar). يتحوّل القالب تلقائيًا إلى الاتجاه من اليمين إلى اليسار في الصفحات العربية."
+
+#: inc/setup-check.php:56
+msgid "Add languages"
+msgstr "إضافة اللغات"
+
+#: inc/setup-check.php:60
+msgid "Language URLs (/en/, /ar/)"
+msgstr "روابط اللغات (/en/، /ar/)"
+
+#: inc/setup-check.php:62
+msgid ""
+"Recommended: \"The language is set from the directory name\" and keep /en/ "
+"visible."
+msgstr "يُنصح باختيار \"تحديد اللغة من اسم المجلد\" مع إبقاء /en/ ظاهرًا."
+
+#: inc/setup-check.php:63
+msgid "URL settings"
+msgstr "إعدادات الروابط"
+
+#: inc/setup-check.php:67
+msgid "Arabic WordPress language pack"
+msgstr "حزمة اللغة العربية لووردبريس"
+
+#: inc/setup-check.php:69
+msgid ""
+"Needed for Arabic dates and system messages. Polylang offers to download it "
+"when you add Arabic."
+msgstr "مطلوبة للتواريخ ورسائل النظام بالعربية. يعرض Polylang تنزيلها عند إضافة العربية."
+
+#: inc/setup-check.php:70
+msgid "Site language"
+msgstr "لغة الموقع"
+
+#: inc/setup-check.php:73
+msgid "Pretty permalinks (Post name)"
+msgstr "الروابط الدائمة الواضحة (اسم المقالة)"
+
+#: inc/setup-check.php:75
+msgid "Choose \"Post name\" so URLs look like /en/about/."
+msgstr "اختر \"اسم المقالة\" لتظهر الروابط بالشكل /en/about/."
+
+#: inc/setup-check.php:76
+msgid "Permalinks"
+msgstr "الروابط الدائمة"
+
+#: inc/setup-check.php:84
+msgid "Static Home page in English and Arabic"
+msgstr "صفحة رئيسية ثابتة بالإنجليزية والعربية"
+
+#: inc/setup-check.php:85
+msgid ""
+"Settings → Reading → \"A static page\", then translate that page into Arabic."
+msgstr "الإعدادات ← القراءة ← \"صفحة ثابتة\"، ثم ترجم تلك الصفحة إلى العربية."
+
+#: inc/setup-check.php:86
+msgid "Reading settings"
+msgstr "إعدادات القراءة"
+
+#: inc/setup-check.php:111 inc/setup-check.php:165
+msgid "page"
+msgstr "صفحة"
+
+#. translators: %s: page name, e.g. About
+#: inc/setup-check.php:116
+#, php-format
+msgid "\"%s\" page in each language, with its template"
+msgstr "صفحة \"%s\" بكل لغة مع قالبها"
+
+#. translators: 1: page name, 2: missing languages, 3: template name
+#: inc/setup-check.php:120
+#, php-format
+msgid ""
+"Missing: %2$s. Create the page, choose the \"%1$s\" template (Page → "
+"Template), and link the translations."
+msgstr "غير موجودة: %2$s. أنشئ الصفحة واختر قالب \"%1$s\" (الصفحة ← القالب) ثم اربط الترجمات."
+
+#. translators: %s: template name
+#: inc/setup-check.php:122
+#, php-format
+msgid "Uses the \"%s\" template."
+msgstr "تستخدم قالب \"%s\"."
+
+#: inc/setup-check.php:123
+msgid "Add page"
+msgstr "إضافة صفحة"
+
+#: inc/setup-check.php:134
+msgid "Primary menu for each language"
+msgstr "القائمة الرئيسية لكل لغة"
+
+#: inc/setup-check.php:135
+msgid ""
+"Optional: without it the header shows an automatic menu. Assign one menu per "
+"language to \"Primary menu\"."
+msgstr "اختياري: بدونها تعرض الترويسة قائمة تلقائية. عيّن قائمة لكل لغة في موضع \"القائمة الرئيسية\"."
+
+#: inc/setup-check.php:136
+msgid "Menus"
+msgstr "القوائم"
+
+#: inc/setup-check.php:169
+msgid "Contact form on each Contact page"
+msgstr "نموذج تواصل في كل صفحة تواصل"
+
+#. translators: %s: languages
+#: inc/setup-check.php:173
+#, php-format
+msgid ""
+"Missing or invalid on: %s. Create a form per language and paste its "
+"shortcode in the Contact page \"Form\" tab."
+msgstr "مفقود أو غير صالح في: %s. أنشئ نموذجًا لكل لغة والصق رمزه المختصر في تبويب \"النموذج\" بصفحة التواصل."
+
+#: inc/setup-check.php:174
+msgid "Paste the form shortcode in the Contact page \"Form\" tab."
+msgstr "الصق الرمز المختصر للنموذج في تبويب \"النموذج\" بصفحة التواصل."
+
+#: inc/setup-check.php:175
+msgid "Contact forms"
+msgstr "نماذج التواصل"
+
+#: inc/setup-check.php:192
+msgid "Theme field groups synced"
+msgstr "مزامنة مجموعات حقول القالب"
+
+#. translators: %d: number of field groups
+#: inc/setup-check.php:195
+#, php-format
+msgid "%d field group was updated with the theme. Click \"Sync\" to apply it."
+msgid_plural ""
+"%d field groups were updated with the theme. Click \"Sync\" to apply them."
+msgstr[0] "تم تحديث %d من مجموعات الحقول مع القالب. اضغط \"مزامنة\" لتطبيقها."
+msgstr[1] "تم تحديث %d من مجموعات الحقول مع القالب. اضغط \"مزامنة\" لتطبيقها."
+msgstr[2] "تم تحديث %d من مجموعات الحقول مع القالب. اضغط \"مزامنة\" لتطبيقها."
+msgstr[3] "تم تحديث %d من مجموعات الحقول مع القالب. اضغط \"مزامنة\" لتطبيقها."
+msgstr[4] "تم تحديث %d من مجموعات الحقول مع القالب. اضغط \"مزامنة\" لتطبيقها."
+msgstr[5] "تم تحديث %d من مجموعات الحقول مع القالب. اضغط \"مزامنة\" لتطبيقها."
+
+#: inc/setup-check.php:196
+msgid "Field groups load from the theme’s acf-json folder."
+msgstr "تُحمَّل مجموعات الحقول من مجلد acf-json في القالب."
+
+#: inc/setup-check.php:197
+msgid "Sync fields"
+msgstr "مزامنة الحقول"
+
+#: inc/setup-check.php:208
+msgid "SMTP email delivery"
+msgstr "إرسال البريد عبر SMTP"
+
+#: inc/setup-check.php:209
+msgid ""
+"Recommended so contact form emails are delivered: install WP Mail SMTP and "
+"connect a cPanel email account."
+msgstr "يُنصح به لضمان وصول رسائل النموذج: ثبّت WP Mail SMTP واربطه بحساب بريد من cPanel."
+
+#: inc/setup-check.php:244
+msgid "SEES theme:"
+msgstr "قالب سيز:"
+
+#: inc/setup-check.php:245
+msgid ""
+"setup check passed — languages, pages, menus and forms are all in place."
+msgstr "اكتمل فحص الإعداد — اللغات والصفحات والقوائم والنماذج جاهزة."
+
+#: inc/setup-check.php:251
+msgid "SEES theme setup check"
+msgstr "فحص إعداد قالب سيز"
+
+#. translators: %d: number of items
+#: inc/setup-check.php:255
+#, php-format
+msgid "%d required step is missing:"
+msgid_plural "%d required steps are missing:"
+msgstr[0] "خطوات مطلوبة ناقصة: %d"
+msgstr[1] "خطوات مطلوبة ناقصة: %d"
+msgstr[2] "خطوات مطلوبة ناقصة: %d"
+msgstr[3] "خطوات مطلوبة ناقصة: %d"
+msgstr[4] "خطوات مطلوبة ناقصة: %d"
+msgstr[5] "خطوات مطلوبة ناقصة: %d"
+
+#: inc/setup-check.php:256
+msgid "everything required is done. Recommended:"
+msgstr "اكتملت كل الخطوات المطلوبة. يُنصح أيضًا بـ:"
+
+#: inc/setup-check.php:263 inc/setup-check.php:317
+msgid "recommended"
+msgstr "مُستحسن"
+
+#: inc/setup-check.php:265 inc/setup-check.php:323
+msgid "Fix"
+msgstr "إصلاح"
+
+#: inc/setup-check.php:269
+msgid "Open the setup checklist"
+msgstr "فتح قائمة الإعداد"
+
+#: inc/setup-check.php:270
+msgid "Hide until next activation"
+msgstr "إخفاء حتى التفعيل القادم"
+
+#: inc/setup-check.php:290
+msgid "SEES setup"
+msgstr "إعداد سيز"
+
+#: inc/setup-check.php:301
+msgid "SEES setup checklist"
+msgstr "قائمة إعداد سيز"
+
+#. translators: 1: completed steps, 2: total steps
+#: inc/setup-check.php:305
+#, php-format
+msgid ""
+"%1$d of %2$d steps complete. This check also runs every time the theme is "
+"activated."
+msgstr "اكتملت %1$d من %2$d خطوة. يعمل هذا الفحص أيضًا في كل مرة يُفعَّل فيها القالب."
+
+#: inc/setup-check.php:315
+msgid "Done"
+msgstr "مكتمل"
+
+#: inc/setup-check.php:315
+msgid "Missing"
+msgstr "ناقص"
+
+#: inc/setup-check.php:315
+msgid "Recommended"
+msgstr "مُستحسن"
+
+#: inc/setup-check.php:331
+msgid ""
+"Fastest route for a new server: migrate the prepared site with All-in-One WP "
+"Migration — it brings languages, pages, menus and forms in one step."
+msgstr "أسرع طريقة لخادم جديد: انقل الموقع المُجهَّز باستخدام All-in-One WP Migration — ينقل اللغات والصفحات والقوائم والنماذج دفعة واحدة."
+
+#: inc/setup.php:27
 msgid "Primary menu"
 msgstr "القائمة الرئيسية"
 
-#: inc/setup.php:24
+#: inc/setup.php:28
 msgid "Footer: Company"
 msgstr "التذييل: الشركة"
 
-#: inc/setup.php:25
+#: inc/setup.php:29
 msgid "Footer: Solutions"
 msgstr "التذييل: الحلول"
 
-#: inc/setup.php:35
+#: inc/setup.php:39
 msgid "Card (4:3)"
 msgstr ""
 
-#: inc/setup.php:36
+#: inc/setup.php:40
 msgid "Wide (16:11)"
 msgstr ""
 
@@ -473,46 +753,59 @@ msgid "Certified teams who listen, communicate clearly and put safety first."
 msgstr "فرق معتمدة تُصغي وتتواصل بوضوح وتضع السلامة أولًا."
 
 #: page-about.php:17
-msgid "SEES — Smart Electrical Engineering Solutions — is based in Al Shahamah District, Makkah. We design, install and maintain electrical systems for commercial, residential and infrastructure projects, bringing careful engineering and modern technology to every installation."
-msgstr "سيز للحلول الهندسية الكهربائية الذكية شركة مقرّها حي الشهامة في مكة المكرمة. نصمّم الأنظمة الكهربائية ونركّبها ونصونها للمشاريع التجارية والسكنية ومشاريع البنية التحتية، ونجمع في كل تركيب بين الهندسة الدقيقة والتقنيات الحديثة."
+msgid ""
+"SEES — Smart Electrical Engineering Solutions — is based in Al Shahamah "
+"District, Makkah. We design, install and maintain electrical systems for "
+"commercial, residential and infrastructure projects, bringing careful "
+"engineering and modern technology to every installation."
+msgstr ""
+"سيز للحلول الهندسية الكهربائية الذكية شركة مقرّها حي الشهامة في مكة المكرمة. "
+"نصمّم الأنظمة الكهربائية ونركّبها ونصونها للمشاريع التجارية والسكنية ومشاريع "
+"البنية التحتية، ونجمع في كل تركيب بين الهندسة الدقيقة والتقنيات الحديثة."
 
 #: page-about.php:23
-msgid "An electrical engineering company built on precision, safety and smart technology."
+msgid ""
+"An electrical engineering company built on precision, safety and smart "
+"technology."
 msgstr "شركة هندسة كهربائية قائمة على الدقة والسلامة والتقنية الذكية."
 
-#: page-about.php:33
+#: page-about.php:30
 msgid "SEES signage"
 msgstr "لافتة سيز"
 
-#: page-about.php:36
+#: page-about.php:33
 msgid "Who we are"
 msgstr "من نحن"
 
-#: page-about.php:37
+#: page-about.php:34
 msgid "Smart engineering for the way the region builds today."
 msgstr "هندسة ذكية تواكب طريقة البناء في المنطقة اليوم."
 
-#: page-about.php:45
+#: page-about.php:42
 msgid "Our Mission"
 msgstr "رسالتنا"
 
-#: page-about.php:46
-msgid "To deliver integrated electrical solutions that are safe, efficient and built to last."
+#: page-about.php:43
+msgid ""
+"To deliver integrated electrical solutions that are safe, efficient and "
+"built to last."
 msgstr "تقديم حلول كهربائية متكاملة آمنة وفعّالة ومصمّمة لتدوم."
 
-#: page-about.php:49
+#: page-about.php:46
 msgid "Our Vision"
 msgstr "رؤيتنا"
 
-#: page-about.php:50
-msgid "To be the region's most trusted partner for smart electrical engineering."
-msgstr "أن نكون الشريك الأكثر ثقة في المنطقة في مجال الهندسة الكهربائية الذكية."
+#: page-about.php:47
+msgid ""
+"To be the region's most trusted partner for smart electrical engineering."
+msgstr ""
+"أن نكون الشريك الأكثر ثقة في المنطقة في مجال الهندسة الكهربائية الذكية."
 
-#: page-about.php:57
+#: page-about.php:54
 msgid "Our values"
 msgstr "قيمنا"
 
-#: page-about.php:58
+#: page-about.php:55
 msgid "What guides every project we take on."
 msgstr "ما يوجّه كل مشروع نتولّاه."
 
@@ -524,55 +817,65 @@ msgstr "مستعد للعمل مع سيز؟"
 msgid "Let's talk about your next electrical project."
 msgstr "لنتحدث عن مشروعك الكهربائي القادم."
 
-#: page-contact.php:19
-msgid "Tell us about your project — an engineer will get back to you with next steps."
+#: page-contact.php:13
+msgid "Makkah, Saudi Arabia"
+msgstr "مكة المكرمة، المملكة العربية السعودية"
+
+#: page-contact.php:21
+msgid ""
+"Tell us about your project — an engineer will get back to you with next "
+"steps."
 msgstr "أخبرنا عن مشروعك، وسيتواصل معك أحد مهندسينا بالخطوات التالية."
 
-#: page-contact.php:30
+#: page-contact.php:29
 msgid "Call us"
 msgstr "اتصل بنا"
 
-#: page-contact.php:34
+#: page-contact.php:33
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
-#: page-contact.php:38
+#: page-contact.php:37
 msgid "Visit"
 msgstr "زورونا"
 
-#: page-contact.php:42
+#: page-contact.php:41
 msgid "Working hours"
 msgstr "ساعات العمل"
 
-#: page-contact.php:47
+#: page-contact.php:45
 msgid "Map: SEES office location"
 msgstr "خريطة: موقع مكتب سيز"
 
-#: page-contact.php:51
-msgid "MAP"
-msgstr "خريطة"
+#: page-contact.php:49
+msgid "Get directions"
+msgstr "احصل على الاتجاهات"
 
-#: page-contact.php:58
+#: page-contact.php:49
+msgid "(opens Google Maps)"
+msgstr "(يفتح خرائط Google)"
+
+#: page-contact.php:57
 msgid "Request a quote"
 msgstr "اطلب عرض سعر"
 
-#: page-contact.php:59
+#: page-contact.php:58
 msgid "Fields marked * are required."
 msgstr "الحقول المعلَّمة بـ * إلزامية."
 
-#: page-contact.php:64
+#: page-contact.php:63
 msgid "Add a Contact Form 7 shortcode in this page's \"Form\" settings."
 msgstr "أضف رمز Contact Form 7 المختصر في إعدادات \"النموذج\" لهذه الصفحة."
 
-#: page-contact.php:70
+#: page-contact.php:69
 msgid "Thank you!"
 msgstr "شكرًا لك!"
 
-#: page-contact.php:71
+#: page-contact.php:70
 msgid "Your request has been sent. A SEES engineer will contact you shortly."
 msgstr "تم إرسال طلبك. سيتواصل معك أحد مهندسي سيز قريبًا."
 
-#: page-contact.php:72
+#: page-contact.php:71
 msgid "Send another request"
 msgstr "إرسال طلب آخر"
 
@@ -589,15 +892,16 @@ msgid "Engineer"
 msgstr "الهندسة"
 
 #: page-solutions.php:16
-msgid "Drawings, calculations and equipment selection, checked against code and budget."
-msgstr "المخططات والحسابات واختيار المعدّات، مع التحقق من مطابقتها للأنظمة والميزانية."
+msgid ""
+"Drawings, calculations and equipment selection, checked against code and "
+"budget."
+msgstr ""
+"المخططات والحسابات واختيار المعدّات، مع التحقق من مطابقتها للأنظمة والميزانية."
 
 #: page-solutions.php:17
-msgid "Install"
-msgstr "التركيب"
-
-#: page-solutions.php:17
-msgid "Certified crews build, test and commission, with full documentation at handover."
+msgid ""
+"Certified crews build, test and commission, with full documentation at "
+"handover."
 msgstr "فرق معتمدة تنفّذ وتختبر وتشغّل، مع توثيق كامل عند التسليم."
 
 #: page-solutions.php:18
@@ -609,36 +913,39 @@ msgid "Maintenance plans and monitoring that keep systems efficient for years."
 msgstr "خطط صيانة ومراقبة تحافظ على كفاءة الأنظمة لسنوات."
 
 #: page-solutions.php:29
-msgid "Complete electrical engineering — designed, installed and maintained by one accountable team."
+msgid ""
+"Complete electrical engineering — designed, installed and maintained by one "
+"accountable team."
 msgstr "هندسة كهربائية متكاملة — تصميم وتركيب وصيانة من فريق واحد مسؤول."
 
-#: page-solutions.php:70
+#: page-solutions.php:67
 msgid "How we work"
 msgstr "كيف نعمل"
 
-#: page-solutions.php:71
+#: page-solutions.php:68
 msgid "Four steps from survey to switch-on."
 msgstr "أربع خطوات من المسح الميداني حتى التشغيل."
 
 #. translators: %s: step number, e.g. 01
-#: page-solutions.php:82
+#: page-solutions.php:79
 #, php-format
 msgid "Step %s"
 msgstr "الخطوة %s"
 
-#: page-solutions.php:98
+#: page-solutions.php:95
 msgid "Common questions"
 msgstr "أسئلة متكررة"
 
-#: page-solutions.php:117
+#: page-solutions.php:114
 msgid "Not sure which solution fits?"
 msgstr "لست متأكدًا من الحل المناسب؟"
 
-#: page-solutions.php:118
-msgid "Describe your project and our engineers will recommend the right approach."
+#: page-solutions.php:115
+msgid ""
+"Describe your project and our engineers will recommend the right approach."
 msgstr "صف لنا مشروعك وسيوصي مهندسونا بالنهج الأنسب."
 
-#: page-solutions.php:119
+#: page-solutions.php:116
 msgid "Talk to an engineer"
 msgstr "تحدّث مع مهندس"
 
@@ -658,11 +965,12 @@ msgstr "السنة"
 msgid "Category"
 msgstr "التصنيف"
 
-#: single-project.php:51
-msgid "[Describe the project: scope, challenge, what SEES delivered and the result.]"
+#: single-project.php:49
+msgid ""
+"[Describe the project: scope, challenge, what SEES delivered and the result.]"
 msgstr "[صف المشروع: النطاق والتحدي وما قدّمته سيز والنتيجة.]"
 
-#: template-parts/page-header.php:44
+#: template-parts/page-header.php:57
 msgid "Breadcrumb"
 msgstr "مسار التنقل"
 
@@ -674,17 +982,5 @@ msgstr "شاهد دراسة الحالة"
 msgid "Learn more"
 msgstr "اعرف المزيد"
 
-msgid "about SEES"
-msgstr "عن سيز"
-
-msgid "Get directions"
-msgstr "احصل على الاتجاهات"
-
-msgid "(opens Google Maps)"
-msgstr "(يفتح خرائط Google)"
-
-msgid "Makkah, Saudi Arabia"
-msgstr "مكة المكرمة، المملكة العربية السعودية"
-
-msgid "Dark mode"
-msgstr "الوضع الداكن"
+#~ msgid "MAP"
+#~ msgstr "خريطة"

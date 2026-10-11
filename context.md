@@ -70,6 +70,23 @@ theme/sees/
   languages/               sees.pot, ar.po, ar.mo
 ```
 
+### Setup checklist (`inc/setup-check.php`)
+
+- **When it runs:** every theme activation re-arms an admin notice for all administrators. The notice lists missing required steps and recommendations, each with a link to the screen that fixes it.
+- **What it checks:**
+  - the 3 plugins
+  - EN/AR languages and URL mode
+  - the Arabic WP language pack
+  - permalinks
+  - the static Home page and its Arabic translation
+  - About / Our Solutions / Contact pages per language with their templates
+  - a primary menu per language
+  - a working CF7 shortcode on each Contact page
+  - pending ACF JSON sync
+  - SMTP
+- **Notice behavior:** it clears itself once everything passes. "Hide until next activation" hides it per user.
+- **Full list:** always available at Appearance → SEES setup.
+
 ### Key decisions
 
 - **Page templates use a `Template Name:` header**, not slugs. Arabic pages have different slugs (Polylang free can't share slugs), so templates are matched by `_wp_page_template`. `sees_page_by_template()` finds a page in the current language.

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-11T09:04:50+00:00\n"
+"POT-Creation-Date: 2026-10-11T12:04:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sees\n"
@@ -21,6 +21,7 @@ msgid "SEES"
 msgstr ""
 
 #. Theme URI of the theme
+#. Author URI of the theme
 #: style.css
 msgid "https://www.seesengineering.com"
 msgstr ""
@@ -47,47 +48,49 @@ msgid "Our Projects"
 msgstr ""
 
 #: archive-project.php:26
+#: inc/setup.php:84
 msgid "A selection of electrical systems we've designed, built and keep running."
 msgstr ""
 
-#: archive-project.php:34
+#: archive-project.php:32
 msgid "Filter projects"
 msgstr ""
 
-#: archive-project.php:35
+#: archive-project.php:33
 msgid "All"
 msgstr ""
 
-#: archive-project.php:51
-#: archive-project.php:59
+#: archive-project.php:49
+#: archive-project.php:57
 msgid "No projects in this category yet."
 msgstr ""
 
-#: archive-project.php:54
+#: archive-project.php:52
 msgid "Previous"
 msgstr ""
 
-#: archive-project.php:55
+#: archive-project.php:53
 msgid "Next"
+msgstr ""
+
+#: archive-project.php:64
+#: single-project.php:58
+msgid "Your project could be next."
+msgstr ""
+
+#: archive-project.php:65
+#: single-project.php:59
+msgid "Share your plans and we'll prepare a proposal."
 msgstr ""
 
 #: archive-project.php:66
 #: single-project.php:60
-msgid "Your project could be next."
-msgstr ""
-
-#: archive-project.php:67
-#: single-project.php:61
-msgid "Share your plans and we'll prepare a proposal."
-msgstr ""
-
-#: archive-project.php:68
-#: single-project.php:62
 msgid "Start a project"
 msgstr ""
 
 #: footer.php:18
-#: header.php:32
+#: header.php:45
+#: header.php:50
 msgid "SEES — Smart Electrical Engineering Solutions"
 msgstr ""
 
@@ -107,6 +110,7 @@ msgstr ""
 #. Template Name of the theme
 #: footer.php:51
 #: inc/menus.php:19
+#: inc/setup-check.php:92
 msgid "Contact"
 msgstr ""
 
@@ -152,132 +156,142 @@ msgstr ""
 msgid "Operations & Maintenance"
 msgstr ""
 
-#: front-page.php:48
+#: front-page.php:51
 msgid "Engineering a smarter tomorrow"
 msgstr ""
 
-#: front-page.php:49
+#: front-page.php:52
 msgid "Smart Electrical Engineering Solutions"
 msgstr ""
 
-#: front-page.php:50
+#: front-page.php:53
 msgid "Delivering intelligent, reliable and sustainable electrical solutions for a brighter future."
 msgstr ""
 
 #. Template Name of the theme
-#: front-page.php:52
-#: front-page.php:118
+#: front-page.php:55
+#: front-page.php:121
 #: inc/menus.php:17
+#: inc/setup-check.php:91
 msgid "Our Solutions"
 msgstr ""
 
-#: front-page.php:53
+#: front-page.php:56
 msgid "View Projects"
 msgstr ""
 
-#: front-page.php:72
+#: front-page.php:75
 msgid "About SEES"
 msgstr ""
 
-#: front-page.php:73
+#: front-page.php:76
 msgid "Engineering Intelligence for Real-World Impact"
 msgstr ""
 
-#: front-page.php:74
+#: front-page.php:77
 msgid "SEES delivers integrated electrical engineering solutions that combine innovation, quality and sustainability. We power progress across diverse sectors with a focus on reliability, efficiency and long-term value."
 msgstr ""
 
-#: front-page.php:75
+#: front-page.php:78
 msgid "Learn More"
 msgstr ""
 
-#: front-page.php:83
+#: front-page.php:78
+msgid "about SEES"
+msgstr ""
+
+#: front-page.php:86
 msgid "Play our story video"
 msgstr ""
 
-#: front-page.php:87
+#: front-page.php:90
 msgid "Our Story"
 msgstr ""
 
-#: front-page.php:88
+#: front-page.php:91
 msgid "Building smarter infrastructure for a better tomorrow."
 msgstr ""
 
-#: front-page.php:95
+#: front-page.php:98
 msgid "Years of Experience"
 msgstr ""
 
-#: front-page.php:99
+#: front-page.php:102
 msgid "Projects Delivered"
 msgstr ""
 
-#: front-page.php:103
+#: front-page.php:106
 msgid "Trusted by Leading Partners"
 msgstr ""
 
-#: front-page.php:107
+#: front-page.php:110
 msgid "Commitment to Sustainable Solutions"
 msgstr ""
 
-#: front-page.php:119
+#: front-page.php:122
 msgid "Integrated electrical solutions, from design to operation."
 msgstr ""
 
-#: front-page.php:121
+#: front-page.php:124
 #: inc/post-types.php:16
 msgid "All solutions"
 msgstr ""
 
-#: front-page.php:152
+#: front-page.php:155
 msgid "One or two sentences on the client's challenge and what SEES delivered."
 msgstr ""
 
-#: front-page.php:160
+#: front-page.php:163
 msgid "Featured Project"
 msgstr ""
 
-#: front-page.php:164
+#: front-page.php:167
 #: single-project.php:14
 msgid "Client"
 msgstr ""
 
-#: front-page.php:165
+#: front-page.php:168
 #: single-project.php:15
 msgid "Location"
 msgstr ""
 
-#: front-page.php:168
+#: front-page.php:171
 msgid "View all projects"
 msgstr ""
 
-#: front-page.php:179
+#: front-page.php:182
 msgid "Let's power your next project."
 msgstr ""
 
-#: front-page.php:180
+#: front-page.php:183
 msgid "Tell us what you're building — an engineer will get back to you with next steps."
 msgstr ""
 
-#: header.php:20
+#: header.php:32
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:39
+#: header.php:57
 msgid "Main"
 msgstr ""
 
-#: header.php:49
-#: header.php:57
+#: header.php:71
+#: header.php:80
+msgid "Dark mode"
+msgstr ""
+
+#: header.php:73
+#: header.php:85
 #: template-parts/cta-band.php:18
 msgid "Get in Touch"
 msgstr ""
 
-#: header.php:53
+#: header.php:77
 #: searchform.php:13
 msgid "Search"
 msgstr ""
 
-#: header.php:58
+#: header.php:86
 msgid "Menu"
 msgstr ""
 
@@ -285,7 +299,7 @@ msgstr ""
 msgid "The SEES theme needs these free plugins:"
 msgstr ""
 
-#: inc/helpers.php:131
+#: inc/helpers.php:136
 msgid "Al Shahamah District, Makkah, Saudi Arabia"
 msgstr ""
 
@@ -335,18 +349,19 @@ msgid "Office"
 msgstr ""
 
 #: inc/menus.php:15
-#: template-parts/page-header.php:45
+#: template-parts/page-header.php:58
 msgid "Home"
 msgstr ""
 
 #. Template Name of the theme
 #: inc/menus.php:16
+#: inc/setup-check.php:90
 msgid "About"
 msgstr ""
 
 #: inc/menus.php:18
 #: inc/post-types.php:31
-#: single-project.php:29
+#: single-project.php:27
 msgid "Projects"
 msgstr ""
 
@@ -383,7 +398,7 @@ msgid "FAQs"
 msgstr ""
 
 #: inc/post-types.php:49
-#: page-solutions.php:97
+#: page-solutions.php:94
 msgid "FAQ"
 msgstr ""
 
@@ -412,23 +427,272 @@ msgstr ""
 msgid "Order"
 msgstr ""
 
-#: inc/setup.php:23
+#: inc/setup-check.php:41
+msgid "Polylang plugin"
+msgstr ""
+
+#: inc/setup-check.php:42
+msgid "Provides English / Arabic content, URLs and the language switcher."
+msgstr ""
+
+#: inc/setup-check.php:43
+#: inc/setup-check.php:46
+#: inc/setup-check.php:49
+#: inc/setup-check.php:210
+#: page-solutions.php:17
+msgid "Install"
+msgstr ""
+
+#: inc/setup-check.php:44
+msgid "Advanced Custom Fields plugin"
+msgstr ""
+
+#: inc/setup-check.php:45
+msgid "All editable page fields (texts, photos, contact details) use ACF."
+msgstr ""
+
+#: inc/setup-check.php:47
+msgid "Contact Form 7 plugin"
+msgstr ""
+
+#: inc/setup-check.php:48
+msgid "Powers the quote request form on the Contact page."
+msgstr ""
+
+#: inc/setup-check.php:53
+msgid "English and Arabic languages in Polylang"
+msgstr ""
+
+#: inc/setup-check.php:55
+msgid "Add English (en_US) and Arabic (ar). The theme switches to right-to-left automatically on Arabic pages."
+msgstr ""
+
+#: inc/setup-check.php:56
+msgid "Add languages"
+msgstr ""
+
+#: inc/setup-check.php:60
+msgid "Language URLs (/en/, /ar/)"
+msgstr ""
+
+#: inc/setup-check.php:62
+msgid "Recommended: \"The language is set from the directory name\" and keep /en/ visible."
+msgstr ""
+
+#: inc/setup-check.php:63
+msgid "URL settings"
+msgstr ""
+
+#: inc/setup-check.php:67
+msgid "Arabic WordPress language pack"
+msgstr ""
+
+#: inc/setup-check.php:69
+msgid "Needed for Arabic dates and system messages. Polylang offers to download it when you add Arabic."
+msgstr ""
+
+#: inc/setup-check.php:70
+msgid "Site language"
+msgstr ""
+
+#: inc/setup-check.php:73
+msgid "Pretty permalinks (Post name)"
+msgstr ""
+
+#: inc/setup-check.php:75
+msgid "Choose \"Post name\" so URLs look like /en/about/."
+msgstr ""
+
+#: inc/setup-check.php:76
+msgid "Permalinks"
+msgstr ""
+
+#: inc/setup-check.php:84
+msgid "Static Home page in English and Arabic"
+msgstr ""
+
+#: inc/setup-check.php:85
+msgid "Settings → Reading → \"A static page\", then translate that page into Arabic."
+msgstr ""
+
+#: inc/setup-check.php:86
+msgid "Reading settings"
+msgstr ""
+
+#: inc/setup-check.php:111
+#: inc/setup-check.php:165
+msgid "page"
+msgstr ""
+
+#. translators: %s: page name, e.g. About
+#: inc/setup-check.php:116
+#, php-format
+msgid "\"%s\" page in each language, with its template"
+msgstr ""
+
+#. translators: 1: page name, 2: missing languages, 3: template name
+#: inc/setup-check.php:120
+#, php-format
+msgid "Missing: %2$s. Create the page, choose the \"%1$s\" template (Page → Template), and link the translations."
+msgstr ""
+
+#. translators: %s: template name
+#: inc/setup-check.php:122
+#, php-format
+msgid "Uses the \"%s\" template."
+msgstr ""
+
+#: inc/setup-check.php:123
+msgid "Add page"
+msgstr ""
+
+#: inc/setup-check.php:134
+msgid "Primary menu for each language"
+msgstr ""
+
+#: inc/setup-check.php:135
+msgid "Optional: without it the header shows an automatic menu. Assign one menu per language to \"Primary menu\"."
+msgstr ""
+
+#: inc/setup-check.php:136
+msgid "Menus"
+msgstr ""
+
+#: inc/setup-check.php:169
+msgid "Contact form on each Contact page"
+msgstr ""
+
+#. translators: %s: languages
+#: inc/setup-check.php:173
+#, php-format
+msgid "Missing or invalid on: %s. Create a form per language and paste its shortcode in the Contact page \"Form\" tab."
+msgstr ""
+
+#: inc/setup-check.php:174
+msgid "Paste the form shortcode in the Contact page \"Form\" tab."
+msgstr ""
+
+#: inc/setup-check.php:175
+msgid "Contact forms"
+msgstr ""
+
+#: inc/setup-check.php:192
+msgid "Theme field groups synced"
+msgstr ""
+
+#. translators: %d: number of field groups
+#: inc/setup-check.php:195
+#, php-format
+msgid "%d field group was updated with the theme. Click \"Sync\" to apply it."
+msgid_plural "%d field groups were updated with the theme. Click \"Sync\" to apply them."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/setup-check.php:196
+msgid "Field groups load from the theme’s acf-json folder."
+msgstr ""
+
+#: inc/setup-check.php:197
+msgid "Sync fields"
+msgstr ""
+
+#: inc/setup-check.php:208
+msgid "SMTP email delivery"
+msgstr ""
+
+#: inc/setup-check.php:209
+msgid "Recommended so contact form emails are delivered: install WP Mail SMTP and connect a cPanel email account."
+msgstr ""
+
+#: inc/setup-check.php:244
+msgid "SEES theme:"
+msgstr ""
+
+#: inc/setup-check.php:245
+msgid "setup check passed — languages, pages, menus and forms are all in place."
+msgstr ""
+
+#: inc/setup-check.php:251
+msgid "SEES theme setup check"
+msgstr ""
+
+#. translators: %d: number of items
+#: inc/setup-check.php:255
+#, php-format
+msgid "%d required step is missing:"
+msgid_plural "%d required steps are missing:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/setup-check.php:256
+msgid "everything required is done. Recommended:"
+msgstr ""
+
+#: inc/setup-check.php:263
+#: inc/setup-check.php:317
+msgid "recommended"
+msgstr ""
+
+#: inc/setup-check.php:265
+#: inc/setup-check.php:323
+msgid "Fix"
+msgstr ""
+
+#: inc/setup-check.php:269
+msgid "Open the setup checklist"
+msgstr ""
+
+#: inc/setup-check.php:270
+msgid "Hide until next activation"
+msgstr ""
+
+#: inc/setup-check.php:290
+msgid "SEES setup"
+msgstr ""
+
+#: inc/setup-check.php:301
+msgid "SEES setup checklist"
+msgstr ""
+
+#. translators: 1: completed steps, 2: total steps
+#: inc/setup-check.php:305
+#, php-format
+msgid "%1$d of %2$d steps complete. This check also runs every time the theme is activated."
+msgstr ""
+
+#: inc/setup-check.php:315
+msgid "Done"
+msgstr ""
+
+#: inc/setup-check.php:315
+msgid "Missing"
+msgstr ""
+
+#: inc/setup-check.php:315
+msgid "Recommended"
+msgstr ""
+
+#: inc/setup-check.php:331
+msgid "Fastest route for a new server: migrate the prepared site with All-in-One WP Migration — it brings languages, pages, menus and forms in one step."
+msgstr ""
+
+#: inc/setup.php:27
 msgid "Primary menu"
 msgstr ""
 
-#: inc/setup.php:24
+#: inc/setup.php:28
 msgid "Footer: Company"
 msgstr ""
 
-#: inc/setup.php:25
+#: inc/setup.php:29
 msgid "Footer: Solutions"
 msgstr ""
 
-#: inc/setup.php:35
+#: inc/setup.php:39
 msgid "Card (4:3)"
 msgstr ""
 
-#: inc/setup.php:36
+#: inc/setup.php:40
 msgid "Wide (16:11)"
 msgstr ""
 
@@ -478,39 +742,39 @@ msgstr ""
 msgid "An electrical engineering company built on precision, safety and smart technology."
 msgstr ""
 
-#: page-about.php:33
+#: page-about.php:30
 msgid "SEES signage"
 msgstr ""
 
-#: page-about.php:36
+#: page-about.php:33
 msgid "Who we are"
 msgstr ""
 
-#: page-about.php:37
+#: page-about.php:34
 msgid "Smart engineering for the way the region builds today."
 msgstr ""
 
-#: page-about.php:45
+#: page-about.php:42
 msgid "Our Mission"
 msgstr ""
 
-#: page-about.php:46
+#: page-about.php:43
 msgid "To deliver integrated electrical solutions that are safe, efficient and built to last."
 msgstr ""
 
-#: page-about.php:49
+#: page-about.php:46
 msgid "Our Vision"
 msgstr ""
 
-#: page-about.php:50
+#: page-about.php:47
 msgid "To be the region's most trusted partner for smart electrical engineering."
 msgstr ""
 
-#: page-about.php:57
+#: page-about.php:54
 msgid "Our values"
 msgstr ""
 
-#: page-about.php:58
+#: page-about.php:55
 msgid "What guides every project we take on."
 msgstr ""
 
@@ -522,55 +786,63 @@ msgstr ""
 msgid "Let's talk about your next electrical project."
 msgstr ""
 
-#: page-contact.php:19
+#: page-contact.php:13
+msgid "Makkah, Saudi Arabia"
+msgstr ""
+
+#: page-contact.php:21
 msgid "Tell us about your project — an engineer will get back to you with next steps."
 msgstr ""
 
-#: page-contact.php:30
+#: page-contact.php:29
 msgid "Call us"
 msgstr ""
 
-#: page-contact.php:34
+#: page-contact.php:33
 msgid "Email"
 msgstr ""
 
-#: page-contact.php:38
+#: page-contact.php:37
 msgid "Visit"
 msgstr ""
 
-#: page-contact.php:42
+#: page-contact.php:41
 msgid "Working hours"
 msgstr ""
 
-#: page-contact.php:47
+#: page-contact.php:45
 msgid "Map: SEES office location"
 msgstr ""
 
-#: page-contact.php:51
-msgid "MAP"
+#: page-contact.php:49
+msgid "Get directions"
 msgstr ""
 
-#: page-contact.php:58
+#: page-contact.php:49
+msgid "(opens Google Maps)"
+msgstr ""
+
+#: page-contact.php:57
 msgid "Request a quote"
 msgstr ""
 
-#: page-contact.php:59
+#: page-contact.php:58
 msgid "Fields marked * are required."
 msgstr ""
 
-#: page-contact.php:64
+#: page-contact.php:63
 msgid "Add a Contact Form 7 shortcode in this page's \"Form\" settings."
 msgstr ""
 
-#: page-contact.php:70
+#: page-contact.php:69
 msgid "Thank you!"
 msgstr ""
 
-#: page-contact.php:71
+#: page-contact.php:70
 msgid "Your request has been sent. A SEES engineer will contact you shortly."
 msgstr ""
 
-#: page-contact.php:72
+#: page-contact.php:71
 msgid "Send another request"
 msgstr ""
 
@@ -591,10 +863,6 @@ msgid "Drawings, calculations and equipment selection, checked against code and 
 msgstr ""
 
 #: page-solutions.php:17
-msgid "Install"
-msgstr ""
-
-#: page-solutions.php:17
 msgid "Certified crews build, test and commission, with full documentation at handover."
 msgstr ""
 
@@ -610,33 +878,33 @@ msgstr ""
 msgid "Complete electrical engineering — designed, installed and maintained by one accountable team."
 msgstr ""
 
-#: page-solutions.php:70
+#: page-solutions.php:67
 msgid "How we work"
 msgstr ""
 
-#: page-solutions.php:71
+#: page-solutions.php:68
 msgid "Four steps from survey to switch-on."
 msgstr ""
 
 #. translators: %s: step number, e.g. 01
-#: page-solutions.php:82
+#: page-solutions.php:79
 #, php-format
 msgid "Step %s"
 msgstr ""
 
-#: page-solutions.php:98
+#: page-solutions.php:95
 msgid "Common questions"
 msgstr ""
 
-#: page-solutions.php:117
+#: page-solutions.php:114
 msgid "Not sure which solution fits?"
 msgstr ""
 
-#: page-solutions.php:118
+#: page-solutions.php:115
 msgid "Describe your project and our engineers will recommend the right approach."
 msgstr ""
 
-#: page-solutions.php:119
+#: page-solutions.php:116
 msgid "Talk to an engineer"
 msgstr ""
 
@@ -656,11 +924,11 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: single-project.php:51
+#: single-project.php:49
 msgid "[Describe the project: scope, challenge, what SEES delivered and the result.]"
 msgstr ""
 
-#: template-parts/page-header.php:44
+#: template-parts/page-header.php:57
 msgid "Breadcrumb"
 msgstr ""
 

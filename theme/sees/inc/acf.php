@@ -22,8 +22,8 @@ add_filter( 'acf/load_field/name=icon', function ( $field ) {
 
 // Tell admins when a required plugin is missing.
 add_action( 'admin_notices', function () {
-	if ( ! current_user_can( 'activate_plugins' ) ) {
-		return;
+	if ( ! current_user_can( 'activate_plugins' ) || get_option( 'sees_setup_check_pending' ) ) {
+		return; // The setup checklist notice already covers missing plugins.
 	}
 	$missing = array();
 	if ( ! class_exists( 'ACF' ) ) {
