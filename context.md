@@ -157,7 +157,11 @@ There are no Repeater or Flexible Content fields (Pro-only). Repeating items are
   - **No flash:** an inline script in `header.php` sets `html[data-theme]` before paint. `prefers-color-scheme` covers visitors without JavaScript.
   - **Role tokens:** components use role tokens (`--bg`, `--bg-soft`, `--surface`, `--fg-strong`, `--fg`, `--line`, `--link`, `--solid-*`, `--btn-*`, `--fade`, `--photo-filter`, `--map-filter`…). Dark mode only redefines that block.
   - **Images:** the header logo switches to `logo-dark.png`, the photo fades turn dark, photos are dimmed slightly, and the map gets a dark style. On dark, primary buttons are green with ink text (brand rule).
-- **Inner page headers:** no photo. A light brand gradient with petrol/green glows, a dot grid, animated "circuit" lines, a faint SEES mark and a brand gradient rule along the bottom. The Header photo field now belongs to Home only.
+- **Inner page headers:** no photo. A light brand gradient with petrol/green glows, a dot grid, a faint SEES mark and a brand gradient rule along the bottom. The Header photo field now belongs to Home only.
+  - **Circuit board:** 13 wires, generated PCB-style with lane jogs, so none overlap.
+  - **Animation:** each wire carries a looping gradient "current" pulse (`pathLength=100`, dash offset), with its own speed and a staggered start. Junction nodes pulse.
+  - **Performance:** the animation pauses off-screen (IntersectionObserver). Below 760px, 4 wires are hidden.
+  - **Reduce motion:** with the OS setting on, the board is static with lit segments, as the brief requires. On GNOME, "Reduce animation" or `enable-animations=false` triggers this.
 - **Contact map:**
   - **Map field:** paste the office's Google Maps embed. Without it, the map shows Makkah: a text search for the district matched the wrong businesses, and the district isn't in OpenStreetMap.
   - **Get directions:** the button appears once the "Google Maps link" field is filled.

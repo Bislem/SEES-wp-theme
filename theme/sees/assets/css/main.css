@@ -122,6 +122,8 @@
 	--glow-1: color-mix(in srgb, var(--c-petrol-20) 85%, transparent);   /* page-header glows */
 	--glow-2: color-mix(in srgb, var(--c-green-20) 90%, transparent);
 	--dot: color-mix(in srgb, var(--c-petrol) 22%, transparent);
+	--circuit-trace: color-mix(in srgb, var(--c-petrol-40) 90%, transparent);
+	--circuit-glow: color-mix(in srgb, var(--c-teal) 55%, transparent);
 	--placeholder: var(--c-navy-60);     /* 4.6:1 on white */
 	--photo-filter: none;
 	--map-filter: none;
@@ -196,6 +198,8 @@
 	--glow-1: color-mix(in srgb, var(--c-petrol) 38%, transparent);
 	--glow-2: color-mix(in srgb, var(--c-green) 12%, transparent);
 	--dot: color-mix(in srgb, var(--c-petrol-40) 18%, transparent);
+	--circuit-trace: color-mix(in srgb, var(--c-petrol-60) 45%, transparent);
+	--circuit-glow: color-mix(in srgb, var(--c-teal) 80%, transparent);
 	--placeholder: #8d9cab;              /* 5.4:1 on dark fields */
 	--photo-filter: brightness(.86) saturate(.95);
 	--map-filter: invert(.9) hue-rotate(180deg) saturate(.55) brightness(.95);
@@ -214,6 +218,7 @@
 		--icon-tile: color-mix(in srgb, var(--c-petrol) 35%, transparent); --fade: #0a1520;
 		--glow-1: color-mix(in srgb, var(--c-petrol) 38%, transparent); --glow-2: color-mix(in srgb, var(--c-green) 12%, transparent);
 		--dot: color-mix(in srgb, var(--c-petrol-40) 18%, transparent);
+		--circuit-trace: color-mix(in srgb, var(--c-petrol-60) 45%, transparent); --circuit-glow: color-mix(in srgb, var(--c-teal) 80%, transparent);
 		--placeholder: #8d9cab;
 		--photo-filter: brightness(.86) saturate(.95);
 		--map-filter: invert(.9) hue-rotate(180deg) saturate(.55) brightness(.95);
@@ -730,48 +735,57 @@ button { font: inherit; }
 	width: 100%;
 	height: 100%;
 }
-.page-header__lines path {
+/* Circuit board: faint traces, current pulses running along every wire, pulsing junctions. */
+.circuit__wires path {
 	fill: none;
-	stroke: var(--c-petrol-40);
+	stroke: var(--circuit-trace);
 	stroke-width: 1.5;
 	stroke-linecap: round;
-	stroke-dasharray: 700;
-	stroke-dashoffset: 0;
-	animation: trace 2.2s var(--ease) both;
+	stroke-linejoin: round;
 }
-.page-header__lines path:nth-child(2) { animation-delay: .15s; }
-.page-header__lines path:nth-child(3) { animation-delay: .3s; }
-.page-header__lines path:nth-child(4) { animation-delay: .45s; }
-.page-header__lines path:nth-child(5) { animation-delay: .6s; }
-/* A brighter "current" running along the first line. */
-.page-header__line-accent {
+.circuit__current {
 	fill: none;
-	stroke: url(#sees-ph-grad);
-	stroke-width: 2.5;
+	stroke: url(#sees-current);
+	stroke-width: 2.6;
 	stroke-linecap: round;
-	stroke-dasharray: 90 610;
-	animation: current 4.5s linear 1.4s infinite;
+	stroke-linejoin: round;
+	stroke-dasharray: 9 91;          /* pathLength=100: a short pulse */
+	stroke-dashoffset: 100;
+	filter: drop-shadow(0 0 3px var(--circuit-glow));
+	animation: circuit-flow var(--dur, 4s) linear var(--delay, 0s) infinite;
 }
-.page-header__stop-1 { stop-color: var(--link); }
-.page-header__stop-2 { stop-color: var(--c-teal); }
-.page-header__stop-3 { stop-color: var(--c-green); }
-.page-header__nodes circle {
+.circuit__stop-1 { stop-color: var(--c-petrol-60); }
+.circuit__stop-2 { stop-color: var(--c-teal); }
+.circuit__stop-3 { stop-color: var(--c-green); }
+.circuit__vias circle {
+	fill: none;
+	stroke: var(--circuit-trace);
+	stroke-width: 1.5;
+}
+.circuit__node {
 	fill: var(--surface);
 	stroke: var(--c-petrol-60);
 	stroke-width: 2;
-	animation: fadeUp .6s 1.2s var(--ease) both;
+	transform-box: fill-box;
+	transform-origin: center;
+	animation: circuit-node 3s ease-in-out var(--delay, 0s) infinite;
+}
+.page-header__decor.is-paused .circuit__current,
+.page-header__decor.is-paused .circuit__node { animation-play-state: paused; }
+@keyframes circuit-flow { to { stroke-dashoffset: 0; } }
+@keyframes circuit-node {
+	0%, 100% { stroke: var(--c-petrol-60); transform: scale(1); }
+	50% { stroke: var(--c-teal); transform: scale(1.35); }
 }
 .page-header__mark {
 	position: absolute;
-	inset-inline-end: 6%;
-	inset-block-start: calc(var(--header-h) + 10px);
-	width: clamp(140px, 16vw, 230px);
+	inset-inline-end: 4%;
+	inset-block-start: calc(var(--header-h) + 6px);
+	width: clamp(120px, 13vw, 190px);
 	height: auto;
-	opacity: .14;
+	opacity: .12;
 	filter: saturate(.8);
 }
-@keyframes trace { from { stroke-dashoffset: 700; } to { stroke-dashoffset: 0; } }
-@keyframes current { from { stroke-dashoffset: 700; } to { stroke-dashoffset: 0; } }
 .page-header__body {
 	position: relative;
 	z-index: 2;
@@ -1523,6 +1537,10 @@ button { font: inherit; }
 		transition: none !important;
 	}
 	.js .reveal, .js .growv { opacity: 1; transform: none; }
+	/* Static circuit: every wire shows a lit segment, nothing moves. */
+	.circuit__current { stroke-dasharray: 14 86; stroke-dashoffset: 40; }
+	.circuit__current:nth-child(3n) { stroke-dashoffset: 72; }
+	.circuit__current:nth-child(3n + 1) { stroke-dashoffset: 18; }
 }
 
 /* ==========================================================================
@@ -1545,6 +1563,7 @@ button { font: inherit; }
 	.lang-switch { padding-inline-start: 10px; }
 	.hero { min-height: 0; }
 	.page-header__decor { width: 100%; opacity: .55; }
+	.circuit__opt { display: none; }
 	.page-header__mark { inset-block-start: auto; inset-block-end: 18px; width: 120px; }
 	/* Phones: copy on a clean background, then the building photo as its own band, then the strip. */
 	.hero::before { display: none; }

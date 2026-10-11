@@ -22,6 +22,14 @@
 		revealEls.forEach( function ( el ) { el.classList.add( 'is-visible' ); } );
 	}
 
+	/* ---------- Header circuit: pause the current animation while off-screen ---------- */
+	var circuit = document.querySelector( '.page-header__decor' );
+	if ( circuit && 'IntersectionObserver' in window ) {
+		new IntersectionObserver( function ( entries ) {
+			circuit.classList.toggle( 'is-paused', ! entries[ 0 ].isIntersecting );
+		} ).observe( circuit );
+	}
+
 	/* ---------- Light / dark theme ---------- */
 	var root = document.documentElement;
 	var themeButtons = document.querySelectorAll( '.theme-toggle' );
