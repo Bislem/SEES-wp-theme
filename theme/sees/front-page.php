@@ -32,7 +32,8 @@ $sees_video     = (string) sees_field( 'story_video' );
 	<section class="hero">
 		<div class="hero__media" aria-hidden="true">
 			<?php
-			echo sees_image( sees_field( 'header_image', 0 ), 'sky.jpg', 'sees-hero', array( // phpcs:ignore WordPress.Security.EscapeOutput
+			// Arabic uses a mirrored photo (building on the left) so the right-aligned copy sits over the sky.
+			echo sees_image( sees_field( 'header_image', 0 ), is_rtl() ? 'hero-building-rtl.jpg' : 'hero-building.jpg', 'sees-hero', array( // phpcs:ignore WordPress.Security.EscapeOutput
 				'class'   => 'hero__img a-zoom',
 				'alt'     => '',
 				'loading' => 'eager',

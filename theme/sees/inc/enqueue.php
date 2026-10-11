@@ -29,14 +29,14 @@ add_action( 'wp_enqueue_scripts', function () {
 
 /**
  * Preload the critical font files for the current language.
- * EN: Plus Jakarta Sans is one variable file (covers 400 and 800).
+ * EN: Plus Jakarta Sans (one variable file, body + hero) and AE Khalid Bold (headings).
  * AR: IBM Plex Sans Arabic 700 (headings) + 400 (body).
  */
 add_action( 'wp_head', function () {
 	$lang  = function_exists( 'pll_current_language' ) ? pll_current_language() : ( is_rtl() ? 'ar' : 'en' );
 	$fonts = 'ar' === $lang
 		? array( 'fonts/ibm-plex-sans-arabic-arabic-700.woff2', 'fonts/ibm-plex-sans-arabic-arabic-400.woff2' )
-		: array( 'fonts/plus-jakarta-sans-latin-wght.woff2' );
+		: array( 'fonts/plus-jakarta-sans-latin-wght.woff2', 'fonts/ae-khalid-latin-bold.woff2' );
 	foreach ( $fonts as $font ) {
 		printf( '<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n", esc_url( sees_asset( $font ) ) );
 	}

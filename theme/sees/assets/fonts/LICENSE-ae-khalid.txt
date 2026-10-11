@@ -1,0 +1,27 @@
+AE Khalid (ae_Khalid.ttf) — Arabeyes "Khotot" project
+Copyright (c) 2004-2006, Arabeyes Project. Copyleft 2002, 2003, 2005 Free Software Foundation.
+Latin glyphs are based on "Free UCS Outline Fonts" (GNU FreeFont), www.nongnu.org/freefont
+Source: https://gitlab.com/arabeyes-art/khotot (Debian package: fonts-arabeyes)
+
+The file ae-khalid-latin.woff2 is a Latin-only subset of ae_Khalid.ttf converted to WOFF2.
+
+License: GPL-2 with Font exception
+
+These fonts are subject to the GNU GENERAL PUBLIC (GPL) LICENSE (Version 2).
+See http://www.gnu.org/copyleft/gpl.html
+
+As a special exception, if you create a document which uses this font, and embed this
+font or unaltered portions of this font into the document, this font does not by itself
+cause the resulting document to be covered by the GNU General Public License. This
+exception does not however invalidate any other reasons why the document might be
+covered by the GNU General Public License. If you modify this font, you may extend this
+exception to your version of the font, but you are not obligated to do so. If you do not
+wish to do so, delete this exception statement from your version.
+
+----------------------------------------------------------------------------------------
+ae-khalid-latin-bold.woff2 — bold weight for the same family.
+AE Khalid ships in a single weight; its Latin glyphs come from GNU FreeSans, so the matching
+bold is FreeSansBold.ttf (GNU FreeFont, Copyright 2002-2012 GNU Freefont contributors),
+Latin subset converted to WOFF2. Source: https://www.gnu.org/software/freefont/
+License: GPL-3+ with Special Font Exception (embedding the font in a document does not
+by itself make the document GPL).

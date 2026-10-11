@@ -14,6 +14,29 @@
 	font-display: swap;
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+/* AE Khalid — the logo's English logotype font (GPL + font exception). Latin subset, single weight. */
+@font-face {
+	font-family: "AE Khalid";
+	src: url("../fonts/ae-khalid-latin.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201E, U+2022, U+2026, U+20AC, U+2122;
+}
+/* Bold: FreeSans Bold, the source of AE Khalid's Latin glyphs (GPL-3+ with font exception). */
+@font-face {
+	font-family: "AE Khalid";
+	src: url("../fonts/ae-khalid-latin-bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201E, U+2022, U+2026, U+20AC, U+2122;
+}
+/* QATAR — the logo's Arabic logotype font. Waiting for licensed files from the client:
+   drop qatar-*.woff2 into assets/fonts/, uncomment, and set --font-heading-ar / --font-display-ar below.
+@font-face { font-family: "Qatar"; src: url("../fonts/qatar-regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Qatar"; src: url("../fonts/qatar-bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+*/
 /* IBM Plex Sans Arabic — Arabic subset */
 @font-face { font-family: "IBM Plex Sans Arabic"; src: url("../fonts/ibm-plex-sans-arabic-arabic-400.woff2") format("woff2"); font-weight: 400; font-display: swap; unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC; }
 @font-face { font-family: "IBM Plex Sans Arabic"; src: url("../fonts/ibm-plex-sans-arabic-arabic-500.woff2") format("woff2"); font-weight: 500; font-display: swap; unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC; }
@@ -56,13 +79,16 @@
 	/* Fonts */
 	--font-en: "Plus Jakarta Sans", "IBM Plex Sans Arabic", system-ui, sans-serif;
 	--font-ar: "IBM Plex Sans Arabic", "Plus Jakarta Sans", system-ui, sans-serif;
+	/* Headings follow the logo fonts: AE Khalid (EN). Arabic stays on Plex until QATAR is licensed. */
+	--font-heading-en: "AE Khalid", "Plus Jakarta Sans", Georgia, serif;
+	--font-heading-ar: var(--font-ar);
 
 	/* Layout */
 	--container: 1360px;
 	--gutter: 40px;
 	--section: 110px;
 	--header-h: 120px;
-	--logo-h: 72px;
+	--logo-h: 80px;
 
 	/* Radius, shadow, motion */
 	--r-btn: 10px;
@@ -79,8 +105,11 @@
 /* Type scale — English (also restores Latin metrics for English snippets on Arabic pages) */
 :root,
 :lang(en) {
-	--fs-h1: clamp(44px, 5.6vw, 76px);   --fw-h1: 800; --lh-h1: 1.04; --ls-h1: -0.03em;
-	--fs-h2: clamp(32px, 3.2vw, 44px);   --fw-h2: 800; --lh-h2: 1.12; --ls-h2: -0.02em;
+	--font-heading: var(--font-heading-en);
+	--font-display: var(--font-en);       /* Home hero headline: bold sans, as in the approved hero mockup */
+	--fs-display: clamp(40px, 4.3vw, 66px); --fw-display: 800; --ls-display: -0.03em; --lh-display: 1.04;
+	--fs-h1: clamp(44px, 5.6vw, 76px);   --fw-h1: 700; --lh-h1: 1.08; --ls-h1: -0.02em;
+	--fs-h2: clamp(32px, 3.2vw, 44px);   --fw-h2: 700; --lh-h2: 1.14; --ls-h2: -0.015em;
 	--fs-h2-sm: clamp(26px, 2.6vw, 34px); /* headings inside cards and panels */
 	--fs-h3: 21px;   --fw-h3: 700; --lh-h3: 1.3;
 	--fs-lead: 20px; --lh-lead: 1.55;
@@ -96,6 +125,9 @@
 
 /* Type scale — Arabic: no uppercase, no negative tracking, taller lines */
 :lang(ar) {
+	--font-heading: var(--font-heading-ar);
+	--font-display: var(--font-heading-ar);
+	--fs-display: clamp(38px, 4.2vw, 62px); --fw-display: 700; --ls-display: 0; --lh-display: 1.3;
 	--fs-h1: clamp(40px, 5vw, 68px);     --fw-h1: 700; --lh-h1: 1.3;  --ls-h1: 0;
 	--fs-h2: clamp(30px, 3vw, 42px);     --fw-h2: 700; --lh-h2: 1.4;  --ls-h2: 0;
 	--fs-h2-sm: clamp(26px, 2.6vw, 32px);
@@ -187,12 +219,16 @@ button { font: inherit; }
 /* ---------- Type roles ---------- */
 .h1 {
 	font-size: var(--fs-h1);
+	font-family: var(--font-heading);
+	font-synthesis: none;
 	font-weight: var(--fw-h1);
 	line-height: var(--lh-h1);
 	letter-spacing: var(--ls-h1);
 }
 .h2 {
 	font-size: var(--fs-h2);
+	font-family: var(--font-heading);
+	font-synthesis: none;
 	font-weight: var(--fw-h2);
 	line-height: var(--lh-h2);
 	letter-spacing: var(--ls-h2);
@@ -377,6 +413,7 @@ button { font: inherit; }
 .primary-nav__cta,
 .primary-nav__search { display: none; }
 
+.home .header-tools { background: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
 /* Soft backing keeps the tools readable over any header photo. */
 .header-tools {
 	display: flex;
@@ -446,7 +483,7 @@ button { font: inherit; }
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	min-height: clamp(640px, 52vw, 820px);
+	min-height: clamp(600px, 41.8vw, 800px); /* photo ratio 1536×642 */
 	padding-block-start: var(--header-h);
 	background: var(--c-bg-soft);
 }
@@ -459,7 +496,7 @@ button { font: inherit; }
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	object-position: 70% center;
+	object-position: center bottom;
 }
 /* White fade on the copy side + light top fade for the navigation. */
 .hero::before {
@@ -469,13 +506,11 @@ button { font: inherit; }
 	z-index: 1;
 	pointer-events: none;
 	background:
-		linear-gradient(180deg, color-mix(in srgb, var(--c-white) 55%, transparent) 0%, transparent 22%),
 		linear-gradient(90deg,
-			var(--c-white) 0%,
-			color-mix(in srgb, var(--c-white) 94%, transparent) 24%,
-			color-mix(in srgb, var(--c-white) 70%, transparent) 40%,
-			color-mix(in srgb, var(--c-white) 15%, transparent) 58%,
-			transparent 70%);
+			color-mix(in srgb, var(--c-white) 88%, transparent) 0%,
+			color-mix(in srgb, var(--c-white) 72%, transparent) 26%,
+			color-mix(in srgb, var(--c-white) 30%, transparent) 42%,
+			transparent 56%);
 }
 .hero__mark {
 	position: absolute;
@@ -492,8 +527,8 @@ button { font: inherit; }
 	z-index: 2;
 	display: flex;
 	flex-direction: column;
-	gap: 24px;
-	padding-block: 64px 96px;
+	gap: 20px;
+	padding-block: 28px 48px;
 }
 .hero__eyebrow {
 	font-size: var(--fs-eyebrow);
@@ -504,10 +539,11 @@ button { font: inherit; }
 }
 .hero__title {
 	max-width: 15ch;
-	font-size: var(--fs-h1);
-	font-weight: var(--fw-h1);
-	line-height: var(--lh-h1);
-	letter-spacing: var(--ls-h1);
+	font-family: var(--font-display);
+	font-size: var(--fs-display);
+	font-weight: var(--fw-display);
+	line-height: var(--lh-display);
+	letter-spacing: var(--ls-display);
 }
 .hero__lead {
 	max-width: 520px;
@@ -522,15 +558,15 @@ button { font: inherit; }
 	position: relative;
 	z-index: 2;
 	margin-block-start: auto;
-	background: linear-gradient(180deg, color-mix(in srgb, var(--c-ink) 55%, transparent), color-mix(in srgb, var(--c-ink) 82%, transparent));
-	-webkit-backdrop-filter: blur(6px);
-	backdrop-filter: blur(6px);
+	background: linear-gradient(180deg, color-mix(in srgb, var(--c-navy) 35%, transparent), color-mix(in srgb, var(--c-navy) 60%, transparent));
+	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
 	color: var(--c-white);
 }
 .features__list {
 	max-width: 1240px;
 	margin-inline: auto;
-	padding: 28px var(--gutter);
+	padding: 22px var(--gutter);
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -588,6 +624,8 @@ button { font: inherit; }
 .page-header__title {
 	max-width: 760px;
 	font-size: var(--fs-h1);
+	font-family: var(--font-heading);
+	font-synthesis: none;
 	font-weight: var(--fw-h1);
 	line-height: var(--lh-h1);
 	letter-spacing: var(--ls-h1);
@@ -784,7 +822,7 @@ button { font: inherit; }
 	justify-content: center;
 	gap: 22px;
 }
-.featured__title { font-size: var(--fs-h2-sm); font-weight: var(--fw-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
+.featured__title { font-size: var(--fs-h2-sm); font-family: var(--font-heading); font-synthesis: none; font-weight: var(--fw-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
 .featured__text { font-size: var(--fs-body-sm); line-height: var(--lh-body); color: var(--c-navy-20); }
 .featured__meta {
 	display: grid;
@@ -820,7 +858,7 @@ button { font: inherit; }
 }
 .cta--photo .cta__body { padding: 64px clamp(28px, 5vw, 72px); color: var(--c-white); }
 .cta__kicker { font-size: var(--fs-lead); color: var(--c-green); }
-.cta__title { font-size: var(--fs-h2); font-weight: var(--fw-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
+.cta__title { font-size: var(--fs-h2); font-family: var(--font-heading); font-synthesis: none; font-weight: var(--fw-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
 .cta__text { font-size: var(--fs-body); line-height: var(--lh-body); color: var(--c-navy-20); }
 
 .cta--brand .cta__box {
@@ -871,7 +909,7 @@ button { font: inherit; }
 .mv__card--dark { background: var(--c-navy); color: var(--c-white); }
 .mv__label { font-size: var(--fs-eyebrow); font-weight: 700; letter-spacing: var(--ls-label); text-transform: var(--tt-label); color: var(--c-petrol); }
 .mv__card--dark .mv__label { color: var(--c-green); }
-.mv__text { font-size: var(--fs-h2-sm); font-weight: 700; line-height: var(--lh-h3); }
+.mv__text { font-size: var(--fs-h2-sm); font-family: var(--font-heading); font-synthesis: none; font-weight: var(--fw-h2); line-height: var(--lh-h3); }
 
 .value-card {
 	display: flex;
@@ -919,7 +957,7 @@ button { font: inherit; }
 .tagline__ring-outer { stroke: var(--c-green); }
 .tagline__ring-inner { stroke: var(--c-teal); }
 .tagline__body { position: relative; padding: 80px var(--gutter); display: flex; flex-direction: column; gap: 18px; align-items: center; }
-.tagline__line { font-size: var(--fs-h2); font-weight: var(--fw-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
+.tagline__line { font-size: var(--fs-h2); font-family: var(--font-heading); font-synthesis: none; font-weight: var(--fw-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
 
 /* ---------- Solutions ---------- */
 .solutions { display: flex; flex-direction: column; gap: 100px; padding-block: 100px 60px; }
@@ -929,7 +967,7 @@ button { font: inherit; }
 .solution-row__body { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
 /* Decorative number lives in CSS content (aria-hidden, not text for contrast). */
 .solution-row__num::before { content: attr(data-num); font-size: var(--fs-num); font-weight: 800; line-height: 1; color: var(--c-border); }
-.solution-row__title { font-size: var(--fs-h2-sm); font-weight: var(--fw-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
+.solution-row__title { font-size: var(--fs-h2-sm); font-family: var(--font-heading); font-synthesis: none; font-weight: var(--fw-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
 .solution-row__line { display: block; width: 64px; height: 3px; background: var(--accent, var(--c-teal)); transform-origin: left center; }
 .accent--teal { --accent: var(--c-teal); }
 .accent--green { --accent: var(--c-green); }
@@ -1152,7 +1190,7 @@ button { font: inherit; }
 	border-radius: var(--r-media);
 	background: var(--c-bg-soft);
 }
-.contact__title { font-size: var(--fs-h2-sm); font-weight: var(--fw-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
+.contact__title { font-size: var(--fs-h2-sm); font-family: var(--font-heading); font-synthesis: none; font-weight: var(--fw-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
 .contact__note { margin-block: 8px 20px; font-size: var(--fs-small); color: var(--c-text); }
 .contact__success {
 	min-height: 520px;
@@ -1328,6 +1366,12 @@ button { font: inherit; }
 		background: linear-gradient(180deg, color-mix(in srgb, var(--c-white) 92%, transparent) 0%, color-mix(in srgb, var(--c-white) 82%, transparent) 70%, color-mix(in srgb, var(--c-white) 40%, transparent) 100%);
 	}
 	.page-header__media { width: 100%; opacity: .35; }
+	/* Phones: copy on a clean background, then the building photo as its own band, then the strip. */
+	.hero::before { display: none; }
+	.hero__body { order: 1; padding-block-end: 32px; }
+	.hero__media { position: relative; order: 2; height: clamp(200px, 58vw, 300px); }
+	.hero__media img { object-position: 84% center; }
+	.features { order: 3; margin-block-start: 0; background: var(--c-navy); }
 	.hero__mark { display: none; }
 	.hero__body { padding-block: 40px 56px; }
 	.page-header__body { padding-block: 40px 56px; }

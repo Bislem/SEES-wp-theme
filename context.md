@@ -9,7 +9,13 @@ _Last updated: 2026-10-11_
 A custom **classic PHP WordPress theme** (`theme/sees/`) for **SEES — Smart Electrical Engineering Solutions**, an electrical engineering company in Al Shahamah District, Makkah, Saudi Arabia. The site is English + Arabic and will run on the client's shared hosting. The client edits all content in wp-admin. Everything must be free/open-source: no page builder, no paid plugins.
 
 - **Design reference:** 5 approved pages in the claude.ai design artifact linked in CLAUDE.md (`project/Main|About|Solutions|Projects|Contact.dc.html`).
-- **Home hero:** later revised from a reference mockup the user supplied (full-bleed building photo, white fade on the copy side, feature strip over the photo).
+- **Home hero:** matches a mockup image the user supplied: full-bleed building photo, white fade on the copy side, feature strip over the photo.
+  - **The photo** (`assets/img/hero-building.*`) was cut from that mockup. The baked-in text and buttons were painted out (OpenCV inpaint and blending).
+  - **The building sign** in the mockup had wrong Arabic text, so it was replaced with the real logo.
+  - **Arabic Home** uses a mirrored version (`hero-building-rtl.*`, logo re-applied unmirrored) so the right-aligned copy sits over the sky.
+  - **Resolution:** the source is only 1536px wide. A higher-resolution or real photo would be sharper on large screens.
+  - **Phones:** the hero stacks: copy, then a photo band, then the feature strip.
+  - **Floating logo mark:** off by default (ACF `hero_mark`).
 - **Required plugins:** Polylang, Advanced Custom Fields (free), Contact Form 7.
 - **Dev-only plugins:** Theme Check, Query Monitor.
 
@@ -99,7 +105,12 @@ There are no Repeater or Flexible Content fields (Pro-only). Repeating items are
 - **Brand colours:** `--c-navy #0e2032`, `--c-petrol #005b7a`, `--c-green #84c666`, `--c-ink #0e1a28`. Official 80/60/40/20 tints exist as `--c-{name}-80…20`.
 - **Web additions:** `--c-teal #14a7a2` (decorative only, never text on white), `--c-bg-soft`, `--c-border`, `--c-text`, `--c-text-on-dark`, `--grad-brand`, plus `--c-error` and `--c-warning*` for form and notice states.
 - **Contrast rules:** never white text on green or teal. Green buttons use ink text. Small icons on white use petrol. The focus ring is petrol on light backgrounds and green on dark ones.
-- **Fonts:** Plus Jakarta Sans for English (one variable Latin woff2, 400–800). IBM Plex Sans Arabic for Arabic (400/500/600/700, with Arabic and Latin subsets). Everything is self-hosted with no external requests. The logo is always an image.
+- **Fonts (follow the logo, per the brand guidelines page "Logo fonts"):**
+  - **English headings:** AE Khalid, the logo's English logotype font (Arabeyes, GPL + font exception). Its Latin glyphs come from GNU FreeSans, so the bold weight is FreeSans Bold. Both are Latin-subset woff2 files.
+  - **English body, buttons, menus and the Home hero headline:** Plus Jakarta Sans (variable). The hero headline keeps it to match the approved hero mockup.
+  - **Arabic:** the logo's Arabic font is QATAR. It appears to be FIFA's Qatar2022 typeface, all rights reserved, with no web license found. **Waiting for licensed files from the client.** Until then Arabic uses IBM Plex Sans Arabic (OFL). The commented `@font-face` slot in main.css and `--font-heading-ar` show where QATAR goes.
+  - Everything is self-hosted with no external requests. The logo is always an image.
+  - Tokens: `--font-en`, `--font-ar`, `--font-heading` (per language), `--font-display` (Home hero).
 - **Type scale:** `--fs-*`, `--lh-*`, `--ls-*` and `--fw-*` tokens are set per language on `:root, :lang(en)` and `:lang(ar)`. Arabic has no uppercase, zero letter-spacing and taller line-heights. Use `sees_lang_attr()` on mixed-language snippets so they pick up the right font and scale.
 - **Layout:** container 1360px; gutters 40/24/16px; sections 110/72px. Radii: buttons 10px, cards 14–16px, large media 18px, pills 999px.
 - **Buttons:** primary is navy with white text; secondary is white with a navy border; on dark backgrounds, green with ink text.
@@ -136,12 +147,13 @@ Real details: +966 50 326 4000 · info@seesengineering.com · Al Shahamah Distri
 
 ## Open items / next steps
 
-1. **Home hero photo:** the client needs to supply the bright daylight building photo from the reference mockup. Upload it in Pages → Home → Header photo; the current fallback is `sky.jpg`. Other pages' header photos could also use real site photography.
-2. **Arabic review:** a native speaker should review all Arabic copy, both the seed content and `languages/ar.po`.
-3. **Placeholders:** replace the ones listed above with real content.
-4. **Insights:** the reference mockup shows an "Insights" menu item. There's no Insights page or template yet; decide whether to add a blog/insights section.
-5. **Manual browser pass:** click through the interactive parts (point above) on real devices.
-6. **Go-live:**
+1. **QATAR Arabic font:** get the licensed font files and web license from the client/designer, add them as woff2 to `assets/fonts/`, then enable the `@font-face` slot and set `--font-heading-ar` (and `--font-display` for Arabic) in main.css.
+2. **Hero photo:** the current hero was extracted from a 1536px mockup. A full-resolution original or a real photo of the building would be sharper. Replace it in Pages → Home → Header photo, separately for each language; the Arabic page needs a version with the building on the left. Other pages' header photos could also use real photography.
+3. **Arabic review:** a native speaker should review all Arabic copy, both the seed content and `languages/ar.po`.
+4. **Placeholders:** replace the ones listed above with real content.
+5. **Insights:** the reference mockup shows an "Insights" menu item. There's no Insights page or template yet; decide whether to add a blog/insights section.
+6. **Manual browser pass:** click through the interactive parts (point above) on real devices.
+7. **Go-live:**
    - install the three plugins on the host
    - upload the theme
    - migrate with All-in-One WP Migration or Duplicator
@@ -149,7 +161,7 @@ Real details: +966 50 326 4000 · info@seesengineering.com · Al Shahamah Distri
    - enable browser caching
    - set a Site Icon
    - optionally add an SEO plugin; the theme's basic meta description switches off automatically when Yoast, Rank Math or The SEO Framework is active
-7. **Logo:** ask the client for the official SVG logo to replace the PNGs.
+8. **Logo:** ask the client for the official SVG logo to replace the PNGs.
 
 ## Repository
 

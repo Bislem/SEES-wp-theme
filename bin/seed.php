@@ -137,6 +137,8 @@ $photo_alts = array(
 	'sitebanner' => array( 'SEES branded site hoarding', 'سياج موقع بعلامة سيز' ),
 	'sign'       => array( 'SEES signage', 'لافتة سيز' ),
 	'sky'        => array( 'Concrete architecture against the sky', 'عمارة خرسانية أمام السماء' ),
+	'hero-building' => array( 'SEES headquarters building with the SEES sign', 'مبنى سيز مع لافتة الشركة' ),
+	'hero-building-rtl' => array( 'SEES headquarters building with the SEES sign', 'مبنى سيز مع لافتة الشركة' ),
 );
 $media = array();
 foreach ( $photo_alts as $name => $alts ) {
@@ -221,6 +223,7 @@ $home = sees_pair(
 	array(
 		'post'   => array( 'post_type' => 'page', 'post_title' => 'الرئيسية', 'post_name' => 'الرئيسية' ),
 		'fields' => array(
+			'header_image'      => $media['hero-building-rtl'] ?? 0,
 			'hero_eyebrow'      => 'نهندس غدًا أذكى',
 			'hero_title'        => 'الحلول الهندسية الكهربائية الذكية',
 			'hero_text'         => 'نقدّم حلولًا كهربائية ذكية وموثوقة ومستدامة من أجل مستقبل أكثر إشراقًا.',
@@ -248,7 +251,7 @@ $home = sees_pair(
 			'cta_text'          => 'أخبرنا بما تبنيه، وسيتواصل معك أحد مهندسينا بالخطوات التالية.',
 		),
 	),
-	array( 'header_image' => $media['sky'] ?? 0, 'about_image' => $media['concrete'] ?? 0, 'cta_image' => $media['facade'] ?? 0 )
+	array( 'header_image' => $media['hero-building'] ?? 0, 'about_image' => $media['concrete'] ?? 0, 'cta_image' => $media['facade'] ?? 0 )
 );
 
 $about = sees_pair(

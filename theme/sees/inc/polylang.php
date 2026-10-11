@@ -18,9 +18,10 @@ add_filter( 'pll_get_taxonomies', function ( $taxonomies, $is_settings ) {
 	return $taxonomies;
 }, 10, 2 );
 
-// Keep ACF "detail" fields in sync across translations (numbers, flags, images).
+// Keep ACF "detail" fields in sync across translations (numbers, flags). Header photos stay per language
+// (the Arabic Home uses a mirrored hero photo).
 add_filter( 'pll_copy_post_metas', function ( $metas ) {
-	return array_merge( $metas, array( 'number', 'icon', 'accent', 'year', 'is_featured', 'header_image' ) );
+	return array_merge( $metas, array( 'number', 'icon', 'accent', 'year', 'is_featured' ) );
 } );
 
 /**

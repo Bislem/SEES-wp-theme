@@ -34,6 +34,11 @@ Plus Jakarta Sans, Copyright 2020 The Plus Jakarta Sans Project Authors
 License: SIL Open Font License, 1.1 — assets/fonts/OFL-plus-jakarta-sans.txt
 Source: https://github.com/tokotype/PlusJakartaSans
 
+AE Khalid, Copyright 2004-2006 Arabeyes Project; Latin glyphs from GNU FreeFont
+License: GPL-2 with font exception — assets/fonts/LICENSE-ae-khalid.txt
+Bold weight: GNU FreeSans Bold (FreeFont), GPL-3+ with font exception
+Source: https://gitlab.com/arabeyes-art/khotot
+
 IBM Plex Sans Arabic, Copyright 2019 IBM Corp.
 License: SIL Open Font License, 1.1 — assets/fonts/OFL-ibm-plex-sans-arabic.txt
 Source: https://github.com/IBM/plex
