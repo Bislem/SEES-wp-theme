@@ -44,6 +44,7 @@ if ( getenv( 'SEES_RESEED' ) ) {
 		wp_delete_attachment( (int) $attachment, true );
 	}
 	delete_option( 'sees_setup_media' );
+	delete_option( 'sees_seeded_projects' );
 	update_option( 'show_on_front', 'posts' );
 	update_option( 'page_on_front', 0 );
 	$nav_menus = (array) PLL()->options['nav_menus'];

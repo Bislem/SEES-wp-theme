@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SEES 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sees\n"
-"POT-Creation-Date: 2026-10-11T12:34:04+00:00\n"
+"POT-Creation-Date: 2026-10-11T13:44:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: SEES\n"
 "Language-Team: Arabic\n"
@@ -380,7 +380,9 @@ msgstr "تم تثبيت حزمة اللغة العربية لووردبريس."
 msgid ""
 "Could not download the Arabic language pack automatically — add Arabic under "
 "Settings → General → Site Language."
-msgstr "تعذّر تنزيل حزمة اللغة العربية تلقائيًا — أضف العربية من الإعدادات ← عام ← لغة الموقع."
+msgstr ""
+"تعذّر تنزيل حزمة اللغة العربية تلقائيًا — أضف العربية من الإعدادات ← عام ← لغة "
+"الموقع."
 
 #. translators: 1: page title, 2: language code
 #: inc/installer.php:274
@@ -410,24 +412,42 @@ msgstr "تم إنشاء الأسئلة الشائعة (4، بالإنجليزي�
 msgid "Project categories created (English + Arabic)."
 msgstr "تم إنشاء تصنيفات المشاريع (بالإنجليزية والعربية)."
 
-#: inc/installer.php:465
-msgid "Sample projects created (6, English + Arabic)."
-msgstr "تم إنشاء مشاريع تجريبية (6، بالإنجليزية والعربية)."
+#. translators: %d: number of projects
+#: inc/installer.php:481
+#, php-format
+msgid "%d sample project created (English + Arabic)."
+msgid_plural "%d sample projects created (English + Arabic)."
+msgstr[0] "تم إنشاء مشاريع تجريبية: %d (بالإنجليزية والعربية)."
+msgstr[1] "تم إنشاء مشاريع تجريبية: %d (بالإنجليزية والعربية)."
+msgstr[2] "تم إنشاء مشاريع تجريبية: %d (بالإنجليزية والعربية)."
+msgstr[3] "تم إنشاء مشاريع تجريبية: %d (بالإنجليزية والعربية)."
+msgstr[4] "تم إنشاء مشاريع تجريبية: %d (بالإنجليزية والعربية)."
+msgstr[5] "تم إنشاء مشاريع تجريبية: %d (بالإنجليزية والعربية)."
 
-#: inc/installer.php:466
+#. translators: %d: number of projects
+#: inc/installer.php:483
+#, php-format
 msgid ""
-"Placeholder projects created as drafts (6, English + Arabic) — fill them in "
+"%d placeholder project created as a draft (English + Arabic) — fill it in "
 "and publish."
-msgstr "تم إنشاء مشاريع مؤقتة كمسودات (6، بالإنجليزية والعربية) — أكمل بياناتها ثم انشرها."
+msgid_plural ""
+"%d placeholder projects created as drafts (English + Arabic) — fill them in "
+"and publish."
+msgstr[0] "تم إنشاء مشاريع مؤقتة كمسودات: %d (بالإنجليزية والعربية) — أكمل بياناتها ثم انشرها."
+msgstr[1] "تم إنشاء مشاريع مؤقتة كمسودات: %d (بالإنجليزية والعربية) — أكمل بياناتها ثم انشرها."
+msgstr[2] "تم إنشاء مشاريع مؤقتة كمسودات: %d (بالإنجليزية والعربية) — أكمل بياناتها ثم انشرها."
+msgstr[3] "تم إنشاء مشاريع مؤقتة كمسودات: %d (بالإنجليزية والعربية) — أكمل بياناتها ثم انشرها."
+msgstr[4] "تم إنشاء مشاريع مؤقتة كمسودات: %d (بالإنجليزية والعربية) — أكمل بياناتها ثم انشرها."
+msgstr[5] "تم إنشاء مشاريع مؤقتة كمسودات: %d (بالإنجليزية والعربية) — أكمل بياناتها ثم انشرها."
 
 #. translators: %s: menu name
-#: inc/installer.php:500
+#: inc/installer.php:518
 #, php-format
 msgid "Menu created and assigned: %s."
 msgstr "تم إنشاء القائمة وتعيينها: %s."
 
 #. translators: %d: number of field groups
-#: inc/installer.php:562
+#: inc/installer.php:580
 #, php-format
 msgid "%d field group synced from the theme."
 msgid_plural "%d field groups synced from the theme."
@@ -438,23 +458,23 @@ msgstr[3] "تمت مزامنة %d من مجموعات الحقول من القا
 msgstr[4] "تمت مزامنة %d من مجموعات الحقول من القالب."
 msgstr[5] "تمت مزامنة %d من مجموعات الحقول من القالب."
 
-#: inc/installer.php:618
+#: inc/installer.php:636
 msgid "Sorry, you are not allowed to do that."
 msgstr "عذرًا، لا تملك صلاحية تنفيذ ذلك."
 
-#: inc/installer.php:636
+#: inc/installer.php:654
 msgid "SEES automatic setup"
 msgstr "الإعداد التلقائي لقالب سيز"
 
-#: inc/installer.php:637
+#: inc/installer.php:655
 msgid "here is what was set up:"
 msgstr "هذا ما تم إعداده:"
 
-#: inc/installer.php:637
+#: inc/installer.php:655
 msgid "everything was already in place."
 msgstr "كل شيء كان جاهزًا مسبقًا."
 
-#: inc/menus.php:15 template-parts/page-header.php:58
+#: inc/menus.php:15 template-parts/page-header.php:98
 msgid "Home"
 msgstr "الرئيسية"
 
@@ -775,7 +795,9 @@ msgstr "إصلاح"
 msgid ""
 "Activate the plugins above — the theme then sets up languages, pages, menus "
 "and forms by itself."
-msgstr "فعّل الإضافات أعلاه — وسيُعدّ القالب بعدها اللغات والصفحات والقوائم والنماذج تلقائيًا."
+msgstr ""
+"فعّل الإضافات أعلاه — وسيُعدّ القالب بعدها اللغات والصفحات والقوائم والنماذج "
+"تلقائيًا."
 
 #: inc/setup-check.php:273
 msgid "Open the setup checklist"
@@ -825,7 +847,12 @@ msgid ""
 "in English and Arabic, solutions, FAQs, project categories, placeholder "
 "projects (drafts), contact forms, menus and the front page. It only adds "
 "what is missing and never overwrites your content."
-msgstr "يُعدّ القالب كل شيء تلقائيًا بعد التفعيل: اللغات، وحزمة اللغة العربية، والروابط الدائمة، وصفحات الرئيسية ومن نحن وحلولنا وتواصل معنا بالإنجليزية والعربية، والحلول، والأسئلة الشائعة، وتصنيفات المشاريع، ومشاريع مؤقتة (مسودات)، ونماذج التواصل، والقوائم، والصفحة الرئيسية للموقع. يضيف فقط ما ينقص ولا يستبدل محتواك أبدًا."
+msgstr ""
+"يُعدّ القالب كل شيء تلقائيًا بعد التفعيل: اللغات، وحزمة اللغة العربية، والروابط "
+"الدائمة، وصفحات الرئيسية ومن نحن وحلولنا وتواصل معنا بالإنجليزية والعربية، "
+"والحلول، والأسئلة الشائعة، وتصنيفات المشاريع، ومشاريع مؤقتة (مسودات)، ونماذج "
+"التواصل، والقوائم، والصفحة الرئيسية للموقع. يضيف فقط ما ينقص ولا يستبدل "
+"محتواك أبدًا."
 
 #: inc/setup-check.php:340
 msgid "Run automatic setup"
@@ -835,7 +862,9 @@ msgstr "تشغيل الإعداد التلقائي"
 msgid ""
 "Install and activate Polylang, Advanced Custom Fields and Contact Form 7 "
 "first — the setup then runs automatically."
-msgstr "ثبّت وفعّل Polylang وAdvanced Custom Fields وContact Form 7 أولًا — وسيعمل الإعداد تلقائيًا بعدها."
+msgstr ""
+"ثبّت وفعّل Polylang وAdvanced Custom Fields وContact Form 7 أولًا — وسيعمل "
+"الإعداد تلقائيًا بعدها."
 
 #: inc/setup.php:27
 msgid "Primary menu"
@@ -1113,7 +1142,7 @@ msgid ""
 "[Describe the project: scope, challenge, what SEES delivered and the result.]"
 msgstr "[صف المشروع: النطاق والتحدي وما قدّمته سيز والنتيجة.]"
 
-#: template-parts/page-header.php:57
+#: template-parts/page-header.php:97
 msgid "Breadcrumb"
 msgstr "مسار التنقل"
 

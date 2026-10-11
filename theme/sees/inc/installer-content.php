@@ -284,6 +284,9 @@ function sees_installer_content(): array {
 			array( 'smart-buildings', 'facade.jpg', false ),
 			array( 'smart-buildings', 'concrete.jpg', false ),
 			array( 'maintenance', 'sitebanner.jpg', false ),
+			array( 'power-distribution', 'pylons.jpg', false ),
+			array( 'solar', 'concrete.jpg', false ),
+			array( 'maintenance', 'sign.jpg', false ),
 		),
 		'project_text' => array(
 			'en' => array(

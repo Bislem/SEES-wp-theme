@@ -82,7 +82,7 @@ theme/sees/
   - CF7 forms per language (Arabic validation messages built in) and their shortcodes on the Contact pages
   - 5 solutions and 4 FAQs (EN+AR)
   - project categories
-  - 6 placeholder projects as drafts
+  - 9 placeholder projects as drafts (tracked in `sees_seeded_projects`, so new ones reach existing sites and deleted ones are never re-created)
   - primary menus per language
   - Polylang string translations
   - ACF JSON sync

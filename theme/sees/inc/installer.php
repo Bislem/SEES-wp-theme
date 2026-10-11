@@ -433,10 +433,20 @@ function sees_setup_categories( array $content, array &$log ): array {
 }
 
 function sees_setup_projects( array $content, array $terms, array $media, string $status, array &$log ): void {
-	if ( get_posts( array( 'post_type' => 'project', 'post_status' => 'any', 'posts_per_page' => 1, 'lang' => '', 'fields' => 'ids' ) ) ) {
-		return;
+	// Remember which seed projects were created, so new ones get added on existing sites
+	// but a placeholder the client deleted is never re-created.
+	$created = get_option( 'sees_seeded_projects', null );
+	if ( null === $created ) {
+		$has_projects = (bool) get_posts( array( 'post_type' => 'project', 'post_status' => 'any', 'posts_per_page' => 1, 'lang' => '', 'fields' => 'ids' ) );
+		$created      = $has_projects ? range( 0, 5 ) : array(); // Sites seeded before this option existed got the first six.
 	}
+	$created = array_map( 'intval', (array) $created );
+	$added   = 0;
+
 	foreach ( $content['projects'] as $i => $p ) {
+		if ( in_array( $i, $created, true ) ) {
+			continue;
+		}
 		list( $cat, $image, $featured ) = $p;
 		$ids = array();
 		foreach ( array( 'en', 'ar' ) as $lang ) {
@@ -460,10 +470,18 @@ function sees_setup_projects( array $content, array $terms, array $media, string
 			$ids[ $lang ] = $id;
 		}
 		pll_save_post_translations( $ids );
+		$created[] = $i;
+		++$added;
 	}
-	$log['done'][] = 'publish' === $status
-		? __( 'Sample projects created (6, English + Arabic).', 'sees' )
-		: __( 'Placeholder projects created as drafts (6, English + Arabic) — fill them in and publish.', 'sees' );
+	update_option( 'sees_seeded_projects', array_values( array_unique( $created ) ), false );
+
+	if ( $added ) {
+		$log['done'][] = 'publish' === $status
+			/* translators: %d: number of projects */
+			? sprintf( _n( '%d sample project created (English + Arabic).', '%d sample projects created (English + Arabic).', $added, 'sees' ), $added )
+			/* translators: %d: number of projects */
+			: sprintf( _n( '%d placeholder project created as a draft (English + Arabic) — fill it in and publish.', '%d placeholder projects created as drafts (English + Arabic) — fill them in and publish.', $added, 'sees' ), $added );
+	}
 }
 
 function sees_setup_menus( array $pages, array &$log ): void {
