@@ -55,7 +55,18 @@ sees-theme-kit/          original brief, brand guidelines PDF, source images
 - **Contact details** on the Contact page are reused in the footer and the Home call-to-action.
 - **Menus**: Appearance → Menus (one per language). Footer columns fall back to automatic links if left unassigned.
 
-## Deploying to shared hosting
+## Installing on a new WordPress (staging / production)
 
-Install the three plugins (Polylang, ACF, Contact Form 7), upload `theme/sees/`, then migrate content with
-All-in-One WP Migration or Duplicator. Configure an SMTP plugin (e.g. WP Mail SMTP) on the host so form mail is delivered.
+1. Install and activate **Polylang**, **Advanced Custom Fields** and **Contact Form 7**.
+2. Upload `theme/sees/` (or deploy it with cPanel Git) and **activate the theme**.
+3. Open any wp-admin page. The theme sets up everything else by itself:
+   - English and Arabic languages, with `/en/` and `/ar/` URLs
+   - the Arabic language pack and permalinks
+   - Home, About, Our Solutions and Contact in both languages, with content
+   - solutions, FAQs and project categories
+   - placeholder projects, as drafts
+   - contact forms, menus and the front page
+
+   A notice lists what was done.
+
+The setup only adds what's missing, never overwrites content, and runs on every activation. Check or re-run it from **Appearance → SEES setup**. The only manual step left is an SMTP plugin (e.g. WP Mail SMTP) so form emails get delivered.

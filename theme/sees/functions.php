@@ -23,3 +23,4 @@ require SEES_DIR . '/inc/menus.php';
 require SEES_DIR . '/inc/polylang.php';
 require SEES_DIR . '/inc/contact-form.php';
 require SEES_DIR . '/inc/setup-check.php';
+require SEES_DIR . '/inc/installer.php';

@@ -70,6 +70,27 @@ theme/sees/
   languages/               sees.pot, ar.po, ar.mo
 ```
 
+### Automatic setup (`inc/installer.php`, content in `inc/installer-content.php`)
+
+- **When it runs:** after every theme activation, on the next wp-admin load where Polylang, ACF and CF7 are active. It can also be re-run from Appearance → SEES setup.
+- **What it creates (missing items only):**
+  - permalinks
+  - EN/AR languages and Polylang URL mode
+  - the Arabic WP language pack
+  - Home/About/Our Solutions/Contact pages per language, linked as translations, with templates and ACF content (empty fields only)
+  - the front page
+  - CF7 forms per language (Arabic validation messages built in) and their shortcodes on the Contact pages
+  - 5 solutions and 4 FAQs (EN+AR)
+  - project categories
+  - 6 placeholder projects as drafts
+  - primary menus per language
+  - Polylang string translations
+  - ACF JSON sync
+- **Polylang's wizard:** skipped, since the theme already did that work.
+- **Finishing step:** Polylang's language cache and rewrite rules are rebuilt on the request after setup (`sees_flush_rewrite`). That avoids a `/ar/` redirect loop and 404s.
+- **Tested** on a brand-new WordPress (plugins installed, theme activated, one admin page load): all EN/AR URLs return 200 and the debug log stays clean.
+- **`bin/seed.php`** (local/demo) calls the same installer, adding the photos to the Media Library and publishing the sample projects.
+
 ### Setup checklist (`inc/setup-check.php`)
 
 - **When it runs:** every theme activation re-arms an admin notice for all administrators. The notice lists missing required steps and recommendations, each with a link to the screen that fixes it.

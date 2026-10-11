@@ -265,7 +265,11 @@ add_action( 'admin_notices', function () {
 			esc_html( $check['action'] ? $check['action'] : __( 'Fix', 'sees' ) )
 		);
 	}
-	echo '</ul><p>';
+	echo '</ul>';
+	if ( ! sees_setup_plugins_ready() ) {
+		echo '<p>' . esc_html__( 'Activate the plugins above — the theme then sets up languages, pages, menus and forms by itself.', 'sees' ) . '</p>';
+	}
+	echo '<p>';
 	printf( '<a class="button button-primary" href="%s">%s</a> ', esc_url( $page_url ), esc_html__( 'Open the setup checklist', 'sees' ) );
 	printf( '<a class="button" href="%s">%s</a>', esc_url( $dismiss_url ), esc_html__( 'Hide until next activation', 'sees' ) );
 	echo '</p></div>';
@@ -327,9 +331,17 @@ function sees_setup_page(): void {
 			<?php endforeach; ?>
 			</tbody>
 		</table>
-		<p class="description" style="margin-top:16px">
-			<?php esc_html_e( 'Fastest route for a new server: migrate the prepared site with All-in-One WP Migration — it brings languages, pages, menus and forms in one step.', 'sees' ); ?>
-		</p>
+		<h2 style="margin-top:28px"><?php esc_html_e( 'Automatic setup', 'sees' ); ?></h2>
+		<p><?php esc_html_e( 'The theme sets everything up by itself after activation: languages, Arabic language pack, permalinks, the Home / About / Our Solutions / Contact pages in English and Arabic, solutions, FAQs, project categories, placeholder projects (drafts), contact forms, menus and the front page. It only adds what is missing and never overwrites your content.', 'sees' ); ?></p>
+		<?php if ( sees_setup_plugins_ready() ) : ?>
+			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+				<input type="hidden" name="action" value="sees_run_setup">
+				<?php wp_nonce_field( 'sees_run_setup' ); ?>
+				<?php submit_button( __( 'Run automatic setup', 'sees' ), 'primary', 'submit', false ); ?>
+			</form>
+		<?php else : ?>
+			<p><strong><?php esc_html_e( 'Install and activate Polylang, Advanced Custom Fields and Contact Form 7 first — the setup then runs automatically.', 'sees' ); ?></strong></p>
+		<?php endif; ?>
 	</div>
 	<?php
 }

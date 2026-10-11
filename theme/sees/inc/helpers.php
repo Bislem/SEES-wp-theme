@@ -33,7 +33,7 @@ function sees_field( string $name, $fallback = '', $post_id = null ) {
  * @return string[]
  */
 function sees_lines( $text ): array {
-	return array_values( array_filter( array_map( 'trim', preg_split( '/\R/', (string) $text ) ) ) );
+	return array_values( array_filter( array_map( 'trim', preg_split( '/\R/u', (string) $text ) ) ) );
 }
 
 /**

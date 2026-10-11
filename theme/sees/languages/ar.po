@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SEES 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sees\n"
-"POT-Creation-Date: 2026-10-11T12:04:17+00:00\n"
+"POT-Creation-Date: 2026-10-11T12:34:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: SEES\n"
 "Language-Team: Arabic\n"
@@ -349,6 +349,111 @@ msgstr ""
 msgid "Office"
 msgstr ""
 
+#: inc/installer.php:49
+msgid ""
+"Polylang, Advanced Custom Fields and Contact Form 7 must be active first."
+msgstr "يجب تفعيل Polylang وAdvanced Custom Fields وContact Form 7 أولًا."
+
+#: inc/installer.php:89
+msgid "Permalinks set to \"Post name\"."
+msgstr "تم ضبط الروابط الدائمة على \"اسم المقالة\"."
+
+#. translators: %s: language name
+#: inc/installer.php:130
+#, php-format
+msgid "Language added: %s."
+msgstr "تمت إضافة اللغة: %s."
+
+#: inc/installer.php:160
+msgid "Polylang URLs set to /en/ and /ar/."
+msgstr "تم ضبط روابط Polylang على /en/ و/ar/."
+
+#: inc/installer.php:166
+msgid "Existing content assigned to English."
+msgstr "تم تعيين المحتوى الموجود للغة الإنجليزية."
+
+#: inc/installer.php:177
+msgid "Arabic WordPress language pack installed."
+msgstr "تم تثبيت حزمة اللغة العربية لووردبريس."
+
+#: inc/installer.php:179
+msgid ""
+"Could not download the Arabic language pack automatically — add Arabic under "
+"Settings → General → Site Language."
+msgstr "تعذّر تنزيل حزمة اللغة العربية تلقائيًا — أضف العربية من الإعدادات ← عام ← لغة الموقع."
+
+#. translators: 1: page title, 2: language code
+#: inc/installer.php:274
+#, php-format
+msgid "Page created: %1$s (%2$s)."
+msgstr "تم إنشاء الصفحة: %1$s (%2$s)."
+
+#: inc/installer.php:292
+msgid "Home set as the front page."
+msgstr "تم تعيين الصفحة الرئيسية كواجهة للموقع."
+
+#. translators: %s: form title
+#: inc/installer.php:340
+#, php-format
+msgid "Contact form created: %s."
+msgstr "تم إنشاء نموذج التواصل: %s."
+
+#: inc/installer.php:375
+msgid "Solutions created (5, English + Arabic)."
+msgstr "تم إنشاء الحلول (5، بالإنجليزية والعربية)."
+
+#: inc/installer.php:398
+msgid "FAQs created (4, English + Arabic)."
+msgstr "تم إنشاء الأسئلة الشائعة (4، بالإنجليزية والعربية)."
+
+#: inc/installer.php:430
+msgid "Project categories created (English + Arabic)."
+msgstr "تم إنشاء تصنيفات المشاريع (بالإنجليزية والعربية)."
+
+#: inc/installer.php:465
+msgid "Sample projects created (6, English + Arabic)."
+msgstr "تم إنشاء مشاريع تجريبية (6، بالإنجليزية والعربية)."
+
+#: inc/installer.php:466
+msgid ""
+"Placeholder projects created as drafts (6, English + Arabic) — fill them in "
+"and publish."
+msgstr "تم إنشاء مشاريع مؤقتة كمسودات (6، بالإنجليزية والعربية) — أكمل بياناتها ثم انشرها."
+
+#. translators: %s: menu name
+#: inc/installer.php:500
+#, php-format
+msgid "Menu created and assigned: %s."
+msgstr "تم إنشاء القائمة وتعيينها: %s."
+
+#. translators: %d: number of field groups
+#: inc/installer.php:562
+#, php-format
+msgid "%d field group synced from the theme."
+msgid_plural "%d field groups synced from the theme."
+msgstr[0] "تمت مزامنة %d من مجموعات الحقول من القالب."
+msgstr[1] "تمت مزامنة %d من مجموعات الحقول من القالب."
+msgstr[2] "تمت مزامنة %d من مجموعات الحقول من القالب."
+msgstr[3] "تمت مزامنة %d من مجموعات الحقول من القالب."
+msgstr[4] "تمت مزامنة %d من مجموعات الحقول من القالب."
+msgstr[5] "تمت مزامنة %d من مجموعات الحقول من القالب."
+
+#: inc/installer.php:618
+msgid "Sorry, you are not allowed to do that."
+msgstr "عذرًا، لا تملك صلاحية تنفيذ ذلك."
+
+#: inc/installer.php:636
+msgid "SEES automatic setup"
+msgstr "الإعداد التلقائي لقالب سيز"
+
+#: inc/installer.php:637
+msgid "here is what was set up:"
+msgstr "هذا ما تم إعداده:"
+
+#: inc/installer.php:637
+msgid "everything was already in place."
+msgstr "كل شيء كان جاهزًا مسبقًا."
+
 #: inc/menus.php:15 template-parts/page-header.php:58
 msgid "Home"
 msgstr "الرئيسية"
@@ -441,7 +546,9 @@ msgstr "إضافة Advanced Custom Fields"
 
 #: inc/setup-check.php:45
 msgid "All editable page fields (texts, photos, contact details) use ACF."
-msgstr "جميع حقول الصفحات القابلة للتحرير (النصوص والصور وبيانات التواصل) تعتمد على ACF."
+msgstr ""
+"جميع حقول الصفحات القابلة للتحرير (النصوص والصور وبيانات التواصل) تعتمد على "
+"ACF."
 
 #: inc/setup-check.php:47
 msgid "Contact Form 7 plugin"
@@ -459,7 +566,9 @@ msgstr "اللغتان الإنجليزية والعربية في Polylang"
 msgid ""
 "Add English (en_US) and Arabic (ar). The theme switches to right-to-left "
 "automatically on Arabic pages."
-msgstr "أضف الإنجليزية (en_US) والعربية (ar). يتحوّل القالب تلقائيًا إلى الاتجاه من اليمين إلى اليسار في الصفحات العربية."
+msgstr ""
+"أضف الإنجليزية (en_US) والعربية (ar). يتحوّل القالب تلقائيًا إلى الاتجاه من "
+"اليمين إلى اليسار في الصفحات العربية."
 
 #: inc/setup-check.php:56
 msgid "Add languages"
@@ -487,7 +596,9 @@ msgstr "حزمة اللغة العربية لووردبريس"
 msgid ""
 "Needed for Arabic dates and system messages. Polylang offers to download it "
 "when you add Arabic."
-msgstr "مطلوبة للتواريخ ورسائل النظام بالعربية. يعرض Polylang تنزيلها عند إضافة العربية."
+msgstr ""
+"مطلوبة للتواريخ ورسائل النظام بالعربية. يعرض Polylang تنزيلها عند إضافة "
+"العربية."
 
 #: inc/setup-check.php:70
 msgid "Site language"
@@ -534,7 +645,9 @@ msgstr "صفحة \"%s\" بكل لغة مع قالبها"
 msgid ""
 "Missing: %2$s. Create the page, choose the \"%1$s\" template (Page → "
 "Template), and link the translations."
-msgstr "غير موجودة: %2$s. أنشئ الصفحة واختر قالب \"%1$s\" (الصفحة ← القالب) ثم اربط الترجمات."
+msgstr ""
+"غير موجودة: %2$s. أنشئ الصفحة واختر قالب \"%1$s\" (الصفحة ← القالب) ثم اربط "
+"الترجمات."
 
 #. translators: %s: template name
 #: inc/setup-check.php:122
@@ -554,7 +667,9 @@ msgstr "القائمة الرئيسية لكل لغة"
 msgid ""
 "Optional: without it the header shows an automatic menu. Assign one menu per "
 "language to \"Primary menu\"."
-msgstr "اختياري: بدونها تعرض الترويسة قائمة تلقائية. عيّن قائمة لكل لغة في موضع \"القائمة الرئيسية\"."
+msgstr ""
+"اختياري: بدونها تعرض الترويسة قائمة تلقائية. عيّن قائمة لكل لغة في موضع "
+"\"القائمة الرئيسية\"."
 
 #: inc/setup-check.php:136
 msgid "Menus"
@@ -570,7 +685,9 @@ msgstr "نموذج تواصل في كل صفحة تواصل"
 msgid ""
 "Missing or invalid on: %s. Create a form per language and paste its "
 "shortcode in the Contact page \"Form\" tab."
-msgstr "مفقود أو غير صالح في: %s. أنشئ نموذجًا لكل لغة والصق رمزه المختصر في تبويب \"النموذج\" بصفحة التواصل."
+msgstr ""
+"مفقود أو غير صالح في: %s. أنشئ نموذجًا لكل لغة والصق رمزه المختصر في تبويب "
+"\"النموذج\" بصفحة التواصل."
 
 #: inc/setup-check.php:174
 msgid "Paste the form shortcode in the Contact page \"Form\" tab."
@@ -613,7 +730,9 @@ msgstr "إرسال البريد عبر SMTP"
 msgid ""
 "Recommended so contact form emails are delivered: install WP Mail SMTP and "
 "connect a cPanel email account."
-msgstr "يُنصح به لضمان وصول رسائل النموذج: ثبّت WP Mail SMTP واربطه بحساب بريد من cPanel."
+msgstr ""
+"يُنصح به لضمان وصول رسائل النموذج: ثبّت WP Mail SMTP واربطه بحساب بريد من "
+"cPanel."
 
 #: inc/setup-check.php:244
 msgid "SEES theme:"
@@ -644,55 +763,79 @@ msgstr[5] "خطوات مطلوبة ناقصة: %d"
 msgid "everything required is done. Recommended:"
 msgstr "اكتملت كل الخطوات المطلوبة. يُنصح أيضًا بـ:"
 
-#: inc/setup-check.php:263 inc/setup-check.php:317
+#: inc/setup-check.php:263 inc/setup-check.php:321
 msgid "recommended"
 msgstr "مُستحسن"
 
-#: inc/setup-check.php:265 inc/setup-check.php:323
+#: inc/setup-check.php:265 inc/setup-check.php:327
 msgid "Fix"
 msgstr "إصلاح"
 
-#: inc/setup-check.php:269
+#: inc/setup-check.php:270
+msgid ""
+"Activate the plugins above — the theme then sets up languages, pages, menus "
+"and forms by itself."
+msgstr "فعّل الإضافات أعلاه — وسيُعدّ القالب بعدها اللغات والصفحات والقوائم والنماذج تلقائيًا."
+
+#: inc/setup-check.php:273
 msgid "Open the setup checklist"
 msgstr "فتح قائمة الإعداد"
 
-#: inc/setup-check.php:270
+#: inc/setup-check.php:274
 msgid "Hide until next activation"
 msgstr "إخفاء حتى التفعيل القادم"
 
-#: inc/setup-check.php:290
+#: inc/setup-check.php:294
 msgid "SEES setup"
 msgstr "إعداد سيز"
 
-#: inc/setup-check.php:301
+#: inc/setup-check.php:305
 msgid "SEES setup checklist"
 msgstr "قائمة إعداد سيز"
 
 #. translators: 1: completed steps, 2: total steps
-#: inc/setup-check.php:305
+#: inc/setup-check.php:309
 #, php-format
 msgid ""
 "%1$d of %2$d steps complete. This check also runs every time the theme is "
 "activated."
-msgstr "اكتملت %1$d من %2$d خطوة. يعمل هذا الفحص أيضًا في كل مرة يُفعَّل فيها القالب."
+msgstr ""
+"اكتملت %1$d من %2$d خطوة. يعمل هذا الفحص أيضًا في كل مرة يُفعَّل فيها القالب."
 
-#: inc/setup-check.php:315
+#: inc/setup-check.php:319
 msgid "Done"
 msgstr "مكتمل"
 
-#: inc/setup-check.php:315
+#: inc/setup-check.php:319
 msgid "Missing"
 msgstr "ناقص"
 
-#: inc/setup-check.php:315
+#: inc/setup-check.php:319
 msgid "Recommended"
 msgstr "مُستحسن"
 
-#: inc/setup-check.php:331
+#: inc/setup-check.php:334
+msgid "Automatic setup"
+msgstr "الإعداد التلقائي"
+
+#: inc/setup-check.php:335
 msgid ""
-"Fastest route for a new server: migrate the prepared site with All-in-One WP "
-"Migration — it brings languages, pages, menus and forms in one step."
-msgstr "أسرع طريقة لخادم جديد: انقل الموقع المُجهَّز باستخدام All-in-One WP Migration — ينقل اللغات والصفحات والقوائم والنماذج دفعة واحدة."
+"The theme sets everything up by itself after activation: languages, Arabic "
+"language pack, permalinks, the Home / About / Our Solutions / Contact pages "
+"in English and Arabic, solutions, FAQs, project categories, placeholder "
+"projects (drafts), contact forms, menus and the front page. It only adds "
+"what is missing and never overwrites your content."
+msgstr "يُعدّ القالب كل شيء تلقائيًا بعد التفعيل: اللغات، وحزمة اللغة العربية، والروابط الدائمة، وصفحات الرئيسية ومن نحن وحلولنا وتواصل معنا بالإنجليزية والعربية، والحلول، والأسئلة الشائعة، وتصنيفات المشاريع، ومشاريع مؤقتة (مسودات)، ونماذج التواصل، والقوائم، والصفحة الرئيسية للموقع. يضيف فقط ما ينقص ولا يستبدل محتواك أبدًا."
+
+#: inc/setup-check.php:340
+msgid "Run automatic setup"
+msgstr "تشغيل الإعداد التلقائي"
+
+#: inc/setup-check.php:343
+msgid ""
+"Install and activate Polylang, Advanced Custom Fields and Contact Form 7 "
+"first — the setup then runs automatically."
+msgstr "ثبّت وفعّل Polylang وAdvanced Custom Fields وContact Form 7 أولًا — وسيعمل الإعداد تلقائيًا بعدها."
 
 #: inc/setup.php:27
 msgid "Primary menu"
@@ -981,6 +1124,13 @@ msgstr "شاهد دراسة الحالة"
 #: template-parts/solution-card.php:18
 msgid "Learn more"
 msgstr "اعرف المزيد"
+
+#~ msgid ""
+#~ "Fastest route for a new server: migrate the prepared site with All-in-One "
+#~ "WP Migration — it brings languages, pages, menus and forms in one step."
+#~ msgstr ""
+#~ "أسرع طريقة لخادم جديد: انقل الموقع المُجهَّز باستخدام All-in-One WP "
+#~ "Migration — ينقل اللغات والصفحات والقوائم والنماذج دفعة واحدة."
 
 #~ msgid "MAP"
 #~ msgstr "خريطة"
