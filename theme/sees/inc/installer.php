@@ -58,7 +58,10 @@ function sees_run_setup( array $args = array() ): array {
 	$media = $args['sample_images'] ? sees_setup_media( $log ) : array();
 	$pages = sees_setup_pages( $content, $log );
 	sees_setup_front_page( $pages, $log );
+	$pages['privacy'] = sees_setup_privacy( $content, $log );
 	sees_setup_forms( $content, $pages, $log );
+	sees_setup_form_consent( $content, $pages, $log );
+	sees_setup_site_icon( $log );
 	sees_setup_solutions( $content, $media, $log );
 	sees_setup_faqs( $content, $log );
 	$terms = sees_setup_categories( $content, $log );
@@ -282,6 +285,178 @@ function sees_setup_pages( array $content, array &$log ): array {
 		$pages[ $key ] = $ids;
 	}
 	return $pages;
+}
+
+/**
+ * Block markup for policy-style content: [ heading, paragraphs[], list items[]? ].
+ */
+function sees_setup_blocks( array $sections ): string {
+	$out = '';
+	foreach ( $sections as $section ) {
+		list( $heading, $paras ) = $section;
+		$items = $section[2] ?? array();
+		if ( $heading ) {
+			$out .= '<!-- wp:heading --><h2 class="wp-block-heading">' . esc_html( $heading ) . '</h2><!-- /wp:heading -->' . "\n\n";
+		}
+		foreach ( $paras as $para ) {
+			$out .= '<!-- wp:paragraph --><p>' . esc_html( $para ) . '</p><!-- /wp:paragraph -->' . "\n\n";
+		}
+		if ( $items ) {
+			$out .= '<!-- wp:list --><ul class="wp-block-list">';
+			foreach ( $items as $item ) {
+				$out .= '<!-- wp:list-item --><li>' . esc_html( $item ) . '</li><!-- /wp:list-item -->';
+			}
+			$out .= '</ul><!-- /wp:list -->' . "\n\n";
+		}
+	}
+	return $out;
+}
+
+/**
+ * Privacy Policy page (Saudi PDPL template) in English and Arabic.
+ * Replaces WordPress's own untouched draft privacy page; never touches a page someone wrote.
+ *
+ * @return array<string,int> lang => page ID
+ */
+function sees_setup_privacy( array $content, array &$log ): array {
+	$def = $content['privacy'];
+	$ids = array();
+
+	$en   = (int) get_option( 'wp_page_for_privacy_policy' );
+	$post = $en ? get_post( $en ) : null;
+	if ( $post && 'trash' === $post->post_status ) {
+		$post = null;
+	}
+	// WordPress's default privacy page: a draft still holding the suggested text.
+	$is_wp_default = $post && 'draft' === $post->post_status
+		&& ( false !== strpos( $post->post_content, 'Suggested text:' ) || false !== strpos( $post->post_content, 'Our website address is' ) );
+
+	foreach ( array( 'en', 'ar' ) as $lang ) {
+		$page = $def[ $lang ];
+		$id   = 0;
+		if ( 'en' === $lang && $post && ! $is_wp_default ) {
+			$id = (int) $post->ID;
+		} elseif ( 'ar' === $lang && ! empty( $ids['en'] ) ) {
+			$id = (int) pll_get_post( $ids['en'], 'ar' );
+		}
+
+		if ( ! $id ) {
+			$data = array(
+				'post_type'    => 'page',
+				'post_status'  => 'publish',
+				'post_title'   => $page['title'],
+				'post_name'    => $page['slug'],
+				'post_content' => sees_setup_blocks( $page['sections'] ),
+				'menu_order'   => 9,
+			);
+			if ( 'en' === $lang && $is_wp_default ) {
+				$data['ID'] = $post->ID;
+				$id         = wp_update_post( wp_slash( $data ), true );
+			} else {
+				$id = wp_insert_post( wp_slash( $data ), true );
+			}
+			if ( is_wp_error( $id ) ) {
+				$log['errors'][] = $id->get_error_message();
+				continue;
+			}
+			pll_set_post_language( $id, $lang );
+			/* translators: 1: page title, 2: language code */
+			$log['done'][] = sprintf( __( 'Page created: %1$s (%2$s).', 'sees' ), $page['title'], strtoupper( $lang ) );
+		}
+		sees_setup_fill_fields( (int) $id, array( 'header_subtitle' => $page['subtitle'] ) );
+		$ids[ $lang ] = (int) $id;
+	}
+
+	if ( ! empty( $ids['en'] ) ) {
+		update_option( 'wp_page_for_privacy_policy', $ids['en'] );
+	}
+	if ( count( $ids ) === 2 ) {
+		pll_save_post_translations( array_merge( (array) pll_get_post_translations( $ids['en'] ), $ids ) );
+	}
+	return $ids;
+}
+
+/**
+ * Add a required consent checkbox (linking to the privacy policy) to the theme's contact forms.
+ */
+function sees_setup_form_consent( array $content, array $pages, array &$log ): void {
+	foreach ( array( 'en', 'ar' ) as $lang ) {
+		$page    = $pages['contact'][ $lang ] ?? 0;
+		$privacy = $pages['privacy'][ $lang ] ?? 0;
+		if ( ! $page || ! $privacy ) {
+			continue;
+		}
+		$code = (string) get_field( 'form_shortcode', $page, false );
+		$id   = preg_match( '/id=["\']?(\d+)/', $code, $m ) ? (int) $m[1] : 0;
+		$form = $id ? wpcf7_contact_form( $id ) : null;
+		if ( ! $form ) {
+			continue;
+		}
+		$markup = (string) $form->prop( 'form' );
+		// Only forms built by the theme.
+		if ( false === strpos( $markup, 'sees-form' ) ) {
+			continue;
+		}
+		$before = wp_json_encode( $form->prop( 'messages' ) );
+		sees_setup_form_messages( $form, $content['forms'][ $lang ]['messages'] );
+		if ( false !== strpos( $markup, '[acceptance' ) ) {
+			if ( wp_json_encode( $form->prop( 'messages' ) ) !== $before ) {
+				$form->save(); // Consent box already there; only the messages changed.
+			}
+			continue;
+		}
+		$text    = sprintf( $content['privacy']['consent'][ $lang ], esc_url( get_permalink( $privacy ) ) );
+		$consent = '<div class="sees-form__consent">[acceptance consent] ' . $text . " [/acceptance]</div>\n";
+		$markup  = preg_replace( '/\[submit/', $consent . '[submit', $markup, 1 );
+		$form->set_properties( array( 'form' => $markup ) );
+		$form->save();
+		/* translators: %s: language code */
+		$log['done'][] = sprintf( __( 'Privacy consent checkbox added to the contact form (%s).', 'sees' ), strtoupper( $lang ) );
+	}
+}
+
+/**
+ * Apply the theme's form messages where the form still has Contact Form 7's default text.
+ */
+function sees_setup_form_messages( WPCF7_ContactForm $form, array $messages ): void {
+	if ( ! $messages || ! function_exists( 'wpcf7_messages' ) ) {
+		return;
+	}
+	$defaults = wpcf7_messages();
+	$current  = (array) $form->prop( 'messages' );
+	$changed  = false;
+	foreach ( $messages as $key => $text ) {
+		$default = $defaults[ $key ]['default'] ?? null;
+		if ( ! isset( $current[ $key ] ) || '' === $current[ $key ] || $current[ $key ] === $default ) {
+			$current[ $key ] = $text;
+			$changed         = true;
+		}
+	}
+	if ( $changed ) {
+		$form->set_properties( array( 'messages' => $current ) );
+	}
+}
+
+/**
+ * Site Icon (favicon / app icon) from the SEES logo mark, if none is set.
+ */
+function sees_setup_site_icon( array &$log ): void {
+	if ( get_option( 'site_icon' ) ) {
+		return;
+	}
+	require_once ABSPATH . 'wp-admin/includes/image.php';
+	require_once ABSPATH . 'wp-admin/includes/file.php';
+	require_once ABSPATH . 'wp-admin/includes/media.php';
+	$tmp = wp_tempnam( 'site-icon.png' );
+	copy( SEES_DIR . '/assets/img/site-icon.png', $tmp );
+	$id = media_handle_sideload( array( 'name' => 'sees-site-icon.png', 'tmp_name' => $tmp ), 0, 'SEES' );
+	if ( is_wp_error( $id ) ) {
+		$log['errors'][] = $id->get_error_message();
+		return;
+	}
+	update_post_meta( $id, '_wp_attachment_context', 'site-icon' );
+	update_option( 'site_icon', $id );
+	$log['done'][] = __( 'Site icon set from the SEES logo mark.', 'sees' );
 }
 
 function sees_setup_front_page( array $pages, array &$log ): void {

@@ -123,6 +123,16 @@ function sees_setup_checks(): array {
 			admin_url( 'post-new.php?post_type=page' ), __( 'Add page', 'sees' ) );
 	}
 
+	// 6b. Privacy policy (Saudi PDPL), per language.
+	$privacy  = (int) get_option( 'wp_page_for_privacy_policy' );
+	$priv_ok  = $privacy && 'publish' === get_post_status( $privacy );
+	if ( $priv_ok && $has_pll && in_array( 'ar', $langs, true ) ) {
+		$priv_ok = (bool) pll_get_post( $privacy, 'ar' );
+	}
+	$add( 'privacy', __( 'Privacy policy page in each language', 'sees' ), $priv_ok, true,
+		__( 'Required by the Saudi Personal Data Protection Law because the contact form collects personal data. Fill in the [placeholders] and have it reviewed.', 'sees' ),
+		admin_url( 'options-privacy.php' ), __( 'Privacy settings', 'sees' ) );
+
 	// 7. Menus (the theme falls back to an automatic menu, so this is a recommendation).
 	$menu_ok = false;
 	if ( $has_pll && function_exists( 'PLL' ) && isset( PLL()->options ) ) {
@@ -196,6 +206,11 @@ function sees_setup_checks(): array {
 				: __( 'Field groups load from the theme’s acf-json folder.', 'sees' ),
 			admin_url( 'edit.php?post_type=acf-field-group&post_status=sync' ), __( 'Sync fields', 'sees' ) );
 	}
+
+	// 9b. Site icon.
+	$add( 'site_icon', __( 'Site icon (favicon)', 'sees' ), (bool) get_option( 'site_icon' ), false,
+		__( 'Shown in browser tabs and on phones. The automatic setup uses the SEES logo mark.', 'sees' ),
+		admin_url( 'customize.php?autofocus[section]=title_tagline' ), __( 'Set icon', 'sees' ) );
 
 	// 10. Outgoing mail (recommendation: shared hosts often drop PHP mail()).
 	$smtp = false;

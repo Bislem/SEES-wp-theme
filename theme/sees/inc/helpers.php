@@ -139,6 +139,17 @@ function sees_contact(): array {
 }
 
 /**
+ * Privacy policy URL in the current language ('' when there is none).
+ */
+function sees_privacy_url(): string {
+	$id = (int) get_option( 'wp_page_for_privacy_policy' );
+	if ( $id && function_exists( 'pll_get_post' ) ) {
+		$id = (int) ( pll_get_post( $id ) ?: $id );
+	}
+	return ( $id && 'publish' === get_post_status( $id ) ) ? (string) get_permalink( $id ) : '';
+}
+
+/**
  * tel: link from a display phone number.
  */
 function sees_tel( string $phone ): string {

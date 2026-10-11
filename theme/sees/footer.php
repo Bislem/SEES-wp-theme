@@ -65,7 +65,13 @@ $contact = sees_contact();
 				printf( esc_html__( '© %s SEES ENG Company. All rights reserved.', 'sees' ), esc_html( wp_date( 'Y' ) ) );
 				?>
 			</span>
-			<span dir="ltr">www.seesengineering.com</span>
+			<span class="site-footer__legal">
+				<?php $sees_privacy = sees_privacy_url(); ?>
+				<?php if ( $sees_privacy ) : ?>
+					<a href="<?php echo esc_url( $sees_privacy ); ?>"><?php esc_html_e( 'Privacy Policy', 'sees' ); ?></a>
+				<?php endif; ?>
+				<span dir="ltr">www.seesengineering.com</span>
+			</span>
 		</div>
 	</div>
 </footer>

@@ -85,6 +85,9 @@ theme/sees/
   - 9 placeholder projects as drafts (tracked in `sees_seeded_projects`, so new ones reach existing sites and deleted ones are never re-created)
   - primary menus per language
   - Polylang string translations
+  - Privacy Policy pages (EN/AR), a Saudi PDPL template with [placeholders], set as WordPress's privacy page. WordPress's own untouched draft is replaced; pages someone wrote are never touched.
+  - a required consent checkbox, linking to the policy, on the theme's contact forms, with consent messages in both languages
+  - the Site Icon, from the logo mark
   - ACF JSON sync
 - **Polylang's wizard:** skipped, since the theme already did that work.
 - **Finishing step:** Polylang's language cache and rewrite rules are rebuilt on the request after setup (`sees_flush_rewrite`). That avoids a `/ar/` redirect loop and 404s.
@@ -198,14 +201,15 @@ Real details: +966 50 326 4000 · info@seesengineering.com · Al Shahamah Distri
 
 ## Open items / next steps
 
-1. **QATAR Arabic font:** get the licensed font files and web license from the client/designer, add them as woff2 to `assets/fonts/`, then enable the `@font-face` slot and set `--font-heading-ar` (and `--font-display` for Arabic) in main.css.
-2. **Hero photo:** the current hero was extracted from a 1536px mockup. A full-resolution original or a real photo of the building would be sharper. Replace it in Pages → Home → Header photo, separately for each language; the Arabic page needs a version with the building on the left. Other pages' header photos could also use real photography.
-3. **Office map pin:** paste the office's Google Maps embed and share link into the Contact page (both languages).
-4. **Arabic review:** a native speaker should review all Arabic copy, both the seed content and `languages/ar.po`.
-5. **Placeholders:** replace the ones listed above with real content.
-6. **Insights:** the reference mockup shows an "Insights" menu item. There's no Insights page or template yet; decide whether to add a blog/insights section.
-7. **Manual browser pass:** click through the interactive parts (point above) on real devices.
-8. **Go-live:**
+1. **Privacy policy:** fill in the legal name, CR number, privacy email, hosting/email provider, retention period and effective date. Have a Saudi lawyer review it.
+2. **QATAR Arabic font:** get the licensed font files and web license from the client/designer, add them as woff2 to `assets/fonts/`, then enable the `@font-face` slot and set `--font-heading-ar` (and `--font-display` for Arabic) in main.css.
+3. **Hero photo:** the current hero was extracted from a 1536px mockup. A full-resolution original or a real photo of the building would be sharper. Replace it in Pages → Home → Header photo, separately for each language; the Arabic page needs a version with the building on the left. Other pages' header photos could also use real photography.
+4. **Office map pin:** paste the office's Google Maps embed and share link into the Contact page (both languages).
+5. **Arabic review:** a native speaker should review all Arabic copy, both the seed content and `languages/ar.po`.
+6. **Placeholders:** replace the ones listed above with real content.
+7. **Insights:** the reference mockup shows an "Insights" menu item. There's no Insights page or template yet; decide whether to add a blog/insights section.
+8. **Manual browser pass:** click through the interactive parts (point above) on real devices.
+9. **Go-live:**
    - install the three plugins on the host
    - upload the theme
    - migrate with All-in-One WP Migration or Duplicator
@@ -213,7 +217,7 @@ Real details: +966 50 326 4000 · info@seesengineering.com · Al Shahamah Distri
    - enable browser caching
    - set a Site Icon
    - optionally add an SEO plugin; the theme's basic meta description switches off automatically when Yoast, Rank Math or The SEO Framework is active
-9. **Logo:** ask the client for the official SVG logo to replace the PNGs.
+10. **Logo:** ask the client for the official SVG logo to replace the PNGs.
 
 ## Repository
 

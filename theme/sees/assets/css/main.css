@@ -1416,6 +1416,12 @@ button { font: inherit; }
 .sees-form__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
 .sees-form label { display: flex; flex-direction: column; gap: 8px; font-size: var(--fs-meta); font-weight: 600; }
 .wpcf7-form-control-wrap { display: block; }
+/* Privacy consent checkbox */
+.sees-form__consent { font-size: var(--fs-meta); line-height: var(--lh-small); color: var(--fg); }
+.sees-form__consent .wpcf7-list-item { margin: 0; }
+.sees-form__consent label { flex-direction: row; align-items: flex-start; gap: 10px; font-weight: 400; cursor: pointer; }
+.sees-form__consent input[type="checkbox"] { flex: none; width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--c-petrol); }
+.sees-form__consent a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
 .wpcf7 fieldset.hidden-fields-container { display: none; }
 .wpcf7 .wpcf7-submit {
 	width: 100%;
@@ -1475,6 +1481,9 @@ button { font: inherit; }
 .footer-col__list { display: flex; flex-direction: column; gap: 6px; font-size: var(--fs-small); }
 .footer-col__list a { display: inline-block; padding-block: 4px; color: var(--c-text-on-dark); transition: color .25s; }
 .footer-col__list a:hover { color: var(--c-green); }
+.site-footer__legal { display: inline-flex; flex-wrap: wrap; gap: 8px 24px; }
+.site-footer__legal a { color: var(--c-text-on-dark); text-decoration: underline; text-underline-offset: 3px; }
+.site-footer__legal a:hover { color: var(--c-green); }
 .site-footer__bottom {
 	display: flex;
 	flex-wrap: wrap;
