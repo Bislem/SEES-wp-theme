@@ -1,0 +1,13 @@
+# Local environment (copy from .env.example)
+.env
+
+# Client source material — keep out of the public repo
+sees-theme-kit.zip
+sees-theme-kit/reference/
+
+# Tooling
+node_modules/
+*.log
+.DS_Store
+.vscode/
+.idea/

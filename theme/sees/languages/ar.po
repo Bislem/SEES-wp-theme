@@ -1,0 +1,678 @@
+# Copyright (C) 2026 SEES
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: SEES 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sees\n"
+"Last-Translator: SEES\n"
+"Language-Team: Arabic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ar\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-11T09:04:50+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: sees\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+
+#. Theme Name of the theme
+#. Author of the theme
+#: style.css
+msgid "SEES"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://www.seesengineering.com"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Custom theme for SEES — Smart Electrical Engineering Solutions. Classic PHP theme with English/Arabic (Polylang), ACF page fields and Contact Form 7 styling."
+msgstr ""
+
+#: 404.php:14
+msgid "Page not found"
+msgstr "الصفحة غير موجودة"
+
+#: 404.php:15
+msgid "The page you are looking for has moved or no longer exists."
+msgstr "الصفحة التي تبحث عنها نُقلت أو لم تعد موجودة."
+
+#: 404.php:21
+msgid "Back to home"
+msgstr "العودة إلى الرئيسية"
+
+#: archive-project.php:25
+msgid "Our Projects"
+msgstr "مشاريعنا"
+
+#: archive-project.php:26
+msgid "A selection of electrical systems we've designed, built and keep running."
+msgstr "مجموعة مختارة من الأنظمة الكهربائية التي صمّمناها ونفّذناها ونحافظ على تشغيلها."
+
+#: archive-project.php:34
+msgid "Filter projects"
+msgstr "تصفية المشاريع"
+
+#: archive-project.php:35
+msgid "All"
+msgstr "الكل"
+
+#: archive-project.php:51
+#: archive-project.php:59
+msgid "No projects in this category yet."
+msgstr "لا توجد مشاريع في هذا التصنيف بعد."
+
+#: archive-project.php:54
+msgid "Previous"
+msgstr "السابق"
+
+#: archive-project.php:55
+msgid "Next"
+msgstr "التالي"
+
+#: archive-project.php:66
+#: single-project.php:60
+msgid "Your project could be next."
+msgstr "قد يكون مشروعك هو التالي."
+
+#: archive-project.php:67
+#: single-project.php:61
+msgid "Share your plans and we'll prepare a proposal."
+msgstr "شاركنا خططك وسنعدّ لك عرضًا مناسبًا."
+
+#: archive-project.php:68
+#: single-project.php:62
+msgid "Start a project"
+msgstr "ابدأ مشروعك"
+
+#: footer.php:18
+#: header.php:32
+msgid "SEES — Smart Electrical Engineering Solutions"
+msgstr "سيز للحلول الهندسية الكهربائية الذكية"
+
+#: footer.php:22
+msgid "Engineering smarter, powering better — integrated electrical solutions from Makkah, Saudi Arabia."
+msgstr "نهندس بذكاء ونُشغّل بشكل أفضل — حلول كهربائية متكاملة من مكة المكرمة، المملكة العربية السعودية."
+
+#: footer.php:27
+msgid "Company"
+msgstr "الشركة"
+
+#: footer.php:39
+#: inc/post-types.php:12
+msgid "Solutions"
+msgstr "الحلول"
+
+#. Template Name of the theme
+#: footer.php:51
+#: inc/menus.php:19
+msgid "Contact"
+msgstr "تواصل معنا"
+
+#. translators: %s: year
+#: footer.php:65
+#, php-format
+msgid "© %s SEES ENG Company. All rights reserved."
+msgstr "© %s شركة سيز للهندسة. جميع الحقوق محفوظة."
+
+#: front-page.php:11
+msgid "Innovative Solutions"
+msgstr "حلول مبتكرة"
+
+#: front-page.php:12
+msgid "Sustainable Growth"
+msgstr "نمو مستدام"
+
+#: front-page.php:13
+msgid "Reliable Execution"
+msgstr "تنفيذ موثوق"
+
+#: front-page.php:14
+msgid "People Focused"
+msgstr "الإنسان أولًا"
+
+#: front-page.php:19
+msgid "Power Distribution"
+msgstr "توزيع الطاقة"
+
+#: front-page.php:20
+msgid "Solar PV"
+msgstr "الطاقة الشمسية"
+
+#: front-page.php:21
+msgid "Substations"
+msgstr "المحطات الفرعية"
+
+#: front-page.php:22
+msgid "Smart Buildings"
+msgstr "المباني الذكية"
+
+#: front-page.php:24
+msgid "Operations & Maintenance"
+msgstr "التشغيل والصيانة"
+
+#: front-page.php:48
+msgid "Engineering a smarter tomorrow"
+msgstr "نهندس غدًا أذكى"
+
+#: front-page.php:49
+msgid "Smart Electrical Engineering Solutions"
+msgstr "الحلول الهندسية الكهربائية الذكية"
+
+#: front-page.php:50
+msgid "Delivering intelligent, reliable and sustainable electrical solutions for a brighter future."
+msgstr "نقدّم حلولًا كهربائية ذكية وموثوقة ومستدامة من أجل مستقبل أكثر إشراقًا."
+
+#. Template Name of the theme
+#: front-page.php:52
+#: front-page.php:118
+#: inc/menus.php:17
+msgid "Our Solutions"
+msgstr "حلولنا"
+
+#: front-page.php:53
+msgid "View Projects"
+msgstr "شاهد المشاريع"
+
+#: front-page.php:72
+msgid "About SEES"
+msgstr "عن سيز"
+
+#: front-page.php:73
+msgid "Engineering Intelligence for Real-World Impact"
+msgstr "ذكاء هندسي بأثر ملموس"
+
+#: front-page.php:74
+msgid "SEES delivers integrated electrical engineering solutions that combine innovation, quality and sustainability. We power progress across diverse sectors with a focus on reliability, efficiency and long-term value."
+msgstr "تقدّم سيز حلولًا هندسية كهربائية متكاملة تجمع بين الابتكار والجودة والاستدامة. نُسهم في دفع عجلة التقدّم في مختلف القطاعات مع تركيز على الموثوقية والكفاءة والقيمة على المدى الطويل."
+
+#: front-page.php:75
+msgid "Learn More"
+msgstr "اعرف المزيد"
+
+#: front-page.php:83
+msgid "Play our story video"
+msgstr "تشغيل فيديو قصتنا"
+
+#: front-page.php:87
+msgid "Our Story"
+msgstr "قصتنا"
+
+#: front-page.php:88
+msgid "Building smarter infrastructure for a better tomorrow."
+msgstr "نبني بنية تحتية أذكى من أجل غدٍ أفضل."
+
+#: front-page.php:95
+msgid "Years of Experience"
+msgstr "سنوات من الخبرة"
+
+#: front-page.php:99
+msgid "Projects Delivered"
+msgstr "مشروع منجز"
+
+#: front-page.php:103
+msgid "Trusted by Leading Partners"
+msgstr "شريك موثوق لكبرى الجهات"
+
+#: front-page.php:107
+msgid "Commitment to Sustainable Solutions"
+msgstr "التزام بالحلول المستدامة"
+
+#: front-page.php:119
+msgid "Integrated electrical solutions, from design to operation."
+msgstr "حلول كهربائية متكاملة، من التصميم إلى التشغيل."
+
+#: front-page.php:121
+#: inc/post-types.php:16
+msgid "All solutions"
+msgstr "جميع الحلول"
+
+#: front-page.php:152
+msgid "One or two sentences on the client's challenge and what SEES delivered."
+msgstr "جملة أو جملتان عن تحدي العميل وما قدّمته سيز."
+
+#: front-page.php:160
+msgid "Featured Project"
+msgstr "مشروع مميّز"
+
+#: front-page.php:164
+#: single-project.php:14
+msgid "Client"
+msgstr "العميل"
+
+#: front-page.php:165
+#: single-project.php:15
+msgid "Location"
+msgstr "الموقع"
+
+#: front-page.php:168
+msgid "View all projects"
+msgstr "شاهد جميع المشاريع"
+
+#: front-page.php:179
+msgid "Let's power your next project."
+msgstr "لنُشغّل مشروعك القادم."
+
+#: front-page.php:180
+msgid "Tell us what you're building — an engineer will get back to you with next steps."
+msgstr "أخبرنا بما تبنيه، وسيتواصل معك أحد مهندسينا بالخطوات التالية."
+
+#: header.php:20
+msgid "Skip to content"
+msgstr "انتقل إلى المحتوى"
+
+#: header.php:39
+msgid "Main"
+msgstr "القائمة الرئيسية"
+
+#: header.php:49
+#: header.php:57
+#: template-parts/cta-band.php:18
+msgid "Get in Touch"
+msgstr "تواصل معنا"
+
+#: header.php:53
+#: searchform.php:13
+msgid "Search"
+msgstr "بحث"
+
+#: header.php:58
+msgid "Menu"
+msgstr "القائمة"
+
+#: inc/acf.php:41
+msgid "The SEES theme needs these free plugins:"
+msgstr "يحتاج قالب سيز إلى هذه الإضافات المجانية:"
+
+#: inc/helpers.php:131
+msgid "Al Shahamah District, Makkah, Saudi Arabia"
+msgstr "حي الشهامة، مكة المكرمة، المملكة العربية السعودية"
+
+#: inc/icons.php:15
+msgid "Lightning bolt"
+msgstr ""
+
+#: inc/icons.php:16
+msgid "Sun"
+msgstr ""
+
+#: inc/icons.php:17
+msgid "Pylon"
+msgstr ""
+
+#: inc/icons.php:18
+msgid "Building"
+msgstr ""
+
+#: inc/icons.php:19
+msgid "Wrench"
+msgstr ""
+
+#: inc/icons.php:20
+msgid "Leaf"
+msgstr ""
+
+#: inc/icons.php:21
+msgid "Target"
+msgstr ""
+
+#: inc/icons.php:22
+msgid "Shield"
+msgstr ""
+
+#: inc/icons.php:23
+#: page-about.php:15
+msgid "People"
+msgstr "الإنسان"
+
+#: inc/icons.php:24
+msgid "Globe"
+msgstr ""
+
+#: inc/icons.php:25
+msgid "Office"
+msgstr ""
+
+#: inc/menus.php:15
+#: template-parts/page-header.php:45
+msgid "Home"
+msgstr "الرئيسية"
+
+#. Template Name of the theme
+#: inc/menus.php:16
+msgid "About"
+msgstr "من نحن"
+
+#: inc/menus.php:18
+#: inc/post-types.php:31
+#: single-project.php:29
+msgid "Projects"
+msgstr "المشاريع"
+
+#: inc/post-types.php:13
+msgid "Solution"
+msgstr "حل"
+
+#: inc/post-types.php:14
+msgid "Add new solution"
+msgstr "إضافة حل جديد"
+
+#: inc/post-types.php:15
+msgid "Edit solution"
+msgstr "تحرير الحل"
+
+#: inc/post-types.php:32
+msgid "Project"
+msgstr "مشروع"
+
+#: inc/post-types.php:33
+msgid "Add new project"
+msgstr "إضافة مشروع جديد"
+
+#: inc/post-types.php:34
+msgid "Edit project"
+msgstr "تحرير المشروع"
+
+#: inc/post-types.php:35
+msgid "All projects"
+msgstr "جميع المشاريع"
+
+#: inc/post-types.php:48
+msgid "FAQs"
+msgstr "الأسئلة الشائعة"
+
+#: inc/post-types.php:49
+#: page-solutions.php:97
+msgid "FAQ"
+msgstr "الأسئلة الشائعة"
+
+#: inc/post-types.php:50
+msgid "Add new question"
+msgstr "إضافة سؤال جديد"
+
+#: inc/post-types.php:51
+msgid "Edit question"
+msgstr "تحرير السؤال"
+
+#: inc/post-types.php:52
+msgid "All FAQs"
+msgstr "جميع الأسئلة"
+
+#: inc/post-types.php:67
+msgid "Project categories"
+msgstr "تصنيفات المشاريع"
+
+#: inc/post-types.php:68
+msgid "Project category"
+msgstr "تصنيف المشروع"
+
+#: inc/post-types.php:79
+#: inc/post-types.php:80
+msgid "Order"
+msgstr "الترتيب"
+
+#: inc/setup.php:23
+msgid "Primary menu"
+msgstr "القائمة الرئيسية"
+
+#: inc/setup.php:24
+msgid "Footer: Company"
+msgstr "التذييل: الشركة"
+
+#: inc/setup.php:25
+msgid "Footer: Solutions"
+msgstr "التذييل: الحلول"
+
+#: inc/setup.php:35
+msgid "Card (4:3)"
+msgstr ""
+
+#: inc/setup.php:36
+msgid "Wide (16:11)"
+msgstr ""
+
+#. translators: %s: search query
+#: index.php:12
+#, php-format
+msgid "Search: %s"
+msgstr "نتائج البحث: %s"
+
+#: index.php:40
+msgid "Nothing found. Try another search."
+msgstr "لا توجد نتائج. جرّب بحثًا آخر."
+
+#: page-about.php:12
+msgid "Innovation"
+msgstr "الابتكار"
+
+#: page-about.php:12
+msgid "Modern technology applied where it makes systems safer and smarter."
+msgstr "تقنيات حديثة نوظّفها حيث تجعل الأنظمة أكثر أمانًا وذكاءً."
+
+#: page-about.php:13
+msgid "Sustainability"
+msgstr "الاستدامة"
+
+#: page-about.php:13
+msgid "Efficient designs and renewable energy that lower long-term impact."
+msgstr "تصاميم عالية الكفاءة وطاقة متجددة تقلّل الأثر على المدى الطويل."
+
+#: page-about.php:14
+msgid "Reliability"
+msgstr "الموثوقية"
+
+#: page-about.php:14
+msgid "Work done to code, tested, documented and delivered on schedule."
+msgstr "عمل مطابق للأنظمة، مُختبَر وموثّق ويُسلَّم في موعده."
+
+#: page-about.php:15
+msgid "Certified teams who listen, communicate clearly and put safety first."
+msgstr "فرق معتمدة تُصغي وتتواصل بوضوح وتضع السلامة أولًا."
+
+#: page-about.php:17
+msgid "SEES — Smart Electrical Engineering Solutions — is based in Al Shahamah District, Makkah. We design, install and maintain electrical systems for commercial, residential and infrastructure projects, bringing careful engineering and modern technology to every installation."
+msgstr "سيز للحلول الهندسية الكهربائية الذكية شركة مقرّها حي الشهامة في مكة المكرمة. نصمّم الأنظمة الكهربائية ونركّبها ونصونها للمشاريع التجارية والسكنية ومشاريع البنية التحتية، ونجمع في كل تركيب بين الهندسة الدقيقة والتقنيات الحديثة."
+
+#: page-about.php:23
+msgid "An electrical engineering company built on precision, safety and smart technology."
+msgstr "شركة هندسة كهربائية قائمة على الدقة والسلامة والتقنية الذكية."
+
+#: page-about.php:33
+msgid "SEES signage"
+msgstr "لافتة سيز"
+
+#: page-about.php:36
+msgid "Who we are"
+msgstr "من نحن"
+
+#: page-about.php:37
+msgid "Smart engineering for the way the region builds today."
+msgstr "هندسة ذكية تواكب طريقة البناء في المنطقة اليوم."
+
+#: page-about.php:45
+msgid "Our Mission"
+msgstr "رسالتنا"
+
+#: page-about.php:46
+msgid "To deliver integrated electrical solutions that are safe, efficient and built to last."
+msgstr "تقديم حلول كهربائية متكاملة آمنة وفعّالة ومصمّمة لتدوم."
+
+#: page-about.php:49
+msgid "Our Vision"
+msgstr "رؤيتنا"
+
+#: page-about.php:50
+msgid "To be the region's most trusted partner for smart electrical engineering."
+msgstr "أن نكون الشريك الأكثر ثقة في المنطقة في مجال الهندسة الكهربائية الذكية."
+
+#: page-about.php:57
+msgid "Our values"
+msgstr "قيمنا"
+
+#: page-about.php:58
+msgid "What guides every project we take on."
+msgstr "ما يوجّه كل مشروع نتولّاه."
+
+#: page-about.php:84
+msgid "Ready to work with SEES?"
+msgstr "مستعد للعمل مع سيز؟"
+
+#: page-about.php:85
+msgid "Let's talk about your next electrical project."
+msgstr "لنتحدث عن مشروعك الكهربائي القادم."
+
+#: page-contact.php:19
+msgid "Tell us about your project — an engineer will get back to you with next steps."
+msgstr "أخبرنا عن مشروعك، وسيتواصل معك أحد مهندسينا بالخطوات التالية."
+
+#: page-contact.php:30
+msgid "Call us"
+msgstr "اتصل بنا"
+
+#: page-contact.php:34
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: page-contact.php:38
+msgid "Visit"
+msgstr "زورونا"
+
+#: page-contact.php:42
+msgid "Working hours"
+msgstr "ساعات العمل"
+
+#: page-contact.php:47
+msgid "Map: SEES office location"
+msgstr "خريطة: موقع مكتب سيز"
+
+#: page-contact.php:51
+msgid "MAP"
+msgstr "خريطة"
+
+#: page-contact.php:58
+msgid "Request a quote"
+msgstr "اطلب عرض سعر"
+
+#: page-contact.php:59
+msgid "Fields marked * are required."
+msgstr "الحقول المعلَّمة بـ * إلزامية."
+
+#: page-contact.php:64
+msgid "Add a Contact Form 7 shortcode in this page's \"Form\" settings."
+msgstr "أضف رمز Contact Form 7 المختصر في إعدادات \"النموذج\" لهذه الصفحة."
+
+#: page-contact.php:70
+msgid "Thank you!"
+msgstr "شكرًا لك!"
+
+#: page-contact.php:71
+msgid "Your request has been sent. A SEES engineer will contact you shortly."
+msgstr "تم إرسال طلبك. سيتواصل معك أحد مهندسي سيز قريبًا."
+
+#: page-contact.php:72
+msgid "Send another request"
+msgstr "إرسال طلب آخر"
+
+#: page-solutions.php:15
+msgid "Assess"
+msgstr "التقييم"
+
+#: page-solutions.php:15
+msgid "Site survey, load analysis and a clear scope before design begins."
+msgstr "مسح الموقع وتحليل الأحمال وتحديد نطاق واضح قبل بدء التصميم."
+
+#: page-solutions.php:16
+msgid "Engineer"
+msgstr "الهندسة"
+
+#: page-solutions.php:16
+msgid "Drawings, calculations and equipment selection, checked against code and budget."
+msgstr "المخططات والحسابات واختيار المعدّات، مع التحقق من مطابقتها للأنظمة والميزانية."
+
+#: page-solutions.php:17
+msgid "Install"
+msgstr "التركيب"
+
+#: page-solutions.php:17
+msgid "Certified crews build, test and commission, with full documentation at handover."
+msgstr "فرق معتمدة تنفّذ وتختبر وتشغّل، مع توثيق كامل عند التسليم."
+
+#: page-solutions.php:18
+msgid "Operate"
+msgstr "التشغيل"
+
+#: page-solutions.php:18
+msgid "Maintenance plans and monitoring that keep systems efficient for years."
+msgstr "خطط صيانة ومراقبة تحافظ على كفاءة الأنظمة لسنوات."
+
+#: page-solutions.php:29
+msgid "Complete electrical engineering — designed, installed and maintained by one accountable team."
+msgstr "هندسة كهربائية متكاملة — تصميم وتركيب وصيانة من فريق واحد مسؤول."
+
+#: page-solutions.php:70
+msgid "How we work"
+msgstr "كيف نعمل"
+
+#: page-solutions.php:71
+msgid "Four steps from survey to switch-on."
+msgstr "أربع خطوات من المسح الميداني حتى التشغيل."
+
+#. translators: %s: step number, e.g. 01
+#: page-solutions.php:82
+#, php-format
+msgid "Step %s"
+msgstr "الخطوة %s"
+
+#: page-solutions.php:98
+msgid "Common questions"
+msgstr "أسئلة متكررة"
+
+#: page-solutions.php:117
+msgid "Not sure which solution fits?"
+msgstr "لست متأكدًا من الحل المناسب؟"
+
+#: page-solutions.php:118
+msgid "Describe your project and our engineers will recommend the right approach."
+msgstr "صف لنا مشروعك وسيوصي مهندسونا بالنهج الأنسب."
+
+#: page-solutions.php:119
+msgid "Talk to an engineer"
+msgstr "تحدّث مع مهندس"
+
+#: searchform.php:11
+msgid "Search for:"
+msgstr "ابحث عن:"
+
+#: searchform.php:12
+msgid "Search the site…"
+msgstr "ابحث في الموقع…"
+
+#: single-project.php:16
+msgid "Year"
+msgstr "السنة"
+
+#: single-project.php:19
+msgid "Category"
+msgstr "التصنيف"
+
+#: single-project.php:51
+msgid "[Describe the project: scope, challenge, what SEES delivered and the result.]"
+msgstr "[صف المشروع: النطاق والتحدي وما قدّمته سيز والنتيجة.]"
+
+#: template-parts/page-header.php:44
+msgid "Breadcrumb"
+msgstr "مسار التنقل"
+
+#: template-parts/project-card.php:37
+msgid "View case study"
+msgstr "شاهد دراسة الحالة"
+
+#: template-parts/solution-card.php:18
+msgid "Learn more"
+msgstr "اعرف المزيد"
+
+msgid "about SEES"
+msgstr "عن سيز"

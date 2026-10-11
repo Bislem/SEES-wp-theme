@@ -1,0 +1,13 @@
+/* Block editor: match front-end typography for page/project content. */
+@import url("main.css");
+
+.editor-styles-wrapper {
+	font-family: var(--font-en);
+	font-size: 17px;
+	line-height: 1.75;
+	color: var(--c-text);
+}
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3 { color: var(--c-navy); line-height: 1.2; }
+.editor-styles-wrapper .editor-post-title { font-weight: 800; letter-spacing: -1px; }

@@ -1,0 +1,673 @@
+# Copyright (C) 2026 SEES
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: SEES 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sees\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-11T09:04:50+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: sees\n"
+
+#. Theme Name of the theme
+#. Author of the theme
+#: style.css
+msgid "SEES"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://www.seesengineering.com"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Custom theme for SEES — Smart Electrical Engineering Solutions. Classic PHP theme with English/Arabic (Polylang), ACF page fields and Contact Form 7 styling."
+msgstr ""
+
+#: 404.php:14
+msgid "Page not found"
+msgstr ""
+
+#: 404.php:15
+msgid "The page you are looking for has moved or no longer exists."
+msgstr ""
+
+#: 404.php:21
+msgid "Back to home"
+msgstr ""
+
+#: archive-project.php:25
+msgid "Our Projects"
+msgstr ""
+
+#: archive-project.php:26
+msgid "A selection of electrical systems we've designed, built and keep running."
+msgstr ""
+
+#: archive-project.php:34
+msgid "Filter projects"
+msgstr ""
+
+#: archive-project.php:35
+msgid "All"
+msgstr ""
+
+#: archive-project.php:51
+#: archive-project.php:59
+msgid "No projects in this category yet."
+msgstr ""
+
+#: archive-project.php:54
+msgid "Previous"
+msgstr ""
+
+#: archive-project.php:55
+msgid "Next"
+msgstr ""
+
+#: archive-project.php:66
+#: single-project.php:60
+msgid "Your project could be next."
+msgstr ""
+
+#: archive-project.php:67
+#: single-project.php:61
+msgid "Share your plans and we'll prepare a proposal."
+msgstr ""
+
+#: archive-project.php:68
+#: single-project.php:62
+msgid "Start a project"
+msgstr ""
+
+#: footer.php:18
+#: header.php:32
+msgid "SEES — Smart Electrical Engineering Solutions"
+msgstr ""
+
+#: footer.php:22
+msgid "Engineering smarter, powering better — integrated electrical solutions from Makkah, Saudi Arabia."
+msgstr ""
+
+#: footer.php:27
+msgid "Company"
+msgstr ""
+
+#: footer.php:39
+#: inc/post-types.php:12
+msgid "Solutions"
+msgstr ""
+
+#. Template Name of the theme
+#: footer.php:51
+#: inc/menus.php:19
+msgid "Contact"
+msgstr ""
+
+#. translators: %s: year
+#: footer.php:65
+#, php-format
+msgid "© %s SEES ENG Company. All rights reserved."
+msgstr ""
+
+#: front-page.php:11
+msgid "Innovative Solutions"
+msgstr ""
+
+#: front-page.php:12
+msgid "Sustainable Growth"
+msgstr ""
+
+#: front-page.php:13
+msgid "Reliable Execution"
+msgstr ""
+
+#: front-page.php:14
+msgid "People Focused"
+msgstr ""
+
+#: front-page.php:19
+msgid "Power Distribution"
+msgstr ""
+
+#: front-page.php:20
+msgid "Solar PV"
+msgstr ""
+
+#: front-page.php:21
+msgid "Substations"
+msgstr ""
+
+#: front-page.php:22
+msgid "Smart Buildings"
+msgstr ""
+
+#: front-page.php:24
+msgid "Operations & Maintenance"
+msgstr ""
+
+#: front-page.php:48
+msgid "Engineering a smarter tomorrow"
+msgstr ""
+
+#: front-page.php:49
+msgid "Smart Electrical Engineering Solutions"
+msgstr ""
+
+#: front-page.php:50
+msgid "Delivering intelligent, reliable and sustainable electrical solutions for a brighter future."
+msgstr ""
+
+#. Template Name of the theme
+#: front-page.php:52
+#: front-page.php:118
+#: inc/menus.php:17
+msgid "Our Solutions"
+msgstr ""
+
+#: front-page.php:53
+msgid "View Projects"
+msgstr ""
+
+#: front-page.php:72
+msgid "About SEES"
+msgstr ""
+
+#: front-page.php:73
+msgid "Engineering Intelligence for Real-World Impact"
+msgstr ""
+
+#: front-page.php:74
+msgid "SEES delivers integrated electrical engineering solutions that combine innovation, quality and sustainability. We power progress across diverse sectors with a focus on reliability, efficiency and long-term value."
+msgstr ""
+
+#: front-page.php:75
+msgid "Learn More"
+msgstr ""
+
+#: front-page.php:83
+msgid "Play our story video"
+msgstr ""
+
+#: front-page.php:87
+msgid "Our Story"
+msgstr ""
+
+#: front-page.php:88
+msgid "Building smarter infrastructure for a better tomorrow."
+msgstr ""
+
+#: front-page.php:95
+msgid "Years of Experience"
+msgstr ""
+
+#: front-page.php:99
+msgid "Projects Delivered"
+msgstr ""
+
+#: front-page.php:103
+msgid "Trusted by Leading Partners"
+msgstr ""
+
+#: front-page.php:107
+msgid "Commitment to Sustainable Solutions"
+msgstr ""
+
+#: front-page.php:119
+msgid "Integrated electrical solutions, from design to operation."
+msgstr ""
+
+#: front-page.php:121
+#: inc/post-types.php:16
+msgid "All solutions"
+msgstr ""
+
+#: front-page.php:152
+msgid "One or two sentences on the client's challenge and what SEES delivered."
+msgstr ""
+
+#: front-page.php:160
+msgid "Featured Project"
+msgstr ""
+
+#: front-page.php:164
+#: single-project.php:14
+msgid "Client"
+msgstr ""
+
+#: front-page.php:165
+#: single-project.php:15
+msgid "Location"
+msgstr ""
+
+#: front-page.php:168
+msgid "View all projects"
+msgstr ""
+
+#: front-page.php:179
+msgid "Let's power your next project."
+msgstr ""
+
+#: front-page.php:180
+msgid "Tell us what you're building — an engineer will get back to you with next steps."
+msgstr ""
+
+#: header.php:20
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:39
+msgid "Main"
+msgstr ""
+
+#: header.php:49
+#: header.php:57
+#: template-parts/cta-band.php:18
+msgid "Get in Touch"
+msgstr ""
+
+#: header.php:53
+#: searchform.php:13
+msgid "Search"
+msgstr ""
+
+#: header.php:58
+msgid "Menu"
+msgstr ""
+
+#: inc/acf.php:41
+msgid "The SEES theme needs these free plugins:"
+msgstr ""
+
+#: inc/helpers.php:131
+msgid "Al Shahamah District, Makkah, Saudi Arabia"
+msgstr ""
+
+#: inc/icons.php:15
+msgid "Lightning bolt"
+msgstr ""
+
+#: inc/icons.php:16
+msgid "Sun"
+msgstr ""
+
+#: inc/icons.php:17
+msgid "Pylon"
+msgstr ""
+
+#: inc/icons.php:18
+msgid "Building"
+msgstr ""
+
+#: inc/icons.php:19
+msgid "Wrench"
+msgstr ""
+
+#: inc/icons.php:20
+msgid "Leaf"
+msgstr ""
+
+#: inc/icons.php:21
+msgid "Target"
+msgstr ""
+
+#: inc/icons.php:22
+msgid "Shield"
+msgstr ""
+
+#: inc/icons.php:23
+#: page-about.php:15
+msgid "People"
+msgstr ""
+
+#: inc/icons.php:24
+msgid "Globe"
+msgstr ""
+
+#: inc/icons.php:25
+msgid "Office"
+msgstr ""
+
+#: inc/menus.php:15
+#: template-parts/page-header.php:45
+msgid "Home"
+msgstr ""
+
+#. Template Name of the theme
+#: inc/menus.php:16
+msgid "About"
+msgstr ""
+
+#: inc/menus.php:18
+#: inc/post-types.php:31
+#: single-project.php:29
+msgid "Projects"
+msgstr ""
+
+#: inc/post-types.php:13
+msgid "Solution"
+msgstr ""
+
+#: inc/post-types.php:14
+msgid "Add new solution"
+msgstr ""
+
+#: inc/post-types.php:15
+msgid "Edit solution"
+msgstr ""
+
+#: inc/post-types.php:32
+msgid "Project"
+msgstr ""
+
+#: inc/post-types.php:33
+msgid "Add new project"
+msgstr ""
+
+#: inc/post-types.php:34
+msgid "Edit project"
+msgstr ""
+
+#: inc/post-types.php:35
+msgid "All projects"
+msgstr ""
+
+#: inc/post-types.php:48
+msgid "FAQs"
+msgstr ""
+
+#: inc/post-types.php:49
+#: page-solutions.php:97
+msgid "FAQ"
+msgstr ""
+
+#: inc/post-types.php:50
+msgid "Add new question"
+msgstr ""
+
+#: inc/post-types.php:51
+msgid "Edit question"
+msgstr ""
+
+#: inc/post-types.php:52
+msgid "All FAQs"
+msgstr ""
+
+#: inc/post-types.php:67
+msgid "Project categories"
+msgstr ""
+
+#: inc/post-types.php:68
+msgid "Project category"
+msgstr ""
+
+#: inc/post-types.php:79
+#: inc/post-types.php:80
+msgid "Order"
+msgstr ""
+
+#: inc/setup.php:23
+msgid "Primary menu"
+msgstr ""
+
+#: inc/setup.php:24
+msgid "Footer: Company"
+msgstr ""
+
+#: inc/setup.php:25
+msgid "Footer: Solutions"
+msgstr ""
+
+#: inc/setup.php:35
+msgid "Card (4:3)"
+msgstr ""
+
+#: inc/setup.php:36
+msgid "Wide (16:11)"
+msgstr ""
+
+#. translators: %s: search query
+#: index.php:12
+#, php-format
+msgid "Search: %s"
+msgstr ""
+
+#: index.php:40
+msgid "Nothing found. Try another search."
+msgstr ""
+
+#: page-about.php:12
+msgid "Innovation"
+msgstr ""
+
+#: page-about.php:12
+msgid "Modern technology applied where it makes systems safer and smarter."
+msgstr ""
+
+#: page-about.php:13
+msgid "Sustainability"
+msgstr ""
+
+#: page-about.php:13
+msgid "Efficient designs and renewable energy that lower long-term impact."
+msgstr ""
+
+#: page-about.php:14
+msgid "Reliability"
+msgstr ""
+
+#: page-about.php:14
+msgid "Work done to code, tested, documented and delivered on schedule."
+msgstr ""
+
+#: page-about.php:15
+msgid "Certified teams who listen, communicate clearly and put safety first."
+msgstr ""
+
+#: page-about.php:17
+msgid "SEES — Smart Electrical Engineering Solutions — is based in Al Shahamah District, Makkah. We design, install and maintain electrical systems for commercial, residential and infrastructure projects, bringing careful engineering and modern technology to every installation."
+msgstr ""
+
+#: page-about.php:23
+msgid "An electrical engineering company built on precision, safety and smart technology."
+msgstr ""
+
+#: page-about.php:33
+msgid "SEES signage"
+msgstr ""
+
+#: page-about.php:36
+msgid "Who we are"
+msgstr ""
+
+#: page-about.php:37
+msgid "Smart engineering for the way the region builds today."
+msgstr ""
+
+#: page-about.php:45
+msgid "Our Mission"
+msgstr ""
+
+#: page-about.php:46
+msgid "To deliver integrated electrical solutions that are safe, efficient and built to last."
+msgstr ""
+
+#: page-about.php:49
+msgid "Our Vision"
+msgstr ""
+
+#: page-about.php:50
+msgid "To be the region's most trusted partner for smart electrical engineering."
+msgstr ""
+
+#: page-about.php:57
+msgid "Our values"
+msgstr ""
+
+#: page-about.php:58
+msgid "What guides every project we take on."
+msgstr ""
+
+#: page-about.php:84
+msgid "Ready to work with SEES?"
+msgstr ""
+
+#: page-about.php:85
+msgid "Let's talk about your next electrical project."
+msgstr ""
+
+#: page-contact.php:19
+msgid "Tell us about your project — an engineer will get back to you with next steps."
+msgstr ""
+
+#: page-contact.php:30
+msgid "Call us"
+msgstr ""
+
+#: page-contact.php:34
+msgid "Email"
+msgstr ""
+
+#: page-contact.php:38
+msgid "Visit"
+msgstr ""
+
+#: page-contact.php:42
+msgid "Working hours"
+msgstr ""
+
+#: page-contact.php:47
+msgid "Map: SEES office location"
+msgstr ""
+
+#: page-contact.php:51
+msgid "MAP"
+msgstr ""
+
+#: page-contact.php:58
+msgid "Request a quote"
+msgstr ""
+
+#: page-contact.php:59
+msgid "Fields marked * are required."
+msgstr ""
+
+#: page-contact.php:64
+msgid "Add a Contact Form 7 shortcode in this page's \"Form\" settings."
+msgstr ""
+
+#: page-contact.php:70
+msgid "Thank you!"
+msgstr ""
+
+#: page-contact.php:71
+msgid "Your request has been sent. A SEES engineer will contact you shortly."
+msgstr ""
+
+#: page-contact.php:72
+msgid "Send another request"
+msgstr ""
+
+#: page-solutions.php:15
+msgid "Assess"
+msgstr ""
+
+#: page-solutions.php:15
+msgid "Site survey, load analysis and a clear scope before design begins."
+msgstr ""
+
+#: page-solutions.php:16
+msgid "Engineer"
+msgstr ""
+
+#: page-solutions.php:16
+msgid "Drawings, calculations and equipment selection, checked against code and budget."
+msgstr ""
+
+#: page-solutions.php:17
+msgid "Install"
+msgstr ""
+
+#: page-solutions.php:17
+msgid "Certified crews build, test and commission, with full documentation at handover."
+msgstr ""
+
+#: page-solutions.php:18
+msgid "Operate"
+msgstr ""
+
+#: page-solutions.php:18
+msgid "Maintenance plans and monitoring that keep systems efficient for years."
+msgstr ""
+
+#: page-solutions.php:29
+msgid "Complete electrical engineering — designed, installed and maintained by one accountable team."
+msgstr ""
+
+#: page-solutions.php:70
+msgid "How we work"
+msgstr ""
+
+#: page-solutions.php:71
+msgid "Four steps from survey to switch-on."
+msgstr ""
+
+#. translators: %s: step number, e.g. 01
+#: page-solutions.php:82
+#, php-format
+msgid "Step %s"
+msgstr ""
+
+#: page-solutions.php:98
+msgid "Common questions"
+msgstr ""
+
+#: page-solutions.php:117
+msgid "Not sure which solution fits?"
+msgstr ""
+
+#: page-solutions.php:118
+msgid "Describe your project and our engineers will recommend the right approach."
+msgstr ""
+
+#: page-solutions.php:119
+msgid "Talk to an engineer"
+msgstr ""
+
+#: searchform.php:11
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:12
+msgid "Search the site…"
+msgstr ""
+
+#: single-project.php:16
+msgid "Year"
+msgstr ""
+
+#: single-project.php:19
+msgid "Category"
+msgstr ""
+
+#: single-project.php:51
+msgid "[Describe the project: scope, challenge, what SEES delivered and the result.]"
+msgstr ""
+
+#: template-parts/page-header.php:44
+msgid "Breadcrumb"
+msgstr ""
+
+#: template-parts/project-card.php:37
+msgid "View case study"
+msgstr ""
+
+#: template-parts/solution-card.php:18
+msgid "Learn more"
+msgstr ""

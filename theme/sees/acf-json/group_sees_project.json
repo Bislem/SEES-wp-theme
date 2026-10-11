@@ -1,0 +1,102 @@
+{
+    "key": "group_sees_project",
+    "title": "Project details",
+    "fields": [
+        {
+            "name": "client",
+            "label": "Client",
+            "type": "text",
+            "placeholder": "[Client]",
+            "key": "field_8280a1a8710ba",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "city",
+            "label": "City",
+            "type": "text",
+            "placeholder": "[City]",
+            "key": "field_e79f3ab1f8808",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "year",
+            "label": "Year",
+            "type": "text",
+            "placeholder": "[Year]",
+            "key": "field_66760fd3014ab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "summary",
+            "label": "Short description",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": "",
+            "instructions": "One or two sentences on the challenge and what SEES delivered.",
+            "key": "field_3ec3af9f60b6d",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "is_featured",
+            "label": "Featured on Home",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 0,
+            "key": "field_aa70f11dc7eb7",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1791712000
+}

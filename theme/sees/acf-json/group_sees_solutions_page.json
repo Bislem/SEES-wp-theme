@@ -1,0 +1,281 @@
+{
+    "key": "group_sees_solutions_page",
+    "title": "Our Solutions page",
+    "fields": [
+        {
+            "name": "",
+            "label": "Process",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_73e24e0c9e46e",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "process_eyebrow",
+            "label": "Eyebrow",
+            "type": "text",
+            "placeholder": "How we work",
+            "key": "field_581db704f2cff",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "process_title",
+            "label": "Title",
+            "type": "text",
+            "key": "field_de5d576bbc5b0",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "step_1_title",
+            "label": "Step 1",
+            "type": "text",
+            "key": "field_c3e7fa8f6e7ce",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "step_1_text",
+            "label": "Step 1 text",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "",
+            "instructions": "",
+            "key": "field_9c81e63d7e86b",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "step_2_title",
+            "label": "Step 2",
+            "type": "text",
+            "key": "field_e080844d3700f",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "step_2_text",
+            "label": "Step 2 text",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "",
+            "instructions": "",
+            "key": "field_6c36f58c48888",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "step_3_title",
+            "label": "Step 3",
+            "type": "text",
+            "key": "field_3c27ad465452d",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "step_3_text",
+            "label": "Step 3 text",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "",
+            "instructions": "",
+            "key": "field_830897000b4d5",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "step_4_title",
+            "label": "Step 4",
+            "type": "text",
+            "key": "field_efa3726baf0ee",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "step_4_text",
+            "label": "Step 4 text",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "",
+            "instructions": "",
+            "key": "field_c804fb1e26545",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "",
+            "label": "FAQ",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_82511cd0476b3",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "faq_eyebrow",
+            "label": "Eyebrow",
+            "type": "text",
+            "placeholder": "FAQ",
+            "key": "field_c5edcc6a19eb3",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "faq_title",
+            "label": "Title",
+            "type": "text",
+            "instructions": "Questions come from FAQs (sorted by order).",
+            "key": "field_6560d24027331",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "",
+            "label": "Call to action",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_bdaecd480916d",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "cta_title",
+            "label": "Title",
+            "type": "text",
+            "key": "field_2e7211c940281",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "cta_text",
+            "label": "Text",
+            "type": "text",
+            "key": "field_75fe060edccc9",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-solutions.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1791712000
+}

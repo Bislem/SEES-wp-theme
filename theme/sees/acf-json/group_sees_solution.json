@@ -1,0 +1,113 @@
+{
+    "key": "group_sees_solution",
+    "title": "Solution details",
+    "fields": [
+        {
+            "name": "number",
+            "label": "Number",
+            "type": "text",
+            "placeholder": "01",
+            "key": "field_0fcc17d13dcbf",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "icon",
+            "label": "Icon",
+            "type": "select",
+            "choices": {},
+            "return_format": "value",
+            "ui": 0,
+            "allow_null": 0,
+            "key": "field_2a6ce7d66da16",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "accent",
+            "label": "Accent colour",
+            "type": "select",
+            "choices": {
+                "teal": "Teal",
+                "green": "Green",
+                "petrol": "Petrol blue"
+            },
+            "default_value": "teal",
+            "return_format": "value",
+            "key": "field_02a62e604df49",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "bullets",
+            "label": "Bullet points",
+            "type": "textarea",
+            "rows": 4,
+            "new_lines": "",
+            "instructions": "One per line (four work best).",
+            "key": "field_55db5a994596a",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "intro",
+            "label": "Intro paragraph",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": "",
+            "instructions": "Shown on the Our Solutions page. The excerpt is used on Home cards.",
+            "key": "field_19a4e3be659ed",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "solution"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1791712000
+}

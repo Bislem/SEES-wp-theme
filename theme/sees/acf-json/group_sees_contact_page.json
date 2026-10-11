@@ -1,0 +1,234 @@
+{
+    "key": "group_sees_contact_page",
+    "title": "Contact page",
+    "fields": [
+        {
+            "name": "",
+            "label": "Details",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_2b3c90bcadd3e",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "phone",
+            "label": "Phone",
+            "type": "text",
+            "key": "field_f647be6f3a55a",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "email",
+            "label": "Email",
+            "type": "email",
+            "key": "field_92bf86ef301c6",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "address",
+            "label": "Address",
+            "type": "text",
+            "key": "field_29097c64966cf",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "hours",
+            "label": "Working hours",
+            "type": "text",
+            "key": "field_f936381790d0f",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "map_url",
+            "label": "Map",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "",
+            "instructions": "Google Maps → Share → Embed a map → paste the embed code (or just its https://www.google.com/maps/embed?… link). Leave empty for the placeholder map.",
+            "key": "field_e635bdf1f7010",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "",
+            "label": "Form",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_a603f877f1fa9",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "form_title",
+            "label": "Form title",
+            "type": "text",
+            "placeholder": "Request a quote",
+            "key": "field_7f5f5da0e1486",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "form_text",
+            "label": "Form note",
+            "type": "text",
+            "key": "field_53a5d650ff286",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "form_shortcode",
+            "label": "Contact Form 7 shortcode",
+            "type": "text",
+            "instructions": "Paste the shortcode from Contact → Contact Forms, e.g. [contact-form-7 id=\"…\"]",
+            "key": "field_9b2afa72374ca",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "success_title",
+            "label": "Success title",
+            "type": "text",
+            "placeholder": "Thank you!",
+            "key": "field_5e683684d61c9",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "success_text",
+            "label": "Success message",
+            "type": "text",
+            "key": "field_717a8dac29a51",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "",
+            "label": "Footer details",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_a1901cd72530c",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "footer_note",
+            "label": "Footer note",
+            "type": "message",
+            "message": "Phone, email and address above are also used in the site footer and the Home call to action.",
+            "key": "field_c3afe1909a649",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-contact.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1791712000
+}

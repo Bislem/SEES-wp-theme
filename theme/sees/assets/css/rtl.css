@@ -1,0 +1,50 @@
+/* ==========================================================================
+   SEES — RTL overrides (loaded only when is_rtl()).
+   Arabic typography (font, sizes, line-heights, no uppercase / tracking) comes
+   from the :lang(ar) tokens in main.css. Only mirroring lives here.
+   ========================================================================== */
+
+/* Lines and bars grow from the right. */
+.eyebrow__line,
+.solution-row__line,
+.solution-card__bar,
+.primary-nav__list a::after { transform-origin: right center; }
+
+/* Mirror directional arrows and nudge them the other way. */
+.icon-arrow { transform: scaleX(-1); }
+.arrow:hover .icon-arrow,
+.solution-card:hover .icon-arrow { transform: scaleX(-1) translateX(5px); }
+
+/* Photo fades in from the left. */
+.hero::before {
+	background:
+		linear-gradient(180deg, color-mix(in srgb, var(--c-white) 55%, transparent) 0%, transparent 22%),
+		linear-gradient(270deg,
+			var(--c-white) 0%,
+			color-mix(in srgb, var(--c-white) 94%, transparent) 24%,
+			color-mix(in srgb, var(--c-white) 70%, transparent) 40%,
+			color-mix(in srgb, var(--c-white) 15%, transparent) 58%,
+			transparent 70%);
+}
+.page-header::before {
+	background: linear-gradient(270deg, var(--c-white) 0%, var(--c-white) 36%, color-mix(in srgb, var(--c-white) 85%, transparent) 47%, transparent 72%);
+}
+.story-card__shade {
+	background: linear-gradient(270deg, color-mix(in srgb, var(--c-navy) 82%, transparent) 0%, color-mix(in srgb, var(--c-navy) 35%, transparent) 55%, transparent 100%);
+}
+.cta--photo .cta__box::before {
+	background: linear-gradient(270deg, color-mix(in srgb, var(--c-ink) 95%, transparent) 0%, color-mix(in srgb, var(--c-ink) 75%, transparent) 45%, color-mix(in srgb, var(--c-ink) 10%, transparent) 100%);
+}
+.hero__media img { object-position: 30% center; }
+.hero__mark { animation-name: drift-rtl; }
+@keyframes drift-rtl { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-14px) rotate(2deg); } }
+
+/* Marquee scrolls the other way. */
+.marquee__track { animation-name: marq-rtl; }
+@keyframes marq-rtl { to { transform: translateX(50%); } }
+
+@media (max-width: 760px) {
+	.hero::before, .page-header::before {
+		background: linear-gradient(180deg, color-mix(in srgb, var(--c-white) 92%, transparent) 0%, color-mix(in srgb, var(--c-white) 82%, transparent) 70%, color-mix(in srgb, var(--c-white) 40%, transparent) 100%);
+	}
+}

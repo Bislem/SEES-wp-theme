@@ -1,0 +1,553 @@
+{
+    "key": "group_sees_home",
+    "title": "Home page",
+    "fields": [
+        {
+            "name": "",
+            "label": "Hero",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_cd86654a53fac",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "hero_eyebrow",
+            "label": "Eyebrow",
+            "type": "text",
+            "placeholder": "Engineering a smarter tomorrow",
+            "key": "field_b3b1eaf360a61",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "hero_title",
+            "label": "Title",
+            "type": "text",
+            "placeholder": "Smart Electrical Engineering Solutions",
+            "key": "field_fee3005fd59a0",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "hero_text",
+            "label": "Intro",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "",
+            "instructions": "",
+            "key": "field_d2145e08f5f12",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "hero_mark",
+            "label": "Show floating logo mark",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 0,
+            "instructions": "Floats the SEES icon over the photo. Leave off when the photo already shows the logo.",
+            "key": "field_21ad3b8df403c",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "feature_1",
+            "label": "Feature 1",
+            "type": "text",
+            "key": "field_340f4123b1d40",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "feature_2",
+            "label": "Feature 2",
+            "type": "text",
+            "key": "field_439b2d6b798d0",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "feature_3",
+            "label": "Feature 3",
+            "type": "text",
+            "key": "field_85f0084863cd1",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "feature_4",
+            "label": "Feature 4",
+            "type": "text",
+            "key": "field_27a1239f5e7cf",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "",
+            "label": "About",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_423edaeef8e6d",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "about_eyebrow",
+            "label": "Eyebrow",
+            "type": "text",
+            "placeholder": "About SEES",
+            "key": "field_c4a7d04d1f476",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "about_title",
+            "label": "Title",
+            "type": "text",
+            "key": "field_e1b39f746cb42",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "about_text",
+            "label": "Text",
+            "type": "textarea",
+            "rows": 4,
+            "new_lines": "",
+            "instructions": "",
+            "key": "field_0af6b11611687",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "about_image",
+            "label": "Story photo",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "",
+            "key": "field_da0871a997bbe",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "story_title",
+            "label": "Story title",
+            "type": "text",
+            "placeholder": "Our Story",
+            "key": "field_3d1c27d692a7c",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "story_text",
+            "label": "Story text",
+            "type": "text",
+            "key": "field_6625409d76afa",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "story_video",
+            "label": "Story video URL",
+            "type": "url",
+            "instructions": "Optional. YouTube/Vimeo or an uploaded video URL — shows the play button.",
+            "key": "field_555121a7ac5e3",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "stat_1_value",
+            "label": "Stat 1 value",
+            "type": "text",
+            "placeholder": "[10+]",
+            "key": "field_3fed86dd4991e",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "stat_1_label",
+            "label": "Stat 1 label",
+            "type": "text",
+            "key": "field_05737d8e0c993",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "stat_2_value",
+            "label": "Stat 2 value",
+            "type": "text",
+            "placeholder": "[100+]",
+            "key": "field_1e9b283d3e053",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "stat_2_label",
+            "label": "Stat 2 label",
+            "type": "text",
+            "key": "field_3b48d3c711b82",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "stat_3_label",
+            "label": "Highlight 3",
+            "type": "text",
+            "key": "field_113e1b55b497b",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "stat_4_label",
+            "label": "Highlight 4",
+            "type": "text",
+            "key": "field_808532731928d",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "",
+            "label": "Solutions",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_01ff4a7997eae",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "solutions_eyebrow",
+            "label": "Eyebrow",
+            "type": "text",
+            "placeholder": "Our Solutions",
+            "key": "field_98fa7e3645bea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "solutions_title",
+            "label": "Title",
+            "type": "text",
+            "instructions": "The four cards come from Solutions (first four by order).",
+            "key": "field_f22d3d6b808de",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "",
+            "label": "Marquee",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_d4a7c137452e7",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "marquee_items",
+            "label": "Scrolling words",
+            "type": "textarea",
+            "rows": 6,
+            "new_lines": "",
+            "instructions": "One per line.",
+            "key": "field_9e44c703ac601",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "",
+            "label": "Featured project",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_c4b899a6633a5",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "featured_eyebrow",
+            "label": "Eyebrow",
+            "type": "text",
+            "placeholder": "Featured Project",
+            "instructions": "The project marked \"Featured\" is shown here (or the latest project).",
+            "key": "field_49fe92a0f5e51",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "",
+            "label": "Call to action",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_af980729c8773",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "cta_kicker",
+            "label": "Kicker line",
+            "type": "text",
+            "key": "field_64c39c079812c",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "cta_title",
+            "label": "Title",
+            "type": "text",
+            "key": "field_f4edf071369b5",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "cta_text",
+            "label": "Text",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "",
+            "instructions": "",
+            "key": "field_e82061160a791",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "cta_image",
+            "label": "Background photo",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "",
+            "key": "field_893179d6e5086",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1791712000
+}
