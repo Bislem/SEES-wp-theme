@@ -1,0 +1,8 @@
+# cPanel → Git Version Control → "Deploy HEAD Commit" runs these tasks.
+# Copies only the theme into the staging site; nothing else from the repo is deployed.
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/sees.easetech.dz/wp-content/themes/sees/
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/rsync -a --delete --exclude '.DS_Store' theme/sees/ $DEPLOYPATH
