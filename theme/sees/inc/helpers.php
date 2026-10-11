@@ -156,6 +156,31 @@ function sees_eyebrow( string $text, array $args = array() ): void {
 }
 
 /**
+ * Google Maps embed URL (no API key needed), in the page language.
+ * Used when no exact pin is configured: a free-text district search can land on the
+ * wrong business, so this shows the city, which is always correct.
+ */
+function sees_map_embed_for( string $place, int $zoom = 12 ): string {
+	return add_query_arg( array(
+		'q'      => rawurlencode( $place ),
+		'hl'     => is_rtl() ? 'ar' : 'en',
+		'z'      => $zoom,
+		'output' => 'embed',
+	), 'https://maps.google.com/maps' );
+}
+
+/**
+ * Validated Google Maps share/place link (used for "Get directions").
+ */
+function sees_map_link( string $value ): string {
+	$value = trim( $value );
+	$host  = (string) wp_parse_url( $value, PHP_URL_HOST );
+	$ok    = 'https' === wp_parse_url( $value, PHP_URL_SCHEME )
+		&& preg_match( '/(^|\.)(google\.[a-z.]+|goo\.gl|maps\.app\.goo\.gl)$/', $host );
+	return $ok ? $value : '';
+}
+
+/**
  * Allowed HTML for the map embed field.
  */
 function sees_map_src( string $value ): string {

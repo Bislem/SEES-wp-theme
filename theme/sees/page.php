@@ -13,7 +13,6 @@ the_post();
 	<?php
 	get_template_part( 'template-parts/page-header', null, array(
 		'subtitle' => sees_field( 'header_subtitle' ),
-		'image'    => sees_field( 'header_image', 0 ) ?: get_post_thumbnail_id(),
 	) );
 	?>
 	<section class="section container container--narrow">

@@ -676,3 +676,15 @@ msgstr "اعرف المزيد"
 
 msgid "about SEES"
 msgstr "عن سيز"
+
+msgid "Get directions"
+msgstr "احصل على الاتجاهات"
+
+msgid "(opens Google Maps)"
+msgstr "(يفتح خرائط Google)"
+
+msgid "Makkah, Saudi Arabia"
+msgstr "مكة المكرمة، المملكة العربية السعودية"
+
+msgid "Dark mode"
+msgstr "الوضع الداكن"

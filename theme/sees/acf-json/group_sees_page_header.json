@@ -31,23 +31,6 @@
                 "class": "",
                 "id": ""
             }
-        },
-        {
-            "name": "header_image",
-            "label": "Header photo",
-            "type": "image",
-            "return_format": "id",
-            "preview_size": "medium",
-            "library": "all",
-            "instructions": "Shown on the right of the page header. Landscape, at least 1600px wide.",
-            "key": "field_2ac47911fd5ec",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
         }
     ],
     "location": [
@@ -68,5 +51,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1791712000
+    "modified": 1791721000
 }

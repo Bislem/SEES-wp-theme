@@ -24,8 +24,6 @@ if ( is_tax( 'project_category' ) ) {
 	get_template_part( 'template-parts/page-header', null, array(
 		'title'    => __( 'Our Projects', 'sees' ),
 		'subtitle' => __( 'A selection of electrical systems we\'ve designed, built and keep running.', 'sees' ),
-		'fallback' => 'pylons.jpg',
-		'position' => 'center 40%',
 	) );
 	?>
 

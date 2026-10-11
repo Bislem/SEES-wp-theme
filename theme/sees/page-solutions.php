@@ -27,9 +27,6 @@ foreach ( $sees_solutions as $sees_solution ) {
 	<?php
 	get_template_part( 'template-parts/page-header', null, array(
 		'subtitle' => sees_field( 'header_subtitle', __( 'Complete electrical engineering — designed, installed and maintained by one accountable team.', 'sees' ) ),
-		'image'    => sees_field( 'header_image', 0 ),
-		'fallback' => 'engineer.jpg',
-		'position' => 'center 30%',
 		'chips'    => $sees_chips,
 	) );
 	?>

@@ -114,6 +114,15 @@ There are no Repeater or Flexible Content fields (Pro-only). Repeating items are
 - **Type scale:** `--fs-*`, `--lh-*`, `--ls-*` and `--fw-*` tokens are set per language on `:root, :lang(en)` and `:lang(ar)`. Arabic has no uppercase, zero letter-spacing and taller line-heights. Use `sees_lang_attr()` on mixed-language snippets so they pick up the right font and scale.
 - **Layout:** container 1360px; gutters 40/24/16px; sections 110/72px. Radii: buttons 10px, cards 14–16px, large media 18px, pills 999px.
 - **Buttons:** primary is navy with white text; secondary is white with a navy border; on dark backgrounds, green with ink text.
+- **Dark mode:**
+  - **How it's chosen:** it follows the system setting. A sun/moon toggle (header; in the mobile menu below 480px) overrides it, and the choice is saved in `localStorage` (`sees-theme`).
+  - **No flash:** an inline script in `header.php` sets `html[data-theme]` before paint. `prefers-color-scheme` covers visitors without JavaScript.
+  - **Role tokens:** components use role tokens (`--bg`, `--bg-soft`, `--surface`, `--fg-strong`, `--fg`, `--line`, `--link`, `--solid-*`, `--btn-*`, `--fade`, `--photo-filter`, `--map-filter`…). Dark mode only redefines that block.
+  - **Images:** the header logo switches to `logo-dark.png`, the photo fades turn dark, photos are dimmed slightly, and the map gets a dark style. On dark, primary buttons are green with ink text (brand rule).
+- **Inner page headers:** no photo. A light brand gradient with petrol/green glows, a dot grid, animated "circuit" lines, a faint SEES mark and a brand gradient rule along the bottom. The Header photo field now belongs to Home only.
+- **Contact map:**
+  - **Map field:** paste the office's Google Maps embed. Without it, the map shows Makkah: a text search for the district matched the wrong businesses, and the district isn't in OpenStreetMap.
+  - **Get directions:** the button appears once the "Google Maps link" field is filled.
 - **Motion:** load fade-up and header zoom, scroll reveal, hover lift, marquee, pulse and ping. All of it is disabled under `prefers-reduced-motion`.
 
 ## Content rules and placeholders
@@ -149,11 +158,12 @@ Real details: +966 50 326 4000 · info@seesengineering.com · Al Shahamah Distri
 
 1. **QATAR Arabic font:** get the licensed font files and web license from the client/designer, add them as woff2 to `assets/fonts/`, then enable the `@font-face` slot and set `--font-heading-ar` (and `--font-display` for Arabic) in main.css.
 2. **Hero photo:** the current hero was extracted from a 1536px mockup. A full-resolution original or a real photo of the building would be sharper. Replace it in Pages → Home → Header photo, separately for each language; the Arabic page needs a version with the building on the left. Other pages' header photos could also use real photography.
-3. **Arabic review:** a native speaker should review all Arabic copy, both the seed content and `languages/ar.po`.
-4. **Placeholders:** replace the ones listed above with real content.
-5. **Insights:** the reference mockup shows an "Insights" menu item. There's no Insights page or template yet; decide whether to add a blog/insights section.
-6. **Manual browser pass:** click through the interactive parts (point above) on real devices.
-7. **Go-live:**
+3. **Office map pin:** paste the office's Google Maps embed and share link into the Contact page (both languages).
+4. **Arabic review:** a native speaker should review all Arabic copy, both the seed content and `languages/ar.po`.
+5. **Placeholders:** replace the ones listed above with real content.
+6. **Insights:** the reference mockup shows an "Insights" menu item. There's no Insights page or template yet; decide whether to add a blog/insights section.
+7. **Manual browser pass:** click through the interactive parts (point above) on real devices.
+8. **Go-live:**
    - install the three plugins on the host
    - upload the theme
    - migrate with All-in-One WP Migration or Duplicator
@@ -161,7 +171,7 @@ Real details: +966 50 326 4000 · info@seesengineering.com · Al Shahamah Distri
    - enable browser caching
    - set a Site Icon
    - optionally add an SEO plugin; the theme's basic meta description switches off automatically when Yoast, Rank Math or The SEO Framework is active
-8. **Logo:** ask the client for the official SVG logo to replace the PNGs.
+9. **Logo:** ask the client for the official SVG logo to replace the PNGs.
 
 ## Repository
 

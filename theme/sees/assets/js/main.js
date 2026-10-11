@@ -22,6 +22,47 @@
 		revealEls.forEach( function ( el ) { el.classList.add( 'is-visible' ); } );
 	}
 
+	/* ---------- Light / dark theme ---------- */
+	var root = document.documentElement;
+	var themeButtons = document.querySelectorAll( '.theme-toggle' );
+	var darkQuery = window.matchMedia ? window.matchMedia( '(prefers-color-scheme: dark)' ) : null;
+
+	function savedTheme() {
+		try {
+			return localStorage.getItem( 'sees-theme' );
+		} catch ( e ) {
+			return null;
+		}
+	}
+
+	function applyTheme( theme ) {
+		root.setAttribute( 'data-theme', theme );
+		themeButtons.forEach( function ( btn ) {
+			btn.setAttribute( 'aria-pressed', theme === 'dark' ? 'true' : 'false' );
+		} );
+	}
+
+	applyTheme( root.getAttribute( 'data-theme' ) || 'light' );
+
+	themeButtons.forEach( function ( btn ) {
+		btn.addEventListener( 'click', function () {
+			var next = root.getAttribute( 'data-theme' ) === 'dark' ? 'light' : 'dark';
+			applyTheme( next );
+			try {
+				localStorage.setItem( 'sees-theme', next );
+			} catch ( e ) {}
+		} );
+	} );
+
+	// Follow system changes until the visitor picks a theme.
+	if ( darkQuery && darkQuery.addEventListener ) {
+		darkQuery.addEventListener( 'change', function ( e ) {
+			if ( ! savedTheme() ) {
+				applyTheme( e.matches ? 'dark' : 'light' );
+			}
+		} );
+	}
+
 	/* ---------- Mobile navigation ---------- */
 	var header = document.getElementById( 'site-header' );
 	var navToggle = document.querySelector( '.nav-toggle' );

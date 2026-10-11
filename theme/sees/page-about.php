@@ -22,9 +22,6 @@ $sees_story = sees_field( 'story_text', '<p>' . esc_html__( 'SEES — Smart Elec
 	get_template_part( 'template-parts/page-header', null, array(
 		'subtitle'  => sees_field( 'header_subtitle', __( 'An electrical engineering company built on precision, safety and smart technology.', 'sees' ) ),
 		'secondary' => sees_field( 'header_arabic' ),
-		'image'     => sees_field( 'header_image', 0 ),
-		'fallback'  => 'sky.jpg',
-		'position'  => '30% center',
 	) );
 	?>
 

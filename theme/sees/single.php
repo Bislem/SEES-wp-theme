@@ -13,7 +13,6 @@ the_post();
 	<?php
 	get_template_part( 'template-parts/page-header', null, array(
 		'subtitle' => get_the_date(),
-		'image'    => get_post_thumbnail_id(),
 	) );
 	?>
 	<article <?php post_class( 'section container container--narrow' ); ?>>

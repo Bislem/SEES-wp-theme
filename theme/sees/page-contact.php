@@ -9,7 +9,9 @@ get_header();
 the_post();
 
 $sees_contact   = sees_contact();
-$sees_map       = sees_map_src( (string) sees_field( 'map_url' ) );
+// Map: the pasted embed (exact office pin) if set, otherwise the city.
+$sees_map       = sees_map_src( (string) sees_field( 'map_url' ) ) ?: sees_map_embed_for( __( 'Makkah, Saudi Arabia', 'sees' ) );
+$sees_map_link  = sees_map_link( (string) sees_field( 'map_link' ) );
 $sees_shortcode = trim( (string) sees_field( 'form_shortcode' ) );
 ?>
 
@@ -17,9 +19,6 @@ $sees_shortcode = trim( (string) sees_field( 'form_shortcode' ) );
 	<?php
 	get_template_part( 'template-parts/page-header', null, array(
 		'subtitle' => sees_field( 'header_subtitle', __( 'Tell us about your project — an engineer will get back to you with next steps.', 'sees' ) ),
-		'image'    => sees_field( 'header_image', 0 ),
-		'fallback' => 'sign.jpg',
-		'position' => 'center 45%',
 	) );
 	?>
 
@@ -42,15 +41,15 @@ $sees_shortcode = trim( (string) sees_field( 'form_shortcode' ) );
 				<span class="info-card__text"><span class="info-card__label"><?php esc_html_e( 'Working hours', 'sees' ); ?></span><strong><?php echo esc_html( $sees_contact['hours'] ); ?></strong></span>
 			</div>
 
-			<div class="map reveal">
-				<?php if ( $sees_map ) : ?>
-					<iframe src="<?php echo esc_url( $sees_map ); ?>" title="<?php esc_attr_e( 'Map: SEES office location', 'sees' ); ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-				<?php else : ?>
-					<svg class="map__roads" aria-hidden="true" viewBox="0 0 400 250" preserveAspectRatio="none"><path d="M0 70 L400 40 M0 160 L400 200 M120 0 L160 250 M280 0 L250 250 M0 230 Q200 120 400 120" stroke-width="10" fill="none"/></svg>
-					<span class="map__pin" aria-hidden="true"><span class="map__ping ping"></span></span>
-					<span class="map__label"><?php echo esc_html( '[' . __( 'MAP', 'sees' ) . ' — ' . $sees_contact['address'] . ']' ); ?></span>
-				<?php endif; ?>
-			</div>
+			<figure class="map reveal">
+				<iframe src="<?php echo esc_url( $sees_map ); ?>" title="<?php esc_attr_e( 'Map: SEES office location', 'sees' ); ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+				<figcaption class="map__bar">
+					<span class="map__address"><?php echo sees_icon( 'pin', 18, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?><?php echo esc_html( $sees_contact['address'] ); ?></span>
+					<?php if ( $sees_map_link ) : ?>
+						<a class="btn btn--primary map__btn arrow" href="<?php echo esc_url( $sees_map_link ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Get directions', 'sees' ); ?><span class="screen-reader-text"> <?php esc_html_e( '(opens Google Maps)', 'sees' ); ?></span> <?php echo sees_icon( 'arrow', 16, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?></a>
+					<?php endif; ?>
+				</figcaption>
+			</figure>
 		</div>
 
 		<div class="contact__form a-up d3" data-contact-form>

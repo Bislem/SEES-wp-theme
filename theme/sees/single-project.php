@@ -24,8 +24,6 @@ if ( $sees_terms && ! is_wp_error( $sees_terms ) ) {
 	<?php
 	get_template_part( 'template-parts/page-header', null, array(
 		'subtitle' => sees_field( 'summary', get_the_excerpt() ),
-		'image'    => get_post_thumbnail_id(),
-		'fallback' => 'engineer.jpg',
 		'parent'   => array( (string) get_post_type_archive_link( 'project' ), __( 'Projects', 'sees' ) ),
 	) );
 	?>

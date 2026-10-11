@@ -65,6 +65,23 @@
             }
         },
         {
+            "name": "header_image",
+            "label": "Hero photo",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Full-width background behind the hero. Landscape, about 1536×642 or larger; keep the left side calm (sky/plain) for the text. On the Arabic page use a version with the subject on the left.",
+            "key": "field_4a3454297e98d",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "name": "hero_mark",
             "label": "Show floating logo mark",
             "type": "true_false",
@@ -549,5 +566,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1791712000
+    "modified": 1791721000
 }

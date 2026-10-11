@@ -80,8 +80,22 @@
             "type": "textarea",
             "rows": 2,
             "new_lines": "",
-            "instructions": "Google Maps → Share → Embed a map → paste the embed code (or just its https://www.google.com/maps/embed?… link). Leave empty for the placeholder map.",
+            "instructions": "Exact office pin: Google Maps → find the office → Share → Embed a map → paste the embed code (or its https://www.google.com/maps/embed?… link). Empty = the map shows Makkah.",
             "key": "field_e635bdf1f7010",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "map_link",
+            "label": "Google Maps link",
+            "type": "url",
+            "instructions": "Google Maps → the office → Share → Copy link (https://maps.app.goo.gl/…). Shows the \"Get directions\" button.",
+            "key": "field_7ec20c6bd1490",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -230,5 +244,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1791712000
+    "modified": 1791721000
 }

@@ -20,14 +20,23 @@
 	/* Mirrors the LTR fade; the Arabic hero photo is mirrored too (sky on the right). */
 	background:
 		linear-gradient(270deg,
-			color-mix(in srgb, var(--c-white) 88%, transparent) 0%,
-			color-mix(in srgb, var(--c-white) 72%, transparent) 26%,
-			color-mix(in srgb, var(--c-white) 30%, transparent) 42%,
+			color-mix(in srgb, var(--fade) 88%, transparent) 0%,
+			color-mix(in srgb, var(--fade) 72%, transparent) 26%,
+			color-mix(in srgb, var(--fade) 30%, transparent) 42%,
 			transparent 56%);
 }
-.page-header::before {
-	background: linear-gradient(270deg, var(--c-white) 0%, var(--c-white) 36%, color-mix(in srgb, var(--c-white) 85%, transparent) 47%, transparent 72%);
+.page-header {
+	background:
+		radial-gradient(60% 90% at 12% 30%, var(--glow-1) 0%, transparent 70%),
+		radial-gradient(40% 60% at 30% 110%, var(--glow-2) 0%, transparent 70%),
+		linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
 }
+.page-header::before {
+	-webkit-mask-image: linear-gradient(270deg, transparent 25%, #000 75%);
+	mask-image: linear-gradient(270deg, transparent 25%, #000 75%);
+}
+/* Circuit lines enter from the left edge. */
+.page-header__circuit { transform: scaleX(-1); }
 .story-card__shade {
 	background: linear-gradient(270deg, color-mix(in srgb, var(--c-navy) 82%, transparent) 0%, color-mix(in srgb, var(--c-navy) 35%, transparent) 55%, transparent 100%);
 }
@@ -44,7 +53,4 @@
 
 @media (max-width: 760px) {
 	.hero__media img { object-position: 16% center; }
-	.page-header::before {
-		background: linear-gradient(180deg, color-mix(in srgb, var(--c-white) 92%, transparent) 0%, color-mix(in srgb, var(--c-white) 82%, transparent) 70%, color-mix(in srgb, var(--c-white) 40%, transparent) 100%);
-	}
 }
