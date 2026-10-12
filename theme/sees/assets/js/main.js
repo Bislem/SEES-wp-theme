@@ -187,6 +187,40 @@
 		} );
 	}
 
+	/* ---------- Jobs filters ---------- */
+	var jobFilters = document.querySelector( '[data-job-filters]' );
+	var jobsGrid = document.querySelector( '[data-job-grid]' );
+
+	if ( jobFilters && jobsGrid ) {
+		var jobSelects = Array.prototype.slice.call( jobFilters.querySelectorAll( '[data-job-filter]' ) );
+		var jobCards = Array.prototype.slice.call( jobsGrid.querySelectorAll( '[data-job-card]' ) );
+		var jobEmpty = document.querySelector( '[data-job-filter-empty]' );
+
+		var filterJobs = function () {
+			var shown = 0;
+			jobCards.forEach( function ( card ) {
+				var matches = jobSelects.every( function ( select ) {
+					var wanted = select.value;
+					return ! wanted || card.getAttribute( 'data-' + select.getAttribute( 'data-job-filter' ) ) === wanted;
+				} );
+				card.hidden = ! matches;
+				if ( matches ) {
+					shown++;
+				}
+			} );
+			if ( jobEmpty ) {
+				jobEmpty.hidden = shown > 0;
+			}
+		};
+
+		jobSelects.forEach( function ( select ) {
+			select.addEventListener( 'change', filterJobs );
+		} );
+		jobFilters.addEventListener( 'reset', function () {
+			window.setTimeout( filterJobs, 0 );
+		} );
+	}
+
 	/* ---------- FAQ: one open at a time (fallback for browsers without <details name>) ---------- */
 	var faqItems = document.querySelectorAll( '.faq__item' );
 	faqItems.forEach( function ( item ) {

@@ -6,6 +6,7 @@
  */
 
 add_action( 'init', function () {
+	$projects_public = sees_projects_public_enabled();
 
 	register_post_type( 'solution', array(
 		'labels'              => array(
@@ -27,20 +28,25 @@ add_action( 'init', function () {
 	) );
 
 	register_post_type( 'project', array(
-		'labels'        => array(
+		'labels'              => array(
 			'name'          => __( 'Projects', 'sees' ),
 			'singular_name' => __( 'Project', 'sees' ),
 			'add_new_item'  => __( 'Add new project', 'sees' ),
 			'edit_item'     => __( 'Edit project', 'sees' ),
 			'all_items'     => __( 'All projects', 'sees' ),
 		),
-		'public'        => true,
-		'has_archive'   => 'projects',
-		'rewrite'       => array( 'slug' => 'projects', 'with_front' => false ),
-		'show_in_rest'  => true,
-		'menu_icon'     => 'dashicons-portfolio',
-		'menu_position' => 22,
-		'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes' ),
+		'public'              => true,
+		'publicly_queryable'  => $projects_public,
+		'exclude_from_search' => ! $projects_public,
+		'has_archive'         => $projects_public ? 'projects' : false,
+		'rewrite'             => $projects_public ? array( 'slug' => 'projects', 'with_front' => false ) : false,
+		'query_var'           => $projects_public,
+		'show_ui'             => true,
+		'show_in_nav_menus'   => $projects_public,
+		'show_in_rest'        => true,
+		'menu_icon'           => 'dashicons-portfolio',
+		'menu_position'       => 22,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes' ),
 	) );
 
 	register_post_type( 'faq', array(
@@ -62,16 +68,41 @@ add_action( 'init', function () {
 		'supports'            => array( 'title', 'editor', 'page-attributes' ),
 	) );
 
+	register_post_type( 'sees_job', array(
+		'labels'              => array(
+			'name'               => __( 'Jobs', 'sees' ),
+			'singular_name'      => __( 'Job', 'sees' ),
+			'add_new_item'       => __( 'Add new job', 'sees' ),
+			'edit_item'          => __( 'Edit job', 'sees' ),
+			'all_items'          => __( 'All jobs', 'sees' ),
+			'not_found'          => __( 'No jobs found.', 'sees' ),
+			'not_found_in_trash' => __( 'No jobs found in Trash.', 'sees' ),
+		),
+		'public'              => true,
+		'publicly_queryable'  => true,
+		'exclude_from_search' => false,
+		'has_archive'         => false,
+		'rewrite'             => array( 'slug' => 'jobs', 'with_front' => false ),
+		'show_in_rest'        => true,
+		'menu_icon'           => 'dashicons-businessperson',
+		'menu_position'       => 23,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
+	) );
+
 	register_taxonomy( 'project_category', 'project', array(
-		'labels'            => array(
+		'labels'             => array(
 			'name'          => __( 'Project categories', 'sees' ),
 			'singular_name' => __( 'Project category', 'sees' ),
 		),
-		'public'            => true,
-		'hierarchical'      => true,
-		'show_in_rest'      => true,
-		'show_admin_column' => true,
-		'rewrite'           => array( 'slug' => 'project-category', 'with_front' => false ),
+		'public'             => $projects_public,
+		'publicly_queryable' => $projects_public,
+		'hierarchical'       => true,
+		'show_ui'            => true,
+		'show_in_nav_menus'  => $projects_public,
+		'show_in_rest'       => true,
+		'show_admin_column'  => true,
+		'query_var'          => $projects_public,
+		'rewrite'            => $projects_public ? array( 'slug' => 'project-category', 'with_front' => false ) : false,
 	) );
 } );
 

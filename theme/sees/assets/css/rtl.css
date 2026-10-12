@@ -41,9 +41,9 @@
 	background: linear-gradient(270deg, color-mix(in srgb, var(--c-navy) 82%, transparent) 0%, color-mix(in srgb, var(--c-navy) 35%, transparent) 55%, transparent 100%);
 }
 .cta--photo .cta__box::before {
-	background: linear-gradient(270deg, color-mix(in srgb, var(--c-ink) 95%, transparent) 0%, color-mix(in srgb, var(--c-ink) 75%, transparent) 45%, color-mix(in srgb, var(--c-ink) 10%, transparent) 100%);
+	background: linear-gradient(270deg, color-mix(in srgb, var(--c-ink) 98%, transparent) 0%, color-mix(in srgb, var(--c-ink) 88%, transparent) 42%, transparent 65%);
 }
-.hero__media img { object-position: center bottom; }
+.hero__media img { object-position: 35% bottom; }
 .hero__mark { animation-name: drift-rtl; }
 @keyframes drift-rtl { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-14px) rotate(2deg); } }
 

@@ -43,6 +43,9 @@ function sees_run_setup( array $args = array() ): array {
 		'project_status' => 'draft',
 		'sample_images'  => false,
 	) );
+	if ( ! sees_projects_public_enabled() ) {
+		$args['project_status'] = 'draft';
+	}
 	$log = array( 'done' => array(), 'skipped' => array(), 'errors' => array() );
 
 	if ( ! sees_setup_plugins_ready() ) {
@@ -667,14 +670,16 @@ function sees_setup_menus( array $pages, array &$log ): void {
 	$changed   = false;
 
 	foreach ( array( 'en', 'ar' ) as $lang ) {
-		if ( ! empty( $assigned[ $lang ] ) && wp_get_nav_menu_object( $assigned[ $lang ] ) ) {
-			continue;
-		}
 		$name    = 'Primary (' . strtoupper( $lang ) . ')';
-		$menu    = wp_get_nav_menu_object( $name );
+		$menu    = ! empty( $assigned[ $lang ] ) ? wp_get_nav_menu_object( $assigned[ $lang ] ) : null;
+		$menu    = $menu ?: wp_get_nav_menu_object( $name );
 		$menu_id = $menu ? (int) $menu->term_id : (int) wp_create_nav_menu( $name );
 		if ( ! $menu ) {
-			$order = array( 'home', 'about', 'solutions', 'projects', 'contact' );
+			$order = array( 'home', 'about', 'solutions', 'jobs' );
+			if ( sees_projects_public_enabled() ) {
+				$order[] = 'projects';
+			}
+			$order[] = 'contact';
 			foreach ( $order as $pos => $key ) {
 				$item = array( 'menu-item-status' => 'publish', 'menu-item-position' => $pos + 1 );
 				if ( 'projects' === $key ) {
@@ -686,11 +691,40 @@ function sees_setup_menus( array $pages, array &$log ): void {
 				}
 				wp_update_nav_menu_item( $menu_id, 0, $item );
 			}
+		} elseif ( ! empty( $pages['jobs'][ $lang ] ) ) {
+			$jobs_id = (int) $pages['jobs'][ $lang ];
+			$items   = wp_get_nav_menu_items( $menu_id ) ?: array();
+			$exists  = array_filter( $items, fn( $item ) => 'page' === $item->object && $jobs_id === (int) $item->object_id );
+			if ( ! $exists ) {
+				$insert_at = count( $items ) + 1;
+				$contact   = (int) ( $pages['contact'][ $lang ] ?? 0 );
+				foreach ( $items as $existing ) {
+					if ( 'page' === $existing->object && $contact === (int) $existing->object_id ) {
+						$insert_at = (int) $existing->menu_order;
+						break;
+					}
+				}
+				foreach ( array_reverse( $items ) as $existing ) {
+					if ( (int) $existing->menu_order >= $insert_at ) {
+						wp_update_post( array( 'ID' => $existing->ID, 'menu_order' => (int) $existing->menu_order + 1 ) );
+					}
+				}
+				wp_update_nav_menu_item( $menu_id, 0, array(
+					'menu-item-status'    => 'publish',
+					'menu-item-position'  => $insert_at,
+					'menu-item-type'      => 'post_type',
+					'menu-item-object'    => 'page',
+					'menu-item-object-id' => $jobs_id,
+				) );
+				$log['done'][] = sprintf( __( 'Jobs added to menu: %s.', 'sees' ), $name );
+			}
 		}
-		$assigned[ $lang ] = $menu_id;
-		$changed           = true;
-		/* translators: %s: menu name */
-		$log['done'][] = sprintf( __( 'Menu created and assigned: %s.', 'sees' ), $name );
+		if ( empty( $assigned[ $lang ] ) || (int) $assigned[ $lang ] !== $menu_id ) {
+			$assigned[ $lang ] = $menu_id;
+			$changed           = true;
+			/* translators: %s: menu name */
+			$log['done'][] = sprintf( __( 'Menu created and assigned: %s.', 'sees' ), $name );
+		}
 	}
 
 	if ( $changed ) {

@@ -42,6 +42,9 @@ add_action( 'wp_head', function () {
 	}
 }, 1 );
 
-// Contact Form 7: only load its assets on the contact page.
-add_filter( 'wpcf7_load_js', fn() => is_page_template( 'page-contact.php' ) );
+// Contact Form 7: load JavaScript only where a configured form can be rendered.
+add_filter( 'wpcf7_load_js', function () {
+	return is_page_template( 'page-contact.php' )
+		|| ( is_singular( 'sees_job' ) && function_exists( 'sees_job_has_application_form' ) && sees_job_has_application_form( get_queried_object_id() ) );
+} );
 add_filter( 'wpcf7_load_css', '__return_false' );

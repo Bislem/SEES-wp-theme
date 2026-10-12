@@ -7,7 +7,7 @@
 
 // Always make the theme's content types translatable.
 add_filter( 'pll_get_post_types', function ( $types, $is_settings ) {
-	foreach ( array( 'solution', 'project', 'faq' ) as $type ) {
+	foreach ( array( 'solution', 'project', 'faq', 'sees_job' ) as $type ) {
 		$types[ $type ] = $type;
 	}
 	return $types;
@@ -21,7 +21,7 @@ add_filter( 'pll_get_taxonomies', function ( $taxonomies, $is_settings ) {
 // Keep ACF "detail" fields in sync across translations (numbers, flags). Header photos stay per language
 // (the Arabic Home uses a mirrored hero photo).
 add_filter( 'pll_copy_post_metas', function ( $metas ) {
-	return array_merge( $metas, array( 'number', 'icon', 'accent', 'year', 'is_featured' ) );
+	return array_values( array_unique( array_merge( $metas, array( 'number', 'icon', 'accent', 'year', 'is_featured' ), sees_job_shared_meta_keys() ) ) );
 } );
 
 /**

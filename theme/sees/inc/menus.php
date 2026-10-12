@@ -15,14 +15,21 @@ function sees_default_nav_items(): array {
 		array( 'url' => function_exists( 'pll_home_url' ) ? pll_home_url() : home_url( '/' ), 'label' => __( 'Home', 'sees' ), 'current' => is_front_page() ),
 		array( 'url' => sees_page_url( 'page-about.php' ), 'label' => __( 'About', 'sees' ), 'current' => is_page_template( 'page-about.php' ) ),
 		array( 'url' => sees_page_url( 'page-solutions.php' ), 'label' => __( 'Our Solutions', 'sees' ), 'current' => is_page_template( 'page-solutions.php' ) ),
-		array( 'url' => (string) get_post_type_archive_link( 'project' ), 'label' => __( 'Projects', 'sees' ), 'current' => sees_is_projects_section() ),
-		array( 'url' => sees_page_url( 'page-contact.php' ), 'label' => __( 'Contact', 'sees' ), 'current' => is_page_template( 'page-contact.php' ) ),
+		array( 'url' => sees_page_url( 'page-jobs.php' ), 'label' => sees_jobs_text( 'careers_nav' ), 'current' => sees_is_jobs_section() ),
 	);
+	if ( sees_projects_public_enabled() ) {
+		$items[] = array( 'url' => (string) get_post_type_archive_link( 'project' ), 'label' => __( 'Projects', 'sees' ), 'current' => sees_is_projects_section() );
+	}
+	$items[] = array( 'url' => sees_page_url( 'page-contact.php' ), 'label' => __( 'Contact', 'sees' ), 'current' => is_page_template( 'page-contact.php' ) );
 	return $items;
 }
 
 function sees_is_projects_section(): bool {
 	return is_post_type_archive( 'project' ) || is_singular( 'project' ) || is_tax( 'project_category' );
+}
+
+function sees_is_jobs_section(): bool {
+	return is_page_template( 'page-jobs.php' ) || is_singular( 'sees_job' );
 }
 
 function sees_render_list( array $items, string $class, string $link_class = '' ): void {
@@ -46,7 +53,18 @@ function sees_menu_fallback(): void {
 
 function sees_footer_company_fallback(): void {
 	$items = sees_default_nav_items();
-	sees_render_list( array( $items[1], $items[3], $items[4] ), 'footer-col__list' );
+	$company = array();
+	foreach ( $items as $item ) {
+		if ( in_array( untrailingslashit( $item['url'] ), array(
+			untrailingslashit( sees_page_url( 'page-about.php' ) ),
+			untrailingslashit( sees_page_url( 'page-jobs.php' ) ),
+			untrailingslashit( (string) get_post_type_archive_link( 'project' ) ),
+			untrailingslashit( sees_page_url( 'page-contact.php' ) ),
+		), true ) ) {
+			$company[] = $item;
+		}
+	}
+	sees_render_list( $company, 'footer-col__list' );
 }
 
 function sees_footer_solutions_fallback(): void {
@@ -60,6 +78,9 @@ function sees_footer_solutions_fallback(): void {
 // Highlight "Projects" in the menu on single projects and category archives.
 add_filter( 'nav_menu_css_class', function ( $classes, $item ) {
 	if ( sees_is_projects_section() && untrailingslashit( $item->url ) === untrailingslashit( (string) get_post_type_archive_link( 'project' ) ) ) {
+		$classes[] = 'current-menu-item';
+	}
+	if ( sees_is_jobs_section() && untrailingslashit( $item->url ) === untrailingslashit( sees_page_url( 'page-jobs.php' ) ) ) {
 		$classes[] = 'current-menu-item';
 	}
 	return array_unique( $classes );

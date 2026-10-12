@@ -14,7 +14,7 @@ $sees_features = array(
 	array( 'people', sees_field( 'feature_4', __( 'People Focused', 'sees' ) ) ),
 );
 $sees_solutions = sees_get_solutions( 4 );
-$sees_featured  = sees_get_featured_project();
+$sees_featured  = sees_projects_public_enabled() ? sees_get_featured_project() : null;
 $sees_marquee   = sees_lines( sees_field( 'marquee_items', implode( "\n", array(
 	__( 'Power Distribution', 'sees' ),
 	__( 'Solar PV', 'sees' ),
@@ -53,7 +53,9 @@ $sees_video     = (string) sees_field( 'story_video' );
 			<p class="hero__lead a-up d4"><?php echo esc_html( sees_field( 'hero_text', __( 'Delivering intelligent, reliable and sustainable electrical solutions for a brighter future.', 'sees' ) ) ); ?></p>
 			<div class="btn-row a-up d5">
 				<a class="btn btn--primary btn--lg arrow" href="<?php echo esc_url( sees_page_url( 'page-solutions.php' ) ); ?>"><?php esc_html_e( 'Our Solutions', 'sees' ); ?> <?php echo sees_icon( 'arrow', 18, array( 'stroke' => 2 ) ); // phpcs:ignore ?></a>
+				<?php if ( sees_projects_public_enabled() ) : ?>
 				<a class="btn btn--outline btn--lg" href="<?php echo esc_url( (string) get_post_type_archive_link( 'project' ) ); ?>"><?php esc_html_e( 'View Projects', 'sees' ); ?></a>
+				<?php endif; ?>
 			</div>
 		</div>
 

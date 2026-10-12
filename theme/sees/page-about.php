@@ -17,7 +17,7 @@ $sees_values = array(
 $sees_story = sees_field( 'story_text', '<p>' . esc_html__( 'SEES — Smart Electrical Engineering Solutions — is based in Al Shahamah District, Makkah. We design, install and maintain electrical systems for commercial, residential and infrastructure projects, bringing careful engineering and modern technology to every installation.', 'sees' ) . '</p>' );
 ?>
 
-<main id="main">
+<main id="main" class="about-page">
 	<?php
 	get_template_part( 'template-parts/page-header', null, array(
 		'subtitle'  => sees_field( 'header_subtitle', __( 'An electrical engineering company built on precision, safety and smart technology.', 'sees' ) ),
