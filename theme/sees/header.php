@@ -89,6 +89,13 @@ $contact_url = sees_page_url( 'page-contact.php' );
 				'fallback_cb'    => 'sees_menu_fallback',
 			) );
 			?>
+			<?php if ( $sees_support ) : // The top-bar links are hidden on phones, so the menu carries Support. ?>
+				<ul class="primary-nav__extra">
+					<li<?php echo is_page( $sees_support->ID ) ? ' class="current-menu-item"' : ''; ?>>
+						<a href="<?php echo esc_url( get_permalink( $sees_support ) ); ?>"<?php echo is_page( $sees_support->ID ) ? ' aria-current="page"' : ''; ?>><?php echo sees_icon( 'download', 18, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?><span><?php echo esc_html( get_the_title( $sees_support ) ); ?></span></a>
+					</li>
+				</ul>
+			<?php endif; ?>
 			<div class="primary-nav__search"><?php get_search_form(); ?></div>
 			<button type="button" class="btn btn--outline theme-toggle primary-nav__theme" aria-pressed="false">
 				<?php echo sees_icon( 'moon', 18, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?>

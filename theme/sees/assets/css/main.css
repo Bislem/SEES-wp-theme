@@ -1747,9 +1747,31 @@ button { font: inherit; }
 @media (max-width: 1240px) { .topbar .topbar__wide { display: none; } }
 @media (max-width: 760px) {
 	.topbar__links { display: none; }
-	.topbar__contact { gap: 4px 16px; }
+	/* Phones: phone number and email always visible, centred. */
+	.topbar__inner { justify-content: center; }
+	.topbar__contact { justify-content: center; gap: 2px 14px; }
 }
-@media (max-width: 420px) { .topbar .topbar__label { display: none; } }
+@media (max-width: 400px) {
+	.topbar__contact { gap: 2px 10px; }
+	.topbar__contact li:first-child .icon { display: none; } /* Room for both numbers on 360px screens. */
+}
+
+/* Extra mobile-menu links (Support), shown only when the header collapses into the menu. */
+.primary-nav__extra { display: none; }
+@media (max-width: 1240px) {
+	.primary-nav__extra { display: block; border-block-start: 1px solid var(--line); }
+	.primary-nav__extra a {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding-block: 14px;
+		font-size: var(--fs-body);
+		font-weight: 500;
+		color: var(--fg-strong);
+	}
+	.primary-nav__extra .icon { color: var(--link); }
+	.primary-nav__extra .current-menu-item > a { font-weight: 700; }
+}
 
 /* ==========================================================================
    Support & Downloads
