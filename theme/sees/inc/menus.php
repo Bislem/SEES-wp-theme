@@ -15,7 +15,7 @@ function sees_default_nav_items(): array {
 		array( 'url' => function_exists( 'pll_home_url' ) ? pll_home_url() : home_url( '/' ), 'label' => __( 'Home', 'sees' ), 'current' => is_front_page() ),
 		array( 'url' => sees_page_url( 'page-about.php' ), 'label' => __( 'About', 'sees' ), 'current' => is_page_template( 'page-about.php' ) ),
 		array( 'url' => sees_page_url( 'page-solutions.php' ), 'label' => __( 'Our Solutions', 'sees' ), 'current' => is_page_template( 'page-solutions.php' ) ),
-		array( 'url' => sees_page_url( 'page-jobs.php' ), 'label' => sees_jobs_text( 'careers_nav' ), 'current' => sees_is_jobs_section() ),
+		array( 'url' => sees_page_url( 'page-jobs.php' ), 'label' => sees_jobs_text( 'careers_nav' ), 'current' => sees_is_jobs_section(), 'class' => 'menu-item--in-topbar' ),
 	);
 	if ( sees_projects_public_enabled() ) {
 		$items[] = array( 'url' => (string) get_post_type_archive_link( 'project' ), 'label' => __( 'Projects', 'sees' ), 'current' => sees_is_projects_section() );
@@ -35,9 +35,10 @@ function sees_is_jobs_section(): bool {
 function sees_render_list( array $items, string $class, string $link_class = '' ): void {
 	echo '<ul class="' . esc_attr( $class ) . '">';
 	foreach ( $items as $item ) {
+		$classes = trim( ( empty( $item['current'] ) ? '' : 'current-menu-item ' ) . ( $item['class'] ?? '' ) );
 		printf(
 			'<li%1$s><a href="%2$s"%3$s%4$s>%5$s</a></li>',
-			! empty( $item['current'] ) ? ' class="current-menu-item"' : '',
+			$classes ? ' class="' . esc_attr( $classes ) . '"' : '',
 			esc_url( $item['url'] ),
 			$link_class ? ' class="' . esc_attr( $link_class ) . '"' : '',
 			! empty( $item['current'] ) ? ' aria-current="page"' : '',
@@ -84,8 +85,13 @@ add_filter( 'nav_menu_css_class', function ( $classes, $item ) {
 	if ( sees_is_projects_section() && untrailingslashit( $item->url ) === untrailingslashit( (string) get_post_type_archive_link( 'project' ) ) ) {
 		$classes[] = 'current-menu-item';
 	}
-	if ( sees_is_jobs_section() && untrailingslashit( $item->url ) === untrailingslashit( sees_page_url( 'page-jobs.php' ) ) ) {
+	$is_careers = untrailingslashit( $item->url ) === untrailingslashit( sees_page_url( 'page-jobs.php' ) );
+	if ( sees_is_jobs_section() && $is_careers ) {
 		$classes[] = 'current-menu-item';
+	}
+	// Careers is also in the top bar: the desktop navigation hides it (see main.css).
+	if ( $is_careers ) {
+		$classes[] = 'menu-item--in-topbar';
 	}
 	return array_unique( $classes );
 }, 10, 2 );

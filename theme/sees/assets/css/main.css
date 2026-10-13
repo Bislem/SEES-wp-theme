@@ -1756,6 +1756,11 @@ button { font: inherit; }
 	.topbar__contact li:first-child .icon { display: none; } /* Room for both numbers on 360px screens. */
 }
 
+/* Links already in the top bar (Careers) are left out of the full-width navigation to avoid duplicates. */
+@media (min-width: 1241px) {
+	.primary-nav__list .menu-item--in-topbar { display: none; }
+}
+
 /* Extra mobile-menu links (Support), shown only when the header collapses into the menu. */
 .primary-nav__extra { display: none; }
 @media (max-width: 1240px) {
