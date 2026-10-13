@@ -54,6 +54,12 @@ if ( getenv( 'SEES_RESEED' ) ) {
 		wp_delete_attachment( (int) $attachment, true );
 	}
 	delete_option( 'sees_sample_downloads' );
+	foreach ( (array) get_option( 'sees_sample_posts', array() ) as $post_id ) {
+		wp_delete_post( (int) $post_id, true );
+	}
+	delete_option( 'sees_sample_posts' );
+	delete_option( 'sees_seeded_news_categories' );
+	delete_option( 'sees_menu_additions' );
 	update_option( 'show_on_front', 'posts' );
 	update_option( 'page_on_front', 0 );
 	$nav_menus = (array) PLL()->options['nav_menus'];
@@ -127,6 +133,47 @@ if ( is_dir( $fixtures ) && ! get_posts( array( 'post_type' => 'sees_download', 
 	}
 	update_option( 'sees_sample_downloads', $attachments, false );
 	$log['done'][] = 'Sample support documents created (local only).';
+}
+
+/* ---------------------------------------------------------------------------
+ * Sample news posts (local only — clearly labelled placeholders)
+ * ------------------------------------------------------------------------ */
+if ( ! get_option( 'sees_sample_posts' ) ) {
+	$media = (array) get_option( 'sees_setup_media', array() );
+	$cat   = fn( $slug ) => ( $t = get_term_by( 'slug', $slug, 'category' ) ) ? (int) $t->term_id : 0;
+	$body  = fn( $p ) => '<!-- wp:paragraph --><p>' . esc_html( $p ) . '</p><!-- /wp:paragraph -->';
+	$samples = array(
+		array( 'news', 'engineer.jpg', '[Sample] SEES completes a solar and distribution upgrade', '[نموذج] سيز تُنجز تحديث أنظمة الطاقة الشمسية والتوزيع', 3 ),
+		array( 'insights', 'pylons.jpg', '[Sample] Five checks before upgrading an electrical panel', '[نموذج] خمسة فحوصات قبل تحديث اللوحة الكهربائية', 10 ),
+		array( 'news', 'facade.jpg', '[Sample] Our new office signage goes up in Makkah', '[نموذج] تركيب اللافتة الجديدة لمكتبنا في مكة المكرمة', 20 ),
+	);
+	$ids = array();
+	foreach ( $samples as $d ) {
+		$pair = array();
+		foreach ( array( 'en' => $d[2], 'ar' => $d[3] ) as $lang => $title ) {
+			$text = 'en' === $lang
+				? 'This is a sample post for testing the News section. Replace it with real company news. ' . str_repeat( 'Placeholder text for layout testing. ', 40 )
+				: 'هذا منشور تجريبي لاختبار قسم الأخبار. استبدله بأخبار حقيقية للشركة. ' . str_repeat( 'نص مؤقت لاختبار التصميم. ', 40 );
+			$id = wp_insert_post( array(
+				'post_type'    => 'post',
+				'post_status'  => 'publish',
+				'post_title'   => $title,
+				'post_excerpt' => 'en' === $lang ? 'Sample post for testing the News section.' : 'منشور تجريبي لاختبار قسم الأخبار.',
+				'post_content' => $body( $text ) . $body( $text ),
+				'post_date'    => gmdate( 'Y-m-d H:i:s', strtotime( "-{$d[4]} days" ) ),
+			) );
+			pll_set_post_language( $id, $lang );
+			wp_set_post_categories( $id, array_filter( array( $cat( 'en' === $lang ? $d[0] : $d[0] . '-ar' ) ) ) );
+			if ( ! empty( $media[ $d[1] ] ) ) {
+				set_post_thumbnail( $id, $media[ $d[1] ] );
+			}
+			$pair[ $lang ] = $id;
+			$ids[]         = $id;
+		}
+		pll_save_post_translations( $pair );
+	}
+	update_option( 'sees_sample_posts', $ids, false );
+	$log['done'][] = 'Sample news posts created (local only).';
 }
 
 PLL()->model->clean_languages_cache();

@@ -17,6 +17,10 @@ function sees_default_nav_items(): array {
 		array( 'url' => sees_page_url( 'page-solutions.php' ), 'label' => __( 'Our Solutions', 'sees' ), 'current' => is_page_template( 'page-solutions.php' ) ),
 		array( 'url' => sees_page_url( 'page-jobs.php' ), 'label' => sees_jobs_text( 'careers_nav' ), 'current' => sees_is_jobs_section(), 'class' => 'menu-item--in-topbar' ),
 	);
+	if ( sees_news_page() ) {
+		// News sits before Careers (index 3) in the automatic menu.
+		array_splice( $items, 3, 0, array( array( 'url' => sees_news_url(), 'label' => get_the_title( sees_news_page() ), 'current' => sees_is_news_section() ) ) );
+	}
 	if ( sees_projects_public_enabled() ) {
 		$items[] = array( 'url' => (string) get_post_type_archive_link( 'project' ), 'label' => __( 'Projects', 'sees' ), 'current' => sees_is_projects_section() );
 	}
@@ -65,6 +69,9 @@ function sees_footer_company_fallback(): void {
 			$company[] = $item;
 		}
 	}
+	if ( sees_news_page() ) {
+		array_splice( $company, 1, 0, array( array( 'url' => sees_news_url(), 'label' => get_the_title( sees_news_page() ), 'current' => sees_is_news_section() ) ) );
+	}
 	$support = sees_page_by_template( 'page-support.php' );
 	if ( $support ) {
 		$company[] = array( 'url' => get_permalink( $support ), 'label' => get_the_title( $support ), 'current' => is_page( $support->ID ) );
@@ -83,6 +90,9 @@ function sees_footer_solutions_fallback(): void {
 // Highlight "Projects" in the menu on single projects and category archives.
 add_filter( 'nav_menu_css_class', function ( $classes, $item ) {
 	if ( sees_is_projects_section() && untrailingslashit( $item->url ) === untrailingslashit( (string) get_post_type_archive_link( 'project' ) ) ) {
+		$classes[] = 'current-menu-item';
+	}
+	if ( sees_is_news_section() && sees_news_url() && untrailingslashit( $item->url ) === untrailingslashit( sees_news_url() ) ) {
 		$classes[] = 'current-menu-item';
 	}
 	$is_careers = untrailingslashit( $item->url ) === untrailingslashit( sees_page_url( 'page-jobs.php' ) );

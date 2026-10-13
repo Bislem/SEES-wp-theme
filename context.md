@@ -115,6 +115,16 @@ theme/sees/
 - **Search:** search, type pills and the language select filter in place with JS. Without JS they work via `?q=&type=&doc_lang=`.
 - **Local samples:** `bin/seed.php` adds 4 sample PDFs from `bin/fixtures/` (mounted at `/var/www/fixtures` in the wpcli container); they're local only.
 
+### News (`inc/blog.php`, `home.php`, `archive.php`, `single.php`, `template-parts/news-list.php`, `post-card.php`)
+
+- **Content:** WordPress's own posts and categories, translated by Polylang. The installer creates the News page in EN/AR as the Posts page, plus the News/Insights categories in EN/AR (News is the default category).
+- **Housekeeping:** the installer turns comments off by default and removes an untouched "Hello world!".
+- **News page:** category pills, the newest post as a large featured card, a 9-per-page grid and pagination. Without a featured image, a card shows a branded placeholder.
+- **Article page:** meta (category, date, reading time), image, content, share links (LinkedIn/X/WhatsApp/email, no trackers), related posts and a CTA.
+- **Links:** desktop nav (Home, About, Our Solutions, News, Contact), the mobile menu and the footer Company column.
+- **Menus:** `sees_setup_menu_add_once()` adds News and Careers to existing menus only once. The `sees_menu_additions` option records it, so items an editor removes stay removed. This replaced the earlier jobs insertion, which re-added Careers on every run.
+- **Local samples:** `bin/seed.php` adds 3 sample posts per language ("[Sample]") for testing.
+
 ### Top bar
 
 - **In `header.php`:** phone, email, address (and hours once they aren't a placeholder), plus Support/Careers links. The data comes from `sees_contact()`.

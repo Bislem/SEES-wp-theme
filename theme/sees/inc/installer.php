@@ -67,6 +67,7 @@ function sees_run_setup( array $args = array() ): array {
 	sees_setup_form_consent( $content, $pages, $log );
 	sees_setup_job_forms( $content, $pages, $log );
 	sees_setup_download_types( $content, $log );
+	sees_setup_blog( $content, $pages, $log );
 	sees_setup_site_icon( $log );
 	sees_setup_solutions( $content, $media, $log );
 	sees_setup_faqs( $content, $log );
@@ -219,6 +220,14 @@ function sees_setup_media( array &$log ): array {
  * Find the page for a template in a language.
  */
 function sees_setup_find_page( string $key, string $template, string $lang ): int {
+	if ( 'news' === $key ) {
+		$posts_page = (int) get_option( 'page_for_posts' );
+		if ( $posts_page && get_post_status( $posts_page ) ) {
+			$id = (int) pll_get_post( $posts_page, $lang );
+			return $id ? $id : ( pll_get_post_language( $posts_page ) === $lang ? $posts_page : 0 );
+		}
+		return 0;
+	}
 	if ( 'home' === $key ) {
 		$front = (int) get_option( 'page_on_front' );
 		if ( $front && 'page' === get_option( 'show_on_front' ) && get_post_status( $front ) ) {
@@ -577,6 +586,94 @@ function sees_setup_download_types( array $content, array &$log ): void {
 }
 
 /**
+ * News: the News page becomes the Posts page, News/Insights categories in both languages,
+ * comments off by default, and WordPress's untouched "Hello world!" post removed.
+ */
+function sees_setup_blog( array $content, array $pages, array &$log ): void {
+	if ( ! empty( $pages['news']['en'] ) && ! (int) get_option( 'page_for_posts' ) ) {
+		update_option( 'page_for_posts', (int) $pages['news']['en'] );
+		$log['done'][] = __( 'News page set as the posts page.', 'sees' );
+	}
+
+	if ( ! get_option( 'sees_seeded_news_categories' ) ) {
+		$first = 0;
+		foreach ( $content['news_categories'] as $slug => $names ) {
+			$pair = array();
+			foreach ( array( 'en' => array( $names[0], $slug ), 'ar' => array( $names[1], $slug . '-ar' ) ) as $lang => $t ) {
+				$term = get_term_by( 'slug', $t[1], 'category' );
+				$id   = $term ? (int) $term->term_id : 0;
+				if ( ! $id ) {
+					$new = wp_insert_term( $t[0], 'category', array( 'slug' => $t[1] ) );
+					$id  = is_wp_error( $new ) ? 0 : (int) $new['term_id'];
+				}
+				if ( $id ) {
+					pll_set_term_language( $id, $lang );
+					$pair[ $lang ] = $id;
+				}
+			}
+			if ( count( $pair ) === 2 ) {
+				pll_save_term_translations( $pair );
+				$first = $first ?: $pair['en'];
+			}
+		}
+		if ( $first ) {
+			update_option( 'default_category', $first ); // New posts land in "News" rather than "Uncategorized".
+		}
+		update_option( 'sees_seeded_news_categories', 1, false );
+		$log['done'][] = __( 'News categories created (English + Arabic).', 'sees' );
+	}
+
+	if ( 'closed' !== get_option( 'default_comment_status' ) ) {
+		update_option( 'default_comment_status', 'closed' );
+		update_option( 'default_ping_status', 'closed' );
+	}
+
+	$hello = get_page_by_path( 'hello-world', OBJECT, 'post' );
+	if ( $hello && 'publish' === $hello->post_status && false !== strpos( $hello->post_content, 'Welcome to WordPress' ) && $hello->post_date === $hello->post_modified ) {
+		wp_delete_post( $hello->ID, true );
+		$log['done'][] = __( 'WordPress sample post "Hello world!" removed.', 'sees' );
+	}
+}
+
+/**
+ * Add a page to a language's menu once, before another page (or at the end).
+ * Remembers what it added, so an item an editor removes on purpose stays removed.
+ */
+function sees_setup_menu_add_once( int $menu_id, string $key, string $lang, int $page_id, int $before_page_id, array &$log ): void {
+	$done = (array) get_option( 'sees_menu_additions', array() );
+	if ( ! $page_id || ! empty( $done[ $key ][ $lang ] ) ) {
+		return;
+	}
+	$items = wp_get_nav_menu_items( $menu_id ) ?: array();
+	$has   = array_filter( $items, fn( $item ) => 'page' === $item->object && $page_id === (int) $item->object_id );
+	if ( ! $has ) {
+		$insert_at = count( $items ) + 1;
+		foreach ( $items as $existing ) {
+			if ( $before_page_id && 'page' === $existing->object && $before_page_id === (int) $existing->object_id ) {
+				$insert_at = (int) $existing->menu_order;
+				break;
+			}
+		}
+		foreach ( array_reverse( $items ) as $existing ) {
+			if ( (int) $existing->menu_order >= $insert_at ) {
+				wp_update_post( array( 'ID' => $existing->ID, 'menu_order' => (int) $existing->menu_order + 1 ) );
+			}
+		}
+		wp_update_nav_menu_item( $menu_id, 0, array(
+			'menu-item-status'    => 'publish',
+			'menu-item-position'  => $insert_at,
+			'menu-item-type'      => 'post_type',
+			'menu-item-object'    => 'page',
+			'menu-item-object-id' => $page_id,
+		) );
+		/* translators: 1: page title, 2: menu name */
+		$log['done'][] = sprintf( __( '%1$s added to menu: %2$s.', 'sees' ), get_the_title( $page_id ), 'Primary (' . strtoupper( $lang ) . ')' );
+	}
+	$done[ $key ][ $lang ] = 1;
+	update_option( 'sees_menu_additions', $done, false );
+}
+
+/**
  * Apply the theme's form messages where the form still has Contact Form 7's default text.
  */
 function sees_setup_form_messages( WPCF7_ContactForm $form, array $messages ): void {
@@ -833,7 +930,7 @@ function sees_setup_menus( array $pages, array &$log ): void {
 		$menu    = $menu ?: wp_get_nav_menu_object( $name );
 		$menu_id = $menu ? (int) $menu->term_id : (int) wp_create_nav_menu( $name );
 		if ( ! $menu ) {
-			$order = array( 'home', 'about', 'solutions', 'jobs' );
+			$order = array( 'home', 'about', 'solutions', 'news', 'jobs' );
 			if ( sees_projects_public_enabled() ) {
 				$order[] = 'projects';
 			}
@@ -849,33 +946,19 @@ function sees_setup_menus( array $pages, array &$log ): void {
 				}
 				wp_update_nav_menu_item( $menu_id, 0, $item );
 			}
-		} elseif ( ! empty( $pages['jobs'][ $lang ] ) ) {
-			$jobs_id = (int) $pages['jobs'][ $lang ];
-			$items   = wp_get_nav_menu_items( $menu_id ) ?: array();
-			$exists  = array_filter( $items, fn( $item ) => 'page' === $item->object && $jobs_id === (int) $item->object_id );
-			if ( ! $exists ) {
-				$insert_at = count( $items ) + 1;
-				$contact   = (int) ( $pages['contact'][ $lang ] ?? 0 );
-				foreach ( $items as $existing ) {
-					if ( 'page' === $existing->object && $contact === (int) $existing->object_id ) {
-						$insert_at = (int) $existing->menu_order;
-						break;
-					}
-				}
-				foreach ( array_reverse( $items ) as $existing ) {
-					if ( (int) $existing->menu_order >= $insert_at ) {
-						wp_update_post( array( 'ID' => $existing->ID, 'menu_order' => (int) $existing->menu_order + 1 ) );
-					}
-				}
-				wp_update_nav_menu_item( $menu_id, 0, array(
-					'menu-item-status'    => 'publish',
-					'menu-item-position'  => $insert_at,
-					'menu-item-type'      => 'post_type',
-					'menu-item-object'    => 'page',
-					'menu-item-object-id' => $jobs_id,
-				) );
-				$log['done'][] = sprintf( __( 'Jobs added to menu: %s.', 'sees' ), $name );
-			}
+		} else {
+			// Existing menus: add pages introduced after the menu was created (once each).
+			$contact = (int) ( $pages['contact'][ $lang ] ?? 0 );
+			$jobs    = (int) ( $pages['jobs'][ $lang ] ?? 0 );
+			sees_setup_menu_add_once( $menu_id, 'news', $lang, (int) ( $pages['news'][ $lang ] ?? 0 ), $jobs ?: $contact, $log );
+			sees_setup_menu_add_once( $menu_id, 'jobs', $lang, $jobs, $contact, $log );
+		}
+		if ( ! $menu ) {
+			// A brand-new menu already contains everything: record that.
+			$done = (array) get_option( 'sees_menu_additions', array() );
+			$done['news'][ $lang ] = 1;
+			$done['jobs'][ $lang ] = 1;
+			update_option( 'sees_menu_additions', $done, false );
 		}
 		if ( empty( $assigned[ $lang ] ) || (int) $assigned[ $lang ] !== $menu_id ) {
 			$assigned[ $lang ] = $menu_id;

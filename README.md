@@ -61,6 +61,10 @@ sees-theme-kit/          original brief, brand guidelines PDF, source images
 - **Support & Downloads**: Downloads → Add new document.
   - Upload the file and give it an English title (and optionally an Arabic title, descriptions, language, version and date). Pick a document type.
   - One document appears on both language versions of the Support page. Visitors can search and filter by type and language.
+- **News**: Posts → Add New Post. Write the article, set a featured image, an excerpt (shown on cards and under the title) and a category (News or Insights).
+  - Translate it with Polylang's "+" column to publish the Arabic version.
+  - Posts appear on the News page, newest first (the latest shown large), with category filters.
+  - Comments are switched off.
 - **Top bar**: phone, email, address (and working hours, once they're no longer a placeholder) come from the Contact page.
 
 ## Going live on www.sees-engineering.com

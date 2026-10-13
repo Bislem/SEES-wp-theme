@@ -253,6 +253,25 @@ function sees_installer_content(): array {
 				),
 			),
 
+			'news' => array(
+				'template' => '', // Set as the Posts page (Settings → Reading) by the setup.
+				'order'    => 3,
+				'en'       => array(
+					'title'  => 'News',
+					'slug'   => 'news',
+					'fields' => array(
+						'header_subtitle' => 'Company news, project updates and insights from the SEES team.',
+					),
+				),
+				'ar'       => array(
+					'title'  => 'الأخبار',
+					'slug'   => 'الأخبار',
+					'fields' => array(
+						'header_subtitle' => 'أخبار الشركة وتحديثات المشاريع ومقالات من فريق سيز.',
+					),
+				),
+			),
+
 			'support' => array(
 				'template' => 'page-support.php',
 				'order'    => 5,
@@ -481,6 +500,12 @@ function sees_installer_content(): array {
 				'en' => 'I agree to SEES processing my data to answer this request, as described in the <a href="%s" target="_blank" rel="noopener">Privacy Policy</a>.',
 				'ar' => 'أوافق على معالجة سيز لبياناتي للرد على هذا الطلب، كما هو موضح في <a href="%s" target="_blank" rel="noopener">سياسة الخصوصية</a>.',
 			),
+		),
+
+		/* ---------------- News categories: slug => [ en, ar ] ---------------- */
+		'news_categories' => array(
+			'news'     => array( 'News', 'الأخبار' ),
+			'insights' => array( 'Insights', 'مقالات' ),
 		),
 
 		/* ---------------- Support document types: slug => [ en, ar ] ---------------- */

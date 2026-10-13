@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-13T11:09:58+00:00\n"
+"POT-Creation-Date: 2026-10-13T11:19:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sees\n"
@@ -66,10 +66,12 @@ msgid "No projects in this category yet."
 msgstr ""
 
 #: archive-project.php:52
+#: template-parts/news-list.php:51
 msgid "Previous"
 msgstr ""
 
 #: archive-project.php:53
+#: template-parts/news-list.php:52
 msgid "Next"
 msgstr ""
 
@@ -109,7 +111,7 @@ msgstr ""
 
 #. Template Name of the theme
 #: footer.php:51
-#: inc/menus.php:23
+#: inc/menus.php:27
 #: inc/setup-check.php:94
 msgid "Contact"
 msgstr ""
@@ -305,9 +307,26 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+#: home.php:12
+#: template-parts/news-list.php:22
+msgid "News"
+msgstr ""
+
+#: home.php:13
+msgid "Company news, project updates and insights from the SEES team."
+msgstr ""
+
 #: inc/acf.php:41
 msgid "The SEES theme needs these free plugins:"
 msgstr ""
+
+#. translators: %d: minutes
+#: inc/blog.php:55
+#, php-format
+msgid "%d min read"
+msgid_plural "%d min read"
+msgstr[0] ""
+msgstr[1] ""
 
 #: inc/downloads.php:22
 msgid "Downloads"
@@ -423,89 +442,107 @@ msgstr ""
 msgid "Polylang, Advanced Custom Fields and Contact Form 7 must be active first."
 msgstr ""
 
-#: inc/installer.php:98
+#: inc/installer.php:99
 msgid "Permalinks set to \"Post name\"."
 msgstr ""
 
 #. translators: %s: language name
-#: inc/installer.php:139
+#: inc/installer.php:140
 #, php-format
 msgid "Language added: %s."
 msgstr ""
 
-#: inc/installer.php:169
+#: inc/installer.php:170
 msgid "Polylang URLs set to /en/ and /ar/."
 msgstr ""
 
-#: inc/installer.php:175
+#: inc/installer.php:176
 msgid "Existing content assigned to English."
 msgstr ""
 
-#: inc/installer.php:186
+#: inc/installer.php:187
 msgid "Arabic WordPress language pack installed."
 msgstr ""
 
-#: inc/installer.php:188
+#: inc/installer.php:189
 msgid "Could not download the Arabic language pack automatically — add Arabic under Settings → General → Site Language."
 msgstr ""
 
 #. translators: 1: page title, 2: language code
-#: inc/installer.php:283
-#: inc/installer.php:422
+#: inc/installer.php:292
+#: inc/installer.php:431
 #, php-format
 msgid "Page created: %1$s (%2$s)."
 msgstr ""
 
 #. translators: %d: number of updated settings
-#: inc/installer.php:344
+#: inc/installer.php:353
 #, php-format
 msgid "Contact email moved to the sees-engineering.com domain (%d settings updated)."
 msgstr ""
 
 #. translators: %s: language code
-#: inc/installer.php:477
+#: inc/installer.php:486
 #, php-format
 msgid "Privacy consent checkbox added to the contact form (%s)."
 msgstr ""
 
 #. translators: %s: form title
-#: inc/installer.php:553
+#: inc/installer.php:562
 #, php-format
 msgid "Job application form created: %s."
 msgstr ""
 
-#: inc/installer.php:574
+#: inc/installer.php:583
 msgid "Support document types created (English + Arabic names)."
 msgstr ""
 
-#: inc/installer.php:620
+#: inc/installer.php:595
+msgid "News page set as the posts page."
+msgstr ""
+
+#: inc/installer.php:623
+msgid "News categories created (English + Arabic)."
+msgstr ""
+
+#: inc/installer.php:634
+msgid "WordPress sample post \"Hello world!\" removed."
+msgstr ""
+
+#. translators: 1: page title, 2: menu name
+#: inc/installer.php:670
+#, php-format
+msgid "%1$s added to menu: %2$s."
+msgstr ""
+
+#: inc/installer.php:717
 msgid "Site icon set from the SEES logo mark."
 msgstr ""
 
-#: inc/installer.php:628
+#: inc/installer.php:725
 msgid "Home set as the front page."
 msgstr ""
 
 #. translators: %s: form title
-#: inc/installer.php:676
+#: inc/installer.php:773
 #, php-format
 msgid "Contact form created: %s."
 msgstr ""
 
-#: inc/installer.php:711
+#: inc/installer.php:808
 msgid "Solutions created (5, English + Arabic)."
 msgstr ""
 
-#: inc/installer.php:734
+#: inc/installer.php:831
 msgid "FAQs created (4, English + Arabic)."
 msgstr ""
 
-#: inc/installer.php:766
+#: inc/installer.php:863
 msgid "Project categories created (English + Arabic)."
 msgstr ""
 
 #. translators: %d: number of projects
-#: inc/installer.php:817
+#: inc/installer.php:914
 #, php-format
 msgid "%d sample project created (English + Arabic)."
 msgid_plural "%d sample projects created (English + Arabic)."
@@ -513,45 +550,40 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %d: number of projects
-#: inc/installer.php:819
+#: inc/installer.php:916
 #, php-format
 msgid "%d placeholder project created as a draft (English + Arabic) — fill it in and publish."
 msgid_plural "%d placeholder projects created as drafts (English + Arabic) — fill them in and publish."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/installer.php:877
-#, php-format
-msgid "Jobs added to menu: %s."
-msgstr ""
-
 #. translators: %s: menu name
-#: inc/installer.php:884
+#: inc/installer.php:967
 #, php-format
 msgid "Menu created and assigned: %s."
 msgstr ""
 
 #. translators: %d: number of field groups
-#: inc/installer.php:947
+#: inc/installer.php:1030
 #, php-format
 msgid "%d field group synced from the theme."
 msgid_plural "%d field groups synced from the theme."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/installer.php:1003
+#: inc/installer.php:1086
 msgid "Sorry, you are not allowed to do that."
 msgstr ""
 
-#: inc/installer.php:1021
+#: inc/installer.php:1104
 msgid "SEES automatic setup"
 msgstr ""
 
-#: inc/installer.php:1022
+#: inc/installer.php:1105
 msgid "here is what was set up:"
 msgstr ""
 
-#: inc/installer.php:1022
+#: inc/installer.php:1105
 msgid "everything was already in place."
 msgstr ""
 
@@ -586,7 +618,7 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: inc/menus.php:21
+#: inc/menus.php:25
 #: inc/post-types.php:32
 #: single-project.php:27
 msgid "Projects"
@@ -694,7 +726,7 @@ msgstr ""
 #: inc/setup-check.php:43
 #: inc/setup-check.php:46
 #: inc/setup-check.php:49
-#: inc/setup-check.php:247
+#: inc/setup-check.php:257
 #: page-solutions.php:17
 msgid "Install"
 msgstr ""
@@ -772,7 +804,8 @@ msgid "Settings → Reading → \"A static page\", then translate that page into
 msgstr ""
 
 #: inc/setup-check.php:86
-#: inc/setup-check.php:222
+#: inc/setup-check.php:146
+#: inc/setup-check.php:232
 msgid "Reading settings"
 msgstr ""
 
@@ -786,7 +819,7 @@ msgid "Support & Downloads"
 msgstr ""
 
 #: inc/setup-check.php:113
-#: inc/setup-check.php:177
+#: inc/setup-check.php:187
 msgid "page"
 msgstr ""
 
@@ -824,193 +857,201 @@ msgstr ""
 msgid "Privacy settings"
 msgstr ""
 
-#: inc/setup-check.php:146
+#: inc/setup-check.php:144
+msgid "News page in each language"
+msgstr ""
+
+#: inc/setup-check.php:145
+msgid "Settings → Reading → \"Posts page\" must be the News page, translated into Arabic. The automatic setup does this."
+msgstr ""
+
+#: inc/setup-check.php:156
 msgid "Primary menu for each language"
 msgstr ""
 
-#: inc/setup-check.php:147
+#: inc/setup-check.php:157
 msgid "Optional: without it the header shows an automatic menu. Assign one menu per language to \"Primary menu\"."
 msgstr ""
 
-#: inc/setup-check.php:148
+#: inc/setup-check.php:158
 msgid "Menus"
 msgstr ""
 
-#: inc/setup-check.php:181
+#: inc/setup-check.php:191
 msgid "Contact form on each Contact page"
 msgstr ""
 
 #. translators: %s: languages
-#: inc/setup-check.php:185
+#: inc/setup-check.php:195
 #, php-format
 msgid "Missing or invalid on: %s. Create a form per language and paste its shortcode in the Contact page \"Form\" tab."
 msgstr ""
 
-#: inc/setup-check.php:186
+#: inc/setup-check.php:196
 msgid "Paste the form shortcode in the Contact page \"Form\" tab."
 msgstr ""
 
-#: inc/setup-check.php:187
+#: inc/setup-check.php:197
 msgid "Contact forms"
 msgstr ""
 
-#: inc/setup-check.php:204
+#: inc/setup-check.php:214
 msgid "Theme field groups synced"
 msgstr ""
 
 #. translators: %d: number of field groups
-#: inc/setup-check.php:207
+#: inc/setup-check.php:217
 #, php-format
 msgid "%d field group was updated with the theme. Click \"Sync\" to apply it."
 msgid_plural "%d field groups were updated with the theme. Click \"Sync\" to apply them."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/setup-check.php:208
+#: inc/setup-check.php:218
 msgid "Field groups load from the theme’s acf-json folder."
 msgstr ""
 
-#: inc/setup-check.php:209
+#: inc/setup-check.php:219
 msgid "Sync fields"
 msgstr ""
 
-#: inc/setup-check.php:215
+#: inc/setup-check.php:225
 msgid "Site address is https://www.sees-engineering.com"
 msgstr ""
 
-#: inc/setup-check.php:217
+#: inc/setup-check.php:227
 msgid "Settings → General: set both addresses to https://www.sees-engineering.com (with www and https)."
 msgstr ""
 
-#: inc/setup-check.php:218
+#: inc/setup-check.php:228
 msgid "General settings"
 msgstr ""
 
-#: inc/setup-check.php:219
+#: inc/setup-check.php:229
 msgid "Search engines can index the live site"
 msgstr ""
 
-#: inc/setup-check.php:221
+#: inc/setup-check.php:231
 msgid "Settings → Reading: untick \"Discourage search engines from indexing this site\"."
 msgstr ""
 
-#: inc/setup-check.php:228
+#: inc/setup-check.php:238
 msgid "Job application form in each language"
 msgstr ""
 
-#: inc/setup-check.php:229
+#: inc/setup-check.php:239
 msgid "Every vacancy uses this form automatically (CV upload, emailed to the careers address). Run the automatic setup to recreate it."
 msgstr ""
 
-#: inc/setup-check.php:230
+#: inc/setup-check.php:240
 msgid "Run setup"
 msgstr ""
 
-#: inc/setup-check.php:233
+#: inc/setup-check.php:243
 msgid "Site icon (favicon)"
 msgstr ""
 
-#: inc/setup-check.php:234
+#: inc/setup-check.php:244
 msgid "Shown in browser tabs and on phones. The automatic setup uses the SEES logo mark."
 msgstr ""
 
-#: inc/setup-check.php:235
+#: inc/setup-check.php:245
 msgid "Set icon"
 msgstr ""
 
-#: inc/setup-check.php:245
+#: inc/setup-check.php:255
 msgid "SMTP email delivery"
 msgstr ""
 
-#: inc/setup-check.php:246
+#: inc/setup-check.php:256
 msgid "Recommended so contact form emails are delivered: install WP Mail SMTP and connect a cPanel email account."
 msgstr ""
 
-#: inc/setup-check.php:281
+#: inc/setup-check.php:291
 msgid "SEES theme:"
 msgstr ""
 
-#: inc/setup-check.php:282
+#: inc/setup-check.php:292
 msgid "setup check passed — languages, pages, menus and forms are all in place."
 msgstr ""
 
-#: inc/setup-check.php:288
+#: inc/setup-check.php:298
 msgid "SEES theme setup check"
 msgstr ""
 
 #. translators: %d: number of items
-#: inc/setup-check.php:292
+#: inc/setup-check.php:302
 #, php-format
 msgid "%d required step is missing:"
 msgid_plural "%d required steps are missing:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/setup-check.php:293
+#: inc/setup-check.php:303
 msgid "everything required is done. Recommended:"
 msgstr ""
 
-#: inc/setup-check.php:300
-#: inc/setup-check.php:358
+#: inc/setup-check.php:310
+#: inc/setup-check.php:368
 msgid "recommended"
 msgstr ""
 
-#: inc/setup-check.php:302
-#: inc/setup-check.php:364
+#: inc/setup-check.php:312
+#: inc/setup-check.php:374
 msgid "Fix"
 msgstr ""
 
-#: inc/setup-check.php:307
+#: inc/setup-check.php:317
 msgid "Activate the plugins above — the theme then sets up languages, pages, menus and forms by itself."
 msgstr ""
 
-#: inc/setup-check.php:310
+#: inc/setup-check.php:320
 msgid "Open the setup checklist"
 msgstr ""
 
-#: inc/setup-check.php:311
+#: inc/setup-check.php:321
 msgid "Hide until next activation"
 msgstr ""
 
-#: inc/setup-check.php:331
+#: inc/setup-check.php:341
 msgid "SEES setup"
 msgstr ""
 
-#: inc/setup-check.php:342
+#: inc/setup-check.php:352
 msgid "SEES setup checklist"
 msgstr ""
 
 #. translators: 1: completed steps, 2: total steps
-#: inc/setup-check.php:346
+#: inc/setup-check.php:356
 #, php-format
 msgid "%1$d of %2$d steps complete. This check also runs every time the theme is activated."
 msgstr ""
 
-#: inc/setup-check.php:356
+#: inc/setup-check.php:366
 msgid "Done"
 msgstr ""
 
-#: inc/setup-check.php:356
+#: inc/setup-check.php:366
 msgid "Missing"
 msgstr ""
 
-#: inc/setup-check.php:356
+#: inc/setup-check.php:366
 msgid "Recommended"
 msgstr ""
 
-#: inc/setup-check.php:371
+#: inc/setup-check.php:381
 msgid "Automatic setup"
 msgstr ""
 
-#: inc/setup-check.php:372
+#: inc/setup-check.php:382
 msgid "The theme sets everything up by itself after activation: languages, Arabic language pack, permalinks, the Home / About / Our Solutions / Contact pages in English and Arabic, solutions, FAQs, project categories, placeholder projects (drafts), contact forms, menus and the front page. It only adds what is missing and never overwrites your content."
 msgstr ""
 
-#: inc/setup-check.php:377
+#: inc/setup-check.php:387
 msgid "Run automatic setup"
 msgstr ""
 
-#: inc/setup-check.php:380
+#: inc/setup-check.php:390
 msgid "Install and activate Polylang, Advanced Custom Fields and Contact Form 7 first — the setup then runs automatically."
 msgstr ""
 
@@ -1137,6 +1178,7 @@ msgid "Call us"
 msgstr ""
 
 #: page-contact.php:33
+#: single.php:55
 msgid "Email"
 msgstr ""
 
@@ -1342,8 +1384,47 @@ msgstr ""
 msgid "[Describe the project: scope, challenge, what SEES delivered and the result.]"
 msgstr ""
 
+#: single.php:51
+msgid "Share"
+msgstr ""
+
+#: single.php:64
+msgid "Keep reading"
+msgstr ""
+
+#: single.php:65
+msgid "More from SEES"
+msgstr ""
+
+#: single.php:68
+#: template-parts/news-list.php:29
+msgid "All news"
+msgstr ""
+
+#: single.php:83
+#: template-parts/news-list.php:66
+msgid "Have a project in mind?"
+msgstr ""
+
+#: single.php:84
+#: template-parts/news-list.php:67
+msgid "Talk to our engineers about your electrical project."
+msgstr ""
+
+#: template-parts/news-list.php:28
+msgid "News categories"
+msgstr ""
+
+#: template-parts/news-list.php:58
+msgid "News and articles will be published here soon."
+msgstr ""
+
 #: template-parts/page-header.php:97
 msgid "Breadcrumb"
+msgstr ""
+
+#: template-parts/post-card.php:37
+msgid "Read more"
 msgstr ""
 
 #: template-parts/project-card.php:37

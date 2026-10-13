@@ -135,6 +135,16 @@ function sees_setup_checks(): array {
 		__( 'Required by the Saudi Personal Data Protection Law because the contact form collects personal data. Fill in the [placeholders] and have it reviewed.', 'sees' ),
 		admin_url( 'options-privacy.php' ), __( 'Privacy settings', 'sees' ) );
 
+	// 6c. News page (the posts page), per language.
+	$news    = (int) get_option( 'page_for_posts' );
+	$news_ok = $news && 'publish' === get_post_status( $news );
+	if ( $news_ok && $has_pll && in_array( 'ar', $langs, true ) ) {
+		$news_ok = (bool) pll_get_post( $news, 'ar' );
+	}
+	$add( 'news', __( 'News page in each language', 'sees' ), $news_ok, true,
+		__( 'Settings → Reading → "Posts page" must be the News page, translated into Arabic. The automatic setup does this.', 'sees' ),
+		admin_url( 'options-reading.php' ), __( 'Reading settings', 'sees' ) );
+
 	// 7. Menus (the theme falls back to an automatic menu, so this is a recommendation).
 	$menu_ok = false;
 	if ( $has_pll && function_exists( 'PLL' ) && isset( PLL()->options ) ) {
