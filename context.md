@@ -213,7 +213,14 @@ Never invent facts. These are still placeholders for the client to fill:
 - **About:** founding, leadership and certifications paragraph.
 - **Home story video URL:** the play button is hidden until one is set.
 
-Real details: +966 50 326 4000 · info@seesengineering.com · Al Shahamah District, Makkah · www.seesengineering.com.
+Real details: +966 50 326 4000 · contact@sees-engineering.com · Al Shahamah District, Makkah · www.sees-engineering.com.
+
+Domain:
+- **Live:** https://www.sees-engineering.com; the bare domain and http redirect to it (`config/production/htaccess-redirects.conf`).
+- **Constants:** `SEES_PUBLIC_DOMAIN` and `SEES_CONTACT_EMAIL` in functions.php.
+- **Migration:** `sees_setup_migrate_domain()` moves any stored info@/careers@seesengineering.com addresses (Contact/Careers/Support fields and CF7 recipients) to the new domain.
+- **Search engines:** non-live hosts get `noindex, nofollow` (`wp_robots`), so staging and local are never indexed.
+- **Deploys:** `.cpanel.yml` reads the target folder from `~/.sees-deploy-path` on each server, defaulting to the staging folder.
 
 ## QA done (local)
 
@@ -226,7 +233,7 @@ Real details: +966 50 326 4000 · info@seesengineering.com · Al Shahamah Distri
   - SEO 100
   - best practices 100
   - performance 88–94, limited by LCP of header photos
-- **Contact form:** submission verified end-to-end into Mailpit. Recipient info@seesengineering.com, Reply-To the visitor. Validation errors work.
+- **Contact form:** submission verified end-to-end into Mailpit. Recipient contact@sees-engineering.com (was info@seesengineering.com before the domain change), Reply-To the visitor. Validation errors work.
 - **Re-seed:** `SEES_RESEED=1 bin/seed.sh` replaces sample content without duplicates.
 - **Debug log:** clean after loading every page.
 - **Not yet click-tested in a real browser:** mobile menu, search panel, project filter, FAQ accordion, the CF7 success panel and the animations. Screenshots were taken with reduced motion on.

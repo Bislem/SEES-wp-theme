@@ -53,6 +53,15 @@ add_action( 'wp_head', function () {
 	}
 } );
 
+// Keep staging and local copies out of search engines: only the live domain is indexable.
+add_filter( 'wp_robots', function ( array $robots ): array {
+	if ( ! sees_is_production() ) {
+		$robots['noindex']  = true;
+		$robots['nofollow'] = true;
+	}
+	return $robots;
+} );
+
 // Serve generated image sizes as WebP (originals are kept).
 add_filter( 'image_editor_output_format', function ( $formats ) {
 	$formats['image/jpeg'] = 'image/webp';

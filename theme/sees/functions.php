@@ -13,6 +13,10 @@ define( 'SEES_VERSION', '0.1.0' );
 define( 'SEES_DIR', get_template_directory() );
 define( 'SEES_URI', get_template_directory_uri() );
 
+// Public website address (shown in the footer) and default contact email.
+define( 'SEES_PUBLIC_DOMAIN', 'www.sees-engineering.com' );
+define( 'SEES_CONTACT_EMAIL', 'contact@sees-engineering.com' );
+
 require SEES_DIR . '/inc/helpers.php';
 require SEES_DIR . '/inc/icons.php';
 require SEES_DIR . '/inc/setup.php';

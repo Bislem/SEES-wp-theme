@@ -44,7 +44,8 @@
                 "width": "50",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placeholder": "contact@sees-engineering.com"
         },
         {
             "name": "address",
@@ -244,5 +245,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1791721000
+    "modified": 1791950000
 }

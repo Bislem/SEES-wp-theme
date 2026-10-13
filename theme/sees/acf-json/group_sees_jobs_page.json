@@ -231,7 +231,7 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "careers@seesengineering.com"
+            "placeholder": "careers@sees-engineering.com"
         }
     ],
     "location": [
@@ -254,5 +254,5 @@
     "active": true,
     "description": "Editable bilingual content for the Jobs page. Edit each Polylang translation separately.",
     "show_in_rest": 0,
-    "modified": 1791900000
+    "modified": 1791950000
 }

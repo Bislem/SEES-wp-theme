@@ -70,7 +70,7 @@ $contact = sees_contact();
 				<?php if ( $sees_privacy ) : ?>
 					<a href="<?php echo esc_url( $sees_privacy ); ?>"><?php esc_html_e( 'Privacy Policy', 'sees' ); ?></a>
 				<?php endif; ?>
-				<span dir="ltr">www.seesengineering.com</span>
+				<span dir="ltr"><?php echo esc_html( SEES_PUBLIC_DOMAIN ); ?></span>
 			</span>
 		</div>
 	</div>

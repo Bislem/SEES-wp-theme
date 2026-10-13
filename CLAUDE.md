@@ -72,7 +72,8 @@ Photos: `assets/img/` — sky, concrete, engineer, pylons, facade, sign, siteban
 
 ## Content rules
 - Never invent stats, client names or project facts. Use bracketed placeholders like `[10+]`, `[PROJECT NAME]`, `[Client]` until the client supplies real content.
-- Real contact details: +966 50 326 4000 · info@seesengineering.com · Al Shahamah District, Makkah, Saudi Arabia · www.seesengineering.com
+- Real contact details: +966 50 326 4000 · contact@sees-engineering.com · Al Shahamah District, Makkah, Saudi Arabia · www.sees-engineering.com
+- Live domain: **https://www.sees-engineering.com** (bare domain redirects to www). Defaults live in `SEES_PUBLIC_DOMAIN` / `SEES_CONTACT_EMAIL` (theme/sees/functions.php). Staging: https://sees.easetech.dz
 - Taglines: "Engineering Smarter, Powering Better" / نهندس بذكاء ونُشغّل بشكل أفضل — "Engineering Comfort, Perfected" / نصمّم الراحة بهندسة ذكية
 
 ## Quality bar

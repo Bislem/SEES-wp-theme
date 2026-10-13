@@ -281,7 +281,7 @@ function sees_installer_content(): array {
 					'fields' => array(
 						'header_subtitle' => 'Tell us about your project — an engineer will get back to you with next steps.',
 						'phone'           => '+966 50 326 4000',
-						'email'           => 'info@seesengineering.com',
+						'email'           => SEES_CONTACT_EMAIL,
 						'address'         => 'Al Shahamah District, Makkah, Saudi Arabia',
 						'hours'           => '[Sun – Thu, 00:00 – 00:00]',
 						'form_title'      => 'Request a quote',
@@ -296,7 +296,7 @@ function sees_installer_content(): array {
 					'fields' => array(
 						'header_subtitle' => 'أخبرنا عن مشروعك، وسيتواصل معك أحد مهندسينا بالخطوات التالية.',
 						'phone'           => '+966 50 326 4000',
-						'email'           => 'info@seesengineering.com',
+						'email'           => SEES_CONTACT_EMAIL,
 						'address'         => 'حي الشهامة، مكة المكرمة، المملكة العربية السعودية',
 						'hours'           => '[الأحد – الخميس، 00:00 – 00:00]',
 						'form_title'      => 'اطلب عرض سعر',

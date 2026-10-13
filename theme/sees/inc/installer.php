@@ -61,6 +61,7 @@ function sees_run_setup( array $args = array() ): array {
 	$media = $args['sample_images'] ? sees_setup_media( $log ) : array();
 	$pages = sees_setup_pages( $content, $log );
 	sees_setup_front_page( $pages, $log );
+	sees_setup_migrate_domain( $log );
 	$pages['privacy'] = sees_setup_privacy( $content, $log );
 	sees_setup_forms( $content, $pages, $log );
 	sees_setup_form_consent( $content, $pages, $log );
@@ -290,6 +291,58 @@ function sees_setup_pages( array $content, array &$log ): array {
 		$pages[ $key ] = $ids;
 	}
 	return $pages;
+}
+
+/**
+ * Move contact details from the old domain (seesengineering.com) to the final one
+ * (sees-engineering.com). Only values still holding an old address are changed.
+ */
+function sees_setup_migrate_domain( array &$log ): void {
+	$map = array(
+		'info@seesengineering.com'    => SEES_CONTACT_EMAIL,
+		'contact@seesengineering.com' => SEES_CONTACT_EMAIL,
+		'careers@seesengineering.com' => 'careers@sees-engineering.com',
+	);
+	$changed = 0;
+
+	// Page fields: Contact email, Careers applications email, Support email.
+	$fields = array( 'page-contact.php' => 'email', 'page-jobs.php' => 'applications_email', 'page-support.php' => 'support_email' );
+	foreach ( $fields as $template => $field ) {
+		$ids = get_posts( array(
+			'post_type'      => 'page',
+			'post_status'    => 'any',
+			'posts_per_page' => -1,
+			'fields'         => 'ids',
+			'lang'           => '',
+			'meta_key'       => '_wp_page_template', // phpcs:ignore WordPress.DB.SlowDBQuery
+			'meta_value'     => $template,           // phpcs:ignore WordPress.DB.SlowDBQuery
+		) );
+		foreach ( $ids as $id ) {
+			$value = strtolower( trim( (string) get_post_meta( $id, $field, true ) ) );
+			if ( isset( $map[ $value ] ) ) {
+				update_field( $field, $map[ $value ], $id );
+				++$changed;
+			}
+		}
+	}
+
+	// Contact Form 7 recipients.
+	foreach ( get_posts( array( 'post_type' => 'wpcf7_contact_form', 'posts_per_page' => -1, 'fields' => 'ids' ) ) as $form_id ) {
+		$form = wpcf7_contact_form( $form_id );
+		$mail = $form ? (array) $form->prop( 'mail' ) : array();
+		$to   = strtolower( trim( (string) ( $mail['recipient'] ?? '' ) ) );
+		if ( isset( $map[ $to ] ) ) {
+			$mail['recipient'] = $map[ $to ];
+			$form->set_properties( array( 'mail' => $mail ) );
+			$form->save();
+			++$changed;
+		}
+	}
+
+	if ( $changed ) {
+		/* translators: %d: number of updated settings */
+		$log['done'][] = sprintf( __( 'Contact email moved to the sees-engineering.com domain (%d settings updated).', 'sees' ), $changed );
+	}
 }
 
 /**

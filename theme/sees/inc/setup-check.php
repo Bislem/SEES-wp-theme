@@ -209,6 +209,19 @@ function sees_setup_checks(): array {
 			admin_url( 'edit.php?post_type=acf-field-group&post_status=sync' ), __( 'Sync fields', 'sees' ) );
 	}
 
+	// 8b. Live domain (only checked on sees-engineering.com).
+	if ( sees_is_production() ) {
+		$home = (string) get_option( 'home' );
+		$add( 'live_url', __( 'Site address is https://www.sees-engineering.com', 'sees' ),
+			0 === strpos( $home, 'https://www.sees-engineering.com' ), true,
+			__( 'Settings → General: set both addresses to https://www.sees-engineering.com (with www and https).', 'sees' ),
+			admin_url( 'options-general.php' ), __( 'General settings', 'sees' ) );
+		$add( 'live_index', __( 'Search engines can index the live site', 'sees' ),
+			'1' === (string) get_option( 'blog_public' ), true,
+			__( 'Settings → Reading: untick "Discourage search engines from indexing this site".', 'sees' ),
+			admin_url( 'options-reading.php' ), __( 'Reading settings', 'sees' ) );
+	}
+
 	// 9a. Job application forms.
 	$job_forms = function_exists( 'sees_job_forms' ) ? sees_job_forms() : array();
 	$jobs_ok   = $has_cf7 && ! empty( $job_forms['en'] ) && ! empty( $job_forms['ar'] ) && wpcf7_contact_form( $job_forms['en'] ) && wpcf7_contact_form( $job_forms['ar'] );

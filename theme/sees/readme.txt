@@ -8,6 +8,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Custom theme for SEES — Smart Electrical Engineering Solutions (Makkah, Saudi Arabia).
+Website: https://www.sees-engineering.com
 
 == Description ==
 

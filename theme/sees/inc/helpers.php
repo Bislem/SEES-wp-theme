@@ -132,10 +132,18 @@ function sees_contact(): array {
 	$id   = $page ? $page->ID : 0;
 	return array(
 		'phone'   => (string) sees_field( 'phone', '+966 50 326 4000', $id ),
-		'email'   => (string) sees_field( 'email', 'info@seesengineering.com', $id ),
+		'email'   => (string) sees_field( 'email', SEES_CONTACT_EMAIL, $id ),
 		'address' => (string) sees_field( 'address', __( 'Al Shahamah District, Makkah, Saudi Arabia', 'sees' ), $id ),
 		'hours'   => (string) sees_field( 'hours', '[Sun – Thu, 00:00 – 00:00]', $id ),
 	);
+}
+
+/**
+ * Is this the live website (sees-engineering.com), rather than staging or local?
+ */
+function sees_is_production(): bool {
+	$host = strtolower( (string) wp_parse_url( home_url(), PHP_URL_HOST ) );
+	return in_array( $host, array( 'sees-engineering.com', 'www.sees-engineering.com' ), true );
 }
 
 /**

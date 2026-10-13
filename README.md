@@ -63,6 +63,28 @@ sees-theme-kit/          original brief, brand guidelines PDF, source images
   - One document appears on both language versions of the Support page. Visitors can search and filter by type and language.
 - **Top bar**: phone, email, address (and working hours, once they're no longer a placeholder) come from the Contact page.
 
+## Going live on www.sees-engineering.com
+
+1. **Domain and SSL (cPanel):** point sees-engineering.com at the hosting, and add both `sees-engineering.com` and `www.sees-engineering.com`. Then run **SSL/TLS Status → Run AutoSSL**, so both get a certificate.
+2. **Email:**
+   - Create the **contact@sees-engineering.com** mailbox, and **careers@sees-engineering.com** if you want a separate one for applications.
+   - In **Email Deliverability**, fix SPF/DKIM.
+   - Install **WP Mail SMTP** and connect it to contact@.
+3. **WordPress:** install it in the domain's folder (usually `public_html`).
+   - **Settings → General:** set both addresses to **https://www.sees-engineering.com**.
+   - **Settings → Reading:** make sure "Discourage search engines" is **unticked**.
+4. **Redirects:** paste `config/production/htaccess-redirects.conf` at the top of that site's `.htaccess`. Then http:// and the bare domain go to https://www.sees-engineering.com.
+5. **Theme deploy:**
+   - Clone the repo in cPanel Git Version Control.
+   - Run `echo "public_html" > ~/.sees-deploy-path` once (in Terminal or over SSH), using the folder from step 3.
+   - Click **Deploy HEAD Commit**, then activate the theme.
+6. **Content:**
+   - **Fresh start:** the theme sets everything up automatically. Open wp-admin once and follow **Appearance → SEES setup**.
+   - **Moving staging content over:** export with All-in-One WP Migration and import on the live site; it rewrites the URLs. Then run **Appearance → SEES setup → Run automatic setup**.
+7. **Final check:** **Appearance → SEES setup** checks the address (https + www) and that search engines are allowed.
+
+Staging and local copies automatically send `noindex` to search engines. Only the live domain is indexed.
+
 ## Installing on a new WordPress (staging / production)
 
 1. Install and activate **Polylang**, **Advanced Custom Fields** and **Contact Form 7**.

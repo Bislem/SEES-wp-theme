@@ -1,8 +1,14 @@
 # cPanel → Git Version Control → "Deploy HEAD Commit" runs these tasks.
-# Copies only the theme into the staging site; nothing else from the repo is deployed.
+# Copies only the theme into the WordPress site; nothing else from the repo is deployed.
+#
+# Target site folder: put its path (relative to the cPanel home) in ~/.sees-deploy-path
+# on each server, e.g.   echo "public_html" > ~/.sees-deploy-path   for www.sees-engineering.com.
+# Without that file it deploys to the staging site (sees.easetech.dz).
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=$HOME/sees.easetech.dz/wp-content/themes/sees/
+    - export SITEDIR=$(cat $HOME/.sees-deploy-path 2>/dev/null || echo sees.easetech.dz)
+    - export DEPLOYPATH=$HOME/$SITEDIR/wp-content/themes/sees/
+    - /bin/test -f $HOME/$SITEDIR/wp-config.php
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/rsync -a --delete --exclude '.DS_Store' theme/sees/ $DEPLOYPATH
