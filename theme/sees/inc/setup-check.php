@@ -89,6 +89,8 @@ function sees_setup_checks(): array {
 	$templates = array(
 		'page-about.php'     => __( 'About', 'sees' ),
 		'page-solutions.php' => __( 'Our Solutions', 'sees' ),
+		'page-jobs.php'      => __( 'Careers', 'sees' ),
+		'page-support.php'   => __( 'Support & Downloads', 'sees' ),
 		'page-contact.php'   => __( 'Contact', 'sees' ),
 	);
 	$check_langs = $langs ? array_intersect( array( 'en', 'ar' ), $langs ) : array( '' );
@@ -206,6 +208,13 @@ function sees_setup_checks(): array {
 				: __( 'Field groups load from the theme’s acf-json folder.', 'sees' ),
 			admin_url( 'edit.php?post_type=acf-field-group&post_status=sync' ), __( 'Sync fields', 'sees' ) );
 	}
+
+	// 9a. Job application forms.
+	$job_forms = function_exists( 'sees_job_forms' ) ? sees_job_forms() : array();
+	$jobs_ok   = $has_cf7 && ! empty( $job_forms['en'] ) && ! empty( $job_forms['ar'] ) && wpcf7_contact_form( $job_forms['en'] ) && wpcf7_contact_form( $job_forms['ar'] );
+	$add( 'job_forms', __( 'Job application form in each language', 'sees' ), (bool) $jobs_ok, true,
+		__( 'Every vacancy uses this form automatically (CV upload, emailed to the careers address). Run the automatic setup to recreate it.', 'sees' ),
+		admin_url( 'themes.php?page=sees-setup' ), __( 'Run setup', 'sees' ) );
 
 	// 9b. Site icon.
 	$add( 'site_icon', __( 'Site icon (favicon)', 'sees' ), (bool) get_option( 'site_icon' ), false,

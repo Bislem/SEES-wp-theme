@@ -2,18 +2,126 @@
     "key": "group_sees_job",
     "title": "Job Details",
     "fields": [
-        {"key":"field_job_status","label":"Vacancy status","name":"job_status","type":"button_group","instructions":"Closed vacancies remain editable and may keep their public detail page, but they are removed from the open positions list and cannot accept applications.","required":1,"choices":{"open":"Open","closed":"Closed"},"default_value":"open","return_format":"value","layout":"horizontal"},
-        {"key":"field_job_reference","label":"Job reference","name":"job_reference","type":"text","instructions":"Optional internal or public reference, for example SEES-ENG-001."},
-        {"key":"field_job_department","label":"Department / specialty","name":"job_department","type":"text","required":1},
-        {"key":"field_job_location","label":"Location","name":"job_location","type":"text","instructions":"Leave empty when the role is remote or the location has not been approved for publication."},
-        {"key":"field_job_employment_type","label":"Employment type","name":"job_employment_type","type":"select","choices":{"full_time":"Full time","part_time":"Part time","contract":"Contract","internship":"Internship","temporary":"Temporary"},"allow_null":1,"return_format":"value","ui":1},
-        {"key":"field_job_closing_date","label":"Closing date","name":"closing_date","type":"date_picker","instructions":"Optional. The vacancy automatically stops appearing in the open positions list after this date.","display_format":"d/m/Y","return_format":"Y-m-d","first_day":6},
-        {"key":"field_job_responsibilities","label":"Responsibilities","name":"job_responsibilities","type":"wysiwyg","tabs":"all","toolbar":"basic","media_upload":0,"delay":0},
-        {"key":"field_job_requirements","label":"Requirements","name":"job_requirements","type":"wysiwyg","tabs":"all","toolbar":"basic","media_upload":0,"delay":0},
-        {"key":"field_job_applications_enabled","label":"Accept applications","name":"applications_enabled","type":"true_false","instructions":"Enable only after an authorised recipient, privacy wording, retention policy and a safe Contact Form 7 form have been confirmed.","message":"Show the application form for this open vacancy","default_value":0,"ui":1,"ui_on_text":"Enabled","ui_off_text":"Disabled"},
-        {"key":"field_job_application_form","label":"Contact Form 7 shortcode","name":"application_form_shortcode","type":"text","instructions":"Use a complete shortcode such as [contact-form-7 id=\"123\" title=\"Job application\"]. Configure file type/size limits, spam protection, privacy consent and the authorised recipient inside Contact Form 7.","conditional_logic":[[{"field":"field_job_applications_enabled","operator":"==","value":"1"}]]}
+        {
+            "key": "field_job_status",
+            "label": "Vacancy status",
+            "name": "job_status",
+            "type": "button_group",
+            "instructions": "Closed vacancies remain editable and may keep their public detail page, but they are removed from the open positions list and cannot accept applications.",
+            "required": 1,
+            "choices": {
+                "open": "Open",
+                "closed": "Closed"
+            },
+            "default_value": "open",
+            "return_format": "value",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_job_reference",
+            "label": "Job reference",
+            "name": "job_reference",
+            "type": "text",
+            "instructions": "Optional internal or public reference, for example SEES-ENG-001."
+        },
+        {
+            "key": "field_job_department",
+            "label": "Department / specialty",
+            "name": "job_department",
+            "type": "text",
+            "required": 1
+        },
+        {
+            "key": "field_job_location",
+            "label": "Location",
+            "name": "job_location",
+            "type": "text",
+            "instructions": "Leave empty when the role is remote or the location has not been approved for publication."
+        },
+        {
+            "key": "field_job_employment_type",
+            "label": "Employment type",
+            "name": "job_employment_type",
+            "type": "select",
+            "choices": {
+                "full_time": "Full time",
+                "part_time": "Part time",
+                "contract": "Contract",
+                "internship": "Internship",
+                "temporary": "Temporary"
+            },
+            "allow_null": 1,
+            "return_format": "value",
+            "ui": 1
+        },
+        {
+            "key": "field_job_closing_date",
+            "label": "Closing date",
+            "name": "closing_date",
+            "type": "date_picker",
+            "instructions": "Optional. The vacancy automatically stops appearing in the open positions list after this date.",
+            "display_format": "d/m/Y",
+            "return_format": "Y-m-d",
+            "first_day": 6
+        },
+        {
+            "key": "field_job_responsibilities",
+            "label": "Responsibilities",
+            "name": "job_responsibilities",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_job_requirements",
+            "label": "Requirements",
+            "name": "job_requirements",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_job_applications_enabled",
+            "label": "Accept applications",
+            "name": "applications_enabled",
+            "type": "true_false",
+            "instructions": "On by default: visitors can apply with the standard application form (CV upload included).",
+            "message": "Show the application form for this open vacancy",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Enabled",
+            "ui_off_text": "Disabled"
+        },
+        {
+            "key": "field_job_application_form",
+            "label": "Contact Form 7 shortcode",
+            "name": "application_form_shortcode",
+            "type": "text",
+            "instructions": "Optional. Leave empty to use the standard application form. Paste a Contact Form 7 shortcode only to use a different form for this vacancy.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_job_applications_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ]
+        }
     ],
-    "location": [[{"param":"post_type","operator":"==","value":"sees_job"}]],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "sees_job"
+            }
+        ]
+    ],
     "menu_order": 0,
     "position": "normal",
     "style": "default",
@@ -23,5 +131,5 @@
     "active": true,
     "description": "Operational fields for an individual vacancy.",
     "show_in_rest": 0,
-    "modified": 1791763200
+    "modified": 1791900000
 }

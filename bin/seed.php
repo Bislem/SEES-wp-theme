@@ -28,7 +28,7 @@ if ( ! sees_setup_plugins_ready() ) {
  * ------------------------------------------------------------------------ */
 if ( getenv( 'SEES_RESEED' ) ) {
 	WP_CLI::log( 'Removing the theme content…' );
-	$types = array( 'page', 'solution', 'project', 'faq', 'wpcf7_contact_form' );
+	$types = array( 'page', 'solution', 'project', 'faq', 'wpcf7_contact_form', 'sees_download' );
 	foreach ( get_posts( array( 'post_type' => $types, 'post_status' => 'any', 'posts_per_page' => -1, 'lang' => '', 'fields' => 'ids' ) ) as $id ) {
 		wp_delete_post( $id, true );
 	}
@@ -45,6 +45,15 @@ if ( getenv( 'SEES_RESEED' ) ) {
 	}
 	delete_option( 'sees_setup_media' );
 	delete_option( 'sees_seeded_projects' );
+	delete_option( 'sees_job_forms' );
+	delete_option( 'sees_seeded_download_types' );
+	foreach ( get_terms( array( 'taxonomy' => 'sees_download_type', 'hide_empty' => false, 'fields' => 'ids' ) ) as $term_id ) {
+		wp_delete_term( $term_id, 'sees_download_type' );
+	}
+	foreach ( (array) get_option( 'sees_sample_downloads', array() ) as $attachment ) {
+		wp_delete_attachment( (int) $attachment, true );
+	}
+	delete_option( 'sees_sample_downloads' );
 	update_option( 'show_on_front', 'posts' );
 	update_option( 'page_on_front', 0 );
 	$nav_menus = (array) PLL()->options['nav_menus'];
@@ -84,6 +93,40 @@ foreach ( $images as list( $post_id, $fields ) ) {
 	if ( $post_id ) {
 		sees_setup_fill_fields( $post_id, array_filter( $fields ) );
 	}
+}
+
+/* ---------------------------------------------------------------------------
+ * Sample support documents (local only — clearly labelled placeholder PDFs)
+ * ------------------------------------------------------------------------ */
+$fixtures = '/var/www/fixtures';
+if ( is_dir( $fixtures ) && ! get_posts( array( 'post_type' => 'sees_download', 'post_status' => 'any', 'posts_per_page' => 1, 'fields' => 'ids' ) ) ) {
+	require_once ABSPATH . 'wp-admin/includes/image.php';
+	require_once ABSPATH . 'wp-admin/includes/file.php';
+	require_once ABSPATH . 'wp-admin/includes/media.php';
+	$samples = array(
+		array( 'company-profile', 'brochures', 'both', '1.0', 'SAMPLE — Company profile', 'نموذج — الملف التعريفي للشركة', 'Placeholder brochure for testing the download centre.', 'ملف تجريبي لاختبار مركز التنزيلات.' ),
+		array( 'panel-datasheet', 'datasheets', 'en', '2.1', 'SAMPLE — LV panel datasheet', 'نموذج — ورقة بيانات لوحة جهد منخفض', 'Placeholder datasheet.', 'ورقة بيانات تجريبية.' ),
+		array( 'maintenance-guide', 'manuals', 'ar', '1.3', 'SAMPLE — Maintenance guide', 'نموذج — دليل الصيانة', 'Placeholder guide.', 'دليل تجريبي.' ),
+		array( 'iso-certificate', 'certificates', 'both', '', 'SAMPLE — Quality certificate', 'نموذج — شهادة الجودة', 'Placeholder certificate.', 'شهادة تجريبية.' ),
+	);
+	$attachments = array();
+	foreach ( $samples as $i => $d ) {
+		$tmp = wp_tempnam( 'sample.pdf' );
+		copy( "$fixtures/sample-{$d[0]}.pdf", $tmp );
+		$file = media_handle_sideload( array( 'name' => "sees-sample-{$d[0]}.pdf", 'tmp_name' => $tmp ), 0 );
+		if ( is_wp_error( $file ) ) {
+			WP_CLI::warning( $file->get_error_message() );
+			continue;
+		}
+		$attachments[] = $file;
+		$id = wp_insert_post( array( 'post_type' => 'sees_download', 'post_status' => 'publish', 'post_title' => $d[4], 'menu_order' => $i ) );
+		foreach ( array( 'download_file' => $file, 'doc_language' => $d[2], 'version' => $d[3], 'title_ar' => $d[5], 'description_en' => $d[6], 'description_ar' => $d[7] ) as $k => $v ) {
+			update_field( $k, $v, $id );
+		}
+		wp_set_object_terms( $id, $d[1], 'sees_download_type' );
+	}
+	update_option( 'sees_sample_downloads', $attachments, false );
+	$log['done'][] = 'Sample support documents created (local only).';
 }
 
 PLL()->model->clean_languages_cache();

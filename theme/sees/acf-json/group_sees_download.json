@@ -1,0 +1,140 @@
+{
+    "key": "group_sees_download",
+    "title": "Document",
+    "fields": [
+        {
+            "key": "field_ace365e7b2cb9",
+            "label": "File",
+            "name": "download_file",
+            "type": "file",
+            "instructions": "The document visitors download (PDF recommended). Max upload size depends on the hosting.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all"
+        },
+        {
+            "key": "field_3e08e89067299",
+            "label": "Arabic title",
+            "name": "title_ar",
+            "type": "text",
+            "instructions": "Shown on the Arabic Support page. The post title is the English title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_911eade550fd9",
+            "label": "Description (English)",
+            "name": "description_en",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_4991aa39c5694",
+            "label": "Description (Arabic)",
+            "name": "description_ar",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_2382fbf63d3aa",
+            "label": "Document language",
+            "name": "doc_language",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "both": "English & Arabic",
+                "en": "English",
+                "ar": "Arabic"
+            },
+            "default_value": "both",
+            "return_format": "value"
+        },
+        {
+            "key": "field_65572c4457c8a",
+            "label": "Version",
+            "name": "version",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "1.0"
+        },
+        {
+            "key": "field_b999a37bad2f1",
+            "label": "Document date",
+            "name": "document_date",
+            "type": "date_picker",
+            "instructions": "Optional. Defaults to the last update.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d/m/Y",
+            "return_format": "Ymd",
+            "first_day": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "sees_download"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1791900000
+}

@@ -20,6 +20,8 @@ require SEES_DIR . '/inc/enqueue.php';
 require SEES_DIR . '/inc/projects-visibility.php';
 require SEES_DIR . '/inc/post-types.php';
 require SEES_DIR . '/inc/jobs.php';
+require SEES_DIR . '/inc/job-applications.php';
+require SEES_DIR . '/inc/downloads.php';
 require SEES_DIR . '/inc/acf.php';
 require SEES_DIR . '/inc/menus.php';
 require SEES_DIR . '/inc/polylang.php';

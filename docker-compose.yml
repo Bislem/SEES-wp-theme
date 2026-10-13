@@ -61,6 +61,7 @@ services:
       - wp_data:/var/www/html
       - ./theme/${THEME_SLUG}:/var/www/html/wp-content/themes/${THEME_SLUG}
       - ./config/mu-plugins:/var/www/html/wp-content/mu-plugins:ro
+      - ./bin/fixtures:/var/www/fixtures:ro   # sample files for bin/seed.php (local only)
 
   mailpit:
     image: axllent/mailpit:v1.27

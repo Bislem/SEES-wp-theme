@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SEES 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sees\n"
-"POT-Creation-Date: 2026-10-11T13:55:47+00:00\n"
+"POT-Creation-Date: 2026-10-13T10:46:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: SEES\n"
 "Language-Team: Arabic\n"
@@ -91,7 +91,7 @@ msgstr "شاركنا خططك وسنعدّ لك عرضًا مناسبًا."
 msgid "Start a project"
 msgstr "ابدأ مشروعك"
 
-#: footer.php:18 header.php:45 header.php:50
+#: footer.php:18 header.php:70 header.php:75
 msgid "SEES — Smart Electrical Engineering Solutions"
 msgstr "سيز للحلول الهندسية الكهربائية الذكية"
 
@@ -107,12 +107,12 @@ msgstr ""
 msgid "Company"
 msgstr "الشركة"
 
-#: footer.php:39 inc/post-types.php:12
+#: footer.php:39 inc/post-types.php:13
 msgid "Solutions"
 msgstr "الحلول"
 
 #. Template Name of the theme
-#: footer.php:51 inc/menus.php:19 inc/setup-check.php:92
+#: footer.php:51 inc/menus.php:23 inc/setup-check.php:94
 msgid "Contact"
 msgstr "تواصل معنا"
 
@@ -177,23 +177,23 @@ msgid ""
 msgstr "نقدّم حلولًا كهربائية ذكية وموثوقة ومستدامة من أجل مستقبل أكثر إشراقًا."
 
 #. Template Name of the theme
-#: front-page.php:55 front-page.php:121 inc/menus.php:17 inc/setup-check.php:91
+#: front-page.php:55 front-page.php:123 inc/menus.php:17 inc/setup-check.php:91
 msgid "Our Solutions"
 msgstr "حلولنا"
 
-#: front-page.php:56
+#: front-page.php:57
 msgid "View Projects"
 msgstr "شاهد المشاريع"
 
-#: front-page.php:75
+#: front-page.php:77
 msgid "About SEES"
 msgstr "عن سيز"
 
-#: front-page.php:76
+#: front-page.php:78
 msgid "Engineering Intelligence for Real-World Impact"
 msgstr "ذكاء هندسي بأثر ملموس"
 
-#: front-page.php:77
+#: front-page.php:79
 msgid ""
 "SEES delivers integrated electrical engineering solutions that combine "
 "innovation, quality and sustainability. We power progress across diverse "
@@ -203,75 +203,75 @@ msgstr ""
 "نُسهم في دفع عجلة التقدّم في مختلف القطاعات مع تركيز على الموثوقية والكفاءة "
 "والقيمة على المدى الطويل."
 
-#: front-page.php:78
+#: front-page.php:80
 msgid "Learn More"
 msgstr "اعرف المزيد"
 
-#: front-page.php:78
+#: front-page.php:80
 msgid "about SEES"
 msgstr "عن سيز"
 
-#: front-page.php:86
+#: front-page.php:88
 msgid "Play our story video"
 msgstr "تشغيل فيديو قصتنا"
 
-#: front-page.php:90
+#: front-page.php:92
 msgid "Our Story"
 msgstr "قصتنا"
 
-#: front-page.php:91
+#: front-page.php:93
 msgid "Building smarter infrastructure for a better tomorrow."
 msgstr "نبني بنية تحتية أذكى من أجل غدٍ أفضل."
 
-#: front-page.php:98
+#: front-page.php:100
 msgid "Years of Experience"
 msgstr "سنوات من الخبرة"
 
-#: front-page.php:102
+#: front-page.php:104
 msgid "Projects Delivered"
 msgstr "مشروع منجز"
 
-#: front-page.php:106
+#: front-page.php:108
 msgid "Trusted by Leading Partners"
 msgstr "شريك موثوق لكبرى الجهات"
 
-#: front-page.php:110
+#: front-page.php:112
 msgid "Commitment to Sustainable Solutions"
 msgstr "التزام بالحلول المستدامة"
 
-#: front-page.php:122
+#: front-page.php:124
 msgid "Integrated electrical solutions, from design to operation."
 msgstr "حلول كهربائية متكاملة، من التصميم إلى التشغيل."
 
-#: front-page.php:124 inc/post-types.php:16
+#: front-page.php:126 inc/post-types.php:17
 msgid "All solutions"
 msgstr "جميع الحلول"
 
-#: front-page.php:155
+#: front-page.php:157
 msgid "One or two sentences on the client's challenge and what SEES delivered."
 msgstr "جملة أو جملتان عن تحدي العميل وما قدّمته سيز."
 
-#: front-page.php:163
+#: front-page.php:165
 msgid "Featured Project"
 msgstr "مشروع مميّز"
 
-#: front-page.php:167 single-project.php:14
+#: front-page.php:169 single-project.php:14
 msgid "Client"
 msgstr "العميل"
 
-#: front-page.php:168 single-project.php:15
+#: front-page.php:170 inc/jobs.php:359 single-project.php:15
 msgid "Location"
 msgstr "الموقع"
 
-#: front-page.php:171
+#: front-page.php:173
 msgid "View all projects"
 msgstr "شاهد جميع المشاريع"
 
-#: front-page.php:182
+#: front-page.php:184
 msgid "Let's power your next project."
 msgstr "لنُشغّل مشروعك القادم."
 
-#: front-page.php:183
+#: front-page.php:185
 msgid ""
 "Tell us what you're building — an engineer will get back to you with next "
 "steps."
@@ -281,29 +281,89 @@ msgstr "أخبرنا بما تبنيه، وسيتواصل معك أحد مهند
 msgid "Skip to content"
 msgstr "انتقل إلى المحتوى"
 
-#: header.php:57
+#: header.php:42
+msgid "Contact information"
+msgstr "معلومات التواصل"
+
+#: header.php:82
 msgid "Main"
 msgstr "القائمة الرئيسية"
 
-#: header.php:71 header.php:80
+#: header.php:96 header.php:105
 msgid "Dark mode"
 msgstr "الوضع الداكن"
 
-#: header.php:73 header.php:85 template-parts/cta-band.php:18
+#: header.php:98 header.php:110 template-parts/cta-band.php:18
 msgid "Get in Touch"
 msgstr "تواصل معنا"
 
-#: header.php:77 searchform.php:13
+#: header.php:102 page-support.php:56 searchform.php:13
 msgid "Search"
 msgstr "بحث"
 
-#: header.php:86
+#: header.php:111
 msgid "Menu"
 msgstr "القائمة"
 
 #: inc/acf.php:41
 msgid "The SEES theme needs these free plugins:"
 msgstr "يحتاج قالب سيز إلى هذه الإضافات المجانية:"
+
+#: inc/downloads.php:22
+msgid "Downloads"
+msgstr "التنزيلات"
+
+#: inc/downloads.php:23 page-support.php:107
+msgid "Download"
+msgstr "تنزيل"
+
+#: inc/downloads.php:24
+msgid "Add new document"
+msgstr "إضافة مستند جديد"
+
+#: inc/downloads.php:25
+msgid "Edit document"
+msgstr "تحرير المستند"
+
+#: inc/downloads.php:26 page-support.php:61
+msgid "All documents"
+msgstr "جميع المستندات"
+
+#: inc/downloads.php:27
+msgid "No documents found."
+msgstr "لم يتم العثور على مستندات."
+
+#: inc/downloads.php:40
+msgid "Document types"
+msgstr "أنواع المستندات"
+
+#: inc/downloads.php:41 page-support.php:60
+msgid "Document type"
+msgstr "نوع المستند"
+
+#: inc/downloads.php:97 page-support.php:49
+msgid "English"
+msgstr "الإنجليزية"
+
+#: inc/downloads.php:98 page-support.php:50
+msgid "Arabic"
+msgstr "العربية"
+
+#: inc/downloads.php:99
+msgid "English & Arabic"
+msgstr "الإنجليزية والعربية"
+
+#: inc/downloads.php:157
+msgid "File"
+msgstr "الملف"
+
+#: inc/downloads.php:158
+msgid "Language"
+msgstr "اللغة"
+
+#: inc/downloads.php:164
+msgid "No file"
+msgstr "لا يوجد ملف"
 
 #: inc/helpers.php:136
 msgid "Al Shahamah District, Makkah, Saudi Arabia"
@@ -353,34 +413,34 @@ msgstr ""
 msgid "Office"
 msgstr ""
 
-#: inc/installer.php:49
+#: inc/installer.php:52
 msgid ""
 "Polylang, Advanced Custom Fields and Contact Form 7 must be active first."
 msgstr "يجب تفعيل Polylang وAdvanced Custom Fields وContact Form 7 أولًا."
 
-#: inc/installer.php:92
+#: inc/installer.php:97
 msgid "Permalinks set to \"Post name\"."
 msgstr "تم ضبط الروابط الدائمة على \"اسم المقالة\"."
 
 #. translators: %s: language name
-#: inc/installer.php:133
+#: inc/installer.php:138
 #, php-format
 msgid "Language added: %s."
 msgstr "تمت إضافة اللغة: %s."
 
-#: inc/installer.php:163
+#: inc/installer.php:168
 msgid "Polylang URLs set to /en/ and /ar/."
 msgstr "تم ضبط روابط Polylang على /en/ و/ar/."
 
-#: inc/installer.php:169
+#: inc/installer.php:174
 msgid "Existing content assigned to English."
 msgstr "تم تعيين المحتوى الموجود للغة الإنجليزية."
 
-#: inc/installer.php:180
+#: inc/installer.php:185
 msgid "Arabic WordPress language pack installed."
 msgstr "تم تثبيت حزمة اللغة العربية لووردبريس."
 
-#: inc/installer.php:182
+#: inc/installer.php:187
 msgid ""
 "Could not download the Arabic language pack automatically — add Arabic under "
 "Settings → General → Site Language."
@@ -389,45 +449,55 @@ msgstr ""
 "الموقع."
 
 #. translators: 1: page title, 2: language code
-#: inc/installer.php:277 inc/installer.php:364
+#: inc/installer.php:282 inc/installer.php:369
 #, php-format
 msgid "Page created: %1$s (%2$s)."
 msgstr "تم إنشاء الصفحة: %1$s (%2$s)."
 
 #. translators: %s: language code
-#: inc/installer.php:414
+#: inc/installer.php:419
 #, php-format
 msgid "Privacy consent checkbox added to the contact form (%s)."
 msgstr "تمت إضافة مربع الموافقة على الخصوصية إلى نموذج التواصل (%s)."
 
-#: inc/installer.php:459
+#. translators: %s: form title
+#: inc/installer.php:479
+#, php-format
+msgid "Job application form created: %s."
+msgstr "تم إنشاء نموذج طلب التوظيف: %s."
+
+#: inc/installer.php:500
+msgid "Support document types created (English + Arabic names)."
+msgstr "تم إنشاء أنواع مستندات الدعم (بأسماء إنجليزية وعربية)."
+
+#: inc/installer.php:546
 msgid "Site icon set from the SEES logo mark."
 msgstr "تم تعيين أيقونة الموقع من شعار سيز."
 
-#: inc/installer.php:467
+#: inc/installer.php:554
 msgid "Home set as the front page."
 msgstr "تم تعيين الصفحة الرئيسية كواجهة للموقع."
 
 #. translators: %s: form title
-#: inc/installer.php:515
+#: inc/installer.php:602
 #, php-format
 msgid "Contact form created: %s."
 msgstr "تم إنشاء نموذج التواصل: %s."
 
-#: inc/installer.php:550
+#: inc/installer.php:637
 msgid "Solutions created (5, English + Arabic)."
 msgstr "تم إنشاء الحلول (5، بالإنجليزية والعربية)."
 
-#: inc/installer.php:573
+#: inc/installer.php:660
 msgid "FAQs created (4, English + Arabic)."
 msgstr "تم إنشاء الأسئلة الشائعة (4، بالإنجليزية والعربية)."
 
-#: inc/installer.php:605
+#: inc/installer.php:692
 msgid "Project categories created (English + Arabic)."
 msgstr "تم إنشاء تصنيفات المشاريع (بالإنجليزية والعربية)."
 
 #. translators: %d: number of projects
-#: inc/installer.php:656
+#: inc/installer.php:743
 #, php-format
 msgid "%d sample project created (English + Arabic)."
 msgid_plural "%d sample projects created (English + Arabic)."
@@ -439,7 +509,7 @@ msgstr[4] "تم إنشاء مشاريع تجريبية: %d (بالإنجليزي
 msgstr[5] "تم إنشاء مشاريع تجريبية: %d (بالإنجليزية والعربية)."
 
 #. translators: %d: number of projects
-#: inc/installer.php:658
+#: inc/installer.php:745
 #, php-format
 msgid ""
 "%d placeholder project created as a draft (English + Arabic) — fill it in "
@@ -466,14 +536,19 @@ msgstr[5] ""
 "تم إنشاء مشاريع مؤقتة كمسودات: %d (بالإنجليزية والعربية) — أكمل بياناتها ثم "
 "انشرها."
 
+#: inc/installer.php:803
+#, php-format
+msgid "Jobs added to menu: %s."
+msgstr "تمت إضافة الوظائف إلى القائمة: %s."
+
 #. translators: %s: menu name
-#: inc/installer.php:693
+#: inc/installer.php:810
 #, php-format
 msgid "Menu created and assigned: %s."
 msgstr "تم إنشاء القائمة وتعيينها: %s."
 
 #. translators: %d: number of field groups
-#: inc/installer.php:755
+#: inc/installer.php:873
 #, php-format
 msgid "%d field group synced from the theme."
 msgid_plural "%d field groups synced from the theme."
@@ -484,21 +559,43 @@ msgstr[3] "تمت مزامنة %d من مجموعات الحقول من القا
 msgstr[4] "تمت مزامنة %d من مجموعات الحقول من القالب."
 msgstr[5] "تمت مزامنة %d من مجموعات الحقول من القالب."
 
-#: inc/installer.php:811
+#: inc/installer.php:929
 msgid "Sorry, you are not allowed to do that."
 msgstr "عذرًا، لا تملك صلاحية تنفيذ ذلك."
 
-#: inc/installer.php:829
+#: inc/installer.php:947
 msgid "SEES automatic setup"
 msgstr "الإعداد التلقائي لقالب سيز"
 
-#: inc/installer.php:830
+#: inc/installer.php:948
 msgid "here is what was set up:"
 msgstr "هذا ما تم إعداده:"
 
-#: inc/installer.php:830
+#: inc/installer.php:948
 msgid "everything was already in place."
 msgstr "كل شيء كان جاهزًا مسبقًا."
+
+#: inc/jobs.php:358
+msgid "Department"
+msgstr "القسم"
+
+#: inc/jobs.php:360
+msgid "Vacancy status"
+msgstr "حالة الوظيفة"
+
+#: inc/jobs.php:370
+msgid "Open"
+msgstr "مفتوحة"
+
+#: inc/jobs.php:370
+msgid "Closed"
+msgstr "مغلقة"
+
+#: inc/jobs.php:384
+msgid ""
+"Applications are enabled, but no application form is available. Run "
+"Appearance → SEES setup to recreate the standard form."
+msgstr "التقديم مفعّل، لكن لا يوجد نموذج تقديم متاح. شغّل المظهر ← إعداد سيز لإعادة إنشاء النموذج القياسي."
 
 #: inc/menus.php:15 template-parts/page-header.php:98
 msgid "Home"
@@ -509,67 +606,96 @@ msgstr "الرئيسية"
 msgid "About"
 msgstr "من نحن"
 
-#: inc/menus.php:18 inc/post-types.php:31 single-project.php:27
+#: inc/menus.php:21 inc/post-types.php:32 single-project.php:27
 msgid "Projects"
 msgstr "المشاريع"
 
-#: inc/post-types.php:13
+#: inc/post-types.php:14
 msgid "Solution"
 msgstr "حل"
 
-#: inc/post-types.php:14
+#: inc/post-types.php:15
 msgid "Add new solution"
 msgstr "إضافة حل جديد"
 
-#: inc/post-types.php:15
+#: inc/post-types.php:16
 msgid "Edit solution"
 msgstr "تحرير الحل"
 
-#: inc/post-types.php:32
+#: inc/post-types.php:33
 msgid "Project"
 msgstr "مشروع"
 
-#: inc/post-types.php:33
+#: inc/post-types.php:34
 msgid "Add new project"
 msgstr "إضافة مشروع جديد"
 
-#: inc/post-types.php:34
+#: inc/post-types.php:35
 msgid "Edit project"
 msgstr "تحرير المشروع"
 
-#: inc/post-types.php:35
+#: inc/post-types.php:36
 msgid "All projects"
 msgstr "جميع المشاريع"
 
-#: inc/post-types.php:48
+#: inc/post-types.php:54
 msgid "FAQs"
 msgstr "الأسئلة الشائعة"
 
-#: inc/post-types.php:49 page-solutions.php:94
+#: inc/post-types.php:55 page-solutions.php:94
 msgid "FAQ"
 msgstr "الأسئلة الشائعة"
 
-#: inc/post-types.php:50
+#: inc/post-types.php:56
 msgid "Add new question"
 msgstr "إضافة سؤال جديد"
 
-#: inc/post-types.php:51
+#: inc/post-types.php:57
 msgid "Edit question"
 msgstr "تحرير السؤال"
 
-#: inc/post-types.php:52
+#: inc/post-types.php:58
 msgid "All FAQs"
 msgstr "جميع الأسئلة"
 
-#: inc/post-types.php:67
+#. Template Name of the theme
+#: inc/post-types.php:73
+msgid "Jobs"
+msgstr "الوظائف"
+
+#: inc/post-types.php:74
+msgid "Job"
+msgstr "وظيفة"
+
+#: inc/post-types.php:75
+msgid "Add new job"
+msgstr "إضافة وظيفة جديدة"
+
+#: inc/post-types.php:76
+msgid "Edit job"
+msgstr "تحرير الوظيفة"
+
+#: inc/post-types.php:77
+msgid "All jobs"
+msgstr "جميع الوظائف"
+
+#: inc/post-types.php:78
+msgid "No jobs found."
+msgstr "لم يتم العثور على وظائف."
+
+#: inc/post-types.php:79
+msgid "No jobs found in Trash."
+msgstr "لا توجد وظائف في سلة المهملات."
+
+#: inc/post-types.php:94
 msgid "Project categories"
 msgstr "تصنيفات المشاريع"
 
-#: inc/post-types.php:68
+#: inc/post-types.php:95
 msgid "Project category"
 msgstr "تصنيف المشروع"
 
-#: inc/post-types.php:79 inc/post-types.php:80
+#: inc/post-types.php:110 inc/post-types.php:111
 msgid "Order"
 msgstr "الترتيب"
 
@@ -582,7 +708,7 @@ msgid "Provides English / Arabic content, URLs and the language switcher."
 msgstr "توفّر المحتوى بالإنجليزية والعربية وروابط اللغات ومبدّل اللغة."
 
 #: inc/setup-check.php:43 inc/setup-check.php:46 inc/setup-check.php:49
-#: inc/setup-check.php:225 page-solutions.php:17
+#: inc/setup-check.php:234 page-solutions.php:17
 msgid "Install"
 msgstr "التركيب"
 
@@ -675,18 +801,27 @@ msgstr "الإعدادات ← القراءة ← \"صفحة ثابتة\"، ثم
 msgid "Reading settings"
 msgstr "إعدادات القراءة"
 
-#: inc/setup-check.php:111 inc/setup-check.php:175
+#: inc/setup-check.php:92
+msgid "Careers"
+msgstr "الوظائف"
+
+#. Template Name of the theme
+#: inc/setup-check.php:93
+msgid "Support & Downloads"
+msgstr "الدعم والتنزيلات"
+
+#: inc/setup-check.php:113 inc/setup-check.php:177
 msgid "page"
 msgstr "صفحة"
 
 #. translators: %s: page name, e.g. About
-#: inc/setup-check.php:116
+#: inc/setup-check.php:118
 #, php-format
 msgid "\"%s\" page in each language, with its template"
 msgstr "صفحة \"%s\" بكل لغة مع قالبها"
 
 #. translators: 1: page name, 2: missing languages, 3: template name
-#: inc/setup-check.php:120
+#: inc/setup-check.php:122
 #, php-format
 msgid ""
 "Missing: %2$s. Create the page, choose the \"%1$s\" template (Page → "
@@ -696,34 +831,36 @@ msgstr ""
 "الترجمات."
 
 #. translators: %s: template name
-#: inc/setup-check.php:122
+#: inc/setup-check.php:124
 #, php-format
 msgid "Uses the \"%s\" template."
 msgstr "تستخدم قالب \"%s\"."
 
-#: inc/setup-check.php:123
+#: inc/setup-check.php:125
 msgid "Add page"
 msgstr "إضافة صفحة"
 
-#: inc/setup-check.php:132
+#: inc/setup-check.php:134
 msgid "Privacy policy page in each language"
 msgstr "صفحة سياسة الخصوصية بكل لغة"
 
-#: inc/setup-check.php:133
+#: inc/setup-check.php:135
 msgid ""
 "Required by the Saudi Personal Data Protection Law because the contact form "
 "collects personal data. Fill in the [placeholders] and have it reviewed."
-msgstr "مطلوبة بموجب نظام حماية البيانات الشخصية السعودي لأن نموذج التواصل يجمع بيانات شخصية. أكمل [الحقول المؤقتة] واطلب مراجعتها."
+msgstr ""
+"مطلوبة بموجب نظام حماية البيانات الشخصية السعودي لأن نموذج التواصل يجمع "
+"بيانات شخصية. أكمل [الحقول المؤقتة] واطلب مراجعتها."
 
-#: inc/setup-check.php:134
+#: inc/setup-check.php:136
 msgid "Privacy settings"
 msgstr "إعدادات الخصوصية"
 
-#: inc/setup-check.php:144
+#: inc/setup-check.php:146
 msgid "Primary menu for each language"
 msgstr "القائمة الرئيسية لكل لغة"
 
-#: inc/setup-check.php:145
+#: inc/setup-check.php:147
 msgid ""
 "Optional: without it the header shows an automatic menu. Assign one menu per "
 "language to \"Primary menu\"."
@@ -731,16 +868,16 @@ msgstr ""
 "اختياري: بدونها تعرض الترويسة قائمة تلقائية. عيّن قائمة لكل لغة في موضع "
 "\"القائمة الرئيسية\"."
 
-#: inc/setup-check.php:146
+#: inc/setup-check.php:148
 msgid "Menus"
 msgstr "القوائم"
 
-#: inc/setup-check.php:179
+#: inc/setup-check.php:181
 msgid "Contact form on each Contact page"
 msgstr "نموذج تواصل في كل صفحة تواصل"
 
 #. translators: %s: languages
-#: inc/setup-check.php:183
+#: inc/setup-check.php:185
 #, php-format
 msgid ""
 "Missing or invalid on: %s. Create a form per language and paste its "
@@ -749,20 +886,20 @@ msgstr ""
 "مفقود أو غير صالح في: %s. أنشئ نموذجًا لكل لغة والصق رمزه المختصر في تبويب "
 "\"النموذج\" بصفحة التواصل."
 
-#: inc/setup-check.php:184
+#: inc/setup-check.php:186
 msgid "Paste the form shortcode in the Contact page \"Form\" tab."
 msgstr "الصق الرمز المختصر للنموذج في تبويب \"النموذج\" بصفحة التواصل."
 
-#: inc/setup-check.php:185
+#: inc/setup-check.php:187
 msgid "Contact forms"
 msgstr "نماذج التواصل"
 
-#: inc/setup-check.php:202
+#: inc/setup-check.php:204
 msgid "Theme field groups synced"
 msgstr "مزامنة مجموعات حقول القالب"
 
 #. translators: %d: number of field groups
-#: inc/setup-check.php:205
+#: inc/setup-check.php:207
 #, php-format
 msgid "%d field group was updated with the theme. Click \"Sync\" to apply it."
 msgid_plural ""
@@ -774,33 +911,48 @@ msgstr[3] "تم تحديث %d من مجموعات الحقول مع القالب
 msgstr[4] "تم تحديث %d من مجموعات الحقول مع القالب. اضغط \"مزامنة\" لتطبيقها."
 msgstr[5] "تم تحديث %d من مجموعات الحقول مع القالب. اضغط \"مزامنة\" لتطبيقها."
 
-#: inc/setup-check.php:206
+#: inc/setup-check.php:208
 msgid "Field groups load from the theme’s acf-json folder."
 msgstr "تُحمَّل مجموعات الحقول من مجلد acf-json في القالب."
 
-#: inc/setup-check.php:207
+#: inc/setup-check.php:209
 msgid "Sync fields"
 msgstr "مزامنة الحقول"
 
-#: inc/setup-check.php:211
+#: inc/setup-check.php:215
+msgid "Job application form in each language"
+msgstr "نموذج طلب التوظيف بكل لغة"
+
+#: inc/setup-check.php:216
+msgid ""
+"Every vacancy uses this form automatically (CV upload, emailed to the "
+"careers address). Run the automatic setup to recreate it."
+msgstr "تستخدم كل وظيفة هذا النموذج تلقائيًا (رفع السيرة الذاتية وإرسالها إلى بريد التوظيف). شغّل الإعداد التلقائي لإعادة إنشائه."
+
+#: inc/setup-check.php:217
+msgid "Run setup"
+msgstr "تشغيل الإعداد"
+
+#: inc/setup-check.php:220
 msgid "Site icon (favicon)"
 msgstr "أيقونة الموقع"
 
-#: inc/setup-check.php:212
+#: inc/setup-check.php:221
 msgid ""
 "Shown in browser tabs and on phones. The automatic setup uses the SEES logo "
 "mark."
-msgstr "تظهر في تبويبات المتصفح وعلى الجوالات. يستخدم الإعداد التلقائي شعار سيز."
+msgstr ""
+"تظهر في تبويبات المتصفح وعلى الجوالات. يستخدم الإعداد التلقائي شعار سيز."
 
-#: inc/setup-check.php:213
+#: inc/setup-check.php:222
 msgid "Set icon"
 msgstr "تعيين الأيقونة"
 
-#: inc/setup-check.php:223
+#: inc/setup-check.php:232
 msgid "SMTP email delivery"
 msgstr "إرسال البريد عبر SMTP"
 
-#: inc/setup-check.php:224
+#: inc/setup-check.php:233
 msgid ""
 "Recommended so contact form emails are delivered: install WP Mail SMTP and "
 "connect a cPanel email account."
@@ -808,21 +960,21 @@ msgstr ""
 "يُنصح به لضمان وصول رسائل النموذج: ثبّت WP Mail SMTP واربطه بحساب بريد من "
 "cPanel."
 
-#: inc/setup-check.php:259
+#: inc/setup-check.php:268
 msgid "SEES theme:"
 msgstr "قالب سيز:"
 
-#: inc/setup-check.php:260
+#: inc/setup-check.php:269
 msgid ""
 "setup check passed — languages, pages, menus and forms are all in place."
 msgstr "اكتمل فحص الإعداد — اللغات والصفحات والقوائم والنماذج جاهزة."
 
-#: inc/setup-check.php:266
+#: inc/setup-check.php:275
 msgid "SEES theme setup check"
 msgstr "فحص إعداد قالب سيز"
 
 #. translators: %d: number of items
-#: inc/setup-check.php:270
+#: inc/setup-check.php:279
 #, php-format
 msgid "%d required step is missing:"
 msgid_plural "%d required steps are missing:"
@@ -833,19 +985,19 @@ msgstr[3] "خطوات مطلوبة ناقصة: %d"
 msgstr[4] "خطوات مطلوبة ناقصة: %d"
 msgstr[5] "خطوات مطلوبة ناقصة: %d"
 
-#: inc/setup-check.php:271
+#: inc/setup-check.php:280
 msgid "everything required is done. Recommended:"
 msgstr "اكتملت كل الخطوات المطلوبة. يُنصح أيضًا بـ:"
 
-#: inc/setup-check.php:278 inc/setup-check.php:336
+#: inc/setup-check.php:287 inc/setup-check.php:345
 msgid "recommended"
 msgstr "مُستحسن"
 
-#: inc/setup-check.php:280 inc/setup-check.php:342
+#: inc/setup-check.php:289 inc/setup-check.php:351
 msgid "Fix"
 msgstr "إصلاح"
 
-#: inc/setup-check.php:285
+#: inc/setup-check.php:294
 msgid ""
 "Activate the plugins above — the theme then sets up languages, pages, menus "
 "and forms by itself."
@@ -853,24 +1005,24 @@ msgstr ""
 "فعّل الإضافات أعلاه — وسيُعدّ القالب بعدها اللغات والصفحات والقوائم والنماذج "
 "تلقائيًا."
 
-#: inc/setup-check.php:288
+#: inc/setup-check.php:297
 msgid "Open the setup checklist"
 msgstr "فتح قائمة الإعداد"
 
-#: inc/setup-check.php:289
+#: inc/setup-check.php:298
 msgid "Hide until next activation"
 msgstr "إخفاء حتى التفعيل القادم"
 
-#: inc/setup-check.php:309
+#: inc/setup-check.php:318
 msgid "SEES setup"
 msgstr "إعداد سيز"
 
-#: inc/setup-check.php:320
+#: inc/setup-check.php:329
 msgid "SEES setup checklist"
 msgstr "قائمة إعداد سيز"
 
 #. translators: 1: completed steps, 2: total steps
-#: inc/setup-check.php:324
+#: inc/setup-check.php:333
 #, php-format
 msgid ""
 "%1$d of %2$d steps complete. This check also runs every time the theme is "
@@ -878,23 +1030,23 @@ msgid ""
 msgstr ""
 "اكتملت %1$d من %2$d خطوة. يعمل هذا الفحص أيضًا في كل مرة يُفعَّل فيها القالب."
 
-#: inc/setup-check.php:334
+#: inc/setup-check.php:343
 msgid "Done"
 msgstr "مكتمل"
 
-#: inc/setup-check.php:334
+#: inc/setup-check.php:343
 msgid "Missing"
 msgstr "ناقص"
 
-#: inc/setup-check.php:334
+#: inc/setup-check.php:343
 msgid "Recommended"
 msgstr "مُستحسن"
 
-#: inc/setup-check.php:349
+#: inc/setup-check.php:358
 msgid "Automatic setup"
 msgstr "الإعداد التلقائي"
 
-#: inc/setup-check.php:350
+#: inc/setup-check.php:359
 msgid ""
 "The theme sets everything up by itself after activation: languages, Arabic "
 "language pack, permalinks, the Home / About / Our Solutions / Contact pages "
@@ -908,11 +1060,11 @@ msgstr ""
 "التواصل، والقوائم، والصفحة الرئيسية للموقع. يضيف فقط ما ينقص ولا يستبدل "
 "محتواك أبدًا."
 
-#: inc/setup-check.php:355
+#: inc/setup-check.php:364
 msgid "Run automatic setup"
 msgstr "تشغيل الإعداد التلقائي"
 
-#: inc/setup-check.php:358
+#: inc/setup-check.php:367
 msgid ""
 "Install and activate Polylang, Advanced Custom Fields and Contact Form 7 "
 "first — the setup then runs automatically."
@@ -1174,6 +1326,86 @@ msgstr "صف لنا مشروعك وسيوصي مهندسونا بالنهج ال
 #: page-solutions.php:116
 msgid "Talk to an engineer"
 msgstr "تحدّث مع مهندس"
+
+#: page-support.php:34
+msgid ""
+"Brochures, datasheets, manuals and certificates — find and download the "
+"documents you need."
+msgstr "الكتيبات وأوراق البيانات والأدلة والشهادات — ابحث عن المستندات التي تحتاجها ونزّلها."
+
+#: page-support.php:41
+msgid "Search documents"
+msgstr "البحث في المستندات"
+
+#: page-support.php:43
+msgid "Search by document name, product or keyword…"
+msgstr "ابحث باسم المستند أو المنتج أو كلمة مفتاحية…"
+
+#: page-support.php:46
+msgid "Document language"
+msgstr "لغة المستند"
+
+#: page-support.php:48
+msgid "All languages"
+msgstr "جميع اللغات"
+
+#: page-support.php:70
+msgid "1 document"
+msgstr "مستند واحد"
+
+#. translators: %s: number of documents
+#: page-support.php:72
+#, php-format
+msgid "%s documents"
+msgstr "عدد المستندات: %s"
+
+#. translators: %s: document version
+#: page-support.php:84
+#, php-format
+msgid "Version %s"
+msgstr "الإصدار %s"
+
+#: page-support.php:103
+msgid "View"
+msgstr "عرض"
+
+#: page-support.php:103
+msgid "(opens in a new tab)"
+msgstr "(يفتح في تبويب جديد)"
+
+#: page-support.php:115
+msgid ""
+"No documents match your search. Try other keywords or another document type."
+msgstr "لا توجد مستندات مطابقة لبحثك. جرّب كلمات أخرى أو نوع مستند آخر."
+
+#: page-support.php:120
+msgid ""
+"Documents will be published here soon. Contact us if you need a document now."
+msgstr "ستُنشر المستندات هنا قريبًا. تواصل معنا إذا كنت تحتاج إلى مستند الآن."
+
+#: page-support.php:128
+msgid "Need help?"
+msgstr "تحتاج إلى مساعدة؟"
+
+#: page-support.php:129
+msgid "Our engineers are here to support you."
+msgstr "مهندسونا هنا لدعمك."
+
+#: page-support.php:134
+msgid "Call support"
+msgstr "اتصل بالدعم"
+
+#: page-support.php:138
+msgid "Email support"
+msgstr "راسل الدعم"
+
+#: page-support.php:142
+msgid "Can’t find a document?"
+msgstr "لم تجد المستند؟"
+
+#: page-support.php:142
+msgid "Request it from our team"
+msgstr "اطلبه من فريقنا"
 
 #: searchform.php:11
 msgid "Search for:"

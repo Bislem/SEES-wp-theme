@@ -26,6 +26,9 @@ Brand guidelines: `sees-theme-kit/reference/Visual_Brand_SEES_ENG_V1_2026.pdf` (
 | Our Solutions | `page-solutions.php` (or `archive-solution.php`) | `solution` CPT + `faq` CPT |
 | Projects | `archive-project.php` + `single-project.php` | `project` CPT with `project_category` taxonomy |
 | Contact | `page-contact.php` | ACF fields (phone, email, address, hours, map embed) + CF7 shortcode |
+| Careers | `page-jobs.php` + `single-sees_job.php` | `sees_job` CPT (inc/jobs.php); standard CF7 application form per language (inc/job-applications.php) |
+| Support & Downloads | `page-support.php` | `sees_download` CPT + `sees_download_type` taxonomy (inc/downloads.php), one record serves both languages |
+| Privacy Policy | `page.php` | Saudi PDPL template created by the installer |
 
 Shared: `header.php`, `footer.php`, `template-parts/` (page-header, cta-band, solution-card, project-card, eyebrow).
 

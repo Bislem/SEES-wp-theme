@@ -253,6 +253,25 @@ function sees_installer_content(): array {
 				),
 			),
 
+			'support' => array(
+				'template' => 'page-support.php',
+				'order'    => 5,
+				'en'       => array(
+					'title'  => 'Support & Downloads',
+					'slug'   => 'support',
+					'fields' => array(
+						'header_subtitle' => 'Brochures, datasheets, manuals and certificates — find and download the documents you need.',
+					),
+				),
+				'ar'       => array(
+					'title'  => 'الدعم والتنزيلات',
+					'slug'   => 'الدعم',
+					'fields' => array(
+						'header_subtitle' => 'الكتيبات وأوراق البيانات والأدلة والشهادات — ابحث عن المستندات التي تحتاجها ونزّلها.',
+					),
+				),
+			),
+
 			'contact' => array(
 				'template' => 'page-contact.php',
 				'order'    => 4,
@@ -421,6 +440,7 @@ function sees_installer_content(): array {
 					array( 'Who we are', array( 'The data controller is [COMPANY LEGAL NAME], Commercial Registration No. [CR NUMBER], Al Shahamah District, Makkah, Saudi Arabia. You can contact us about privacy at [PRIVACY EMAIL] or +966 50 326 4000.' ) ),
 					array( 'Personal data we collect', array( 'We only collect the data you choose to send us through the contact form:' ), array( 'Full name, company name, email address and phone number.', 'The solution you are interested in and the project details you write in your message.' ) ),
 					array( '', array( 'Like most websites, our hosting provider\'s servers automatically record technical data (IP address, browser type, pages requested and time of the request) to keep the site secure and working. This website does not use advertising or analytics cookies. Your light/dark display preference is saved only in your own browser and is never sent to us.' ) ),
+					array( 'Job applications', array( 'When you apply for a vacancy, we collect your name, email, phone number, LinkedIn or portfolio link, your CV and your cover letter. We use them only to assess your application for that role and to contact you about it. Applications are sent to our recruitment team by email; uploaded files are not kept on the website after sending. We keep applications for [RETENTION PERIOD FOR APPLICATIONS, e.g. 12 months] after the vacancy closes, unless you ask us to delete them earlier.' ) ),
 					array( 'Why we use it and on what basis', array( 'We use the data you send to reply to your enquiry, prepare quotes and communicate with you about your project. We process it on the basis of your consent, which you give by ticking the consent box before sending the form, and to take the steps you request before any contract. Technical data is used only to operate and protect the website. We do not use your data for marketing without your separate consent, and we never sell it.' ) ),
 					array( 'How we store and protect it', array( 'Messages from the form are delivered to our company email and kept in our systems hosted by [HOSTING / EMAIL PROVIDER]. Access is limited to staff who need it to answer you, and we apply organisational, administrative and technical measures to protect your data from loss, misuse or unauthorised access.' ) ),
 					array( 'Who we share it with', array( 'We share personal data only when necessary:' ), array( 'Service providers that host our website and email, under obligations to protect it.', 'Government or judicial authorities when required by law.' ) ),
@@ -443,6 +463,7 @@ function sees_installer_content(): array {
 					array( 'من نحن', array( 'جهة التحكم في البيانات هي [الاسم النظامي للشركة]، سجل تجاري رقم [رقم السجل التجاري]، حي الشهامة، مكة المكرمة، المملكة العربية السعودية. يمكنك التواصل معنا بشأن الخصوصية عبر [بريد الخصوصية] أو على الرقم ‎+966 50 326 4000.' ) ),
 					array( 'البيانات الشخصية التي نجمعها', array( 'نجمع فقط البيانات التي تختار إرسالها إلينا عبر نموذج التواصل:' ), array( 'الاسم الكامل واسم الشركة والبريد الإلكتروني ورقم الجوال.', 'الحل الذي تهتم به وتفاصيل المشروع التي تكتبها في رسالتك.' ) ),
 					array( '', array( 'كما هو الحال في معظم المواقع، تسجّل خوادم مزوّد الاستضافة تلقائيًا بيانات تقنية (عنوان IP ونوع المتصفح والصفحات المطلوبة ووقت الطلب) للحفاظ على أمان الموقع وعمله. لا يستخدم هذا الموقع ملفات تعريف ارتباط إعلانية أو تحليلية. ويُحفظ تفضيلك للوضع الفاتح أو الداكن في متصفحك فقط ولا يُرسل إلينا.' ) ),
+					array( 'طلبات التوظيف', array( 'عند تقديمك على وظيفة، نجمع اسمك وبريدك الإلكتروني ورقم جوالك ورابط LinkedIn أو ملف أعمالك وسيرتك الذاتية وخطاب التقديم. ونستخدمها فقط لتقييم طلبك لتلك الوظيفة والتواصل معك بشأنه. تُرسل الطلبات إلى فريق التوظيف عبر البريد الإلكتروني، ولا تُحفظ الملفات المرفوعة على الموقع بعد الإرسال. ونحتفظ بالطلبات لمدة [مدة الاحتفاظ بطلبات التوظيف، مثل 12 شهرًا] بعد إغلاق الوظيفة، ما لم تطلب حذفها قبل ذلك.' ) ),
 					array( 'لماذا نستخدمها وعلى أي أساس', array( 'نستخدم البيانات التي ترسلها للرد على استفسارك وإعداد عروض الأسعار والتواصل معك بشأن مشروعك. ونعالجها بناءً على موافقتك التي تمنحها بتحديد مربع الموافقة قبل إرسال النموذج، ولاتخاذ الإجراءات التي تطلبها قبل أي تعاقد. وتُستخدم البيانات التقنية فقط لتشغيل الموقع وحمايته. لا نستخدم بياناتك لأغراض تسويقية دون موافقة مستقلة منك، ولا نبيعها أبدًا.' ) ),
 					array( 'كيف نحفظها ونحميها', array( 'تصل رسائل النموذج إلى البريد الإلكتروني للشركة وتُحفظ في أنظمتنا المستضافة لدى [مزوّد الاستضافة والبريد]. ويقتصر الوصول إليها على الموظفين الذين يحتاجونها للرد عليك، ونطبّق تدابير تنظيمية وإدارية وتقنية لحماية بياناتك من الفقد أو سوء الاستخدام أو الوصول غير المصرّح به.' ) ),
 					array( 'مع من نشاركها', array( 'لا نشارك البيانات الشخصية إلا عند الضرورة:' ), array( 'مزوّدو الخدمات الذين يستضيفون موقعنا وبريدنا الإلكتروني، مع التزامهم بحمايتها.', 'الجهات الحكومية أو القضائية عندما يقتضي النظام ذلك.' ) ),
@@ -459,6 +480,68 @@ function sees_installer_content(): array {
 			'consent' => array(
 				'en' => 'I agree to SEES processing my data to answer this request, as described in the <a href="%s" target="_blank" rel="noopener">Privacy Policy</a>.',
 				'ar' => 'أوافق على معالجة سيز لبياناتي للرد على هذا الطلب، كما هو موضح في <a href="%s" target="_blank" rel="noopener">سياسة الخصوصية</a>.',
+			),
+		),
+
+		/* ---------------- Support document types: slug => [ en, ar ] ---------------- */
+		'download_types' => array(
+			'brochures'    => array( 'Brochures & profiles', 'الكتيبات والملفات التعريفية' ),
+			'datasheets'   => array( 'Technical datasheets', 'أوراق البيانات الفنية' ),
+			'manuals'      => array( 'Manuals & guides', 'الأدلة والإرشادات' ),
+			'certificates' => array( 'Certificates & approvals', 'الشهادات والاعتمادات' ),
+			'forms'        => array( 'Forms & templates', 'النماذج والقوالب' ),
+		),
+
+		/* ---------------- Standard job application forms (Contact Form 7) ---------------- */
+		'job_forms' => array(
+			'en' => array(
+				'title'   => 'Job application (EN)',
+				'locale'  => 'en_US',
+				'labels'  => array(
+					'name' => 'Full name', 'email' => 'Email', 'phone' => 'Phone', 'link' => 'LinkedIn or portfolio',
+					'cv' => 'CV / résumé', 'cv_hint' => 'PDF, DOC or DOCX — up to 5 MB', 'letter' => 'Cover letter',
+					'letter_ph' => 'Tell us briefly about your experience and why this role interests you…', 'submit' => 'Submit application',
+				),
+				'mail_subject'   => '[_site_title] Job application: [_post_title] — [your-name]',
+				'mail_body'      => "New application for: [_post_title]\nReference: [_job_reference]\nVacancy: [_post_url]\n\nName: [your-name]\nEmail: [your-email]\nPhone: [your-phone]\nLinkedIn / portfolio: [your-link]\n\nCover letter:\n[your-message]\n\nThe CV is attached.",
+				'reply_subject'  => 'We received your application — [_post_title]',
+				'reply_body'     => "Dear [your-name],\n\nThank you for applying for [_post_title] at SEES. We have received your application and CV. Our team will review it and contact you if your profile matches the role.\n\nSEES — Smart Electrical Engineering Solutions\n[_site_url]",
+				'messages'       => array(
+					'mail_sent_ok'             => 'Thank you — your application has been sent. We have emailed you a confirmation.',
+					'accept_terms'             => 'Please tick the box to agree to our Privacy Policy before sending.',
+					'upload_file_type_invalid' => 'Please upload your CV as a PDF, DOC or DOCX file.',
+					'upload_file_too_large'    => 'Your CV is larger than 5 MB. Please upload a smaller file.',
+				),
+			),
+			'ar' => array(
+				'title'   => 'طلب توظيف (AR)',
+				'locale'  => 'ar',
+				'labels'  => array(
+					'name' => 'الاسم الكامل', 'email' => 'البريد الإلكتروني', 'phone' => 'رقم الجوال', 'link' => 'LinkedIn أو ملف الأعمال',
+					'cv' => 'السيرة الذاتية', 'cv_hint' => 'PDF أو DOC أو DOCX — حتى 5 ميجابايت', 'letter' => 'خطاب التقديم',
+					'letter_ph' => 'أخبرنا باختصار عن خبراتك وسبب اهتمامك بهذه الوظيفة…', 'submit' => 'إرسال الطلب',
+				),
+				'mail_subject'   => '[_site_title] طلب توظيف: [_post_title] — [your-name]',
+				'mail_body'      => "طلب جديد للوظيفة: [_post_title]\nالرقم المرجعي: [_job_reference]\nرابط الوظيفة: [_post_url]\n\nالاسم: [your-name]\nالبريد الإلكتروني: [your-email]\nالجوال: [your-phone]\nLinkedIn / ملف الأعمال: [your-link]\n\nخطاب التقديم:\n[your-message]\n\nالسيرة الذاتية مرفقة.",
+				'reply_subject'  => 'تم استلام طلبك — [_post_title]',
+				'reply_body'     => "عزيزي/عزيزتي [your-name]،\n\nشكرًا لتقديمك على وظيفة [_post_title] في سيز. لقد استلمنا طلبك وسيرتك الذاتية، وسيقوم فريقنا بمراجعتها والتواصل معك إذا كان ملفك مناسبًا للوظيفة.\n\nسيز للحلول الهندسية الكهربائية الذكية\n[_site_url]",
+				'messages'       => array(
+					'mail_sent_ok'             => 'شكرًا لك — تم إرسال طلبك، وأرسلنا إليك رسالة تأكيد عبر البريد الإلكتروني.',
+					'mail_sent_ng'             => 'حدث خطأ أثناء إرسال طلبك. يرجى المحاولة لاحقًا.',
+					'validation_error'         => 'يوجد خطأ في حقل أو أكثر. يرجى المراجعة والمحاولة مرة أخرى.',
+					'spam'                     => 'حدث خطأ أثناء إرسال طلبك. يرجى المحاولة لاحقًا.',
+					'accept_terms'             => 'يرجى تحديد مربع الموافقة على سياسة الخصوصية قبل الإرسال.',
+					'invalid_required'         => 'يرجى تعبئة هذا الحقل.',
+					'invalid_too_long'         => 'هذا الحقل أطول من المسموح.',
+					'invalid_too_short'        => 'هذا الحقل أقصر من المسموح.',
+					'invalid_email'            => 'يرجى إدخال بريد إلكتروني صحيح.',
+					'invalid_url'              => 'يرجى إدخال رابط صحيح.',
+					'invalid_tel'              => 'يرجى إدخال رقم هاتف صحيح.',
+					'upload_failed'            => 'حدث خطأ غير معروف أثناء رفع الملف.',
+					'upload_file_type_invalid' => 'يرجى رفع السيرة الذاتية بصيغة PDF أو DOC أو DOCX.',
+					'upload_file_too_large'    => 'حجم السيرة الذاتية أكبر من 5 ميجابايت. يرجى رفع ملف أصغر.',
+					'upload_failed_php_error'  => 'حدث خطأ أثناء رفع الملف.',
+				),
 			),
 		),
 

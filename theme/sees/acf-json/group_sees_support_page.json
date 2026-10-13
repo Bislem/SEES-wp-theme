@@ -1,0 +1,55 @@
+{
+    "key": "group_sees_support_page",
+    "title": "Support page",
+    "fields": [
+        {
+            "key": "field_a685b08394ac5",
+            "label": "Support email",
+            "name": "support_email",
+            "type": "email",
+            "instructions": "Leave empty to use the Contact page email.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_2bc10239e58da",
+            "label": "Support phone",
+            "name": "support_phone",
+            "type": "text",
+            "instructions": "Leave empty to use the Contact page phone.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-support.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1791900000
+}

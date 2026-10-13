@@ -54,6 +54,14 @@ sees-theme-kit/          original brief, brand guidelines PDF, source images
 - **Solutions / Projects / FAQs**: menu items in wp-admin. Order with the "Order" attribute. Tick "Featured on Home" on one project.
 - **Contact details** on the Contact page are reused in the footer and the Home call-to-action.
 - **Menus**: Appearance → Menus (one per language). Footer columns fall back to automatic links if left unassigned.
+- **Careers**: Jobs → Add new job. Fill in the vacancy (title, description, department, location, type, closing date) and publish, in one or both languages.
+  - The application form appears automatically: CV upload, consent, and emails with the CV attached.
+  - Applications go to Careers page → *Applications* tab email, or to the Contact email if that's empty. The applicant gets a confirmation.
+  - Vacancies past their closing date, or set to *Closed*, disappear from the list and stop accepting applications.
+- **Support & Downloads**: Downloads → Add new document.
+  - Upload the file and give it an English title (and optionally an Arabic title, descriptions, language, version and date). Pick a document type.
+  - One document appears on both language versions of the Support page. Visitors can search and filter by type and language.
+- **Top bar**: phone, email, address (and working hours, once they're no longer a placeholder) come from the Contact page.
 
 ## Installing on a new WordPress (staging / production)
 

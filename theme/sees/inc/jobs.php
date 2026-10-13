@@ -297,17 +297,16 @@ function sees_job_filter_options( array $jobs ): array {
  * Arbitrary shortcodes are rejected.
  */
 function sees_job_application_shortcode( int $post_id ): string {
-	if ( ! sees_job_is_open( $post_id ) || ! sees_job_field( $post_id, 'applications_enabled', false, true ) || ! function_exists( 'wpcf7_contact_form' ) ) {
+	// Applications are on unless an editor switched them off for this vacancy.
+	if ( ! sees_job_is_open( $post_id ) || ! sees_job_field( $post_id, 'applications_enabled', true, true ) || ! function_exists( 'wpcf7_contact_form' ) ) {
 		return '';
 	}
 	$shortcode = trim( (string) sees_job_field( $post_id, 'application_form_shortcode', '', true ) );
-	if ( ! preg_match( '/^\[contact-form-7\b[^\]]*\]$/', $shortcode ) || ! preg_match( '/\bid=["\']?(\d+)/', $shortcode, $match ) ) {
-		return '';
+	if ( preg_match( '/^\[contact-form-7\b[^\]]*\]$/', $shortcode ) && preg_match( '/\bid=["\']?(\d+)/', $shortcode, $match ) && wpcf7_contact_form( (int) $match[1] ) ) {
+		return $shortcode;
 	}
-	if ( ! wpcf7_contact_form( (int) $match[1] ) ) {
-		return '';
-	}
-	return $shortcode;
+	// No (valid) custom form: use the standard application form created by the theme.
+	return function_exists( 'sees_job_default_form_shortcode' ) ? sees_job_default_form_shortcode( $post_id ) : '';
 }
 
 function sees_job_has_application_form( int $post_id ): bool {
@@ -381,7 +380,7 @@ add_action( 'admin_notices', function (): void {
 		return;
 	}
 	$post_id = isset( $_GET['post'] ) ? absint( $_GET['post'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-	if ( $post_id && sees_job_field( $post_id, 'applications_enabled', false, true ) && ! sees_job_has_application_form( $post_id ) ) {
-		echo '<div class="notice notice-warning"><p>' . esc_html__( 'Applications are enabled, but no valid Contact Form 7 shortcode is configured. The public Apply button will stay hidden.', 'sees' ) . '</p></div>';
+	if ( $post_id && sees_job_field( $post_id, 'applications_enabled', true, true ) && sees_job_is_open( $post_id ) && ! sees_job_has_application_form( $post_id ) ) {
+		echo '<div class="notice notice-warning"><p>' . esc_html__( 'Applications are enabled, but no application form is available. Run Appearance → SEES setup to recreate the standard form.', 'sees' ) . '</p></div>';
 	}
 } );

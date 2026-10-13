@@ -32,6 +32,31 @@ $contact_url = sees_page_url( 'page-contact.php' );
 <a class="skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'sees' ); ?></a>
 
 <header class="site-header" id="site-header">
+	<?php
+	$sees_info    = sees_contact();
+	$sees_support = sees_page_by_template( 'page-support.php' );
+	$sees_careers = sees_page_by_template( 'page-jobs.php' );
+	?>
+	<div class="topbar">
+		<div class="container topbar__inner">
+			<ul class="topbar__contact" aria-label="<?php esc_attr_e( 'Contact information', 'sees' ); ?>">
+				<li><a href="<?php echo esc_url( sees_tel( $sees_info['phone'] ) ); ?>"><?php echo sees_icon( 'phone', 15, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?><span dir="ltr"><?php echo esc_html( $sees_info['phone'] ); ?></span></a></li>
+				<li><a href="<?php echo esc_url( 'mailto:' . $sees_info['email'] ); ?>"><?php echo sees_icon( 'mail', 15, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?><span class="topbar__label"><?php echo esc_html( $sees_info['email'] ); ?></span></a></li>
+				<li class="topbar__wide"><?php echo sees_icon( 'pin', 15, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?><span><?php echo esc_html( $sees_info['address'] ); ?></span></li>
+				<?php if ( false === strpos( $sees_info['hours'], '[' ) ) : // Hide until real hours are set. ?>
+					<li class="topbar__wide"><?php echo sees_icon( 'clock', 15, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?><span><?php echo esc_html( $sees_info['hours'] ); ?></span></li>
+				<?php endif; ?>
+			</ul>
+			<ul class="topbar__links">
+				<?php if ( $sees_support ) : ?>
+					<li><a href="<?php echo esc_url( get_permalink( $sees_support ) ); ?>"><?php echo sees_icon( 'download', 15, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?><span><?php echo esc_html( get_the_title( $sees_support ) ); ?></span></a></li>
+				<?php endif; ?>
+				<?php if ( $sees_careers ) : ?>
+					<li><a href="<?php echo esc_url( get_permalink( $sees_careers ) ); ?>"><?php echo sees_icon( 'people', 15, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?><span><?php echo esc_html( get_the_title( $sees_careers ) ); ?></span></a></li>
+				<?php endif; ?>
+			</ul>
+		</div>
+	</div>
 	<div class="container site-header__bar a-up">
 		<a class="brand" href="<?php echo esc_url( function_exists( 'pll_home_url' ) ? pll_home_url() : home_url( '/' ) ); ?>" rel="home">
 			<?php

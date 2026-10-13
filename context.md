@@ -94,6 +94,38 @@ theme/sees/
 - **Tested** on a brand-new WordPress (plugins installed, theme activated, one admin page load): all EN/AR URLs return 200 and the debug log stays clean.
 - **`bin/seed.php`** (local/demo) calls the same installer, adding the photos to the Media Library and publishing the sample projects.
 
+### Careers (`inc/jobs.php` by Amine, plus `inc/job-applications.php`)
+
+- **Vacancies:** `sees_job` posts, translatable. Status, closing date, reference, type and form are shared across translations.
+- **Listing:** only published, open, not-expired vacancies appear, with department, location and type filters. `single-sees_job.php` shows the facts and the form.
+- **Application form:** the installer creates one per language (CF7: name, email, phone, LinkedIn, required CV as PDF/DOC/DOCX up to 5 MB, cover letter, consent). IDs are in the `sees_job_forms` option. Every vacancy uses it unless an editor pastes a custom shortcode.
+- **Emails:**
+  - the HR email has the CV attached, plus the `[_post_title]`, `[_job_reference]` and `[_post_url]` mail tags
+  - recipient: Careers page → `applications_email`, falling back to the Contact email
+  - the applicant receives a confirmation (Mail 2)
+- **Closed vacancies:** submissions to closed or expired ones are aborted server-side.
+- **CV storage:** CF7 deletes uploaded CVs after sending; none are kept on the server.
+- **Tested end to end:** valid, missing, wrong-type and no-consent cases; EN/AR; a closed vacancy; on a fresh install.
+- **No seeded vacancies:** the installer never creates them (Amine's rule). Projects are hidden from the public site by default (`sees_projects_public_enabled` filter, `inc/projects-visibility.php`).
+
+### Support & Downloads (`inc/downloads.php`, `page-support.php`)
+
+- **Documents:** `sees_download` records, not translated by Polylang. The English title is the post title; the ACF fields hold `title_ar`, `description_en/ar`, the file, `doc_language` (en/ar/both), version and date.
+- **Types:** the `sees_download_type` taxonomy, with `name_ar` term meta. The installer creates 5 types once (`sees_seeded_download_types`).
+- **Search:** search, type pills and the language select filter in place with JS. Without JS they work via `?q=&type=&doc_lang=`.
+- **Local samples:** `bin/seed.php` adds 4 sample PDFs from `bin/fixtures/` (mounted at `/var/www/fixtures` in the wpcli container); they're local only.
+
+### Top bar
+
+- **In `header.php`:** phone, email, address (and hours once they aren't a placeholder), plus Support/Careers links. The data comes from `sees_contact()`.
+- **Header height:** `--topbar-h` and `--header-h` include it.
+- **Small screens:** the address hides below 1240px, the links below 760px, and the email label below 420px.
+
+### Privacy links in forms
+
+- **Storage:** consent text stores `href="{sees_privacy_url}"`, resolved per page language at render time (`inc/contact-form.php`).
+- **Repair:** the installer swaps any fixed link in theme forms for the token. Fixed links built during setup missed the `/ar/` prefix.
+
 ### Setup checklist (`inc/setup-check.php`)
 
 - **When it runs:** every theme activation re-arms an admin notice for all administrators. The notice lists missing required steps and recommendations, each with a link to the screen that fixes it.
@@ -199,17 +231,23 @@ Real details: +966 50 326 4000 · info@seesengineering.com · Al Shahamah Distri
 - **Debug log:** clean after loading every page.
 - **Not yet click-tested in a real browser:** mobile menu, search panel, project filter, FAQ accordion, the CF7 success panel and the animations. Screenshots were taken with reduced motion on.
 
+## Testing note
+
+On this machine, the host's headless Chrome stopped loading HTTP pages on 2026-10-13. Browser checks now run in Docker: `docker run -d --rm --name sees-chrome --network host zenika/alpine-chrome:124 --no-sandbox --remote-debugging-address=127.0.0.1 --remote-debugging-port=9360 --remote-allow-origins=* about:blank`, driven over the DevTools protocol on port 9360.
+
 ## Open items / next steps
 
-1. **Privacy policy:** fill in the legal name, CR number, privacy email, hosting/email provider, retention period and effective date. Have a Saudi lawyer review it.
-2. **QATAR Arabic font:** get the licensed font files and web license from the client/designer, add them as woff2 to `assets/fonts/`, then enable the `@font-face` slot and set `--font-heading-ar` (and `--font-display` for Arabic) in main.css.
-3. **Hero photo:** the current hero was extracted from a 1536px mockup. A full-resolution original or a real photo of the building would be sharper. Replace it in Pages → Home → Header photo, separately for each language; the Arabic page needs a version with the building on the left. Other pages' header photos could also use real photography.
-4. **Office map pin:** paste the office's Google Maps embed and share link into the Contact page (both languages).
-5. **Arabic review:** a native speaker should review all Arabic copy, both the seed content and `languages/ar.po`.
-6. **Placeholders:** replace the ones listed above with real content.
-7. **Insights:** the reference mockup shows an "Insights" menu item. There's no Insights page or template yet; decide whether to add a blog/insights section.
-8. **Manual browser pass:** click through the interactive parts (point above) on real devices.
-9. **Go-live:**
+1. **Remove the database dumps from git history:** commit `0ea7174` published `backups/*.sql` (full WordPress database, users table included) in the public repo. They're untracked now, but still in history. Needs `git filter-repo` plus a force push, coordinated with Amine. Also change any passwords those databases contained.
+2. **Privacy policy on existing sites:** add the "Job applications" section (in `inc/installer-content.php`) to the policy page by hand. New installs already have it.
+3. **Privacy policy:** fill in the legal name, CR number, privacy email, hosting/email provider, retention period and effective date. Have a Saudi lawyer review it.
+4. **QATAR Arabic font:** get the licensed font files and web license from the client/designer, add them as woff2 to `assets/fonts/`, then enable the `@font-face` slot and set `--font-heading-ar` (and `--font-display` for Arabic) in main.css.
+5. **Hero photo:** the current hero was extracted from a 1536px mockup. A full-resolution original or a real photo of the building would be sharper. Replace it in Pages → Home → Header photo, separately for each language; the Arabic page needs a version with the building on the left. Other pages' header photos could also use real photography.
+6. **Office map pin:** paste the office's Google Maps embed and share link into the Contact page (both languages).
+7. **Arabic review:** a native speaker should review all Arabic copy, both the seed content and `languages/ar.po`.
+8. **Placeholders:** replace the ones listed above with real content.
+9. **Insights:** the reference mockup shows an "Insights" menu item. There's no Insights page or template yet; decide whether to add a blog/insights section.
+10. **Manual browser pass:** click through the interactive parts (point above) on real devices.
+11. **Go-live:**
    - install the three plugins on the host
    - upload the theme
    - migrate with All-in-One WP Migration or Duplicator
@@ -217,7 +255,7 @@ Real details: +966 50 326 4000 · info@seesengineering.com · Al Shahamah Distri
    - enable browser caching
    - set a Site Icon
    - optionally add an SEO plugin; the theme's basic meta description switches off automatically when Yoast, Rank Math or The SEO Framework is active
-10. **Logo:** ask the client for the official SVG logo to replace the PNGs.
+12. **Logo:** ask the client for the official SVG logo to replace the PNGs.
 
 ## Repository
 

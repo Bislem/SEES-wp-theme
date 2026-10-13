@@ -64,6 +64,10 @@ function sees_footer_company_fallback(): void {
 			$company[] = $item;
 		}
 	}
+	$support = sees_page_by_template( 'page-support.php' );
+	if ( $support ) {
+		$company[] = array( 'url' => get_permalink( $support ), 'label' => get_the_title( $support ), 'current' => is_page( $support->ID ) );
+	}
 	sees_render_list( $company, 'footer-col__list' );
 }
 

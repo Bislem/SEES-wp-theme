@@ -1,0 +1,39 @@
+{
+    "key": "group_sees_download_type",
+    "title": "Document type",
+    "fields": [
+        {
+            "key": "field_de51893f7a782",
+            "label": "Arabic name",
+            "name": "name_ar",
+            "type": "text",
+            "instructions": "Shown on the Arabic Support page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "sees_download_type"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1791900000
+}

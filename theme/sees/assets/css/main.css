@@ -88,7 +88,8 @@
 	--container: 1360px;
 	--gutter: 40px;
 	--section: 110px;
-	--header-h: 120px;
+	--topbar-h: 40px;
+	--header-h: 160px;   /* top bar + header bar */
 	--logo-h: 80px;
 
 	/* Radius, shadow, motion */
@@ -1718,6 +1719,147 @@ button { font: inherit; }
 .sticky, .bypostauthor { /* No special styling needed. */ }
 
 /* ==========================================================================
+   Top contact bar
+   ========================================================================== */
+.topbar {
+	position: relative;
+	z-index: 3;
+	background: var(--c-ink);
+	color: var(--c-text-on-dark);
+	font-size: var(--fs-eyebrow);
+	line-height: var(--lh-small);
+}
+:root[data-theme="dark"] .topbar { border-block-end: 1px solid var(--line); }
+.topbar__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px 24px;
+	min-height: var(--topbar-h);
+}
+.topbar__contact,
+.topbar__links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; }
+.topbar li { display: inline-flex; align-items: center; gap: 8px; }
+.topbar a { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; color: var(--c-text-on-dark); transition: color .25s; }
+.topbar a:hover { color: var(--c-green); }
+.topbar .icon { flex: none; color: var(--c-teal); }
+.topbar__links a { font-weight: 600; color: var(--c-white); }
+@media (max-width: 1240px) { .topbar .topbar__wide { display: none; } }
+@media (max-width: 760px) {
+	.topbar__links { display: none; }
+	.topbar__contact { gap: 4px 16px; }
+}
+@media (max-width: 420px) { .topbar .topbar__label { display: none; } }
+
+/* ==========================================================================
+   Support & Downloads
+   ========================================================================== */
+.downloads__search {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto auto;
+	gap: 12px;
+	padding: 14px;
+	margin-block-end: 24px;
+	border: 1px solid var(--line);
+	border-radius: var(--r-card-lg);
+	background: var(--surface);
+	box-shadow: var(--shadow-hover);
+}
+.downloads__query { position: relative; display: block; }
+.downloads__query .icon { position: absolute; inset-inline-start: 16px; inset-block-start: 50%; translate: 0 -50%; color: var(--link); pointer-events: none; }
+.downloads__query input,
+.downloads__lang select {
+	width: 100%;
+	min-height: 54px;
+	padding-inline: 16px;
+	font: inherit;
+	font-size: var(--fs-small);
+	color: var(--fg-strong);
+	background: var(--bg);
+	border: 1px solid var(--line-strong);
+	border-radius: var(--r-btn);
+}
+.downloads__query input { padding-inline-start: 50px; font-size: var(--fs-body-sm); }
+.downloads__query input:focus,
+.downloads__lang select:focus { outline: none; border-color: var(--c-petrol); box-shadow: 0 0 0 4px color-mix(in srgb, var(--c-petrol) 15%, transparent); }
+.downloads__lang select { min-width: 170px; }
+.downloads__submit { min-height: 54px; }
+.js .downloads__submit { display: none; } /* filtering happens as you type */
+.downloads__types { margin-block-end: 18px; }
+.downloads__count { margin-block-end: 14px; font-size: var(--fs-meta); color: var(--fg); }
+.downloads__list { display: flex; flex-direction: column; gap: 12px; }
+.download {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 18px 22px;
+	padding: 20px 22px;
+	border: 1px solid var(--line);
+	border-radius: var(--r-card);
+	background: var(--surface);
+	transition: border-color .3s, box-shadow .3s, transform .3s var(--ease);
+}
+.download[hidden] { display: none; }
+.download:hover { border-color: var(--c-teal); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+.download__badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 64px;
+	border-radius: 10px;
+	background: var(--icon-tile);
+	color: var(--link);
+	font-size: var(--fs-eyebrow);
+	font-weight: 800;
+	letter-spacing: .04em;
+	clip-path: polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%);
+}
+.download__badge--pdf { background: color-mix(in srgb, var(--c-petrol) 18%, transparent); }
+.download__body { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.download__title { font-size: var(--fs-h3); font-weight: var(--fw-h3); line-height: var(--lh-h3); color: var(--fg-strong); }
+.download__desc { font-size: var(--fs-small); color: var(--fg); }
+.download__meta { font-size: var(--fs-meta); color: var(--fg); }
+.download__actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.download__actions .btn { min-height: 46px; padding-inline: 18px; font-size: var(--fs-meta); }
+.downloads__empty { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 48px 16px; text-align: center; color: var(--fg); }
+.downloads__empty[hidden] { display: none; }
+.downloads__empty .icon { color: var(--link); }
+.support-help__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 18px; }
+.support-help .info-card { background: var(--surface); }
+@media (max-width: 760px) {
+	.downloads__search { grid-template-columns: 1fr; }
+	.download { grid-template-columns: auto minmax(0, 1fr); padding: 16px; }
+	.download__actions { grid-column: 1 / -1; justify-content: stretch; }
+	.download__actions .btn { flex: 1 1 0; }
+}
+
+/* ==========================================================================
+   Application form extras (CV upload, hints)
+   ========================================================================== */
+.sees-form__hint { font-weight: 400; font-size: var(--fs-meta); color: var(--fg); }
+.sees-form--job .sees-form__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 560px) { .sees-form--job .sees-form__grid { grid-template-columns: 1fr; } }
+.wpcf7 input[type="file"] {
+	min-height: 56px;
+	padding: 10px 12px;
+	line-height: 2;
+	cursor: pointer;
+	border-style: dashed;
+}
+.wpcf7 input[type="file"]::file-selector-button {
+	margin-inline-end: 14px;
+	padding: 8px 16px;
+	font: inherit;
+	font-weight: 600;
+	color: var(--btn-fg);
+	background: var(--btn-bg);
+	border: 0;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+/* ==========================================================================
    Motion
    ========================================================================== */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: none; } }
@@ -1768,7 +1910,7 @@ button { font: inherit; }
    Responsive — tablet 24px / phone 16px gutters, 72px sections on phones
    ========================================================================== */
 @media (max-width: 1024px) {
-	:root { --gutter: 24px; --logo-h: 64px; --header-h: 112px; }
+	:root { --gutter: 24px; --logo-h: 64px; --header-h: 152px; }
 	.stats { padding-inline-start: 0; border-inline-start: 0; }
 	.features__list { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; }
 	.features__item { justify-content: flex-start; }
@@ -1791,7 +1933,7 @@ button { font: inherit; }
 	.job-detail__aside { position: static; }
 }
 @media (max-width: 760px) {
-	:root { --gutter: 16px; --section: 72px; --header-h: 92px; --logo-h: 52px; }
+	:root { --gutter: 16px; --section: 72px; --topbar-h: 36px; --header-h: 128px; --logo-h: 52px; }
 	.header-tools { gap: 6px; }
 	.lang-switch { padding-inline-start: 10px; }
 	.hero { min-height: 0; }

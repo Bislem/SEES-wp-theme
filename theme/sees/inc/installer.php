@@ -64,6 +64,8 @@ function sees_run_setup( array $args = array() ): array {
 	$pages['privacy'] = sees_setup_privacy( $content, $log );
 	sees_setup_forms( $content, $pages, $log );
 	sees_setup_form_consent( $content, $pages, $log );
+	sees_setup_job_forms( $content, $pages, $log );
+	sees_setup_download_types( $content, $log );
 	sees_setup_site_icon( $log );
 	sees_setup_solutions( $content, $media, $log );
 	sees_setup_faqs( $content, $log );
@@ -403,12 +405,17 @@ function sees_setup_form_consent( array $content, array $pages, array &$log ): v
 		$before = wp_json_encode( $form->prop( 'messages' ) );
 		sees_setup_form_messages( $form, $content['forms'][ $lang ]['messages'] );
 		if ( false !== strpos( $markup, '[acceptance' ) ) {
-			if ( wp_json_encode( $form->prop( 'messages' ) ) !== $before ) {
-				$form->save(); // Consent box already there; only the messages changed.
+			// Consent box already there: swap a fixed privacy link for the per-language token.
+			$fixed = sees_setup_consent_token( $markup );
+			if ( $fixed !== $markup ) {
+				$form->set_properties( array( 'form' => $fixed ) );
+			}
+			if ( $fixed !== $markup || wp_json_encode( $form->prop( 'messages' ) ) !== $before ) {
+				$form->save();
 			}
 			continue;
 		}
-		$text    = sprintf( $content['privacy']['consent'][ $lang ], esc_url( get_permalink( $privacy ) ) );
+		$text    = sprintf( $content['privacy']['consent'][ $lang ], '{sees_privacy_url}' );
 		$consent = '<div class="sees-form__consent">[acceptance consent] ' . $text . " [/acceptance]</div>\n";
 		$markup  = preg_replace( '/\[submit/', $consent . '[submit', $markup, 1 );
 		$form->set_properties( array( 'form' => $markup ) );
@@ -416,6 +423,104 @@ function sees_setup_form_consent( array $content, array $pages, array &$log ): v
 		/* translators: %s: language code */
 		$log['done'][] = sprintf( __( 'Privacy consent checkbox added to the contact form (%s).', 'sees' ), strtoupper( $lang ) );
 	}
+}
+
+/**
+ * Replace a fixed link inside the consent box with the {sees_privacy_url} token.
+ */
+function sees_setup_consent_token( string $markup ): string {
+	return (string) preg_replace_callback( '#(<div class="sees-form__consent">.*?</div>)#s', function ( $m ) {
+		return preg_replace( '#href="[^"]*"#', 'href="{sees_privacy_url}"', $m[1] );
+	}, $markup );
+}
+
+/**
+ * Standard job application forms (one per language), used by every vacancy that has no
+ * custom form. IDs are stored in the `sees_job_forms` option (see inc/job-applications.php).
+ */
+function sees_setup_job_forms( array $content, array $pages, array &$log ): void {
+	$forms = (array) get_option( 'sees_job_forms', array() );
+	foreach ( array( 'en', 'ar' ) as $lang ) {
+		$existing = ! empty( $forms[ $lang ] ) ? wpcf7_contact_form( (int) $forms[ $lang ] ) : null;
+		if ( $existing ) {
+			$markup = (string) $existing->prop( 'form' );
+			$fixed  = sees_setup_consent_token( $markup );
+			if ( $fixed !== $markup ) {
+				$existing->set_properties( array( 'form' => $fixed ) );
+				$existing->save();
+			}
+			continue;
+		}
+		$def     = $content['job_forms'][ $lang ];
+		$t       = $def['labels'];
+		$privacy = $pages['privacy'][ $lang ] ?? 0;
+		$consent = $privacy
+			? '<div class="sees-form__consent">[acceptance consent] ' . sprintf( $content['privacy']['consent'][ $lang ], '{sees_privacy_url}' ) . " [/acceptance]</div>\n"
+			: '';
+
+		$markup = "<div class=\"sees-form sees-form--job\">\n<div class=\"sees-form__grid\">\n"
+			. "<label>{$t['name']} *\n[text* your-name autocomplete:name]</label>\n"
+			. "<label>{$t['email']} *\n[email* your-email autocomplete:email placeholder \"you@example.com\"]</label>\n"
+			. "<label>{$t['phone']} *\n[tel* your-phone autocomplete:tel placeholder \"+966\"]</label>\n"
+			. "<label>{$t['link']}\n[url your-link placeholder \"https://\"]</label>\n"
+			. "</div>\n"
+			. "<label>{$t['cv']} * <span class=\"sees-form__hint\">{$t['cv_hint']}</span>\n[file* your-cv limit:5mb filetypes:pdf|doc|docx]</label>\n"
+			. "<label>{$t['letter']}\n[textarea your-message x5 placeholder \"{$t['letter_ph']}\"]</label>\n"
+			. $consent
+			. "[submit \"{$t['submit']}\"]\n</div>";
+
+		$form = WPCF7_ContactForm::get_template( array( 'title' => $def['title'], 'locale' => $def['locale'] ) );
+		$mail = $form->prop( 'mail' );
+		$mail['subject']            = $def['mail_subject'];
+		$mail['recipient']          = sees_job_applications_email(); // Also set per submission (filter).
+		$mail['additional_headers'] = 'Reply-To: [your-email]';
+		$mail['body']               = $def['mail_body'];
+		$mail['attachments']        = '[your-cv]';
+
+		$reply = array_merge( (array) $form->prop( 'mail_2' ), array(
+			'active'             => true,
+			'recipient'          => '[your-email]',
+			'subject'            => $def['reply_subject'],
+			'body'               => $def['reply_body'],
+			'additional_headers' => '',
+			'attachments'        => '',
+		) );
+
+		// A brand-new form: our messages win over Contact Form 7's (possibly translated) defaults.
+		$form->set_properties( array(
+			'form'     => $markup,
+			'mail'     => $mail,
+			'mail_2'   => $reply,
+			'messages' => array_merge( (array) $form->prop( 'messages' ), $def['messages'] ),
+		) );
+		$id = (int) $form->save();
+		if ( $id ) {
+			$forms[ $lang ] = $id;
+			/* translators: %s: form title */
+			$log['done'][] = sprintf( __( 'Job application form created: %s.', 'sees' ), $def['title'] );
+		}
+	}
+	update_option( 'sees_job_forms', array_map( 'intval', $forms ), false );
+}
+
+/**
+ * Support document types with their Arabic names (created once; editors may rename or delete them).
+ */
+function sees_setup_download_types( array $content, array &$log ): void {
+	if ( get_option( 'sees_seeded_download_types' ) ) {
+		return;
+	}
+	$existing = get_terms( array( 'taxonomy' => 'sees_download_type', 'hide_empty' => false, 'fields' => 'ids' ) );
+	if ( ! is_wp_error( $existing ) && ! $existing ) {
+		foreach ( $content['download_types'] as $slug => $names ) {
+			$term = wp_insert_term( $names[0], 'sees_download_type', array( 'slug' => $slug ) );
+			if ( ! is_wp_error( $term ) ) {
+				update_term_meta( $term['term_id'], 'name_ar', $names[1] );
+			}
+		}
+		$log['done'][] = __( 'Support document types created (English + Arabic names).', 'sees' );
+	}
+	update_option( 'sees_seeded_download_types', 1, false );
 }
 
 /**
@@ -499,7 +604,7 @@ function sees_setup_forms( array $content, array $pages, array &$log ): void {
 		$mail['subject']            = '[_site_title] ' . $t['subject'] . ': [your-name]';
 		$mail['recipient']          = $contact_email;
 		$mail['additional_headers'] = 'Reply-To: [your-email]';
-		$mail['body']               = "Name: [your-name]\nCompany: [your-company]\nEmail: [your-email]\nPhone: [your-phone]\nSolution: [your-solution]\n\n[your-message]\n\n-- \nSent from [_url]";
+		$mail['body']               = "Name: [your-name]\nCompany: [your-company]\nEmail: [your-email]\nPhone: [your-phone]\nSolution: [your-solution]\n\n[your-message]\n\n-- \nSent from [_post_url]";
 
 		$props = array(
 			'form'   => $markup,

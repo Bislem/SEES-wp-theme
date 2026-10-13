@@ -54,6 +54,7 @@ function sees_icon( string $name, int $size = 24, array $args = array() ): strin
 		'pin'      => '<path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/>',
 		'clock'    => '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
 		'menu'     => '<path d="M4 7h16M4 12h16M4 17h16"/>',
+		'download' => '<path d="M12 4v11M7 10l5 5 5-5"/><path d="M5 20h14"/>',
 		'moon'     => '<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>',
 		'close'    => '<path d="M6 6l12 12M18 6L6 18"/>',
 		'play'     => '<path d="M8 5l12 7-12 7z" fill="currentColor" stroke="none"/>',

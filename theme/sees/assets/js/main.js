@@ -221,6 +221,83 @@
 		} );
 	}
 
+	/* ---------- Support downloads: search + type + language filters in place ---------- */
+	var downloads = document.querySelector( '[data-downloads]' );
+	if ( downloads && downloads.querySelector( '[data-downloads-list]' ) ) {
+		var dlItems = Array.prototype.slice.call( downloads.querySelectorAll( '[data-download]' ) );
+		var dlQuery = downloads.querySelector( '[data-downloads-q]' );
+		var dlLang = downloads.querySelector( '[data-downloads-lang]' );
+		var dlPills = Array.prototype.slice.call( downloads.querySelectorAll( '[data-downloads-type]' ) );
+		var dlCount = downloads.querySelector( '[data-downloads-count]' );
+		var dlEmpty = downloads.querySelector( '[data-downloads-empty]' );
+		var dlTypeInput = downloads.querySelector( '[data-downloads-type-input]' );
+		var dlType = dlTypeInput ? dlTypeInput.value : '';
+
+		var filterDownloads = function () {
+			var words = ( dlQuery ? dlQuery.value : '' ).toLowerCase().split( /\s+/ ).filter( Boolean );
+			var lang = dlLang ? dlLang.value : '';
+			var shown = 0;
+			dlItems.forEach( function ( item ) {
+				var types = ( item.getAttribute( 'data-types' ) || '' ).split( ' ' );
+				var itemLang = item.getAttribute( 'data-lang' );
+				var text = item.getAttribute( 'data-search' ) || '';
+				var match = ( ! dlType || types.indexOf( dlType ) !== -1 ) &&
+					( ! lang || itemLang === 'both' || itemLang === lang ) &&
+					words.every( function ( w ) { return text.indexOf( w ) !== -1; } );
+				item.hidden = ! match;
+				if ( match ) {
+					shown++;
+				}
+			} );
+			if ( dlCount ) {
+				dlCount.textContent = shown === 1 ? dlCount.getAttribute( 'data-one' ) : dlCount.getAttribute( 'data-many' ).replace( '%s', shown );
+			}
+			if ( dlEmpty ) {
+				dlEmpty.hidden = shown > 0;
+			}
+			dlPills.forEach( function ( pill ) {
+				if ( pill.getAttribute( 'data-downloads-type' ) === dlType ) {
+					pill.setAttribute( 'aria-current', 'true' );
+				} else {
+					pill.removeAttribute( 'aria-current' );
+				}
+			} );
+			if ( window.history && history.replaceState ) {
+				var url = new URL( window.location.href );
+				[ [ 'q', dlQuery ? dlQuery.value.trim() : '' ], [ 'type', dlType ], [ 'doc_lang', lang ] ].forEach( function ( pair ) {
+					if ( pair[ 1 ] ) {
+						url.searchParams.set( pair[ 0 ], pair[ 1 ] );
+					} else {
+						url.searchParams.delete( pair[ 0 ] );
+					}
+				} );
+				history.replaceState( null, '', url.toString() );
+			}
+		};
+
+		if ( dlQuery ) {
+			dlQuery.addEventListener( 'input', filterDownloads );
+		}
+		if ( dlLang ) {
+			dlLang.addEventListener( 'change', filterDownloads );
+		}
+		dlPills.forEach( function ( pill ) {
+			pill.addEventListener( 'click', function ( e ) {
+				e.preventDefault();
+				dlType = pill.getAttribute( 'data-downloads-type' );
+				filterDownloads();
+			} );
+		} );
+		var dlForm = downloads.querySelector( '[data-downloads-form]' );
+		if ( dlForm ) {
+			dlForm.addEventListener( 'submit', function ( e ) {
+				e.preventDefault();
+				filterDownloads();
+			} );
+		}
+		filterDownloads();
+	}
+
 	/* ---------- FAQ: one open at a time (fallback for browsers without <details name>) ---------- */
 	var faqItems = document.querySelectorAll( '.faq__item' );
 	faqItems.forEach( function ( item ) {
