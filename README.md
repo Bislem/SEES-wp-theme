@@ -53,6 +53,9 @@ sees-theme-kit/          original brief, brand guidelines PDF, source images
   Each language is its own page, linked via Polylang.
 - **Solutions / Projects / FAQs**: menu items in wp-admin. Order with the "Order" attribute. Tick "Featured on Home" on one project.
 - **Contact details** on the Contact page are reused in the footer and the Home call-to-action.
+- **Contact form**: name, company, email, phone, a required **Subject** (General enquiry, Request a quote, Project or technical question, Maintenance & after-sales support, Documents & certificates, Partnership or supplier, Feedback or complaint, Other) and message. The subject appears in the email subject line.
+  - Edit the subjects in Contact → Contact Forms. If you add, remove or reorder them, update the keys in `data-topics` the same way.
+  - Links can preselect a subject with `?topic=quote` (keys: general, quote, project, support, documents, partnership, feedback, other). The Solutions and project pages use `project`/`quote`, and the Support page uses `documents`.
 - **Menus**: Appearance → Menus (one per language). Footer columns fall back to automatic links if left unassigned.
 - **Careers**: Jobs → Add new job. Fill in the vacancy (title, description, department, location, type, closing date) and publish, in one or both languages.
   - The application form appears automatically: CV upload, consent, and emails with the CV attached.
@@ -65,8 +68,8 @@ sees-theme-kit/          original brief, brand guidelines PDF, source images
   - Translate it with Polylang's "+" column to publish the Arabic version.
   - Posts appear on the News page, newest first (the latest shown large), with category filters.
   - Comments are switched off.
-- **Submissions** (wp-admin menu): a copy of every quote request and job application, saved even if the email fails.
-  - *Quote requests* and *Job applications* views. New items are marked, with a count on the menu. Open one to see the details, reply by email or download the CV.
+- **Submissions** (wp-admin menu): a copy of every contact message and job application, saved even if the email fails.
+  - *Contact messages* and *Job applications* views. New items are marked, with a count on the menu. Open one to see the details, reply by email or download the CV.
   - Each vacancy shows its application count (Jobs list column, and a box on the edit screen) with a link to its applications.
   - CVs are kept in a private folder that can't be opened from the web; only logged-in editors and administrators can download them.
   - Everything is deleted automatically after 12 months (Submissions → Retention). Keep that in line with the privacy policy.

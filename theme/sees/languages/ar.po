@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SEES 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sees\n"
-"POT-Creation-Date: 2026-10-13T11:29:17+00:00\n"
+"POT-Creation-Date: 2026-10-13T11:38:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: SEES\n"
 "Language-Team: Arabic\n"
@@ -377,7 +377,7 @@ msgstr "الإنجليزية والعربية"
 msgid "File"
 msgstr "الملف"
 
-#: inc/downloads.php:158 inc/submissions.php:289
+#: inc/downloads.php:158 inc/submissions.php:292
 msgid "Language"
 msgstr "اللغة"
 
@@ -385,7 +385,7 @@ msgstr "اللغة"
 msgid "No file"
 msgstr "لا يوجد ملف"
 
-#: inc/helpers.php:136
+#: inc/helpers.php:145
 msgid "Al Shahamah District, Makkah, Saudi Arabia"
 msgstr "حي الشهامة، مكة المكرمة، المملكة العربية السعودية"
 
@@ -438,29 +438,29 @@ msgid ""
 "Polylang, Advanced Custom Fields and Contact Form 7 must be active first."
 msgstr "يجب تفعيل Polylang وAdvanced Custom Fields وContact Form 7 أولًا."
 
-#: inc/installer.php:99
+#: inc/installer.php:100
 msgid "Permalinks set to \"Post name\"."
 msgstr "تم ضبط الروابط الدائمة على \"اسم المقالة\"."
 
 #. translators: %s: language name
-#: inc/installer.php:140
+#: inc/installer.php:141
 #, php-format
 msgid "Language added: %s."
 msgstr "تمت إضافة اللغة: %s."
 
-#: inc/installer.php:170
+#: inc/installer.php:171
 msgid "Polylang URLs set to /en/ and /ar/."
 msgstr "تم ضبط روابط Polylang على /en/ و/ar/."
 
-#: inc/installer.php:176
+#: inc/installer.php:177
 msgid "Existing content assigned to English."
 msgstr "تم تعيين المحتوى الموجود للغة الإنجليزية."
 
-#: inc/installer.php:187
+#: inc/installer.php:188
 msgid "Arabic WordPress language pack installed."
 msgstr "تم تثبيت حزمة اللغة العربية لووردبريس."
 
-#: inc/installer.php:189
+#: inc/installer.php:190
 msgid ""
 "Could not download the Arabic language pack automatically — add Arabic under "
 "Settings → General → Site Language."
@@ -469,13 +469,13 @@ msgstr ""
 "الموقع."
 
 #. translators: 1: page title, 2: language code
-#: inc/installer.php:292 inc/installer.php:431
+#: inc/installer.php:293 inc/installer.php:432
 #, php-format
 msgid "Page created: %1$s (%2$s)."
 msgstr "تم إنشاء الصفحة: %1$s (%2$s)."
 
 #. translators: %d: number of updated settings
-#: inc/installer.php:353
+#: inc/installer.php:354
 #, php-format
 msgid ""
 "Contact email moved to the sees-engineering.com domain (%d settings updated)."
@@ -483,67 +483,73 @@ msgstr ""
 "تم نقل بريد التواصل إلى نطاق sees-engineering.com (تم تحديث %d من الإعدادات)."
 
 #. translators: %s: language code
-#: inc/installer.php:486
+#: inc/installer.php:487
 #, php-format
 msgid "Privacy consent checkbox added to the contact form (%s)."
 msgstr "تمت إضافة مربع الموافقة على الخصوصية إلى نموذج التواصل (%s)."
 
 #. translators: %s: form title
-#: inc/installer.php:562
+#: inc/installer.php:563
 #, php-format
 msgid "Job application form created: %s."
 msgstr "تم إنشاء نموذج طلب التوظيف: %s."
 
-#: inc/installer.php:583
+#: inc/installer.php:584
 msgid "Support document types created (English + Arabic names)."
 msgstr "تم إنشاء أنواع مستندات الدعم (بأسماء إنجليزية وعربية)."
 
-#: inc/installer.php:595
+#: inc/installer.php:596
 msgid "News page set as the posts page."
 msgstr "تم تعيين صفحة الأخبار كصفحة المقالات."
 
-#: inc/installer.php:623
+#: inc/installer.php:624
 msgid "News categories created (English + Arabic)."
 msgstr "تم إنشاء تصنيفات الأخبار (بالإنجليزية والعربية)."
 
-#: inc/installer.php:634
+#: inc/installer.php:635
 msgid "WordPress sample post \"Hello world!\" removed."
 msgstr "تم حذف منشور ووردبريس التجريبي «Hello world!»."
 
 #. translators: 1: page title, 2: menu name
-#: inc/installer.php:670
+#: inc/installer.php:671
 #, php-format
 msgid "%1$s added to menu: %2$s."
 msgstr "تمت إضافة %1$s إلى القائمة: %2$s."
 
-#: inc/installer.php:717
+#: inc/installer.php:718
 msgid "Site icon set from the SEES logo mark."
 msgstr "تم تعيين أيقونة الموقع من شعار سيز."
 
-#: inc/installer.php:725
+#: inc/installer.php:726
 msgid "Home set as the front page."
 msgstr "تم تعيين الصفحة الرئيسية كواجهة للموقع."
 
 #. translators: %s: form title
-#: inc/installer.php:773
+#: inc/installer.php:761
 #, php-format
 msgid "Contact form created: %s."
 msgstr "تم إنشاء نموذج التواصل: %s."
 
-#: inc/installer.php:808
+#. translators: %s: form title
+#: inc/installer.php:830
+#, php-format
+msgid "Contact form updated with a Subject field: %s."
+msgstr "تم تحديث نموذج التواصل بحقل الموضوع: %s."
+
+#: inc/installer.php:864
 msgid "Solutions created (5, English + Arabic)."
 msgstr "تم إنشاء الحلول (5، بالإنجليزية والعربية)."
 
-#: inc/installer.php:831
+#: inc/installer.php:887
 msgid "FAQs created (4, English + Arabic)."
 msgstr "تم إنشاء الأسئلة الشائعة (4، بالإنجليزية والعربية)."
 
-#: inc/installer.php:863
+#: inc/installer.php:919
 msgid "Project categories created (English + Arabic)."
 msgstr "تم إنشاء تصنيفات المشاريع (بالإنجليزية والعربية)."
 
 #. translators: %d: number of projects
-#: inc/installer.php:914
+#: inc/installer.php:970
 #, php-format
 msgid "%d sample project created (English + Arabic)."
 msgid_plural "%d sample projects created (English + Arabic)."
@@ -555,7 +561,7 @@ msgstr[4] "تم إنشاء مشاريع تجريبية: %d (بالإنجليزي
 msgstr[5] "تم إنشاء مشاريع تجريبية: %d (بالإنجليزية والعربية)."
 
 #. translators: %d: number of projects
-#: inc/installer.php:916
+#: inc/installer.php:972
 #, php-format
 msgid ""
 "%d placeholder project created as a draft (English + Arabic) — fill it in "
@@ -583,13 +589,13 @@ msgstr[5] ""
 "انشرها."
 
 #. translators: %s: menu name
-#: inc/installer.php:967
+#: inc/installer.php:1023
 #, php-format
 msgid "Menu created and assigned: %s."
 msgstr "تم إنشاء القائمة وتعيينها: %s."
 
 #. translators: %d: number of field groups
-#: inc/installer.php:1030
+#: inc/installer.php:1086
 #, php-format
 msgid "%d field group synced from the theme."
 msgid_plural "%d field groups synced from the theme."
@@ -600,19 +606,19 @@ msgstr[3] "تمت مزامنة %d من مجموعات الحقول من القا
 msgstr[4] "تمت مزامنة %d من مجموعات الحقول من القالب."
 msgstr[5] "تمت مزامنة %d من مجموعات الحقول من القالب."
 
-#: inc/installer.php:1086 inc/submissions.php:168
+#: inc/installer.php:1142 inc/submissions.php:169
 msgid "Sorry, you are not allowed to do that."
 msgstr "عذرًا، لا تملك صلاحية تنفيذ ذلك."
 
-#: inc/installer.php:1104
+#: inc/installer.php:1160
 msgid "SEES automatic setup"
 msgstr "الإعداد التلقائي لقالب سيز"
 
-#: inc/installer.php:1105
+#: inc/installer.php:1161
 msgid "here is what was set up:"
 msgstr "هذا ما تم إعداده:"
 
-#: inc/installer.php:1105
+#: inc/installer.php:1161
 msgid "everything was already in place."
 msgstr "كل شيء كان جاهزًا مسبقًا."
 
@@ -645,7 +651,7 @@ msgid "Home"
 msgstr "الرئيسية"
 
 #. Template Name of the theme
-#: inc/menus.php:16 inc/setup-check.php:90 inc/submissions.php:243
+#: inc/menus.php:16 inc/setup-check.php:90 inc/submissions.php:246
 msgid "About"
 msgstr "من نحن"
 
@@ -653,7 +659,7 @@ msgstr "من نحن"
 msgid "Projects"
 msgstr "المشاريع"
 
-#: inc/post-types.php:14 inc/submissions.php:55
+#: inc/post-types.php:14 inc/submissions.php:56
 msgid "Solution"
 msgstr "حل"
 
@@ -770,8 +776,9 @@ msgid "Contact Form 7 plugin"
 msgstr "إضافة Contact Form 7"
 
 #: inc/setup-check.php:48
-msgid "Powers the quote request form on the Contact page."
-msgstr "تشغّل نموذج طلب عرض السعر في صفحة التواصل."
+msgid ""
+"Powers the contact form on the Contact page and the job application form."
+msgstr "يشغّل نموذج التواصل في صفحة التواصل ونموذج التقديم على الوظائف."
 
 #: inc/setup-check.php:53
 msgid "English and Arabic languages in Polylang"
@@ -1195,111 +1202,115 @@ msgstr "لا توجد طلبات واردة بعد."
 msgid "Search submissions"
 msgstr "البحث في الطلبات الواردة"
 
-#: inc/submissions.php:51 inc/submissions.php:241
+#: inc/submissions.php:51 inc/submissions.php:244
 msgid "Name"
 msgstr "الاسم"
 
-#: inc/submissions.php:53 inc/submissions.php:244 page-contact.php:33
+#: inc/submissions.php:53 inc/submissions.php:247 page-contact.php:33
 #: single.php:55
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
-#: inc/submissions.php:54 inc/submissions.php:245
+#: inc/submissions.php:54 inc/submissions.php:248
 msgid "Phone"
 msgstr "الهاتف"
 
-#: inc/submissions.php:56
+#: inc/submissions.php:55
+msgid "Subject"
+msgstr "الموضوع"
+
+#: inc/submissions.php:57
 msgid "LinkedIn / portfolio"
 msgstr "LinkedIn / ملف الأعمال"
 
-#: inc/submissions.php:57
+#: inc/submissions.php:58
 msgid "Message"
 msgstr "الرسالة"
 
-#: inc/submissions.php:58
+#: inc/submissions.php:59
 msgid "Privacy consent"
 msgstr "الموافقة على الخصوصية"
 
-#: inc/submissions.php:98
+#: inc/submissions.php:99
 msgid "Given"
 msgstr "تمت الموافقة"
 
-#: inc/submissions.php:173
+#: inc/submissions.php:174
 msgid "The file is no longer available."
 msgstr "الملف لم يعد متاحًا."
 
-#: inc/submissions.php:190
-msgid "Quote requests"
-msgstr "طلبات عروض الأسعار"
-
 #: inc/submissions.php:191
+msgid "Contact messages"
+msgstr "رسائل التواصل"
+
+#: inc/submissions.php:192
 msgid "Job applications"
 msgstr "طلبات التوظيف"
 
-#: inc/submissions.php:192
+#: inc/submissions.php:193
 msgid "Retention"
 msgstr "مدة الاحتفاظ"
 
-#: inc/submissions.php:242
+#: inc/submissions.php:245
 msgid "Type"
 msgstr "النوع"
 
-#: inc/submissions.php:246 inc/submissions.php:297
+#: inc/submissions.php:249 inc/submissions.php:300
 msgid "CV"
 msgstr "السيرة الذاتية"
 
-#: inc/submissions.php:247 inc/submissions.php:288 inc/submissions.php:432
+#: inc/submissions.php:250 inc/submissions.php:291 inc/submissions.php:435
 msgid "Received"
 msgstr "تاريخ الاستلام"
 
-#: inc/submissions.php:255
+#: inc/submissions.php:258
 msgid "Job application"
 msgstr "طلب توظيف"
 
-#: inc/submissions.php:255
-msgid "Quote request"
-msgstr "طلب عرض سعر"
+#: inc/submissions.php:258
+msgid "Contact message"
+msgstr "رسالة تواصل"
 
-#: inc/submissions.php:256
+#: inc/submissions.php:259
 msgid "New"
 msgstr "جديد"
 
-#: inc/submissions.php:270 inc/submissions.php:297
+#: inc/submissions.php:273 inc/submissions.php:300
 msgid "Download CV"
 msgstr "تنزيل السيرة الذاتية"
 
-#: inc/submissions.php:278
+#: inc/submissions.php:281
 msgid "Details"
 msgstr "التفاصيل"
 
-#: inc/submissions.php:279
+#: inc/submissions.php:282
 msgid "Actions"
 msgstr "الإجراءات"
 
-#: inc/submissions.php:291
+#: inc/submissions.php:294
 msgid "Vacancy"
 msgstr "الوظيفة"
 
-#: inc/submissions.php:306
+#: inc/submissions.php:309
 msgid "Reply by email"
 msgstr "الرد عبر البريد الإلكتروني"
 
-#: inc/submissions.php:308
+#: inc/submissions.php:311
 msgid "Delete permanently"
 msgstr "حذف نهائي"
 
 #. translators: %d: months
-#: inc/submissions.php:311
+#: inc/submissions.php:314
 #, php-format
 msgid "Deleted automatically %d months after it was received."
 msgstr "يُحذف تلقائيًا بعد %d شهرًا من استلامه."
 
-#: inc/submissions.php:338 inc/submissions.php:351
+#: inc/submissions.php:341 inc/submissions.php:354
 msgid "Applications"
 msgstr "الطلبات"
 
 #. translators: %d: number of applications
-#: inc/submissions.php:354
+#: inc/submissions.php:357
 #, php-format
 msgid "%d application received"
 msgid_plural "%d applications received"
@@ -1310,43 +1321,43 @@ msgstr[3] "%d طلب"
 msgstr[4] "%d طلب"
 msgstr[5] "%d طلب"
 
-#: inc/submissions.php:356
+#: inc/submissions.php:359
 msgid "View applications"
 msgstr "عرض الطلبات"
 
-#: inc/submissions.php:395
+#: inc/submissions.php:398
 msgid "Saved."
 msgstr "تم الحفظ."
 
-#: inc/submissions.php:399
+#: inc/submissions.php:402
 msgid "Submission retention"
 msgstr "مدة الاحتفاظ بالطلبات الواردة"
 
-#: inc/submissions.php:400
+#: inc/submissions.php:403
 msgid ""
-"Quote requests and job applications (including CVs) are deleted "
+"Contact messages and job applications (including CVs) are deleted "
 "automatically after this period. The Saudi Personal Data Protection Law "
 "expects personal data to be kept no longer than needed — make sure this "
 "matches the period stated in your privacy policy."
-msgstr "تُحذف طلبات عروض الأسعار وطلبات التوظيف (بما فيها السير الذاتية) تلقائيًا بعد هذه المدة. ويقتضي نظام حماية البيانات الشخصية السعودي ألا تُحفظ البيانات الشخصية أطول من اللازم — تأكد من أن هذه المدة تطابق المدة المذكورة في سياسة الخصوصية."
+msgstr "تُحذف رسائل التواصل وطلبات التوظيف (بما فيها السير الذاتية) تلقائيًا بعد هذه المدة. ويقتضي نظام حماية البيانات الشخصية السعودي ألا تُحفظ البيانات الشخصية أطول من اللازم — تأكد من أن هذه المدة تطابق المدة المذكورة في سياسة الخصوصية."
 
-#: inc/submissions.php:403
+#: inc/submissions.php:406
 msgid "Keep submissions for"
 msgstr "الاحتفاظ بالطلبات الواردة لمدة"
 
-#: inc/submissions.php:404
+#: inc/submissions.php:407
 msgid "months"
 msgstr "شهرًا"
 
-#: inc/submissions.php:406
+#: inc/submissions.php:409
 msgid "Save"
 msgstr "حفظ"
 
-#: inc/submissions.php:427 inc/submissions.php:446
+#: inc/submissions.php:430 inc/submissions.php:449
 msgid "SEES form submissions"
 msgstr "طلبات نماذج SEES"
 
-#: inc/submissions.php:436
+#: inc/submissions.php:439
 msgid "Form submissions"
 msgstr "طلبات النماذج"
 
@@ -1488,8 +1499,8 @@ msgid "(opens Google Maps)"
 msgstr "(يفتح خرائط Google)"
 
 #: page-contact.php:57
-msgid "Request a quote"
-msgstr "اطلب عرض سعر"
+msgid "Send us a message"
+msgstr "أرسل لنا رسالة"
 
 #: page-contact.php:58
 msgid "Fields marked * are required."
@@ -1731,6 +1742,29 @@ msgstr "شاهد دراسة الحالة"
 #: template-parts/solution-card.php:18
 msgid "Learn more"
 msgstr "اعرف المزيد"
+
+#~ msgid "Powers the quote request form on the Contact page."
+#~ msgstr "تشغّل نموذج طلب عرض السعر في صفحة التواصل."
+
+#~ msgid "Quote requests"
+#~ msgstr "طلبات عروض الأسعار"
+
+#~ msgid "Quote request"
+#~ msgstr "طلب عرض سعر"
+
+#~ msgid ""
+#~ "Quote requests and job applications (including CVs) are deleted "
+#~ "automatically after this period. The Saudi Personal Data Protection Law "
+#~ "expects personal data to be kept no longer than needed — make sure this "
+#~ "matches the period stated in your privacy policy."
+#~ msgstr ""
+#~ "تُحذف طلبات عروض الأسعار وطلبات التوظيف (بما فيها السير الذاتية) تلقائيًا "
+#~ "بعد هذه المدة. ويقتضي نظام حماية البيانات الشخصية السعودي ألا تُحفظ "
+#~ "البيانات الشخصية أطول من اللازم — تأكد من أن هذه المدة تطابق المدة "
+#~ "المذكورة في سياسة الخصوصية."
+
+#~ msgid "Request a quote"
+#~ msgstr "اطلب عرض سعر"
 
 #~ msgid ""
 #~ "Fastest route for a new server: migrate the prepared site with All-in-One "

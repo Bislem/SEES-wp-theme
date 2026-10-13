@@ -54,7 +54,7 @@ $sees_shortcode = trim( (string) sees_field( 'form_shortcode' ) );
 
 		<div class="contact__form a-up d3" data-contact-form>
 			<div class="contact__form-inner" data-form-panel>
-				<h2 class="contact__title"><?php echo esc_html( sees_field( 'form_title', __( 'Request a quote', 'sees' ) ) ); ?></h2>
+				<h2 class="contact__title"><?php echo esc_html( sees_field( 'form_title', __( 'Send us a message', 'sees' ) ) ); ?></h2>
 				<p class="contact__note"><?php echo esc_html( sees_field( 'form_text', __( 'Fields marked * are required.', 'sees' ) ) ); ?></p>
 				<?php
 				if ( $sees_shortcode && shortcode_exists( 'contact-form-7' ) ) {

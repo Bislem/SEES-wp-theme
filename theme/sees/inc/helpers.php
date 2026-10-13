@@ -123,6 +123,15 @@ function sees_page_url( string $template, string $fallback = '' ): string {
 }
 
 /**
+ * Contact page URL that preselects a subject in the contact form
+ * (general, quote, project, support, documents, partnership, feedback, other).
+ */
+function sees_contact_url( string $topic = '' ): string {
+	$url = sees_page_url( 'page-contact.php' );
+	return $topic && $url ? add_query_arg( 'topic', $topic, $url ) : $url;
+}
+
+/**
  * Site-wide contact details, edited on the Contact page.
  *
  * @return array{phone:string,email:string,address:string,hours:string}

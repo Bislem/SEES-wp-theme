@@ -298,30 +298,30 @@ function sees_installer_content(): array {
 					'title'  => 'Contact',
 					'slug'   => 'contact',
 					'fields' => array(
-						'header_subtitle' => 'Tell us about your project — an engineer will get back to you with next steps.',
+						'header_subtitle' => 'Questions, quotes or support — send us a message and our team will get back to you.',
 						'phone'           => '+966 50 326 4000',
 						'email'           => SEES_CONTACT_EMAIL,
 						'address'         => 'Al Shahamah District, Makkah, Saudi Arabia',
 						'hours'           => '[Sun – Thu, 00:00 – 00:00]',
-						'form_title'      => 'Request a quote',
+						'form_title'      => 'Send us a message',
 						'form_text'       => 'Fields marked * are required.',
 						'success_title'   => 'Thank you!',
-						'success_text'    => 'Your request has been sent. A SEES engineer will contact you shortly.',
+						'success_text'    => 'Your message has been sent. Our team will get back to you shortly.',
 					),
 				),
 				'ar'       => array(
 					'title'  => 'تواصل معنا',
 					'slug'   => 'تواصل-معنا',
 					'fields' => array(
-						'header_subtitle' => 'أخبرنا عن مشروعك، وسيتواصل معك أحد مهندسينا بالخطوات التالية.',
+						'header_subtitle' => 'استفسارات أو عروض أسعار أو دعم — أرسل لنا رسالة وسيتواصل معك فريقنا.',
 						'phone'           => '+966 50 326 4000',
 						'email'           => SEES_CONTACT_EMAIL,
 						'address'         => 'حي الشهامة، مكة المكرمة، المملكة العربية السعودية',
 						'hours'           => '[الأحد – الخميس، 00:00 – 00:00]',
-						'form_title'      => 'اطلب عرض سعر',
+						'form_title'      => 'أرسل لنا رسالة',
 						'form_text'       => 'الحقول المعلَّمة بـ * إلزامية.',
 						'success_title'   => 'شكرًا لك!',
-						'success_text'    => 'تم إرسال طلبك. سيتواصل معك أحد مهندسي سيز قريبًا.',
+						'success_text'    => 'تم إرسال رسالتك. سيتواصل معك فريقنا قريبًا.',
 					),
 				),
 			),
@@ -406,28 +406,32 @@ function sees_installer_content(): array {
 
 		/* ---------------- Contact Form 7 forms per language ---------------- */
 		'forms' => array(
+			'topic_keys' => array( 'general', 'quote', 'project', 'support', 'documents', 'partnership', 'feedback', 'other' ),
 			'en' => array(
-				'title'   => 'Quote request (EN)',
+				'title'   => 'Contact form (EN)',
 				'locale'  => 'en_US',
 				'labels'  => array(
-					'name' => 'Full name', 'name_ph' => 'Your name', 'company' => 'Company', 'company_ph' => 'Company name',
-					'email' => 'Email', 'phone' => 'Phone', 'solution' => 'Solution',
-					'options' => '"Power Distribution" "Solar & Renewables" "Power Infrastructure" "Smart Buildings" "Operations & Maintenance"',
-					'details' => 'Project details', 'details_ph' => 'Location, size, timeline…', 'submit' => 'Send request', 'subject' => 'Quote request',
+					'name' => 'Full name', 'name_ph' => 'Your name', 'company' => 'Company', 'company_ph' => 'Company name (optional)',
+					'email' => 'Email', 'phone' => 'Phone', 'topic' => 'Subject', 'topic_ph' => 'Choose a subject',
+					'message' => 'Message', 'message_ph' => 'How can we help? For a quote, tell us the location, size and timeline of your project.',
+					'submit' => 'Send message', 'mail_topic' => 'Subject', 'mail_message' => 'Message',
 				),
+				// Subjects, in the order of 'topic_keys' (used by ?topic=… links to preselect one).
+				'topics'  => array( 'General enquiry', 'Request a quote', 'Project or technical question', 'Maintenance & after-sales support', 'Documents & certificates', 'Partnership or supplier', 'Feedback or complaint', 'Other' ),
 				'messages' => array(
 					'accept_terms' => 'Please tick the box to agree to our Privacy Policy before sending.',
 				),
 			),
 			'ar' => array(
-				'title'   => 'طلب عرض سعر (AR)',
+				'title'   => 'نموذج التواصل (AR)',
 				'locale'  => 'ar',
 				'labels'  => array(
-					'name' => 'الاسم الكامل', 'name_ph' => 'اسمك', 'company' => 'الشركة', 'company_ph' => 'اسم الشركة',
-					'email' => 'البريد الإلكتروني', 'phone' => 'رقم الجوال', 'solution' => 'الحل المطلوب',
-					'options' => '"توزيع الطاقة" "الطاقة الشمسية والمتجددة" "البنية التحتية للطاقة" "المباني الذكية" "التشغيل والصيانة"',
-					'details' => 'تفاصيل المشروع', 'details_ph' => 'الموقع، الحجم، الجدول الزمني…', 'submit' => 'إرسال الطلب', 'subject' => 'طلب عرض سعر',
+					'name' => 'الاسم الكامل', 'name_ph' => 'اسمك', 'company' => 'الشركة', 'company_ph' => 'اسم الشركة (اختياري)',
+					'email' => 'البريد الإلكتروني', 'phone' => 'رقم الجوال', 'topic' => 'الموضوع', 'topic_ph' => 'اختر الموضوع',
+					'message' => 'الرسالة', 'message_ph' => 'كيف يمكننا مساعدتك؟ لطلب عرض سعر، اذكر موقع المشروع وحجمه وجدوله الزمني.',
+					'submit' => 'إرسال الرسالة', 'mail_topic' => 'الموضوع', 'mail_message' => 'الرسالة',
 				),
+				'topics'  => array( 'استفسار عام', 'طلب عرض سعر', 'سؤال فني أو عن مشروع', 'الصيانة والدعم بعد البيع', 'المستندات والشهادات', 'شراكة أو توريد', 'ملاحظة أو شكوى', 'أخرى' ),
 				// Arabic form messages (so they don't depend on CF7's own language files).
 				'messages' => array(
 					'mail_sent_ok'     => 'تم إرسال رسالتك بنجاح. شكرًا لك.',
@@ -457,7 +461,7 @@ function sees_installer_content(): array {
 				'sections' => array(
 					array( '', array( 'Last updated: [EFFECTIVE DATE]', 'This policy explains how SEES ENG Company ("SEES", "we") handles personal data collected through this website, in accordance with the Kingdom of Saudi Arabia\'s Personal Data Protection Law (PDPL), issued by Royal Decree No. M/19 and amended by Royal Decree No. M/148, and its Implementing Regulations.' ) ),
 					array( 'Who we are', array( 'The data controller is [COMPANY LEGAL NAME], Commercial Registration No. [CR NUMBER], Al Shahamah District, Makkah, Saudi Arabia. You can contact us about privacy at [PRIVACY EMAIL] or +966 50 326 4000.' ) ),
-					array( 'Personal data we collect', array( 'We only collect the data you choose to send us through the contact form:' ), array( 'Full name, company name, email address and phone number.', 'The solution you are interested in and the project details you write in your message.' ) ),
+					array( 'Personal data we collect', array( 'We only collect the data you choose to send us through the contact form:' ), array( 'Full name, company name, email address and phone number.', 'The subject you choose and what you write in your message (for example, project details).' ) ),
 					array( '', array( 'Like most websites, our hosting provider\'s servers automatically record technical data (IP address, browser type, pages requested and time of the request) to keep the site secure and working. This website does not use advertising or analytics cookies. Your light/dark display preference is saved only in your own browser and is never sent to us.' ) ),
 					array( 'Job applications', array( 'When you apply for a vacancy, we collect your name, email, phone number, LinkedIn or portfolio link, your CV and your cover letter. We use them only to assess your application for that role and to contact you about it. Applications are sent to our recruitment team by email, and a copy (including your CV) is stored in the protected administration area of this website, where only authorised staff can open it. We keep applications for 12 months after we receive them, after which the website deletes them automatically, unless you ask us to delete them earlier.' ) ),
 					array( 'Why we use it and on what basis', array( 'We use the data you send to reply to your enquiry, prepare quotes and communicate with you about your project. We process it on the basis of your consent, which you give by ticking the consent box before sending the form, and to take the steps you request before any contract. Technical data is used only to operate and protect the website. We do not use your data for marketing without your separate consent, and we never sell it.' ) ),
@@ -480,7 +484,7 @@ function sees_installer_content(): array {
 				'sections' => array(
 					array( '', array( 'آخر تحديث: [تاريخ السريان]', 'توضح هذه السياسة كيفية تعامل شركة سيز للهندسة («سيز» أو «نحن») مع البيانات الشخصية التي تُجمع عبر هذا الموقع، وفقًا لنظام حماية البيانات الشخصية في المملكة العربية السعودية الصادر بالمرسوم الملكي رقم م/19 والمعدّل بالمرسوم الملكي رقم م/148، ولائحته التنفيذية.' ) ),
 					array( 'من نحن', array( 'جهة التحكم في البيانات هي [الاسم النظامي للشركة]، سجل تجاري رقم [رقم السجل التجاري]، حي الشهامة، مكة المكرمة، المملكة العربية السعودية. يمكنك التواصل معنا بشأن الخصوصية عبر [بريد الخصوصية] أو على الرقم ‎+966 50 326 4000.' ) ),
-					array( 'البيانات الشخصية التي نجمعها', array( 'نجمع فقط البيانات التي تختار إرسالها إلينا عبر نموذج التواصل:' ), array( 'الاسم الكامل واسم الشركة والبريد الإلكتروني ورقم الجوال.', 'الحل الذي تهتم به وتفاصيل المشروع التي تكتبها في رسالتك.' ) ),
+					array( 'البيانات الشخصية التي نجمعها', array( 'نجمع فقط البيانات التي تختار إرسالها إلينا عبر نموذج التواصل:' ), array( 'الاسم الكامل واسم الشركة والبريد الإلكتروني ورقم الجوال.', 'الموضوع الذي تختاره وما تكتبه في رسالتك (مثل تفاصيل المشروع).' ) ),
 					array( '', array( 'كما هو الحال في معظم المواقع، تسجّل خوادم مزوّد الاستضافة تلقائيًا بيانات تقنية (عنوان IP ونوع المتصفح والصفحات المطلوبة ووقت الطلب) للحفاظ على أمان الموقع وعمله. لا يستخدم هذا الموقع ملفات تعريف ارتباط إعلانية أو تحليلية. ويُحفظ تفضيلك للوضع الفاتح أو الداكن في متصفحك فقط ولا يُرسل إلينا.' ) ),
 					array( 'طلبات التوظيف', array( 'عند تقديمك على وظيفة، نجمع اسمك وبريدك الإلكتروني ورقم جوالك ورابط LinkedIn أو ملف أعمالك وسيرتك الذاتية وخطاب التقديم. ونستخدمها فقط لتقييم طلبك لتلك الوظيفة والتواصل معك بشأنه. تُرسل الطلبات إلى فريق التوظيف عبر البريد الإلكتروني، وتُحفظ نسخة منها (بما فيها سيرتك الذاتية) في منطقة الإدارة المحمية في هذا الموقع، ولا يطّلع عليها إلا الموظفون المخوّلون. ونحتفظ بالطلبات لمدة 12 شهرًا من تاريخ استلامها، ثم يحذفها الموقع تلقائيًا، ما لم تطلب حذفها قبل ذلك.' ) ),
 					array( 'لماذا نستخدمها وعلى أي أساس', array( 'نستخدم البيانات التي ترسلها للرد على استفسارك وإعداد عروض الأسعار والتواصل معك بشأن مشروعك. ونعالجها بناءً على موافقتك التي تمنحها بتحديد مربع الموافقة قبل إرسال النموذج، ولاتخاذ الإجراءات التي تطلبها قبل أي تعاقد. وتُستخدم البيانات التقنية فقط لتشغيل الموقع وحمايته. لا نستخدم بياناتك لأغراض تسويقية دون موافقة مستقلة منك، ولا نبيعها أبدًا.' ) ),

@@ -137,7 +137,7 @@ $sees_base  = get_permalink();
 					<span class="info-card__icon ic ic--petrol"><?php echo sees_icon( 'mail', 24, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?></span>
 					<span class="info-card__text"><span class="info-card__label"><?php esc_html_e( 'Email support', 'sees' ); ?></span><strong><?php echo esc_html( $sees_email ); ?></strong></span>
 				</a>
-				<a class="info-card reveal" href="<?php echo esc_url( sees_page_url( 'page-contact.php' ) ); ?>">
+				<a class="info-card reveal" href="<?php echo esc_url( sees_contact_url( 'documents' ) ); ?>">
 					<span class="info-card__icon ic ic--teal"><?php echo sees_icon( 'search', 24, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?></span>
 					<span class="info-card__text"><span class="info-card__label"><?php esc_html_e( 'Can’t find a document?', 'sees' ); ?></span><strong><?php esc_html_e( 'Request it from our team', 'sees' ); ?></strong></span>
 				</a>

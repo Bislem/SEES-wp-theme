@@ -1,6 +1,6 @@
 <?php
 /**
- * Submissions: a copy of every quote request and job application, kept in wp-admin.
+ * Submissions: a copy of every contact message and job application, kept in wp-admin.
  *
  * - Saved before the email is sent, so nothing is lost if mail delivery fails.
  * - CVs are copied to a private folder (wp-content/uploads/sees-private/, blocked by
@@ -52,7 +52,8 @@ function sees_submission_labels(): array {
 		'your-company'  => __( 'Company', 'sees' ),
 		'your-email'    => __( 'Email', 'sees' ),
 		'your-phone'    => __( 'Phone', 'sees' ),
-		'your-solution' => __( 'Solution', 'sees' ),
+		'your-subject'  => __( 'Subject', 'sees' ),
+		'your-solution' => __( 'Solution', 'sees' ), // Older quote forms.
 		'your-link'     => __( 'LinkedIn / portfolio', 'sees' ),
 		'your-message'  => __( 'Message', 'sees' ),
 		'consent'       => __( 'Privacy consent', 'sees' ),
@@ -100,7 +101,7 @@ add_filter( 'wpcf7_before_send_mail', function ( $form, &$abort, $submission ) {
 
 	$job     = $is_job ? (int) $submission->get_meta( 'container_post_id' ) : 0;
 	$name    = $data['your-name'] ?? '';
-	$subject = $is_job ? get_the_title( $job ) : ( $data['your-company'] ?? '' );
+	$subject = $is_job ? get_the_title( $job ) : ( $data['your-subject'] ?? $data['your-company'] ?? '' );
 
 	$id = wp_insert_post( array(
 		'post_type'   => 'sees_submission',
@@ -111,7 +112,7 @@ add_filter( 'wpcf7_before_send_mail', function ( $form, &$abort, $submission ) {
 		return $form;
 	}
 
-	update_post_meta( $id, '_sees_type', $is_job ? 'application' : 'quote' );
+	update_post_meta( $id, '_sees_type', $is_job ? 'application' : 'contact' );
 	update_post_meta( $id, '_sees_fields', $data );
 	update_post_meta( $id, '_sees_email', strtolower( (string) ( $data['your-email'] ?? '' ) ) );
 	update_post_meta( $id, '_sees_form', (int) $form->id() );
@@ -187,7 +188,7 @@ add_action( 'admin_post_sees_cv', function () {
  * ------------------------------------------------------------------------ */
 add_action( 'admin_menu', function () {
 	$base = 'edit.php?post_type=sees_submission';
-	add_submenu_page( $base, __( 'Quote requests', 'sees' ), __( 'Quote requests', 'sees' ), SEES_SUB_CAP, $base . '&sees_type=quote' );
+	add_submenu_page( $base, __( 'Contact messages', 'sees' ), __( 'Contact messages', 'sees' ), SEES_SUB_CAP, $base . '&sees_type=contact' );
 	add_submenu_page( $base, __( 'Job applications', 'sees' ), __( 'Job applications', 'sees' ), SEES_SUB_CAP, $base . '&sees_type=application' );
 	add_submenu_page( $base, __( 'Retention', 'sees' ), __( 'Retention', 'sees' ), 'manage_options', 'sees-submissions-retention', 'sees_submissions_retention_page' );
 
@@ -223,7 +224,9 @@ add_action( 'pre_get_posts', function ( WP_Query $q ) {
 	$type = isset( $_GET['sees_type'] ) ? sanitize_key( wp_unslash( $_GET['sees_type'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
 	$job  = isset( $_GET['sees_job'] ) ? absint( $_GET['sees_job'] ) : 0;                          // phpcs:ignore WordPress.Security.NonceVerification
 	$meta = array();
-	if ( in_array( $type, array( 'quote', 'application' ), true ) ) {
+	if ( 'contact' === $type ) {
+		$meta[] = array( 'key' => '_sees_type', 'value' => array( 'contact', 'quote' ), 'compare' => 'IN' ); // 'quote': older entries.
+	} elseif ( 'application' === $type ) {
 		$meta[] = array( 'key' => '_sees_type', 'value' => $type );
 	}
 	if ( $job ) {
@@ -252,12 +255,12 @@ add_action( 'manage_sees_submission_posts_custom_column', function ( $column, $i
 	$f = (array) get_post_meta( $id, '_sees_fields', true );
 	switch ( $column ) {
 		case 'sees_type':
-			echo esc_html( 'application' === get_post_meta( $id, '_sees_type', true ) ? __( 'Job application', 'sees' ) : __( 'Quote request', 'sees' ) );
+			echo esc_html( 'application' === get_post_meta( $id, '_sees_type', true ) ? __( 'Job application', 'sees' ) : __( 'Contact message', 'sees' ) );
 			echo get_post_meta( $id, '_sees_unread', true ) ? ' <strong>• ' . esc_html__( 'New', 'sees' ) . '</strong>' : '';
 			break;
 		case 'sees_about':
 			$job = (int) get_post_meta( $id, '_sees_job', true );
-			echo esc_html( $job ? get_the_title( $job ) . ( get_post_meta( $id, '_sees_job_reference', true ) ? ' (' . get_post_meta( $id, '_sees_job_reference', true ) . ')' : '' ) : ( $f['your-solution'] ?? '—' ) );
+			echo esc_html( $job ? get_the_title( $job ) . ( get_post_meta( $id, '_sees_job_reference', true ) ? ' (' . get_post_meta( $id, '_sees_job_reference', true ) . ')' : '' ) : ( $f['your-subject'] ?? $f['your-solution'] ?? '—' ) );
 			break;
 		case 'sees_email':
 			$email = (string) ( $f['your-email'] ?? '' );
@@ -397,7 +400,7 @@ function sees_submissions_retention_page(): void {
 	?>
 	<div class="wrap">
 		<h1><?php esc_html_e( 'Submission retention', 'sees' ); ?></h1>
-		<p><?php esc_html_e( 'Quote requests and job applications (including CVs) are deleted automatically after this period. The Saudi Personal Data Protection Law expects personal data to be kept no longer than needed — make sure this matches the period stated in your privacy policy.', 'sees' ); ?></p>
+		<p><?php esc_html_e( 'Contact messages and job applications (including CVs) are deleted automatically after this period. The Saudi Personal Data Protection Law expects personal data to be kept no longer than needed — make sure this matches the period stated in your privacy policy.', 'sees' ); ?></p>
 		<form method="post">
 			<?php wp_nonce_field( 'sees_retention' ); ?>
 			<label><?php esc_html_e( 'Keep submissions for', 'sees' ); ?>

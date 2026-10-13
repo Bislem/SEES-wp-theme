@@ -114,6 +114,7 @@ foreach ( $sees_solutions as $sees_solution ) {
 		'title'  => sees_field( 'cta_title', __( 'Not sure which solution fits?', 'sees' ) ),
 		'text'   => sees_field( 'cta_text', __( 'Describe your project and our engineers will recommend the right approach.', 'sees' ) ),
 		'button' => __( 'Talk to an engineer', 'sees' ),
+		'url'    => sees_contact_url( 'project' ),
 	) );
 	?>
 </main>

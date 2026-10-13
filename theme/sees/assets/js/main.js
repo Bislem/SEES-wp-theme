@@ -319,6 +319,17 @@
 		var success = formWrap.querySelector( '[data-form-success]' );
 		var reset = formWrap.querySelector( '[data-form-reset]' );
 
+		// ?topic=quote preselects that subject (keys listed in data-topics on the form).
+		var topic = new URLSearchParams( window.location.search ).get( 'topic' );
+		var topics = formWrap.querySelector( '[data-topics]' );
+		var subject = formWrap.querySelector( 'select[name="your-subject"]' );
+		if ( topic && topics && subject ) {
+			var index = topics.getAttribute( 'data-topics' ).split( ' ' ).indexOf( topic );
+			if ( index > -1 && subject.options[ index + 1 ] ) {
+				subject.selectedIndex = index + 1; // Option 0 is the "Choose a subject" label.
+			}
+		}
+
 		formWrap.addEventListener( 'wpcf7mailsent', function () {
 			panel.hidden = true;
 			success.hidden = false;

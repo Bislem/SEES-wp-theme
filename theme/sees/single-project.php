@@ -58,6 +58,7 @@ if ( $sees_terms && ! is_wp_error( $sees_terms ) ) {
 		'title'  => __( 'Your project could be next.', 'sees' ),
 		'text'   => __( 'Share your plans and we\'ll prepare a proposal.', 'sees' ),
 		'button' => __( 'Start a project', 'sees' ),
+		'url'    => sees_contact_url( 'quote' ),
 	) );
 	?>
 </main>

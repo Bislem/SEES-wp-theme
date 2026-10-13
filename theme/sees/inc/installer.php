@@ -64,6 +64,7 @@ function sees_run_setup( array $args = array() ): array {
 	sees_setup_migrate_domain( $log );
 	$pages['privacy'] = sees_setup_privacy( $content, $log );
 	sees_setup_forms( $content, $pages, $log );
+	sees_setup_contact_subject( $content, $pages, $log );
 	sees_setup_form_consent( $content, $pages, $log );
 	sees_setup_job_forms( $content, $pages, $log );
 	sees_setup_download_types( $content, $log );
@@ -736,28 +737,15 @@ function sees_setup_forms( array $content, array $pages, array &$log ): void {
 			continue;
 		}
 		$def  = $content['forms'][ $lang ];
-		$t    = $def['labels'];
 		$form = WPCF7_ContactForm::get_template( array( 'title' => $def['title'], 'locale' => $def['locale'] ) );
 
-		$markup = "<div class=\"sees-form\">\n<div class=\"sees-form__grid\">\n"
-			. "<label>{$t['name']} *\n[text* your-name autocomplete:name placeholder \"{$t['name_ph']}\"]</label>\n"
-			. "<label>{$t['company']}\n[text your-company autocomplete:organization placeholder \"{$t['company_ph']}\"]</label>\n"
-			. "<label>{$t['email']} *\n[email* your-email autocomplete:email placeholder \"you@company.com\"]</label>\n"
-			. "<label>{$t['phone']}\n[tel your-phone autocomplete:tel placeholder \"+966\"]</label>\n"
-			. "</div>\n"
-			. "<label>{$t['solution']}\n[select your-solution {$t['options']}]</label>\n"
-			. "<label>{$t['details']} *\n[textarea* your-message x5 placeholder \"{$t['details_ph']}\"]</label>\n"
-			. "[submit \"{$t['submit']}\"]\n</div>";
-
 		$contact_email = (string) get_field( 'email', $page ) ?: (string) get_option( 'admin_email' );
-		$mail          = $form->prop( 'mail' );
-		$mail['subject']            = '[_site_title] ' . $t['subject'] . ': [your-name]';
+		$mail          = sees_setup_contact_mail( (array) $form->prop( 'mail' ), $def );
 		$mail['recipient']          = $contact_email;
 		$mail['additional_headers'] = 'Reply-To: [your-email]';
-		$mail['body']               = "Name: [your-name]\nCompany: [your-company]\nEmail: [your-email]\nPhone: [your-phone]\nSolution: [your-solution]\n\n[your-message]\n\n-- \nSent from [_post_url]";
 
 		$props = array(
-			'form'   => $markup,
+			'form'   => sees_setup_contact_markup( $content, $lang ),
 			'mail'   => $mail,
 			'mail_2' => array_merge( (array) $form->prop( 'mail_2' ), array( 'active' => false ) ),
 		);
@@ -772,6 +760,74 @@ function sees_setup_forms( array $content, array $pages, array &$log ): void {
 			/* translators: %s: form title */
 			$log['done'][] = sprintf( __( 'Contact form created: %s.', 'sees' ), $def['title'] );
 		}
+	}
+}
+
+/**
+ * Contact form markup: name, company, email, phone, subject (required select) and message.
+ * The subject keys in data-topics let ?topic=quote links preselect a subject.
+ */
+function sees_setup_contact_markup( array $content, string $lang ): string {
+	$def    = $content['forms'][ $lang ];
+	$t      = $def['labels'];
+	$topics = '"' . implode( '" "', array_map( fn( $o ) => str_replace( '"', '', $o ), array_merge( array( $t['topic_ph'] ), $def['topics'] ) ) ) . '"';
+	return "<div class=\"sees-form\" data-topics=\"" . esc_attr( implode( ' ', $content['forms']['topic_keys'] ) ) . "\">\n<div class=\"sees-form__grid\">\n"
+		. "<label>{$t['name']} *\n[text* your-name autocomplete:name placeholder \"{$t['name_ph']}\"]</label>\n"
+		. "<label>{$t['company']}\n[text your-company autocomplete:organization placeholder \"{$t['company_ph']}\"]</label>\n"
+		. "<label>{$t['email']} *\n[email* your-email autocomplete:email placeholder \"you@company.com\"]</label>\n"
+		. "<label>{$t['phone']}\n[tel your-phone autocomplete:tel placeholder \"+966\"]</label>\n"
+		. "</div>\n"
+		. "<label>{$t['topic']} *\n[select* your-subject first_as_label {$topics}]</label>\n"
+		. "<label>{$t['message']} *\n[textarea* your-message x5 placeholder \"{$t['message_ph']}\"]</label>\n"
+		. "[submit \"{$t['submit']}\"]\n</div>";
+}
+
+function sees_setup_contact_mail( array $mail, array $def ): array {
+	$t               = $def['labels'];
+	$mail['subject'] = '[_site_title] [your-subject]: [your-name]';
+	$mail['body']    = "{$t['mail_topic']}: [your-subject]\n\n{$t['name']}: [your-name]\n{$t['company']}: [your-company]\n{$t['email']}: [your-email]\n{$t['phone']}: [your-phone]\n\n{$t['mail_message']}:\n[your-message]\n\n-- \nSent from [_post_url]";
+	return $mail;
+}
+
+/**
+ * Upgrade the theme's original quote forms (with a "Solution" select) to the general contact form
+ * with a "Subject" select. Only touches theme-built forms; the consent box is re-added afterwards.
+ */
+function sees_setup_contact_subject( array $content, array $pages, array &$log ): void {
+	$old_texts = array(
+		'form_title'      => array( 'Request a quote', 'اطلب عرض سعر' ),
+		'success_text'    => array( 'Your request has been sent. A SEES engineer will contact you shortly.', 'تم إرسال طلبك. سيتواصل معك أحد مهندسي سيز قريبًا.' ),
+		'header_subtitle' => array( 'Tell us about your project — an engineer will get back to you with next steps.', 'أخبرنا عن مشروعك، وسيتواصل معك أحد مهندسينا بالخطوات التالية.' ),
+	);
+	foreach ( array( 'en', 'ar' ) as $lang ) {
+		$page = $pages['contact'][ $lang ] ?? 0;
+		if ( ! $page ) {
+			continue;
+		}
+		// Page texts still holding the old quote wording.
+		foreach ( $old_texts as $field => $olds ) {
+			if ( in_array( trim( (string) get_field( $field, $page, false ) ), $olds, true ) ) {
+				update_field( $field, $content['pages']['contact'][ $lang ]['fields'][ $field ], $page );
+			}
+		}
+
+		$code = (string) get_field( 'form_shortcode', $page, false );
+		$id   = preg_match( '/id=["\']?(\d+)/', $code, $m ) ? (int) $m[1] : 0;
+		$form = $id ? wpcf7_contact_form( $id ) : null;
+		if ( ! $form || false === strpos( (string) $form->prop( 'form' ), 'sees-form' ) || false === strpos( (string) $form->prop( 'form' ), '[select your-solution' ) ) {
+			continue;
+		}
+		$def   = $content['forms'][ $lang ];
+		$props = array(
+			'form' => sees_setup_contact_markup( $content, $lang ),
+			'mail' => sees_setup_contact_mail( (array) $form->prop( 'mail' ), $def ),
+		);
+		$form->set_properties( $props );
+		$form->set_title( $def['title'] );
+		$form->save();
+		update_field( 'form_shortcode', sprintf( '[contact-form-7 id="%d" title="%s"]', $form->id(), $def['title'] ), $page );
+		/* translators: %s: form title */
+		$log['done'][] = sprintf( __( 'Contact form updated with a Subject field: %s.', 'sees' ), $def['title'] );
 	}
 }
 

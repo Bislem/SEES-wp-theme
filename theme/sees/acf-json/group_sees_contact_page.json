@@ -125,7 +125,7 @@
             "name": "form_title",
             "label": "Form title",
             "type": "text",
-            "placeholder": "Request a quote",
+            "placeholder": "Send us a message",
             "key": "field_7f5f5da0e1486",
             "instructions": "",
             "required": 0,

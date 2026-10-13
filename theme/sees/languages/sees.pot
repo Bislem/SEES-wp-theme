@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-13T11:29:17+00:00\n"
+"POT-Creation-Date: 2026-10-13T11:38:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sees\n"
@@ -383,7 +383,7 @@ msgid "File"
 msgstr ""
 
 #: inc/downloads.php:158
-#: inc/submissions.php:289
+#: inc/submissions.php:292
 msgid "Language"
 msgstr ""
 
@@ -391,7 +391,7 @@ msgstr ""
 msgid "No file"
 msgstr ""
 
-#: inc/helpers.php:136
+#: inc/helpers.php:145
 msgid "Al Shahamah District, Makkah, Saudi Arabia"
 msgstr ""
 
@@ -444,107 +444,113 @@ msgstr ""
 msgid "Polylang, Advanced Custom Fields and Contact Form 7 must be active first."
 msgstr ""
 
-#: inc/installer.php:99
+#: inc/installer.php:100
 msgid "Permalinks set to \"Post name\"."
 msgstr ""
 
 #. translators: %s: language name
-#: inc/installer.php:140
+#: inc/installer.php:141
 #, php-format
 msgid "Language added: %s."
 msgstr ""
 
-#: inc/installer.php:170
+#: inc/installer.php:171
 msgid "Polylang URLs set to /en/ and /ar/."
 msgstr ""
 
-#: inc/installer.php:176
+#: inc/installer.php:177
 msgid "Existing content assigned to English."
 msgstr ""
 
-#: inc/installer.php:187
+#: inc/installer.php:188
 msgid "Arabic WordPress language pack installed."
 msgstr ""
 
-#: inc/installer.php:189
+#: inc/installer.php:190
 msgid "Could not download the Arabic language pack automatically — add Arabic under Settings → General → Site Language."
 msgstr ""
 
 #. translators: 1: page title, 2: language code
-#: inc/installer.php:292
-#: inc/installer.php:431
+#: inc/installer.php:293
+#: inc/installer.php:432
 #, php-format
 msgid "Page created: %1$s (%2$s)."
 msgstr ""
 
 #. translators: %d: number of updated settings
-#: inc/installer.php:353
+#: inc/installer.php:354
 #, php-format
 msgid "Contact email moved to the sees-engineering.com domain (%d settings updated)."
 msgstr ""
 
 #. translators: %s: language code
-#: inc/installer.php:486
+#: inc/installer.php:487
 #, php-format
 msgid "Privacy consent checkbox added to the contact form (%s)."
 msgstr ""
 
 #. translators: %s: form title
-#: inc/installer.php:562
+#: inc/installer.php:563
 #, php-format
 msgid "Job application form created: %s."
 msgstr ""
 
-#: inc/installer.php:583
+#: inc/installer.php:584
 msgid "Support document types created (English + Arabic names)."
 msgstr ""
 
-#: inc/installer.php:595
+#: inc/installer.php:596
 msgid "News page set as the posts page."
 msgstr ""
 
-#: inc/installer.php:623
+#: inc/installer.php:624
 msgid "News categories created (English + Arabic)."
 msgstr ""
 
-#: inc/installer.php:634
+#: inc/installer.php:635
 msgid "WordPress sample post \"Hello world!\" removed."
 msgstr ""
 
 #. translators: 1: page title, 2: menu name
-#: inc/installer.php:670
+#: inc/installer.php:671
 #, php-format
 msgid "%1$s added to menu: %2$s."
 msgstr ""
 
-#: inc/installer.php:717
+#: inc/installer.php:718
 msgid "Site icon set from the SEES logo mark."
 msgstr ""
 
-#: inc/installer.php:725
+#: inc/installer.php:726
 msgid "Home set as the front page."
 msgstr ""
 
 #. translators: %s: form title
-#: inc/installer.php:773
+#: inc/installer.php:761
 #, php-format
 msgid "Contact form created: %s."
 msgstr ""
 
-#: inc/installer.php:808
+#. translators: %s: form title
+#: inc/installer.php:830
+#, php-format
+msgid "Contact form updated with a Subject field: %s."
+msgstr ""
+
+#: inc/installer.php:864
 msgid "Solutions created (5, English + Arabic)."
 msgstr ""
 
-#: inc/installer.php:831
+#: inc/installer.php:887
 msgid "FAQs created (4, English + Arabic)."
 msgstr ""
 
-#: inc/installer.php:863
+#: inc/installer.php:919
 msgid "Project categories created (English + Arabic)."
 msgstr ""
 
 #. translators: %d: number of projects
-#: inc/installer.php:914
+#: inc/installer.php:970
 #, php-format
 msgid "%d sample project created (English + Arabic)."
 msgid_plural "%d sample projects created (English + Arabic)."
@@ -552,7 +558,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %d: number of projects
-#: inc/installer.php:916
+#: inc/installer.php:972
 #, php-format
 msgid "%d placeholder project created as a draft (English + Arabic) — fill it in and publish."
 msgid_plural "%d placeholder projects created as drafts (English + Arabic) — fill them in and publish."
@@ -560,33 +566,33 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: menu name
-#: inc/installer.php:967
+#: inc/installer.php:1023
 #, php-format
 msgid "Menu created and assigned: %s."
 msgstr ""
 
 #. translators: %d: number of field groups
-#: inc/installer.php:1030
+#: inc/installer.php:1086
 #, php-format
 msgid "%d field group synced from the theme."
 msgid_plural "%d field groups synced from the theme."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/installer.php:1086
-#: inc/submissions.php:168
+#: inc/installer.php:1142
+#: inc/submissions.php:169
 msgid "Sorry, you are not allowed to do that."
 msgstr ""
 
-#: inc/installer.php:1104
+#: inc/installer.php:1160
 msgid "SEES automatic setup"
 msgstr ""
 
-#: inc/installer.php:1105
+#: inc/installer.php:1161
 msgid "here is what was set up:"
 msgstr ""
 
-#: inc/installer.php:1105
+#: inc/installer.php:1161
 msgid "everything was already in place."
 msgstr ""
 
@@ -618,7 +624,7 @@ msgstr ""
 #. Template Name of the theme
 #: inc/menus.php:16
 #: inc/setup-check.php:90
-#: inc/submissions.php:243
+#: inc/submissions.php:246
 msgid "About"
 msgstr ""
 
@@ -629,7 +635,7 @@ msgid "Projects"
 msgstr ""
 
 #: inc/post-types.php:14
-#: inc/submissions.php:55
+#: inc/submissions.php:56
 msgid "Solution"
 msgstr ""
 
@@ -749,7 +755,7 @@ msgid "Contact Form 7 plugin"
 msgstr ""
 
 #: inc/setup-check.php:48
-msgid "Powers the quote request form on the Contact page."
+msgid "Powers the contact form on the Contact page and the job application form."
 msgstr ""
 
 #: inc/setup-check.php:53
@@ -1102,159 +1108,163 @@ msgid "Search submissions"
 msgstr ""
 
 #: inc/submissions.php:51
-#: inc/submissions.php:241
+#: inc/submissions.php:244
 msgid "Name"
 msgstr ""
 
 #: inc/submissions.php:53
-#: inc/submissions.php:244
+#: inc/submissions.php:247
 #: page-contact.php:33
 #: single.php:55
 msgid "Email"
 msgstr ""
 
 #: inc/submissions.php:54
-#: inc/submissions.php:245
+#: inc/submissions.php:248
 msgid "Phone"
 msgstr ""
 
-#: inc/submissions.php:56
-msgid "LinkedIn / portfolio"
+#: inc/submissions.php:55
+msgid "Subject"
 msgstr ""
 
 #: inc/submissions.php:57
-msgid "Message"
+msgid "LinkedIn / portfolio"
 msgstr ""
 
 #: inc/submissions.php:58
+msgid "Message"
+msgstr ""
+
+#: inc/submissions.php:59
 msgid "Privacy consent"
 msgstr ""
 
-#: inc/submissions.php:98
+#: inc/submissions.php:99
 msgid "Given"
 msgstr ""
 
-#: inc/submissions.php:173
+#: inc/submissions.php:174
 msgid "The file is no longer available."
 msgstr ""
 
-#: inc/submissions.php:190
-msgid "Quote requests"
-msgstr ""
-
 #: inc/submissions.php:191
-msgid "Job applications"
+msgid "Contact messages"
 msgstr ""
 
 #: inc/submissions.php:192
+msgid "Job applications"
+msgstr ""
+
+#: inc/submissions.php:193
 msgid "Retention"
 msgstr ""
 
-#: inc/submissions.php:242
+#: inc/submissions.php:245
 msgid "Type"
 msgstr ""
 
-#: inc/submissions.php:246
-#: inc/submissions.php:297
+#: inc/submissions.php:249
+#: inc/submissions.php:300
 msgid "CV"
 msgstr ""
 
-#: inc/submissions.php:247
-#: inc/submissions.php:288
-#: inc/submissions.php:432
+#: inc/submissions.php:250
+#: inc/submissions.php:291
+#: inc/submissions.php:435
 msgid "Received"
 msgstr ""
 
-#: inc/submissions.php:255
+#: inc/submissions.php:258
 msgid "Job application"
 msgstr ""
 
-#: inc/submissions.php:255
-msgid "Quote request"
+#: inc/submissions.php:258
+msgid "Contact message"
 msgstr ""
 
-#: inc/submissions.php:256
+#: inc/submissions.php:259
 msgid "New"
 msgstr ""
 
-#: inc/submissions.php:270
-#: inc/submissions.php:297
+#: inc/submissions.php:273
+#: inc/submissions.php:300
 msgid "Download CV"
 msgstr ""
 
-#: inc/submissions.php:278
+#: inc/submissions.php:281
 msgid "Details"
 msgstr ""
 
-#: inc/submissions.php:279
+#: inc/submissions.php:282
 msgid "Actions"
 msgstr ""
 
-#: inc/submissions.php:291
+#: inc/submissions.php:294
 msgid "Vacancy"
 msgstr ""
 
-#: inc/submissions.php:306
+#: inc/submissions.php:309
 msgid "Reply by email"
 msgstr ""
 
-#: inc/submissions.php:308
+#: inc/submissions.php:311
 msgid "Delete permanently"
 msgstr ""
 
 #. translators: %d: months
-#: inc/submissions.php:311
+#: inc/submissions.php:314
 #, php-format
 msgid "Deleted automatically %d months after it was received."
 msgstr ""
 
-#: inc/submissions.php:338
-#: inc/submissions.php:351
+#: inc/submissions.php:341
+#: inc/submissions.php:354
 msgid "Applications"
 msgstr ""
 
 #. translators: %d: number of applications
-#: inc/submissions.php:354
+#: inc/submissions.php:357
 #, php-format
 msgid "%d application received"
 msgid_plural "%d applications received"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/submissions.php:356
+#: inc/submissions.php:359
 msgid "View applications"
 msgstr ""
 
-#: inc/submissions.php:395
+#: inc/submissions.php:398
 msgid "Saved."
 msgstr ""
 
-#: inc/submissions.php:399
+#: inc/submissions.php:402
 msgid "Submission retention"
 msgstr ""
 
-#: inc/submissions.php:400
-msgid "Quote requests and job applications (including CVs) are deleted automatically after this period. The Saudi Personal Data Protection Law expects personal data to be kept no longer than needed — make sure this matches the period stated in your privacy policy."
-msgstr ""
-
 #: inc/submissions.php:403
-msgid "Keep submissions for"
-msgstr ""
-
-#: inc/submissions.php:404
-msgid "months"
+msgid "Contact messages and job applications (including CVs) are deleted automatically after this period. The Saudi Personal Data Protection Law expects personal data to be kept no longer than needed — make sure this matches the period stated in your privacy policy."
 msgstr ""
 
 #: inc/submissions.php:406
+msgid "Keep submissions for"
+msgstr ""
+
+#: inc/submissions.php:407
+msgid "months"
+msgstr ""
+
+#: inc/submissions.php:409
 msgid "Save"
 msgstr ""
 
-#: inc/submissions.php:427
-#: inc/submissions.php:446
+#: inc/submissions.php:430
+#: inc/submissions.php:449
 msgid "SEES form submissions"
 msgstr ""
 
-#: inc/submissions.php:436
+#: inc/submissions.php:439
 msgid "Form submissions"
 msgstr ""
 
@@ -1381,7 +1391,7 @@ msgid "(opens Google Maps)"
 msgstr ""
 
 #: page-contact.php:57
-msgid "Request a quote"
+msgid "Send us a message"
 msgstr ""
 
 #: page-contact.php:58

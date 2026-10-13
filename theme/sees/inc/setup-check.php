@@ -45,7 +45,7 @@ function sees_setup_checks(): array {
 		__( 'All editable page fields (texts, photos, contact details) use ACF.', 'sees' ),
 		sprintf( $plugins, 'advanced-custom-fields' ), __( 'Install', 'sees' ) );
 	$add( 'cf7', __( 'Contact Form 7 plugin', 'sees' ), $has_cf7, true,
-		__( 'Powers the quote request form on the Contact page.', 'sees' ),
+		__( 'Powers the contact form on the Contact page and the job application form.', 'sees' ),
 		sprintf( $plugins, 'contact-form-7' ), __( 'Install', 'sees' ) );
 
 	// 2. Languages.
