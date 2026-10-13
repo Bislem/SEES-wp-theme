@@ -76,7 +76,18 @@ $sees_facts       = array_filter( array(
 					<h2 class="h2"><?php echo esc_html( sees_jobs_text( 'application' ) ); ?></h2>
 					<p><?php echo esc_html( sees_jobs_text( 'application_intro' ) ); ?></p>
 				</div>
-				<div class="sees-job-form"><?php echo $sees_application; // phpcs:ignore WordPress.Security.EscapeOutput ?></div>
+				<div class="sees-job-form" data-form-host>
+					<div data-form-panel><?php echo $sees_application; // phpcs:ignore WordPress.Security.EscapeOutput ?></div>
+					<?php
+					get_template_part( 'template-parts/form-success', null, array(
+						'title'        => sees_jobs_text( 'application_sent' ),
+						'text'         => sees_jobs_text( 'application_sent_text' ),
+						'use_response' => true,
+						'link_url'     => sees_page_url( 'page-jobs.php' ) . '#open-positions',
+						'link_label'   => sees_jobs_text( 'back_to_jobs' ),
+					) );
+					?>
+				</div>
 			</div>
 		</section>
 	<?php endif; ?>

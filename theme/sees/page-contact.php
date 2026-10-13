@@ -52,7 +52,7 @@ $sees_shortcode = trim( (string) sees_field( 'form_shortcode' ) );
 			</figure>
 		</div>
 
-		<div class="contact__form a-up d3" data-contact-form>
+		<div class="contact__form a-up d3" data-contact-form data-form-host>
 			<div class="contact__form-inner" data-form-panel>
 				<h2 class="contact__title"><?php echo esc_html( sees_field( 'form_title', __( 'Send us a message', 'sees' ) ) ); ?></h2>
 				<p class="contact__note"><?php echo esc_html( sees_field( 'form_text', __( 'Fields marked * are required.', 'sees' ) ) ); ?></p>
@@ -64,12 +64,13 @@ $sees_shortcode = trim( (string) sees_field( 'form_shortcode' ) );
 				}
 				?>
 			</div>
-			<div class="contact__success" data-form-success role="status" hidden tabindex="-1">
-				<span class="contact__success-icon pop" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path class="draw" d="M5 12l5 5 9-10"/></svg></span>
-				<h2 class="contact__title"><?php echo esc_html( sees_field( 'success_title', __( 'Thank you!', 'sees' ) ) ); ?></h2>
-				<p class="contact__note"><?php echo esc_html( sees_field( 'success_text', __( 'Your request has been sent. A SEES engineer will contact you shortly.', 'sees' ) ) ); ?></p>
-				<button type="button" class="btn btn--outline" data-form-reset><?php esc_html_e( 'Send another request', 'sees' ); ?></button>
-			</div>
+			<?php
+			get_template_part( 'template-parts/form-success', null, array(
+				'title' => sees_field( 'success_title', __( 'Thank you!', 'sees' ) ),
+				'text'  => sees_field( 'success_text', __( 'Your message has been sent. Our team will get back to you shortly.', 'sees' ) ),
+				'reset' => __( 'Send another message', 'sees' ),
+			) );
+			?>
 		</div>
 	</section>
 </main>

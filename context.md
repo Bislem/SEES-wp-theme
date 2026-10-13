@@ -114,6 +114,14 @@ theme/sees/
 - **Subjects** live in `installer-content.php` → `forms[lang]['topics']`, with shared keys in `forms['topic_keys']`. The keys are output as `data-topics` on the form. `main.js` preselects the subject from `?topic=` and `sees_contact_url( $topic )` builds such links.
 - **Upgrade:** `sees_setup_contact_subject()` turns the original theme quote forms (containing `[select your-solution`) into this form once. It also replaces the old quote wording on Contact pages, but only where a field still holds the original default text.
 
+### Form feedback (`template-parts/form-success.php`, `main.js`)
+
+- **Status box at the top:** CF7's response box is moved to the top of every form. On an error it is scrolled into view; a red box for errors, green for sent.
+- **"Sent" panel:** after a successful send, the form (`[data-form-panel]`) is replaced by the "sent" panel inside `[data-form-host]`, which is scrolled into view and focused.
+  - Contact page: success title/text from the page fields, plus "Send another message".
+  - Vacancy page: "Application sent!" with the form's own CF7 success message (`data-form-message`), plus "Back to all vacancies".
+- **Fresh-install test (2026-10-13):** new WordPress with plain permalinks; theme activated, then Polylang + ACF + CF7. One admin visit ran the full setup: all 21 checklist items green, every EN/AR page 200, contact forms with Subject and consent, job forms, menus with News. Contact and job emails were delivered (CV attached, applicant confirmation), submissions saved, the CV URL returned 403, debug.log stayed empty.
+
 ### Submissions (`inc/submissions.php`)
 
 - **What:** `sees_submission` posts (not public, no "Add new"), one per contact message or job application. Saved on `wpcf7_before_send_mail` (priority 20, after the closed-vacancy abort), so a copy exists even if mail fails. Only theme forms (markup contains `sees-form`, or a `sees_job_forms` ID).

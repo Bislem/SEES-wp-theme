@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SEES 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sees\n"
-"POT-Creation-Date: 2026-10-13T11:38:34+00:00\n"
+"POT-Creation-Date: 2026-10-13T11:47:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: SEES\n"
 "Language-Team: Arabic\n"
@@ -259,7 +259,7 @@ msgstr "مشروع مميّز"
 msgid "Client"
 msgstr "العميل"
 
-#: front-page.php:170 inc/jobs.php:359 single-project.php:15
+#: front-page.php:170 inc/jobs.php:361 single-project.php:15
 msgid "Location"
 msgstr "الموقع"
 
@@ -622,23 +622,23 @@ msgstr "هذا ما تم إعداده:"
 msgid "everything was already in place."
 msgstr "كل شيء كان جاهزًا مسبقًا."
 
-#: inc/jobs.php:358
+#: inc/jobs.php:360
 msgid "Department"
 msgstr "القسم"
 
-#: inc/jobs.php:360
+#: inc/jobs.php:362
 msgid "Vacancy status"
 msgstr "حالة الوظيفة"
 
-#: inc/jobs.php:370
+#: inc/jobs.php:372
 msgid "Open"
 msgstr "مفتوحة"
 
-#: inc/jobs.php:370
+#: inc/jobs.php:372
 msgid "Closed"
 msgstr "مغلقة"
 
-#: inc/jobs.php:384
+#: inc/jobs.php:386
 msgid ""
 "Applications are enabled, but no application form is available. Run "
 "Appearance → SEES setup to recreate the standard form."
@@ -1339,7 +1339,10 @@ msgid ""
 "automatically after this period. The Saudi Personal Data Protection Law "
 "expects personal data to be kept no longer than needed — make sure this "
 "matches the period stated in your privacy policy."
-msgstr "تُحذف رسائل التواصل وطلبات التوظيف (بما فيها السير الذاتية) تلقائيًا بعد هذه المدة. ويقتضي نظام حماية البيانات الشخصية السعودي ألا تُحفظ البيانات الشخصية أطول من اللازم — تأكد من أن هذه المدة تطابق المدة المذكورة في سياسة الخصوصية."
+msgstr ""
+"تُحذف رسائل التواصل وطلبات التوظيف (بما فيها السير الذاتية) تلقائيًا بعد هذه "
+"المدة. ويقتضي نظام حماية البيانات الشخصية السعودي ألا تُحفظ البيانات الشخصية "
+"أطول من اللازم — تأكد من أن هذه المدة تطابق المدة المذكورة في سياسة الخصوصية."
 
 #: inc/submissions.php:406
 msgid "Keep submissions for"
@@ -1510,17 +1513,17 @@ msgstr "الحقول المعلَّمة بـ * إلزامية."
 msgid "Add a Contact Form 7 shortcode in this page's \"Form\" settings."
 msgstr "أضف رمز Contact Form 7 المختصر في إعدادات \"النموذج\" لهذه الصفحة."
 
-#: page-contact.php:69
+#: page-contact.php:69 template-parts/form-success.php:17
 msgid "Thank you!"
 msgstr "شكرًا لك!"
 
 #: page-contact.php:70
-msgid "Your request has been sent. A SEES engineer will contact you shortly."
-msgstr "تم إرسال طلبك. سيتواصل معك أحد مهندسي سيز قريبًا."
+msgid "Your message has been sent. Our team will get back to you shortly."
+msgstr "تم إرسال رسالتك. سيتواصل معك فريقنا قريبًا."
 
 #: page-contact.php:71
-msgid "Send another request"
-msgstr "إرسال طلب آخر"
+msgid "Send another message"
+msgstr "إرسال رسالة أخرى"
 
 #: page-solutions.php:15
 msgid "Assess"
@@ -1742,6 +1745,13 @@ msgstr "شاهد دراسة الحالة"
 #: template-parts/solution-card.php:18
 msgid "Learn more"
 msgstr "اعرف المزيد"
+
+#~ msgid ""
+#~ "Your request has been sent. A SEES engineer will contact you shortly."
+#~ msgstr "تم إرسال طلبك. سيتواصل معك أحد مهندسي سيز قريبًا."
+
+#~ msgid "Send another request"
+#~ msgstr "إرسال طلب آخر"
 
 #~ msgid "Powers the quote request form on the Contact page."
 #~ msgstr "تشغّل نموذج طلب عرض السعر في صفحة التواصل."

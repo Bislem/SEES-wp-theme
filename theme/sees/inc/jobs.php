@@ -71,6 +71,8 @@ function sees_jobs_text( string $key ): string {
 		'back_to_jobs'       => array( 'Back to all vacancies', 'العودة إلى جميع الوظائف' ),
 		'application'        => array( 'Apply for this position', 'التقديم على هذه الوظيفة' ),
 		'application_intro'  => array( 'Complete the application form below. Required fields are marked clearly.', 'أكمل نموذج التقديم أدناه. الحقول المطلوبة موضحة بوضوح.' ),
+		'application_sent'      => array( 'Application sent!', 'تم إرسال طلبك!' ),
+		'application_sent_text' => array( 'Thank you for applying. We have emailed you a confirmation, and our team will contact you if your profile matches the role.', 'شكرًا لتقديمك. أرسلنا إليك رسالة تأكيد عبر البريد الإلكتروني، وسيتواصل معك فريقنا إذا كان ملفك مناسبًا للوظيفة.' ),
 		'closed_notice'      => array( 'Applications for this position are closed.', 'أُغلق باب التقديم على هذه الوظيفة.' ),
 		'process_eyebrow'    => array( 'Recruitment process', 'مراحل التوظيف' ),
 		'process_title'      => array( 'A Clear and Simple Process', 'عملية واضحة وبسيطة' ),

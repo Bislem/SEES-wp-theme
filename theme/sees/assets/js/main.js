@@ -312,39 +312,75 @@
 		} );
 	} );
 
-	/* ---------- Contact form success panel ---------- */
-	var formWrap = document.querySelector( '[data-contact-form]' );
-	if ( formWrap ) {
-		var panel = formWrap.querySelector( '[data-form-panel]' );
-		var success = formWrap.querySelector( '[data-form-success]' );
-		var reset = formWrap.querySelector( '[data-form-reset]' );
+	/* ---------- Forms (Contact Form 7): status at the top, "sent" panel ---------- */
+	function bringIntoView( el ) {
+		var box = el.getBoundingClientRect();
+		if ( box.top < 0 || box.top > window.innerHeight * 0.6 ) {
+			el.scrollIntoView( { behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' } );
+		}
+	}
 
-		// ?topic=quote preselects that subject (keys listed in data-topics on the form).
-		var topic = new URLSearchParams( window.location.search ).get( 'topic' );
-		var topics = formWrap.querySelector( '[data-topics]' );
-		var subject = formWrap.querySelector( 'select[name="your-subject"]' );
-		if ( topic && topics && subject ) {
-			var index = topics.getAttribute( 'data-topics' ).split( ' ' ).indexOf( topic );
-			if ( index > -1 && subject.options[ index + 1 ] ) {
-				subject.selectedIndex = index + 1; // Option 0 is the "Choose a subject" label.
+	document.querySelectorAll( '.wpcf7 form' ).forEach( function ( form ) {
+		// Show the status / error message above the fields instead of under the button.
+		var output = form.querySelector( '.wpcf7-response-output' );
+		var first = form.querySelector( ':scope > :not(fieldset)' );
+		if ( output && first && first !== output ) {
+			form.insertBefore( output, first );
+		}
+	} );
+
+	[ 'wpcf7invalid', 'wpcf7spam', 'wpcf7mailfailed' ].forEach( function ( name ) {
+		document.addEventListener( name, function ( e ) {
+			var output = e.target.querySelector( '.wpcf7-response-output' );
+			if ( output ) {
+				window.setTimeout( function () {
+					bringIntoView( output );
+				}, 50 );
 			}
+		} );
+	} );
+
+	// After a successful send, replace the form with its "sent" panel.
+	document.querySelectorAll( '[data-form-host]' ).forEach( function ( host ) {
+		var panel = host.querySelector( '[data-form-panel]' );
+		var success = host.querySelector( '[data-form-success]' );
+		var message = host.querySelector( '[data-form-message]' );
+		var reset = host.querySelector( '[data-form-reset]' );
+		if ( ! panel || ! success ) {
+			return;
 		}
 
-		formWrap.addEventListener( 'wpcf7mailsent', function () {
+		host.addEventListener( 'wpcf7mailsent', function ( e ) {
+			var text = e.detail && e.detail.apiResponse && e.detail.apiResponse.message;
+			if ( message && text ) {
+				message.textContent = text;
+			}
 			panel.hidden = true;
 			success.hidden = false;
-			success.focus();
+			success.focus( { preventScroll: true } );
+			bringIntoView( success );
 		} );
 
 		if ( reset ) {
 			reset.addEventListener( 'click', function () {
 				success.hidden = true;
 				panel.hidden = false;
-				var first = panel.querySelector( 'input:not([type="hidden"]), textarea, select' );
-				if ( first ) {
-					first.focus();
+				var field = panel.querySelector( 'input:not([type="hidden"]), textarea, select' );
+				if ( field ) {
+					field.focus();
 				}
 			} );
+		}
+	} );
+
+	// ?topic=quote preselects that subject (keys listed in data-topics on the contact form).
+	var topic = new URLSearchParams( window.location.search ).get( 'topic' );
+	var topics = document.querySelector( '[data-contact-form] [data-topics]' );
+	var subject = document.querySelector( '[data-contact-form] select[name="your-subject"]' );
+	if ( topic && topics && subject ) {
+		var index = topics.getAttribute( 'data-topics' ).split( ' ' ).indexOf( topic );
+		if ( index > -1 && subject.options[ index + 1 ] ) {
+			subject.selectedIndex = index + 1; // Option 0 is the "Choose a subject" label.
 		}
 	}
 }() );

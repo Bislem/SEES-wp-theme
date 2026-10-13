@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-13T11:38:34+00:00\n"
+"POT-Creation-Date: 2026-10-13T11:47:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sees\n"
@@ -258,7 +258,7 @@ msgid "Client"
 msgstr ""
 
 #: front-page.php:170
-#: inc/jobs.php:359
+#: inc/jobs.php:361
 #: single-project.php:15
 msgid "Location"
 msgstr ""
@@ -596,23 +596,23 @@ msgstr ""
 msgid "everything was already in place."
 msgstr ""
 
-#: inc/jobs.php:358
+#: inc/jobs.php:360
 msgid "Department"
 msgstr ""
 
-#: inc/jobs.php:360
+#: inc/jobs.php:362
 msgid "Vacancy status"
 msgstr ""
 
-#: inc/jobs.php:370
+#: inc/jobs.php:372
 msgid "Open"
 msgstr ""
 
-#: inc/jobs.php:370
+#: inc/jobs.php:372
 msgid "Closed"
 msgstr ""
 
-#: inc/jobs.php:384
+#: inc/jobs.php:386
 msgid "Applications are enabled, but no application form is available. Run Appearance → SEES setup to recreate the standard form."
 msgstr ""
 
@@ -1403,15 +1403,16 @@ msgid "Add a Contact Form 7 shortcode in this page's \"Form\" settings."
 msgstr ""
 
 #: page-contact.php:69
+#: template-parts/form-success.php:17
 msgid "Thank you!"
 msgstr ""
 
 #: page-contact.php:70
-msgid "Your request has been sent. A SEES engineer will contact you shortly."
+msgid "Your message has been sent. Our team will get back to you shortly."
 msgstr ""
 
 #: page-contact.php:71
-msgid "Send another request"
+msgid "Send another message"
 msgstr ""
 
 #: page-solutions.php:15
