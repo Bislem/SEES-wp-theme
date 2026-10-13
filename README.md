@@ -65,6 +65,12 @@ sees-theme-kit/          original brief, brand guidelines PDF, source images
   - Translate it with Polylang's "+" column to publish the Arabic version.
   - Posts appear on the News page, newest first (the latest shown large), with category filters.
   - Comments are switched off.
+- **Submissions** (wp-admin menu): a copy of every quote request and job application, saved even if the email fails.
+  - *Quote requests* and *Job applications* views. New items are marked, with a count on the menu. Open one to see the details, reply by email or download the CV.
+  - Each vacancy shows its application count (Jobs list column, and a box on the edit screen) with a link to its applications.
+  - CVs are kept in a private folder that can't be opened from the web; only logged-in editors and administrators can download them.
+  - Everything is deleted automatically after 12 months (Submissions → Retention). Keep that in line with the privacy policy.
+  - A "delete my data" request: Tools → Erase Personal Data, using the person's email (also removes their CV). Tools → Export Personal Data gives them a copy.
 - **Top bar**: phone, email, address (and working hours, once they're no longer a placeholder) come from the Contact page.
 
 ## Going live on www.sees-engineering.com

@@ -25,6 +25,7 @@ require SEES_DIR . '/inc/projects-visibility.php';
 require SEES_DIR . '/inc/post-types.php';
 require SEES_DIR . '/inc/jobs.php';
 require SEES_DIR . '/inc/job-applications.php';
+require SEES_DIR . '/inc/submissions.php';
 require SEES_DIR . '/inc/downloads.php';
 require SEES_DIR . '/inc/blog.php';
 require SEES_DIR . '/inc/acf.php';

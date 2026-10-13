@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-13T11:19:07+00:00\n"
+"POT-Creation-Date: 2026-10-13T11:29:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sees\n"
@@ -101,6 +101,7 @@ msgid "Engineering smarter, powering better — integrated electrical solutions 
 msgstr ""
 
 #: footer.php:27
+#: inc/submissions.php:52
 msgid "Company"
 msgstr ""
 
@@ -382,6 +383,7 @@ msgid "File"
 msgstr ""
 
 #: inc/downloads.php:158
+#: inc/submissions.php:289
 msgid "Language"
 msgstr ""
 
@@ -572,6 +574,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: inc/installer.php:1086
+#: inc/submissions.php:168
 msgid "Sorry, you are not allowed to do that."
 msgstr ""
 
@@ -615,6 +618,7 @@ msgstr ""
 #. Template Name of the theme
 #: inc/menus.php:16
 #: inc/setup-check.php:90
+#: inc/submissions.php:243
 msgid "About"
 msgstr ""
 
@@ -625,6 +629,7 @@ msgid "Projects"
 msgstr ""
 
 #: inc/post-types.php:14
+#: inc/submissions.php:55
 msgid "Solution"
 msgstr ""
 
@@ -1075,6 +1080,184 @@ msgstr ""
 msgid "Wide (16:11)"
 msgstr ""
 
+#: inc/submissions.php:26
+msgid "Submissions"
+msgstr ""
+
+#: inc/submissions.php:27
+#: inc/submissions.php:28
+msgid "Submission"
+msgstr ""
+
+#: inc/submissions.php:29
+msgid "All submissions"
+msgstr ""
+
+#: inc/submissions.php:30
+msgid "No submissions yet."
+msgstr ""
+
+#: inc/submissions.php:31
+msgid "Search submissions"
+msgstr ""
+
+#: inc/submissions.php:51
+#: inc/submissions.php:241
+msgid "Name"
+msgstr ""
+
+#: inc/submissions.php:53
+#: inc/submissions.php:244
+#: page-contact.php:33
+#: single.php:55
+msgid "Email"
+msgstr ""
+
+#: inc/submissions.php:54
+#: inc/submissions.php:245
+msgid "Phone"
+msgstr ""
+
+#: inc/submissions.php:56
+msgid "LinkedIn / portfolio"
+msgstr ""
+
+#: inc/submissions.php:57
+msgid "Message"
+msgstr ""
+
+#: inc/submissions.php:58
+msgid "Privacy consent"
+msgstr ""
+
+#: inc/submissions.php:98
+msgid "Given"
+msgstr ""
+
+#: inc/submissions.php:173
+msgid "The file is no longer available."
+msgstr ""
+
+#: inc/submissions.php:190
+msgid "Quote requests"
+msgstr ""
+
+#: inc/submissions.php:191
+msgid "Job applications"
+msgstr ""
+
+#: inc/submissions.php:192
+msgid "Retention"
+msgstr ""
+
+#: inc/submissions.php:242
+msgid "Type"
+msgstr ""
+
+#: inc/submissions.php:246
+#: inc/submissions.php:297
+msgid "CV"
+msgstr ""
+
+#: inc/submissions.php:247
+#: inc/submissions.php:288
+#: inc/submissions.php:432
+msgid "Received"
+msgstr ""
+
+#: inc/submissions.php:255
+msgid "Job application"
+msgstr ""
+
+#: inc/submissions.php:255
+msgid "Quote request"
+msgstr ""
+
+#: inc/submissions.php:256
+msgid "New"
+msgstr ""
+
+#: inc/submissions.php:270
+#: inc/submissions.php:297
+msgid "Download CV"
+msgstr ""
+
+#: inc/submissions.php:278
+msgid "Details"
+msgstr ""
+
+#: inc/submissions.php:279
+msgid "Actions"
+msgstr ""
+
+#: inc/submissions.php:291
+msgid "Vacancy"
+msgstr ""
+
+#: inc/submissions.php:306
+msgid "Reply by email"
+msgstr ""
+
+#: inc/submissions.php:308
+msgid "Delete permanently"
+msgstr ""
+
+#. translators: %d: months
+#: inc/submissions.php:311
+#, php-format
+msgid "Deleted automatically %d months after it was received."
+msgstr ""
+
+#: inc/submissions.php:338
+#: inc/submissions.php:351
+msgid "Applications"
+msgstr ""
+
+#. translators: %d: number of applications
+#: inc/submissions.php:354
+#, php-format
+msgid "%d application received"
+msgid_plural "%d applications received"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/submissions.php:356
+msgid "View applications"
+msgstr ""
+
+#: inc/submissions.php:395
+msgid "Saved."
+msgstr ""
+
+#: inc/submissions.php:399
+msgid "Submission retention"
+msgstr ""
+
+#: inc/submissions.php:400
+msgid "Quote requests and job applications (including CVs) are deleted automatically after this period. The Saudi Personal Data Protection Law expects personal data to be kept no longer than needed — make sure this matches the period stated in your privacy policy."
+msgstr ""
+
+#: inc/submissions.php:403
+msgid "Keep submissions for"
+msgstr ""
+
+#: inc/submissions.php:404
+msgid "months"
+msgstr ""
+
+#: inc/submissions.php:406
+msgid "Save"
+msgstr ""
+
+#: inc/submissions.php:427
+#: inc/submissions.php:446
+msgid "SEES form submissions"
+msgstr ""
+
+#: inc/submissions.php:436
+msgid "Form submissions"
+msgstr ""
+
 #. translators: %s: search query
 #: index.php:12
 #, php-format
@@ -1175,11 +1358,6 @@ msgstr ""
 
 #: page-contact.php:29
 msgid "Call us"
-msgstr ""
-
-#: page-contact.php:33
-#: single.php:55
-msgid "Email"
 msgstr ""
 
 #: page-contact.php:37

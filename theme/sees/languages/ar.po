@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SEES 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sees\n"
-"POT-Creation-Date: 2026-10-13T11:19:07+00:00\n"
+"POT-Creation-Date: 2026-10-13T11:29:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: SEES\n"
 "Language-Team: Arabic\n"
@@ -103,7 +103,7 @@ msgstr ""
 "نهندس بذكاء ونُشغّل بشكل أفضل — حلول كهربائية متكاملة من مكة المكرمة، المملكة "
 "العربية السعودية."
 
-#: footer.php:27
+#: footer.php:27 inc/submissions.php:52
 msgid "Company"
 msgstr "الشركة"
 
@@ -377,7 +377,7 @@ msgstr "الإنجليزية والعربية"
 msgid "File"
 msgstr "الملف"
 
-#: inc/downloads.php:158
+#: inc/downloads.php:158 inc/submissions.php:289
 msgid "Language"
 msgstr "اللغة"
 
@@ -600,7 +600,7 @@ msgstr[3] "تمت مزامنة %d من مجموعات الحقول من القا
 msgstr[4] "تمت مزامنة %d من مجموعات الحقول من القالب."
 msgstr[5] "تمت مزامنة %d من مجموعات الحقول من القالب."
 
-#: inc/installer.php:1086
+#: inc/installer.php:1086 inc/submissions.php:168
 msgid "Sorry, you are not allowed to do that."
 msgstr "عذرًا، لا تملك صلاحية تنفيذ ذلك."
 
@@ -645,7 +645,7 @@ msgid "Home"
 msgstr "الرئيسية"
 
 #. Template Name of the theme
-#: inc/menus.php:16 inc/setup-check.php:90
+#: inc/menus.php:16 inc/setup-check.php:90 inc/submissions.php:243
 msgid "About"
 msgstr "من نحن"
 
@@ -653,7 +653,7 @@ msgstr "من نحن"
 msgid "Projects"
 msgstr "المشاريع"
 
-#: inc/post-types.php:14
+#: inc/post-types.php:14 inc/submissions.php:55
 msgid "Solution"
 msgstr "حل"
 
@@ -907,7 +907,9 @@ msgstr "صفحة الأخبار بكل لغة"
 msgid ""
 "Settings → Reading → \"Posts page\" must be the News page, translated into "
 "Arabic. The automatic setup does this."
-msgstr "الإعدادات ← القراءة ← يجب أن تكون «صفحة المقالات» هي صفحة الأخبار مع ترجمتها إلى العربية. يقوم الإعداد التلقائي بذلك."
+msgstr ""
+"الإعدادات ← القراءة ← يجب أن تكون «صفحة المقالات» هي صفحة الأخبار مع ترجمتها "
+"إلى العربية. يقوم الإعداد التلقائي بذلك."
 
 #: inc/setup-check.php:156
 msgid "Primary menu for each language"
@@ -1173,6 +1175,181 @@ msgstr ""
 msgid "Wide (16:11)"
 msgstr ""
 
+#: inc/submissions.php:26
+msgid "Submissions"
+msgstr "الطلبات الواردة"
+
+#: inc/submissions.php:27 inc/submissions.php:28
+msgid "Submission"
+msgstr "طلب وارد"
+
+#: inc/submissions.php:29
+msgid "All submissions"
+msgstr "جميع الطلبات الواردة"
+
+#: inc/submissions.php:30
+msgid "No submissions yet."
+msgstr "لا توجد طلبات واردة بعد."
+
+#: inc/submissions.php:31
+msgid "Search submissions"
+msgstr "البحث في الطلبات الواردة"
+
+#: inc/submissions.php:51 inc/submissions.php:241
+msgid "Name"
+msgstr "الاسم"
+
+#: inc/submissions.php:53 inc/submissions.php:244 page-contact.php:33
+#: single.php:55
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: inc/submissions.php:54 inc/submissions.php:245
+msgid "Phone"
+msgstr "الهاتف"
+
+#: inc/submissions.php:56
+msgid "LinkedIn / portfolio"
+msgstr "LinkedIn / ملف الأعمال"
+
+#: inc/submissions.php:57
+msgid "Message"
+msgstr "الرسالة"
+
+#: inc/submissions.php:58
+msgid "Privacy consent"
+msgstr "الموافقة على الخصوصية"
+
+#: inc/submissions.php:98
+msgid "Given"
+msgstr "تمت الموافقة"
+
+#: inc/submissions.php:173
+msgid "The file is no longer available."
+msgstr "الملف لم يعد متاحًا."
+
+#: inc/submissions.php:190
+msgid "Quote requests"
+msgstr "طلبات عروض الأسعار"
+
+#: inc/submissions.php:191
+msgid "Job applications"
+msgstr "طلبات التوظيف"
+
+#: inc/submissions.php:192
+msgid "Retention"
+msgstr "مدة الاحتفاظ"
+
+#: inc/submissions.php:242
+msgid "Type"
+msgstr "النوع"
+
+#: inc/submissions.php:246 inc/submissions.php:297
+msgid "CV"
+msgstr "السيرة الذاتية"
+
+#: inc/submissions.php:247 inc/submissions.php:288 inc/submissions.php:432
+msgid "Received"
+msgstr "تاريخ الاستلام"
+
+#: inc/submissions.php:255
+msgid "Job application"
+msgstr "طلب توظيف"
+
+#: inc/submissions.php:255
+msgid "Quote request"
+msgstr "طلب عرض سعر"
+
+#: inc/submissions.php:256
+msgid "New"
+msgstr "جديد"
+
+#: inc/submissions.php:270 inc/submissions.php:297
+msgid "Download CV"
+msgstr "تنزيل السيرة الذاتية"
+
+#: inc/submissions.php:278
+msgid "Details"
+msgstr "التفاصيل"
+
+#: inc/submissions.php:279
+msgid "Actions"
+msgstr "الإجراءات"
+
+#: inc/submissions.php:291
+msgid "Vacancy"
+msgstr "الوظيفة"
+
+#: inc/submissions.php:306
+msgid "Reply by email"
+msgstr "الرد عبر البريد الإلكتروني"
+
+#: inc/submissions.php:308
+msgid "Delete permanently"
+msgstr "حذف نهائي"
+
+#. translators: %d: months
+#: inc/submissions.php:311
+#, php-format
+msgid "Deleted automatically %d months after it was received."
+msgstr "يُحذف تلقائيًا بعد %d شهرًا من استلامه."
+
+#: inc/submissions.php:338 inc/submissions.php:351
+msgid "Applications"
+msgstr "الطلبات"
+
+#. translators: %d: number of applications
+#: inc/submissions.php:354
+#, php-format
+msgid "%d application received"
+msgid_plural "%d applications received"
+msgstr[0] "%d طلب"
+msgstr[1] "%d طلب"
+msgstr[2] "%d طلب"
+msgstr[3] "%d طلب"
+msgstr[4] "%d طلب"
+msgstr[5] "%d طلب"
+
+#: inc/submissions.php:356
+msgid "View applications"
+msgstr "عرض الطلبات"
+
+#: inc/submissions.php:395
+msgid "Saved."
+msgstr "تم الحفظ."
+
+#: inc/submissions.php:399
+msgid "Submission retention"
+msgstr "مدة الاحتفاظ بالطلبات الواردة"
+
+#: inc/submissions.php:400
+msgid ""
+"Quote requests and job applications (including CVs) are deleted "
+"automatically after this period. The Saudi Personal Data Protection Law "
+"expects personal data to be kept no longer than needed — make sure this "
+"matches the period stated in your privacy policy."
+msgstr "تُحذف طلبات عروض الأسعار وطلبات التوظيف (بما فيها السير الذاتية) تلقائيًا بعد هذه المدة. ويقتضي نظام حماية البيانات الشخصية السعودي ألا تُحفظ البيانات الشخصية أطول من اللازم — تأكد من أن هذه المدة تطابق المدة المذكورة في سياسة الخصوصية."
+
+#: inc/submissions.php:403
+msgid "Keep submissions for"
+msgstr "الاحتفاظ بالطلبات الواردة لمدة"
+
+#: inc/submissions.php:404
+msgid "months"
+msgstr "شهرًا"
+
+#: inc/submissions.php:406
+msgid "Save"
+msgstr "حفظ"
+
+#: inc/submissions.php:427 inc/submissions.php:446
+msgid "SEES form submissions"
+msgstr "طلبات نماذج SEES"
+
+#: inc/submissions.php:436
+msgid "Form submissions"
+msgstr "طلبات النماذج"
+
 #. translators: %s: search query
 #: index.php:12
 #, php-format
@@ -1289,10 +1466,6 @@ msgstr "أخبرنا عن مشروعك، وسيتواصل معك أحد مهند
 #: page-contact.php:29
 msgid "Call us"
 msgstr "اتصل بنا"
-
-#: page-contact.php:33 single.php:55
-msgid "Email"
-msgstr "البريد الإلكتروني"
 
 #: page-contact.php:37
 msgid "Visit"

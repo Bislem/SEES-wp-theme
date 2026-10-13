@@ -104,9 +104,19 @@ theme/sees/
   - recipient: Careers page → `applications_email`, falling back to the Contact email
   - the applicant receives a confirmation (Mail 2)
 - **Closed vacancies:** submissions to closed or expired ones are aborted server-side.
-- **CV storage:** CF7 deletes uploaded CVs after sending; none are kept on the server.
+- **CV storage:** a private copy is kept with the submission (see Submissions below); CF7's own temporary upload is deleted after sending.
 - **Tested end to end:** valid, missing, wrong-type and no-consent cases; EN/AR; a closed vacancy; on a fresh install.
 - **No seeded vacancies:** the installer never creates them (Amine's rule). Projects are hidden from the public site by default (`sees_projects_public_enabled` filter, `inc/projects-visibility.php`).
+
+### Submissions (`inc/submissions.php`)
+
+- **What:** `sees_submission` posts (not public, no "Add new"), one per quote request or job application. Saved on `wpcf7_before_send_mail` (priority 20, after the closed-vacancy abort), so a copy exists even if mail fails. Only theme forms (markup contains `sees-form`, or a `sees_job_forms` ID).
+- **Meta:** `_sees_type` (quote/application), `_sees_fields` (sanitised posted fields), `_sees_email` (lowercase), `_sees_form`, `_sees_lang`, `_sees_unread`, `_sees_job`, `_sees_job_reference`, `_sees_file`, `_sees_file_name`.
+- **CVs:** copied to `uploads/sees-private/Y/m/<random>-<name>` (folder has `.htaccess` deny-all + `index.php`). Download via `admin-post.php?action=sees_cv` (nonce + `edit_others_pages`). The file is deleted with its submission.
+- **Admin:** Quote requests / Job applications submenus, unread count bubble, columns, read-only detail box (opening marks it read). Jobs list gets an Applications column and the job edit screen an Applications box (counts across translations).
+- **Retention:** daily cron `sees_submissions_cleanup` deletes entries older than `sees_submission_retention_months` (default 12, Submissions → Retention).
+- **Privacy tools:** registered exporter + eraser (by email). Privacy policy template text updated (copy stored in the admin area, 12-month automatic deletion). Existing sites must update their privacy page by hand.
+- **Tested:** EN quote + AR application via the CF7 REST endpoint, list filters, per-job counts, CV download (200 logged in, 400 without nonce/login, direct URL 403), exporter, eraser (CV file removed), retention cleanup.
 
 ### Support & Downloads (`inc/downloads.php`, `page-support.php`)
 
