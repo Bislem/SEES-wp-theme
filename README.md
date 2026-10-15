@@ -74,6 +74,9 @@ sees-theme-kit/          original brief, brand guidelines PDF, source images
   - CVs are kept in a private folder that can't be opened from the web; only logged-in editors and administrators can download them.
   - Everything is deleted automatically after 12 months (Submissions → Retention). Keep that in line with the privacy policy.
   - A "delete my data" request: Tools → Erase Personal Data, using the person's email (also removes their CV). Tools → Export Personal Data gives them a copy.
+- **Social media**: Contact page → *Social media* tab: LinkedIn, X, Instagram, Facebook, YouTube, TikTok, Snapchat and WhatsApp (a number or a wa.me link).
+  - Fill them on the English Contact page; Arabic reuses them unless you enter different ones there.
+  - Icons appear in the top bar (large screens), the footer and the mobile menu. Empty fields are hidden.
 - **Top bar**: phone, email, address (and working hours, once they're no longer a placeholder) come from the Contact page.
 
 ## Going live on www.sees-engineering.com

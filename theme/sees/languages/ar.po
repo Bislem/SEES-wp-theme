@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SEES 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sees\n"
-"POT-Creation-Date: 2026-10-13T11:47:43+00:00\n"
+"POT-Creation-Date: 2026-10-15T09:30:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: SEES\n"
 "Language-Team: Arabic\n"
@@ -91,7 +91,7 @@ msgstr "شاركنا خططك وسنعدّ لك عرضًا مناسبًا."
 msgid "Start a project"
 msgstr "ابدأ مشروعك"
 
-#: footer.php:18 header.php:70 header.php:75
+#: footer.php:18 header.php:73 header.php:78
 msgid "SEES — Smart Electrical Engineering Solutions"
 msgstr "سيز للحلول الهندسية الكهربائية الذكية"
 
@@ -103,26 +103,26 @@ msgstr ""
 "نهندس بذكاء ونُشغّل بشكل أفضل — حلول كهربائية متكاملة من مكة المكرمة، المملكة "
 "العربية السعودية."
 
-#: footer.php:27 inc/submissions.php:52
+#: footer.php:28 inc/submissions.php:52
 msgid "Company"
 msgstr "الشركة"
 
-#: footer.php:39 inc/post-types.php:13
+#: footer.php:40 inc/post-types.php:13
 msgid "Solutions"
 msgstr "الحلول"
 
 #. Template Name of the theme
-#: footer.php:51 inc/menus.php:27 inc/setup-check.php:94
+#: footer.php:52 inc/menus.php:27 inc/setup-check.php:94
 msgid "Contact"
 msgstr "تواصل معنا"
 
 #. translators: %s: year
-#: footer.php:65
+#: footer.php:66
 #, php-format
 msgid "© %s SEES ENG Company. All rights reserved."
 msgstr "© %s شركة سيز للهندسة. جميع الحقوق محفوظة."
 
-#: footer.php:71
+#: footer.php:72
 msgid "Privacy Policy"
 msgstr "سياسة الخصوصية"
 
@@ -285,23 +285,23 @@ msgstr "انتقل إلى المحتوى"
 msgid "Contact information"
 msgstr "معلومات التواصل"
 
-#: header.php:82
+#: header.php:85
 msgid "Main"
 msgstr "القائمة الرئيسية"
 
-#: header.php:103 header.php:112
+#: header.php:107 header.php:116
 msgid "Dark mode"
 msgstr "الوضع الداكن"
 
-#: header.php:105 header.php:117 template-parts/cta-band.php:18
+#: header.php:109 header.php:121 template-parts/cta-band.php:18
 msgid "Get in Touch"
 msgstr "تواصل معنا"
 
-#: header.php:109 page-support.php:56 searchform.php:13
+#: header.php:113 page-support.php:56 searchform.php:13
 msgid "Search"
 msgstr "بحث"
 
-#: header.php:118
+#: header.php:122
 msgid "Menu"
 msgstr "القائمة"
 
@@ -385,7 +385,17 @@ msgstr "اللغة"
 msgid "No file"
 msgstr "لا يوجد ملف"
 
-#: inc/helpers.php:145
+#: inc/helpers.php:180
+msgid "SEES on social media"
+msgstr "سيز على وسائل التواصل الاجتماعي"
+
+#. translators: %s: social network name
+#: inc/helpers.php:186
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (يُفتح في علامة تبويب جديدة)"
+
+#: inc/helpers.php:205
 msgid "Al Shahamah District, Makkah, Saudi Arabia"
 msgstr "حي الشهامة، مكة المكرمة، المملكة العربية السعودية"
 
@@ -757,7 +767,7 @@ msgid "Provides English / Arabic content, URLs and the language switcher."
 msgstr "توفّر المحتوى بالإنجليزية والعربية وروابط اللغات ومبدّل اللغة."
 
 #: inc/setup-check.php:43 inc/setup-check.php:46 inc/setup-check.php:49
-#: inc/setup-check.php:257 page-solutions.php:17
+#: inc/setup-check.php:263 page-solutions.php:17
 msgid "Install"
 msgstr "التركيب"
 
@@ -1038,11 +1048,25 @@ msgstr ""
 msgid "Set icon"
 msgstr "تعيين الأيقونة"
 
-#: inc/setup-check.php:255
+#: inc/setup-check.php:249
+msgid "Social media links"
+msgstr "روابط وسائل التواصل الاجتماعي"
+
+#: inc/setup-check.php:250
+msgid ""
+"Optional: add your LinkedIn, X, Instagram, WhatsApp… links on the Contact "
+"page (Social media tab). They appear in the top bar, footer and mobile menu."
+msgstr "اختياري: أضف روابط LinkedIn وX وInstagram وواتساب… في صفحة التواصل (تبويب وسائل التواصل الاجتماعي). تظهر في الشريط العلوي والتذييل وقائمة الجوال."
+
+#: inc/setup-check.php:251
+msgid "Add links"
+msgstr "إضافة الروابط"
+
+#: inc/setup-check.php:261
 msgid "SMTP email delivery"
 msgstr "إرسال البريد عبر SMTP"
 
-#: inc/setup-check.php:256
+#: inc/setup-check.php:262
 msgid ""
 "Recommended so contact form emails are delivered: install WP Mail SMTP and "
 "connect a cPanel email account."
@@ -1050,21 +1074,21 @@ msgstr ""
 "يُنصح به لضمان وصول رسائل النموذج: ثبّت WP Mail SMTP واربطه بحساب بريد من "
 "cPanel."
 
-#: inc/setup-check.php:291
+#: inc/setup-check.php:297
 msgid "SEES theme:"
 msgstr "قالب سيز:"
 
-#: inc/setup-check.php:292
+#: inc/setup-check.php:298
 msgid ""
 "setup check passed — languages, pages, menus and forms are all in place."
 msgstr "اكتمل فحص الإعداد — اللغات والصفحات والقوائم والنماذج جاهزة."
 
-#: inc/setup-check.php:298
+#: inc/setup-check.php:304
 msgid "SEES theme setup check"
 msgstr "فحص إعداد قالب سيز"
 
 #. translators: %d: number of items
-#: inc/setup-check.php:302
+#: inc/setup-check.php:308
 #, php-format
 msgid "%d required step is missing:"
 msgid_plural "%d required steps are missing:"
@@ -1075,19 +1099,19 @@ msgstr[3] "خطوات مطلوبة ناقصة: %d"
 msgstr[4] "خطوات مطلوبة ناقصة: %d"
 msgstr[5] "خطوات مطلوبة ناقصة: %d"
 
-#: inc/setup-check.php:303
+#: inc/setup-check.php:309
 msgid "everything required is done. Recommended:"
 msgstr "اكتملت كل الخطوات المطلوبة. يُنصح أيضًا بـ:"
 
-#: inc/setup-check.php:310 inc/setup-check.php:368
+#: inc/setup-check.php:316 inc/setup-check.php:374
 msgid "recommended"
 msgstr "مُستحسن"
 
-#: inc/setup-check.php:312 inc/setup-check.php:374
+#: inc/setup-check.php:318 inc/setup-check.php:380
 msgid "Fix"
 msgstr "إصلاح"
 
-#: inc/setup-check.php:317
+#: inc/setup-check.php:323
 msgid ""
 "Activate the plugins above — the theme then sets up languages, pages, menus "
 "and forms by itself."
@@ -1095,24 +1119,24 @@ msgstr ""
 "فعّل الإضافات أعلاه — وسيُعدّ القالب بعدها اللغات والصفحات والقوائم والنماذج "
 "تلقائيًا."
 
-#: inc/setup-check.php:320
+#: inc/setup-check.php:326
 msgid "Open the setup checklist"
 msgstr "فتح قائمة الإعداد"
 
-#: inc/setup-check.php:321
+#: inc/setup-check.php:327
 msgid "Hide until next activation"
 msgstr "إخفاء حتى التفعيل القادم"
 
-#: inc/setup-check.php:341
+#: inc/setup-check.php:347
 msgid "SEES setup"
 msgstr "إعداد سيز"
 
-#: inc/setup-check.php:352
+#: inc/setup-check.php:358
 msgid "SEES setup checklist"
 msgstr "قائمة إعداد سيز"
 
 #. translators: 1: completed steps, 2: total steps
-#: inc/setup-check.php:356
+#: inc/setup-check.php:362
 #, php-format
 msgid ""
 "%1$d of %2$d steps complete. This check also runs every time the theme is "
@@ -1120,23 +1144,23 @@ msgid ""
 msgstr ""
 "اكتملت %1$d من %2$d خطوة. يعمل هذا الفحص أيضًا في كل مرة يُفعَّل فيها القالب."
 
-#: inc/setup-check.php:366
+#: inc/setup-check.php:372
 msgid "Done"
 msgstr "مكتمل"
 
-#: inc/setup-check.php:366
+#: inc/setup-check.php:372
 msgid "Missing"
 msgstr "ناقص"
 
-#: inc/setup-check.php:366
+#: inc/setup-check.php:372
 msgid "Recommended"
 msgstr "مُستحسن"
 
-#: inc/setup-check.php:381
+#: inc/setup-check.php:387
 msgid "Automatic setup"
 msgstr "الإعداد التلقائي"
 
-#: inc/setup-check.php:382
+#: inc/setup-check.php:388
 msgid ""
 "The theme sets everything up by itself after activation: languages, Arabic "
 "language pack, permalinks, the Home / About / Our Solutions / Contact pages "
@@ -1150,11 +1174,11 @@ msgstr ""
 "التواصل، والقوائم، والصفحة الرئيسية للموقع. يضيف فقط ما ينقص ولا يستبدل "
 "محتواك أبدًا."
 
-#: inc/setup-check.php:387
+#: inc/setup-check.php:393
 msgid "Run automatic setup"
 msgstr "تشغيل الإعداد التلقائي"
 
-#: inc/setup-check.php:390
+#: inc/setup-check.php:396
 msgid ""
 "Install and activate Polylang, Advanced Custom Fields and Contact Form 7 "
 "first — the setup then runs automatically."

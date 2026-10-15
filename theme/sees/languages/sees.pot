@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-13T11:47:43+00:00\n"
+"POT-Creation-Date: 2026-10-15T09:30:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sees\n"
@@ -91,8 +91,8 @@ msgid "Start a project"
 msgstr ""
 
 #: footer.php:18
-#: header.php:70
-#: header.php:75
+#: header.php:73
+#: header.php:78
 msgid "SEES — Smart Electrical Engineering Solutions"
 msgstr ""
 
@@ -100,30 +100,30 @@ msgstr ""
 msgid "Engineering smarter, powering better — integrated electrical solutions from Makkah, Saudi Arabia."
 msgstr ""
 
-#: footer.php:27
+#: footer.php:28
 #: inc/submissions.php:52
 msgid "Company"
 msgstr ""
 
-#: footer.php:39
+#: footer.php:40
 #: inc/post-types.php:13
 msgid "Solutions"
 msgstr ""
 
 #. Template Name of the theme
-#: footer.php:51
+#: footer.php:52
 #: inc/menus.php:27
 #: inc/setup-check.php:94
 msgid "Contact"
 msgstr ""
 
 #. translators: %s: year
-#: footer.php:65
+#: footer.php:66
 #, php-format
 msgid "© %s SEES ENG Company. All rights reserved."
 msgstr ""
 
-#: footer.php:71
+#: footer.php:72
 msgid "Privacy Policy"
 msgstr ""
 
@@ -283,28 +283,28 @@ msgstr ""
 msgid "Contact information"
 msgstr ""
 
-#: header.php:82
+#: header.php:85
 msgid "Main"
 msgstr ""
 
-#: header.php:103
-#: header.php:112
+#: header.php:107
+#: header.php:116
 msgid "Dark mode"
 msgstr ""
 
-#: header.php:105
-#: header.php:117
+#: header.php:109
+#: header.php:121
 #: template-parts/cta-band.php:18
 msgid "Get in Touch"
 msgstr ""
 
-#: header.php:109
+#: header.php:113
 #: page-support.php:56
 #: searchform.php:13
 msgid "Search"
 msgstr ""
 
-#: header.php:118
+#: header.php:122
 msgid "Menu"
 msgstr ""
 
@@ -391,7 +391,17 @@ msgstr ""
 msgid "No file"
 msgstr ""
 
-#: inc/helpers.php:145
+#: inc/helpers.php:180
+msgid "SEES on social media"
+msgstr ""
+
+#. translators: %s: social network name
+#: inc/helpers.php:186
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr ""
+
+#: inc/helpers.php:205
 msgid "Al Shahamah District, Makkah, Saudi Arabia"
 msgstr ""
 
@@ -737,7 +747,7 @@ msgstr ""
 #: inc/setup-check.php:43
 #: inc/setup-check.php:46
 #: inc/setup-check.php:49
-#: inc/setup-check.php:257
+#: inc/setup-check.php:263
 #: page-solutions.php:17
 msgid "Install"
 msgstr ""
@@ -970,99 +980,111 @@ msgstr ""
 msgid "Set icon"
 msgstr ""
 
-#: inc/setup-check.php:255
+#: inc/setup-check.php:249
+msgid "Social media links"
+msgstr ""
+
+#: inc/setup-check.php:250
+msgid "Optional: add your LinkedIn, X, Instagram, WhatsApp… links on the Contact page (Social media tab). They appear in the top bar, footer and mobile menu."
+msgstr ""
+
+#: inc/setup-check.php:251
+msgid "Add links"
+msgstr ""
+
+#: inc/setup-check.php:261
 msgid "SMTP email delivery"
 msgstr ""
 
-#: inc/setup-check.php:256
+#: inc/setup-check.php:262
 msgid "Recommended so contact form emails are delivered: install WP Mail SMTP and connect a cPanel email account."
 msgstr ""
 
-#: inc/setup-check.php:291
+#: inc/setup-check.php:297
 msgid "SEES theme:"
 msgstr ""
 
-#: inc/setup-check.php:292
+#: inc/setup-check.php:298
 msgid "setup check passed — languages, pages, menus and forms are all in place."
 msgstr ""
 
-#: inc/setup-check.php:298
+#: inc/setup-check.php:304
 msgid "SEES theme setup check"
 msgstr ""
 
 #. translators: %d: number of items
-#: inc/setup-check.php:302
+#: inc/setup-check.php:308
 #, php-format
 msgid "%d required step is missing:"
 msgid_plural "%d required steps are missing:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/setup-check.php:303
+#: inc/setup-check.php:309
 msgid "everything required is done. Recommended:"
 msgstr ""
 
-#: inc/setup-check.php:310
-#: inc/setup-check.php:368
+#: inc/setup-check.php:316
+#: inc/setup-check.php:374
 msgid "recommended"
 msgstr ""
 
-#: inc/setup-check.php:312
-#: inc/setup-check.php:374
+#: inc/setup-check.php:318
+#: inc/setup-check.php:380
 msgid "Fix"
 msgstr ""
 
-#: inc/setup-check.php:317
+#: inc/setup-check.php:323
 msgid "Activate the plugins above — the theme then sets up languages, pages, menus and forms by itself."
 msgstr ""
 
-#: inc/setup-check.php:320
+#: inc/setup-check.php:326
 msgid "Open the setup checklist"
 msgstr ""
 
-#: inc/setup-check.php:321
+#: inc/setup-check.php:327
 msgid "Hide until next activation"
 msgstr ""
 
-#: inc/setup-check.php:341
+#: inc/setup-check.php:347
 msgid "SEES setup"
 msgstr ""
 
-#: inc/setup-check.php:352
+#: inc/setup-check.php:358
 msgid "SEES setup checklist"
 msgstr ""
 
 #. translators: 1: completed steps, 2: total steps
-#: inc/setup-check.php:356
+#: inc/setup-check.php:362
 #, php-format
 msgid "%1$d of %2$d steps complete. This check also runs every time the theme is activated."
 msgstr ""
 
-#: inc/setup-check.php:366
+#: inc/setup-check.php:372
 msgid "Done"
 msgstr ""
 
-#: inc/setup-check.php:366
+#: inc/setup-check.php:372
 msgid "Missing"
 msgstr ""
 
-#: inc/setup-check.php:366
+#: inc/setup-check.php:372
 msgid "Recommended"
 msgstr ""
 
-#: inc/setup-check.php:381
+#: inc/setup-check.php:387
 msgid "Automatic setup"
 msgstr ""
 
-#: inc/setup-check.php:382
+#: inc/setup-check.php:388
 msgid "The theme sets everything up by itself after activation: languages, Arabic language pack, permalinks, the Home / About / Our Solutions / Contact pages in English and Arabic, solutions, FAQs, project categories, placeholder projects (drafts), contact forms, menus and the front page. It only adds what is missing and never overwrites your content."
 msgstr ""
 
-#: inc/setup-check.php:387
+#: inc/setup-check.php:393
 msgid "Run automatic setup"
 msgstr ""
 
-#: inc/setup-check.php:390
+#: inc/setup-check.php:396
 msgid "Install and activate Polylang, Advanced Custom Fields and Contact Form 7 first — the setup then runs automatically."
 msgstr ""
 

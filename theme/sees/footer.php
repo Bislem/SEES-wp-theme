@@ -20,6 +20,7 @@ $contact = sees_contact();
 					?>
 				</a>
 				<p><?php esc_html_e( 'Engineering smarter, powering better — integrated electrical solutions from Makkah, Saudi Arabia.', 'sees' ); ?></p>
+				<?php sees_social_list( 'site-footer__social', 18 ); ?>
 			</div>
 
 			<div class="site-footer__cols">

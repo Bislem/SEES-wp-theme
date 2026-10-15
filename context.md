@@ -122,6 +122,14 @@ theme/sees/
   - Vacancy page: "Application sent!" with the form's own CF7 success message (`data-form-message`), plus "Back to all vacancies".
 - **Fresh-install test (2026-10-13):** new WordPress with plain permalinks; theme activated, then Polylang + ACF + CF7. One admin visit ran the full setup: all 21 checklist items green, every EN/AR page 200, contact forms with Subject and consent, job forms, menus with News. Contact and job emails were delivered (CV attached, applicant confirmation), submissions saved, the CV URL returned 403, debug.log stayed empty.
 
+### Social links
+
+- **Fields:** `social_*` on the Contact page (ACF tab *Social media*). `sees_social_links()` reads the current-language Contact page, falling back per field to the default-language page. A WhatsApp number becomes `https://wa.me/<digits>`.
+- **Output:** `sees_social_list( $class, $size )` (helpers.php) with brand glyphs from `sees_social_icon()` (icons.php).
+  - Shown in the top bar (`.topbar__social`, only above 1240px; up to 1360px the address hides to make room), the footer brand column and the mobile menu (`.primary-nav__social`, 1240px and below).
+  - Links open in a new tab, with an accessible label.
+- **Defaults:** none are seeded (no invented accounts). The setup checklist has an optional "Social media links" item.
+
 ### Submissions (`inc/submissions.php`)
 
 - **What:** `sees_submission` posts (not public, no "Add new"), one per contact message or job application. Saved on `wpcf7_before_send_mail` (priority 20, after the closed-vacancy abort), so a copy exists even if mail fails. Only theme forms (markup contains `sees-form`, or a `sees_job_forms` ID).

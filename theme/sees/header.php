@@ -47,6 +47,7 @@ $contact_url = sees_page_url( 'page-contact.php' );
 					<li class="topbar__wide"><?php echo sees_icon( 'clock', 15, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?><span><?php echo esc_html( $sees_info['hours'] ); ?></span></li>
 				<?php endif; ?>
 			</ul>
+			<div class="topbar__end">
 			<ul class="topbar__links">
 				<?php if ( $sees_support ) : ?>
 					<li><a href="<?php echo esc_url( get_permalink( $sees_support ) ); ?>"><?php echo sees_icon( 'download', 15, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?><span><?php echo esc_html( get_the_title( $sees_support ) ); ?></span></a></li>
@@ -55,6 +56,8 @@ $contact_url = sees_page_url( 'page-contact.php' );
 					<li><a href="<?php echo esc_url( get_permalink( $sees_careers ) ); ?>"><?php echo sees_icon( 'people', 15, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?><span><?php echo esc_html( get_the_title( $sees_careers ) ); ?></span></a></li>
 				<?php endif; ?>
 			</ul>
+			<?php sees_social_list( 'topbar__social', 15 ); ?>
+			</div>
 		</div>
 	</div>
 	<div class="container site-header__bar a-up">
@@ -96,6 +99,7 @@ $contact_url = sees_page_url( 'page-contact.php' );
 					</li>
 				</ul>
 			<?php endif; ?>
+			<?php sees_social_list( 'primary-nav__social', 18 ); // Phones and tablets: the top bar hides its social icons. ?>
 			<div class="primary-nav__search"><?php get_search_form(); ?></div>
 			<button type="button" class="btn btn--outline theme-toggle primary-nav__theme" aria-pressed="false">
 				<?php echo sees_icon( 'moon', 18, array( 'stroke' => 1.7 ) ); // phpcs:ignore ?>

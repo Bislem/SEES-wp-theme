@@ -244,6 +244,12 @@ function sees_setup_checks(): array {
 		__( 'Shown in browser tabs and on phones. The automatic setup uses the SEES logo mark.', 'sees' ),
 		admin_url( 'customize.php?autofocus[section]=title_tagline' ), __( 'Set icon', 'sees' ) );
 
+	// 9c. Social media links (optional).
+	$contact_page = function_exists( 'get_field' ) ? sees_page_by_template( 'page-contact.php' ) : null;
+	$add( 'social', __( 'Social media links', 'sees' ), function_exists( 'get_field' ) && (bool) sees_social_links(), false,
+		__( 'Optional: add your LinkedIn, X, Instagram, WhatsApp… links on the Contact page (Social media tab). They appear in the top bar, footer and mobile menu.', 'sees' ),
+		$contact_page ? (string) get_edit_post_link( $contact_page->ID, 'raw' ) : admin_url( 'edit.php?post_type=page' ), __( 'Add links', 'sees' ) );
+
 	// 10. Outgoing mail (recommendation: shared hosts often drop PHP mail()).
 	$smtp = false;
 	foreach ( array( 'wp-mail-smtp/wp_mail_smtp.php', 'fluent-smtp/fluent-smtp.php', 'post-smtp/postman-smtp.php', 'easy-wp-smtp/easy-wp-smtp.php' ) as $plugin ) {

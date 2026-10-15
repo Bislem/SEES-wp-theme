@@ -132,6 +132,66 @@ function sees_contact_url( string $topic = '' ): string {
 }
 
 /**
+ * Social media links, edited on the Contact page (Social media tab). A network is shown only
+ * when it has a link. Each field falls back to the default-language Contact page, so the
+ * links only need to be entered once.
+ *
+ * @return array<int,array{network:string,label:string,url:string}>
+ */
+function sees_social_links(): array {
+	$page     = sees_page_by_template( 'page-contact.php' );
+	$id       = $page ? $page->ID : 0;
+	$fallback = $id && function_exists( 'pll_get_post' ) && function_exists( 'pll_default_language' ) ? (int) pll_get_post( $id, pll_default_language() ) : 0;
+	$networks = array(
+		'linkedin'  => 'LinkedIn',
+		'x'         => 'X',
+		'instagram' => 'Instagram',
+		'facebook'  => 'Facebook',
+		'youtube'   => 'YouTube',
+		'tiktok'    => 'TikTok',
+		'snapchat'  => 'Snapchat',
+		'whatsapp'  => 'WhatsApp',
+	);
+	$links = array();
+	foreach ( $networks as $network => $label ) {
+		$value = trim( (string) sees_field( 'social_' . $network, '', $id ) );
+		if ( '' === $value && $fallback && $fallback !== $id ) {
+			$value = trim( (string) sees_field( 'social_' . $network, '', $fallback ) );
+		}
+		if ( 'whatsapp' === $network && '' !== $value && ! preg_match( '#^https?://#i', $value ) ) {
+			$digits = preg_replace( '/\D+/', '', $value ); // "+966 50 …" → https://wa.me/96650…
+			$value  = $digits ? 'https://wa.me/' . $digits : '';
+		}
+		if ( '' !== $value && wp_http_validate_url( $value ) ) {
+			$links[] = array( 'network' => $network, 'label' => $label, 'url' => $value );
+		}
+	}
+	return $links;
+}
+
+/**
+ * Print the social links as an icon list (top bar, footer, mobile menu).
+ */
+function sees_social_list( string $class, int $size = 18 ): void {
+	$links = sees_social_links();
+	if ( ! $links ) {
+		return;
+	}
+	echo '<ul class="social ' . esc_attr( $class ) . '" aria-label="' . esc_attr__( 'SEES on social media', 'sees' ) . '">';
+	foreach ( $links as $link ) {
+		printf(
+			'<li><a class="social__link" href="%1$s" target="_blank" rel="noopener noreferrer me" aria-label="%2$s" title="%3$s">%4$s</a></li>',
+			esc_url( $link['url'] ),
+			/* translators: %s: social network name */
+			esc_attr( sprintf( __( '%s (opens in a new tab)', 'sees' ), $link['label'] ) ),
+			esc_attr( $link['label'] ),
+			sees_social_icon( $link['network'], $size ) // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG.
+		);
+	}
+	echo '</ul>';
+}
+
+/**
  * Site-wide contact details, edited on the Contact page.
  *
  * @return array{phone:string,email:string,address:string,hours:string}

@@ -195,6 +195,160 @@
         },
         {
             "name": "",
+            "label": "Social media",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_4562791bc40e7",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "social_note",
+            "label": "Social media links",
+            "type": "message",
+            "key": "field_6c3030740b415",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Shown as icons in the top bar, the footer and the mobile menu. Leave a field empty to hide that network. Fill them on the English Contact page; the Arabic site uses the same links unless you enter different ones on the Arabic Contact page."
+        },
+        {
+            "name": "social_linkedin",
+            "label": "LinkedIn",
+            "type": "url",
+            "placeholder": "https://www.linkedin.com/company/…",
+            "instructions": "",
+            "key": "field_f135af73afaf4",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "social_x",
+            "label": "X (Twitter)",
+            "type": "url",
+            "placeholder": "https://x.com/…",
+            "instructions": "",
+            "key": "field_b872e96902184",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "social_instagram",
+            "label": "Instagram",
+            "type": "url",
+            "placeholder": "https://www.instagram.com/…",
+            "instructions": "",
+            "key": "field_411c5abc3f189",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "social_facebook",
+            "label": "Facebook",
+            "type": "url",
+            "placeholder": "https://www.facebook.com/…",
+            "instructions": "",
+            "key": "field_a2d117594df93",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "social_youtube",
+            "label": "YouTube",
+            "type": "url",
+            "placeholder": "https://www.youtube.com/@…",
+            "instructions": "",
+            "key": "field_bc5d1e93c35d6",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "social_tiktok",
+            "label": "TikTok",
+            "type": "url",
+            "placeholder": "https://www.tiktok.com/@…",
+            "instructions": "",
+            "key": "field_048d4b2333fd4",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "social_snapchat",
+            "label": "Snapchat",
+            "type": "url",
+            "placeholder": "https://www.snapchat.com/add/…",
+            "instructions": "",
+            "key": "field_fd1e0b48174d8",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "social_whatsapp",
+            "label": "WhatsApp",
+            "type": "text",
+            "placeholder": "+966 50 000 0000",
+            "instructions": "WhatsApp number in international format, or a wa.me link.",
+            "key": "field_3607fb466be3c",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "name": "",
             "label": "Footer details",
             "type": "tab",
             "placement": "top",
@@ -245,5 +399,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1791950000
+    "modified": 1792056371
 }
